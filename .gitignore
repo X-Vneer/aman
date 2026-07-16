@@ -10,3 +10,8 @@ Thumbs.db
 # Local env
 .env
 .env.local
+
+# Local DB dumps — contain real user data, keep out of version control
+aman-db.sql.zip
+*.sql
+*.sql.zip

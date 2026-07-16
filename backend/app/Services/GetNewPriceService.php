@@ -74,7 +74,7 @@ class GetNewPriceService
      */
     private function loadCoupon(string|null $coupon_code): void
     {
-        $this->coupon = Coupon::where('status', CouponTypeStatus::Active->value)
+        $this->coupon = Coupon::whereRaw('('.Coupon::STATUS_SQL.') = ?', [CouponTypeStatus::Active->value])
             ->where('code', $coupon_code)
             ->first();
     }

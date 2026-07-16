@@ -31,14 +31,9 @@ return new class extends Migration
             $table->decimal('paid_amount', 8, 2)->default(0);
             $table->decimal('paid_amount_after_discount', 8, 2)->default(0);
 
-            // Virtual Column for status
-            $table->string('status')->virtualAs(
-                'CASE ' .
-                'WHEN deleted_at IS NOT NULL OR date_start > NOW() THEN "Inactive" ' .
-                'WHEN uses_count >= max_uses OR NOW() > date_end THEN "Expired" ' .
-                'ELSE "Active" ' .
-                'END'
-            );
+            // `status` is NOT a stored column: MySQL 8 forbids NOW() in generated columns.
+            // It is computed at read time — see App\Models\Coupon::$status accessor
+            // (display) and Coupon::STATUS_SQL (SQL filter + sort in Admin\CouponController).
 
             $table->decimal('discount_amount', 8, 2)->virtualAs('paid_amount - paid_amount_after_discount');
             $table->timestamp('deleted_at')->nullable();

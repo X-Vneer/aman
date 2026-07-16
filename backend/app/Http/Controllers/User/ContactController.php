@@ -33,7 +33,8 @@ class ContactController extends BaseApiController {
                 $items = $items->whereIn('type', $request->types);
             }
             if($request->statuses){
-                $items = $items->whereIn('status', $request->statuses);
+                // `status` is computed (no physical column on MySQL); filter on the CASE expression.
+                $items = $items->whereIn(DB::raw('('.Contact::STATUS_SQL.')'), $request->statuses);
             }
             return [$items];
         }, [], auth('admin')->check(), function ($items) {

@@ -34,7 +34,8 @@ class CouponController extends BaseApiController {
     function index(Request $request) {
         return $this->indexInit($request, function ($items) use($request){
             if($request->statuses){
-                $items = $items->whereIn('status', $request->statuses);
+                // `status` is computed (no physical column on MySQL); filter on the CASE expression.
+                $items = $items->whereIn(DB::raw('('.Coupon::STATUS_SQL.')'), $request->statuses);
             }
 
             if($request->video_ids){
@@ -51,7 +52,10 @@ class CouponController extends BaseApiController {
             $loads = $items->load(['userVideos']);
             $items->data = $loads;
             return [$items];
-        }, null, null, true, 'created_at', ['status' => true]);
+        }, null, null, true, 'created_at', [
+            // `status` is computed (no physical column on MySQL); sort on the CASE expression.
+            'status' => fn($q, $dir) => $q->orderByRaw('('.Coupon::STATUS_SQL.') '.$dir),
+        ]);
     }
 
     function couponUsers(Request $request, $id) {

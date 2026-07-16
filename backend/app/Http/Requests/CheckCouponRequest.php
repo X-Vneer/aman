@@ -29,7 +29,7 @@ class CheckCouponRequest extends CustomFormRequest
     {  
         
         $validator->after(function ($validator) {
-            $coupon = Coupon::where('status', CouponTypeStatus::Active->value)
+            $coupon = Coupon::whereRaw('('.Coupon::STATUS_SQL.') = ?', [CouponTypeStatus::Active->value])
                 ->where('code', $this->coupon)->first();
 
             $video = Video::find($this->video_id);

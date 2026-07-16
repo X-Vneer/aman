@@ -20,13 +20,9 @@ return new class extends Migration
             $table->string('subject');
             $table->text('message');
             $table->json('reply')->nullable();
-            $table->string('status')->virtualAs(
-                "case
-                    when `reply` is not null then 'Responded'
-                    when `reply` is null and `created_at` > current_timestamp() - interval 12 hour then 'New'
-                    else 'Pending'
-                end"
-            );
+            // `status` is NOT a stored column: MySQL 8 forbids NOW() in generated columns.
+            // It is computed at read time — see App\Models\Contact::$status accessor
+            // (display) and Contact::STATUS_SQL (SQL filter in User\ContactController).
 
             $table->timestamp('deleted_at')->nullable();
             $table->timestamps();
