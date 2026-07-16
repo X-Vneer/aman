@@ -47,9 +47,9 @@ const Header = () => {
             <UserButton />
           </div>
 
-          <div className="flex basis-full items-center max-lg:grow-0! max-lg:justify-center">
-            <div className="max-w-28 shrink-0 lg:max-w-36" aria-label="brand">
-              <Logo variant="horizontal" className="w-full" />
+          <div className="flex gap-2 basis-full items-center max-lg:grow-0! max-lg:justify-center">
+            <div className="max-w-20 shrink-0 lg:max-w-26" aria-label="brand">
+              <Logo variant="horizontal" className="w-full " />
             </div>
             <ul className="mx-2 hidden list-none items-center justify-start gap-5 font-medium lg:flex lg:gap-8">
               {siteConfig.navItems.map((item) => {
