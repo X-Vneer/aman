@@ -9,7 +9,7 @@ import { getMessages, setRequestLocale } from "next-intl/server"
 import { notFound } from "next/navigation"
 import { NuqsAdapter } from "nuqs/adapters/next/app"
 
-import { fontSans, urdu } from "@/config/fonts"
+import { fontSans } from "@/config/fonts"
 import NySessionProvider from "@/lib/auth/provider"
 import { routing } from "@/lib/i18n/routing"
 
@@ -99,7 +99,7 @@ export default async function RootLayout(props: {
     <html
       suppressHydrationWarning
       lang={locale}
-      dir={["ar", "ur"].includes(locale) ? "rtl" : "ltr"}
+      dir={["ar"].includes(locale) ? "rtl" : "ltr"}
       className="dark">
       <head>
         {/* Google tag (gtag.js) */}
@@ -127,7 +127,7 @@ export default async function RootLayout(props: {
                 suppressHydrationWarning
                 className={clsx(
                   "bg-background dark min-h-screen font-sans text-white antialiased",
-                  locale === "ur" ? urdu.variable : fontSans.variable,
+                  fontSans.variable,
                 )}>
                 <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>{children}</Providers>
                 <ScreenIndicator />

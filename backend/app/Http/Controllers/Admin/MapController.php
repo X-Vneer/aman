@@ -23,7 +23,7 @@ class MapController extends BaseApiController
      * `ValueRaw` is the configured count. Palestine is also exposed under `376` for the same stats.
      *
      * Response `data` shape:
-     * { "682": { "Name": { "en": "...", "ar": "...", "fil": "...", "ur": "...", "fr": "...", "id": "..." }, ... }, ... }
+     * { "682": { "Name": { "en": "...", "ar": "...", "fr": "...", "id": "..." }, ... }, ... }
      *
      * Cached 1 month; change `map.cache_code` to invalidate.
      */
@@ -69,7 +69,7 @@ class MapController extends BaseApiController
 
     /**
      * Labels for every entry in `config('app.supported_languages')`, using `lang/{locale}/map_countries.php`
-     * (en, ar, fil, fr, id, ur). Falls back to English only if a key is missing in that locale file.
+     * (en, ar, fr, id). Falls back to English only if a key is missing in that locale file.
      *
      * @return array<string, string>
      */

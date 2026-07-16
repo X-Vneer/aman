@@ -5,7 +5,6 @@ import ChooseCourse from "./components/choose-course"
 import { getVideos } from "@/services/utils/get-videos"
 import DynamicBg from "./components/dynamic-bg"
 import { HoveredCourseProvider } from "./components/hovered-course-context"
-import { cn } from "@/lib/cn"
 import { generatePageMetadata } from "@/utils/generate-page-metadata"
 
 type Props = {
@@ -39,10 +38,7 @@ const Page = async (props: Props) => {
             <div className="w-full space-y-10">
               <div className="mx-auto space-y-5 text-center">
                 <h1
-                  className={cn(
-                    "text-foreground [&>span]:text-primary text-4xl md:text-5xl lg:text-6xl",
-                    locale === "fil" && "md:text-3xl lg:text-5xl",
-                  )}
+                  className="text-foreground [&>span]:text-primary text-4xl md:text-5xl lg:text-6xl"
                   dangerouslySetInnerHTML={{ __html: content.title }}></h1>
                 <p className="text-foreground mx-auto max-w-84 text-center md:text-sm lg:max-w-160 lg:text-base">
                   {t("description")}

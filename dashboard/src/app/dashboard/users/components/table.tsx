@@ -47,14 +47,8 @@ export const langs = {
   fr: {
     color: "red",
   },
-  fil: {
-    color: "gray",
-  },
   id: {
     color: "pink",
-  },
-  ur: {
-    color: "yellow",
   },
 }
 

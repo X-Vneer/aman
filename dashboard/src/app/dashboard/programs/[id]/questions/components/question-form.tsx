@@ -27,8 +27,6 @@ type LangsTimeObject = {
   ar: TimeObject
   en: TimeObject
   fr: TimeObject
-  ur: TimeObject
-  fil: TimeObject
   id: TimeObject
 }
 
@@ -44,56 +42,42 @@ const _initialValues = {
     ar: "",
     en: "",
     fr: "",
-    ur: "",
-    fil: "",
     id: "",
   },
   answers_a: {
     ar: "",
     en: "",
     fr: "",
-    ur: "",
-    fil: "",
     id: "",
   },
   wrong_a: {
     ar: "",
     en: "",
     fr: "",
-    ur: "",
-    fil: "",
     id: "",
   },
   answers_b: {
     ar: "",
     en: "",
     fr: "",
-    ur: "",
-    fil: "",
     id: "",
   },
   wrong_b: {
     ar: "",
     en: "",
     fr: "",
-    ur: "",
-    fil: "",
     id: "",
   },
   answers_c: {
     ar: "",
     en: "",
     fr: "",
-    ur: "",
-    fil: "",
     id: "",
   },
   wrong_c: {
     ar: "",
     en: "",
     fr: "",
-    ur: "",
-    fil: "",
     id: "",
   },
 
@@ -107,8 +91,6 @@ const _initialValues = {
     ar: { h: 0, m: 0, s: 0 },
     en: { h: 0, m: 0, s: 0 },
     fr: { h: 0, m: 0, s: 0 },
-    ur: { h: 0, m: 0, s: 0 },
-    fil: { h: 0, m: 0, s: 0 },
     id: { h: 0, m: 0, s: 0 },
   },
   wrong_answer_audio_urls: {
@@ -123,16 +105,6 @@ const _initialValues = {
       answer_c: "",
     },
     fr: {
-      answer_a: "",
-      answer_b: "",
-      answer_c: "",
-    },
-    ur: {
-      answer_a: "",
-      answer_b: "",
-      answer_c: "",
-    },
-    fil: {
       answer_a: "",
       answer_b: "",
       answer_c: "",
@@ -167,8 +139,6 @@ const QuestionForm = ({ initialValues }: { initialValues?: QuestionFormValues })
           ar: formatTime(appears_at.ar),
           en: formatTime(appears_at.en),
           fr: formatTime(appears_at.fr),
-          ur: formatTime(appears_at.ur),
-          fil: formatTime(appears_at.fil),
           id: formatTime(appears_at.id),
         },
         allowed_time: formatTime(allowed_time),

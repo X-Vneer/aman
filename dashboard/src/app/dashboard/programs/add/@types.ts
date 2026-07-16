@@ -13,7 +13,5 @@ export interface Langs {
   ar: string
   en: string
   fr: string
-  ur: string
-  fil: string
   id: string
 }

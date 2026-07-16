@@ -15,9 +15,7 @@ const ChooseLanguageTitle = (props: Props) => {
     ar: "أختر اللغة",
     en: "Choose the language",
     fr: "Choisir la langue",
-    fil: "Piliin ang Wika",
     id: "Pilih bahasa",
-    ur: "ہم مندرجہ ذیل ادائیگی کے طریقوں کی حمایت کرتے ہیں",
   }
 
   return <p className="text-center text-lg text-white">{text[language as "ar"]}</p>

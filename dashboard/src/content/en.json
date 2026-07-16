@@ -215,7 +215,7 @@
       "new-price-label": "New Price",
       "save-button": "Save",
       "title": "Edit Prices",
-      "unit": "SAR"
+      "unit": "ILS"
     },
     "users": {
       "table": {
@@ -376,11 +376,9 @@
   "langs": {
     "ar": "Arabic",
     "en": "English",
-    "fil": "Tagalog",
     "fr": "French",
     "id": "Indonesian",
-    "title": "Languages",
-    "ur": "Urdu"
+    "title": "Languages"
   },
   "login": {
     "description": "Welcome back! Please enter your login details",
@@ -885,11 +883,9 @@
       "langs": {
         "ar": "Arabic",
         "en": "English",
-        "fil": "Tagalog",
         "fr": "French",
         "id": "Indonesian",
-        "title": "Languages",
-        "ur": "Urdu"
+        "title": "Languages"
       },
       "payment-methods": {
         "title": "Select Payment Method"
@@ -936,7 +932,7 @@
       "certificate_count": "Number of Certificates",
       "correct_answers": "Number of Correct Answers",
       "coupons": "Coupons",
-      "currency": "SAR",
+      "currency": "ILS",
       "current_time": "Current Stop Point",
       "download-certificate": "Download Certificate",
       "email": "Email",

@@ -14,8 +14,6 @@ class ScenesStoreRequest extends CustomFormRequest
         'title.ar' => 'required|min:1|max:191',
         'title.en' => 'required|min:1|max:191',
         'title.fr' => 'required|min:1|max:191',
-        'title.ur' => 'required|min:1|max:191',
-        'title.fil' => 'required|min:1|max:191',
         'title.id' => 'required|min:1|max:191',
         'start_time' => 'required|time_format',
         'logo' => 'required|min:1|max:191',

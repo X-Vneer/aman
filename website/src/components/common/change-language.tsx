@@ -51,18 +51,14 @@ const ChangeLanguage = (props: Props) => {
     ar: "تغير اللغة",
     en: "Change the language",
     fr: "Modifier la langue",
-    fil: "Palitan ang Wika",
     id: "Ubah bahasa",
-    ur: "زبان تبدیل کریں",
   } as const
 
   const button = {
     ar: "تعديل اللغة",
     en: "Modify the language",
     fr: "Modifier la langue",
-    fil: "Baguhin ang Wika",
     id: "Ubah bahasa",
-    ur: "زبان میں ترمیم کریں",
   } as const
 
   return (

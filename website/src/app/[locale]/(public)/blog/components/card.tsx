@@ -8,9 +8,7 @@ const INTL_LOCALE_BY_APP: Record<string, string> = {
   ar: "ar-SA",
   en: "en-US",
   fr: "fr-FR",
-  fil: "fil-PH",
   id: "id-ID",
-  ur: "ur-PK",
 }
 
 export function formatBlogPublishDate(publishDate: string, locale: string) {

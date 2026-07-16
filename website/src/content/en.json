@@ -146,10 +146,8 @@
     "tabs": {
       "ar": "العربية",
       "en": "English",
-      "fil": "Tagalog",
       "fr": "Français",
-      "id": "Indonesian",
-      "ur": "اُردُو"
+      "id": "Indonesian"
     },
     "title": "Choose the language"
   },
@@ -182,7 +180,7 @@
     "workplace": "Company name"
   },
   "contact-us": {
-    "description": "Fill out the form below and we will get back to you as soon as possible. Or contact us directly on +966 53 367 3587",
+    "description": "Fill out the form below and we will get back to you as soon as possible. Or contact us directly on +970 53 367 3587",
     "form": {
       "email-input-label": "Enter your email address",
       "email-input-placeholder": "Example@example.co",
@@ -421,10 +419,8 @@
         "tabs": {
           "ar": "العربية",
           "en": "English",
-          "fil": "Tagalog",
           "fr": "Français",
-          "id": "Indonesian",
-          "ur": "اُردُو"
+          "id": "Indonesian"
         },
         "title": "Change the language",
         "update-button": "Modify the language"

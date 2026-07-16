@@ -146,10 +146,8 @@
     "tabs": {
       "ar": "العربية",
       "en": "English",
-      "fil": "Tagalog",
       "fr": "Français",
-      "id": "Indonesian",
-      "ur": "اُردُو"
+      "id": "Indonesian"
     },
     "title": "Pilih bahasa"
   },
@@ -182,7 +180,7 @@
     "workplace": "Nama perusahaan"
   },
   "contact-us": {
-    "description": "Isi formulir di bawah ini dan kami akan menghubungi Anda secepatnya. Atau hubungi kami langsung di +966 53 367 3587",
+    "description": "Isi formulir di bawah ini dan kami akan menghubungi Anda secepatnya. Atau hubungi kami langsung di +970 53 367 3587",
     "form": {
       "email-input-label": "Masukkan alamat email Anda",
       "email-input-placeholder": "Example@example.co",
@@ -402,10 +400,8 @@
         "tabs": {
           "ar": "العربية",
           "en": "English",
-          "fil": "Tagalog",
           "fr": "Français",
-          "id": "Indonesian",
-          "ur": "اُردُو"
+          "id": "Indonesian"
         },
         "title": "Ubah bahasa",
         "update-button": "Ubah bahasa"

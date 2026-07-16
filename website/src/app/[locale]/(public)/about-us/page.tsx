@@ -1,5 +1,5 @@
 import { logo } from "@/assets"
-import { arShare, enShare, filShare, frShare, idShare, urShare } from "@/assets/share-your-success"
+import { arShare, enShare, frShare, idShare } from "@/assets/share-your-success"
 import Footer from "@/components/common/footer"
 import { LOCALES } from "@/config"
 import { AmanApiGuest } from "@/services/aman"
@@ -27,10 +27,8 @@ export async function generateMetadata(props: {
 const images = {
   ar: arShare,
   en: enShare,
-  fil: filShare,
   fr: frShare,
   id: idShare,
-  ur: urShare,
 } as const
 
 export const dynamic = "force-dynamic"

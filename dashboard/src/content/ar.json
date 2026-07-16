@@ -376,11 +376,9 @@
   "langs": {
     "ar": "العربية",
     "en": "English",
-    "fil": "Tagalog",
     "fr": "Français",
     "id": "Indonesian",
-    "title": "اللغات",
-    "ur": "اُردُو"
+    "title": "اللغات"
   },
   "login": {
     "description": "مرحبا بعودتك! الرجاء ادخال بيانات التسجيل الخاصة بك",
@@ -881,11 +879,9 @@
       "langs": {
         "ar": "العربية",
         "en": "English",
-        "fil": "Tagalog",
         "fr": "Français",
         "id": "Indonesian",
-        "title": "اللغات",
-        "ur": "اُردُو"
+        "title": "اللغات"
       },
       "payment-methods": {
         "title": "حدد طريقة الدفع"

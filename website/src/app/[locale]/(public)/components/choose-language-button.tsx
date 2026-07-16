@@ -18,9 +18,7 @@ const ChooseLanguageButton = (props: Props) => {
     ar: "التالي",
     en: "Next",
     fr: "Suivant",
-    fil: "Susunod",
     id: "Berikutnya",
-    ur: "اگلا",
   }
   return (
     <Button

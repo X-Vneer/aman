@@ -90,7 +90,7 @@ function CourseSearchField({
   }, [throttledQuery, onThrottledQueryChange])
 
   const locale = useLocale()
-  const isRtl = locale === "ar" || locale === "ur"
+  const isRtl = locale === "ar"
   return (
     <div className="flex w-full max-w-2xl items-stretch gap-3">
       <label

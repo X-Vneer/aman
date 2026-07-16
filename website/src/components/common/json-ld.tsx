@@ -30,14 +30,14 @@ export function organizationSchema() {
     logo: `${baseUrl}/logo.png`,
     email: "",
     telephone: "",
-    areaServed: "SA",
+    areaServed: "PS",
     sameAs: [],
     contactPoint: {
       "@type": "ContactPoint",
       telephone: "",
       contactType: "customer support",
       email: "",
-      availableLanguage: ["ar", "en", "fr", "fil", "id", "ur"],
+      availableLanguage: ["ar", "en", "fr", "id"],
     },
   }
 }
@@ -51,24 +51,22 @@ const HOME_LABEL: Record<string, string> = {
   ar: "الرئيسية",
   en: "Home",
   fr: "Accueil",
-  fil: "Home",
   id: "Beranda",
-  ur: "ہوم",
 }
 
 const PAGE_CRUMB_LABEL: Record<PageMetaKey, Record<string, string>> = {
   home: HOME_LABEL,
-  start: { ar: "البرامج", en: "Programs", fr: "Programmes", fil: "Mga Programa", id: "Program", ur: "پروگرامز" },
-  "about-us": { ar: "عن أمان", en: "About Us", fr: "À propos", fil: "Tungkol Sa Amin", id: "Tentang Kami", ur: "ہمارے بارے میں" },
-  awareness: { ar: "التوعية", en: "Awareness", fr: "Sensibilisation", fil: "Kamalayan", id: "Kesadaran", ur: "آگاہی" },
-  blog: { ar: "المدونة", en: "Blog", fr: "Blog", fil: "Blog", id: "Blog", ur: "بلاگ" },
-  "contact-us": { ar: "تواصل معنا", en: "Contact Us", fr: "Contact", fil: "Makipag-ugnayan", id: "Kontak", ur: "رابطہ" },
-  faqs: { ar: "الأسئلة الشائعة", en: "FAQs", fr: "FAQ", fil: "Mga FAQ", id: "FAQ", ur: "عام سوالات" },
-  "information-center": { ar: "مركز المعلومات", en: "Information Center", fr: "Centre d'information", fil: "Information Center", id: "Pusat Informasi", ur: "معلوماتی مرکز" },
-  "privacy-policy": { ar: "سياسة الخصوصية", en: "Privacy Policy", fr: "Confidentialité", fil: "Privacy", id: "Privasi", ur: "رازداری" },
-  stories: { ar: "قصص الإنقاذ", en: "Stories", fr: "Histoires", fil: "Mga Kwento", id: "Kisah", ur: "کہانیاں" },
-  terms: { ar: "الشروط والأحكام", en: "Terms", fr: "Conditions", fil: "Mga Tuntunin", id: "Syarat", ur: "شرائط" },
-  login: { ar: "تسجيل الدخول", en: "Log in", fr: "Se connecter", fil: "Mag-log in", id: "Masuk", ur: "لاگ ان" },
+  start: { ar: "البرامج", en: "Programs", fr: "Programmes", id: "Program" },
+  "about-us": { ar: "عن أمان", en: "About Us", fr: "À propos", id: "Tentang Kami" },
+  awareness: { ar: "التوعية", en: "Awareness", fr: "Sensibilisation", id: "Kesadaran" },
+  blog: { ar: "المدونة", en: "Blog", fr: "Blog", id: "Blog" },
+  "contact-us": { ar: "تواصل معنا", en: "Contact Us", fr: "Contact", id: "Kontak" },
+  faqs: { ar: "الأسئلة الشائعة", en: "FAQs", fr: "FAQ", id: "FAQ" },
+  "information-center": { ar: "مركز المعلومات", en: "Information Center", fr: "Centre d'information", id: "Pusat Informasi" },
+  "privacy-policy": { ar: "سياسة الخصوصية", en: "Privacy Policy", fr: "Confidentialité", id: "Privasi" },
+  stories: { ar: "قصص الإنقاذ", en: "Stories", fr: "Histoires", id: "Kisah" },
+  terms: { ar: "الشروط والأحكام", en: "Terms", fr: "Conditions", id: "Syarat" },
+  login: { ar: "تسجيل الدخول", en: "Log in", fr: "Se connecter", id: "Masuk" },
 }
 
 export function localizedCrumb(key: PageMetaKey, locale: string): string {

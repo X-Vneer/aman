@@ -15,9 +15,7 @@ const RESCUER_LABEL: Record<(typeof LOCALES)[number], string> = {
   ar: "منقذ",
   en: "rescuer",
   fr: "sauveteur",
-  fil: "tagapagligtas",
   id: "penyelamat",
-  ur: "بچاؤ کار",
 }
 
 function resolvedLanguage(lang: string): (typeof LOCALES)[number] {

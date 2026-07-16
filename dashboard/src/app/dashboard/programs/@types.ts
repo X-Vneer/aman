@@ -73,16 +73,6 @@ export interface WrongAnswerAudioUrls {
     answer_b: string
     answer_c: string
   }
-  ur: {
-    answer_a: string
-    answer_b: string
-    answer_c: string
-  }
-  fil: {
-    answer_a: string
-    answer_b: string
-    answer_c: string
-  }
   id: {
     answer_a: string
     answer_b: string

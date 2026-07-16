@@ -80,7 +80,5 @@ export interface Symptoms {
   ar: string[]
   en: string[]
   fr: string[]
-  ur: string[]
-  fil: string[]
   id: string[]
 }

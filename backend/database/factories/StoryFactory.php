@@ -26,7 +26,7 @@ class StoryFactory extends Factory
             'email' => $this->faker->unique()->safeEmail(),
             'age' => $this->faker->numberBetween(18, 120),
             'video_id' => Video::factory(),
-            'locale' => $this->faker->randomElement(['en', 'ar', 'fr', 'ur', 'fil', 'id']),
+            'locale' => $this->faker->randomElement(['en', 'ar', 'fr', 'id']),
             'content' => $this->faker->paragraphs(3, true),
             'program_name' => $this->faker->firstName(),
         ];

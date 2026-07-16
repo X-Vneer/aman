@@ -84,7 +84,7 @@ export const siteConfig = {
   contactInfo: {
     email: "",
     phonenumber: "",
-    // whatsapp: "00966 533673587",
+    // whatsapp: "00970 533673587",
     socials: [
       {
         label: "",
@@ -171,31 +171,21 @@ export const siteConfig = {
   },
   share: {
     ar: {
-      title: "دورة إسعافات أولية – منصة أمان في السعودية",
+      title: "دورة إسعافات أولية – منصة أمان في فلسطين",
       description: "منصة أمان تقدم برنامج أمان معتمد لتعلم الإسعافات الأولية والحالات الصحية الطارئة.",
     },
     en: {
-      title: "First Aid Course – Aman Platform in Saudi Arabia",
+      title: "First Aid Course – Aman Platform in Palestine",
       description:
         "Aman platform offers an accredited Aman program to learn first aid and emergency health situations.",
     },
-    fil: {
-      title: "Kurso sa First Aid – Aman Platform sa Saudi Arabia",
-      description:
-        "Ang platform na Aman ay nag-aalok ng isang akreditadong programa ng Aman upang matuto ng first aid at mga emergency na sitwasyon sa kalusugan.",
-    },
     fr: {
-      title: "Cours de Premiers Secours – Plateforme Aman en Arabie Saoudite",
+      title: "Cours de Premiers Secours – Plateforme Aman en Palestine",
       description:
         "La plateforme Aman propose un programme Aman accrédité pour apprendre les premiers secours et les situations d'urgence sanitaire.",
     },
-    ur: {
-      title: "فرسٹ ایڈ کورس – سعودی عرب میں امان پلیٹ فارم",
-      description:
-        "امان پلیٹ فارم فرسٹ ایڈ اور ہنگامی صحت کی صورتحال سیکھنے کے لیے ایک معتمد امان پروگرام پیش کرتا ہے۔",
-    },
     id: {
-      title: "Kursus Pertolongan Pertama – Platform Aman di Arab Saudi",
+      title: "Kursus Pertolongan Pertama – Platform Aman di Palestina",
       description:
         "Platform Aman menawarkan program Aman terakreditasi untuk mempelajari pertolongan pertama dan situasi kesehatan darurat.",
     },

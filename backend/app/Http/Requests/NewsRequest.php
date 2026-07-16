@@ -8,7 +8,7 @@ use Illuminate\Validation\Rule;
 class NewsRequest extends CustomFormRequest
 {
     /** @var list<string> */
-    private const LOCALES = ['ar', 'en', 'fr', 'fil', 'ur', 'id'];
+    private const LOCALES = ['ar', 'en', 'fr', 'id'];
 
     public function rules(): array
     {

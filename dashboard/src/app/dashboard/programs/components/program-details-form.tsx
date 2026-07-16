@@ -53,9 +53,7 @@ const ProgramDetailsForm = ({ initialValues }: { initialValues?: VideoFormValues
     video_url: {
       ar: "",
       en: "",
-      fil: "",
       fr: "",
-      ur: "",
       id: "",
     },
     logo: "",
@@ -65,17 +63,13 @@ const ProgramDetailsForm = ({ initialValues }: { initialValues?: VideoFormValues
     title: {
       ar: "",
       en: "",
-      fil: "",
       fr: "",
-      ur: "",
       id: "",
     },
     description: {
       ar: "",
       en: "",
-      fil: "",
       fr: "",
-      ur: "",
       id: "",
     },
     time: {

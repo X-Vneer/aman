@@ -78,7 +78,7 @@ return [
     |
     */
 
-    'supported_languages' => ['en', 'ar', 'fil', 'ur', 'fr', 'id'],
+    'supported_languages' => ['en', 'ar', 'fr', 'id'],
     'locale' => env('APP_LOCALE', 'en'),
 
 

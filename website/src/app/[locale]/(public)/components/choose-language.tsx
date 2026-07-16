@@ -6,7 +6,6 @@ import { Ripple } from "m3-ripple"
 import { useTranslations } from "next-intl"
 import { parseAsStringLiteral, useQueryState } from "nuqs"
 
-import { urdu } from "@/config/fonts"
 import { cn } from "@/lib/cn"
 import { useParams } from "next/navigation"
 
@@ -37,10 +36,7 @@ const ChooseLanguage = (props: Props) => {
               <Tabs.Tab
                 key={element}
                 id={element}
-                className={cn(
-                  "max-md:px-1.5 max-sm:px-1",
-                  element === "ur" ? urdu.className : "",
-                )}>
+                className={cn("max-md:px-1.5 max-sm:px-1")}>
                 <Ripple />
                 {t(element)}
                 <Tabs.Indicator />

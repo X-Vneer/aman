@@ -15,9 +15,7 @@ export interface Country {
     en: string
     ar: string
     fr: string
-    fil: string
     id: string
-    ur: string
   }
   Id: string
   Flag: string
