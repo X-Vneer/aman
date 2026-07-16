@@ -37,7 +37,7 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
   return (
     <>
       <JsonLd data={pageBreadcrumbSchema("awareness", locale, "/awareness")} />
-      <main className="relative">
+      <main className="relative overflow-hidden">
         <section className="relative z-10 bg-[#0A090959] backdrop-blur-lg">
           <div className="container mx-auto max-w-7xl grow px-6">
             <div className="flex w-full flex-col items-center justify-between md:flex-row md:px-10 lg:px-14 xl:px-20">
