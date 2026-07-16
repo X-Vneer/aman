@@ -10,11 +10,6 @@ class UserUpdateRequest extends CustomFormRequest
     protected $roles =  [
         'first_name' => 'required|min:1|max:50',
         'last_name' => 'required|min:1|max:50',
-        'info'=> 'nullable|array',
-        'info.gender' => 'nullable|in:Male,Female',
-        'info.nationality' => 'nullable|string|max:100',
-        'info.sector' => 'nullable|string',
-        'info.workplace' => 'nullable|string|max:191',
     ];
 
     public function rules()

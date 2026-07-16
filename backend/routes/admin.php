@@ -5,7 +5,6 @@ use App\Http\Controllers\Admin\AdminHomeController;
 use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\MapController;
-use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Admin\PartnerController;
 use App\Http\Controllers\Admin\QuestionController;
 use App\Http\Controllers\Admin\ReportController;
@@ -145,12 +144,6 @@ Route::resource('partners', PartnerController::class)->names('admin.partners');
 Route::put('partners/{partner}/toggleActive/{state}', [PartnerController::class, 'toggleActive'])
     ->where(['id' => '[0-9]+', 'state' => 'true|false'])->name('admin.partners.toggleActive');
 // End::Partner ===================================================== //
-
-// Start::News ===================================================== //
-Route::resource('news', NewsController::class)->names('admin.news');
-Route::put('news/{news}/toggleActive/{state}', [NewsController::class, 'toggleActive'])
-    ->where(['id' => '[0-9]+', 'state' => 'true|false'])->name('admin.news.toggleActive');
-// End::News ===================================================== //
 
 // Start::Blogs ===================================================== //
 Route::resource('blogs', BlogController::class)->names('admin.blogs');

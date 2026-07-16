@@ -12,12 +12,8 @@ import Stories from "./app/dashboard/stories/page"
 import Blogs from "./app/dashboard/blogs/page"
 const AddBlog = React.lazy(async () => import("./app/dashboard/blogs/add/page"))
 const EditBlog = React.lazy(async () => import("./app/dashboard/blogs/[id]/page"))
-import News from "./app/dashboard/news/page"
-const AddNews = React.lazy(async () => import("./app/dashboard/news/add/page"))
-const EditNews = React.lazy(async () => import("./app/dashboard/news/[id]/page"))
 const AddPartner = React.lazy(async () => import("./app/dashboard/partners/add/page"))
 const EditPartner = React.lazy(async () => import("./app/dashboard/partners/[id]/page"))
-const FormInformation = React.lazy(async () => import("./app/dashboard/form-information/page"))
 const ViewUser = React.lazy(async () => import("./app/dashboard/users/[id]/page"))
 const Certificates = React.lazy(async () => import("./app/dashboard/certificates/page"))
 const Reports = React.lazy(async () => import("./app/dashboard/reports/page"))
@@ -98,19 +94,6 @@ const Router = () => {
                   </div>
                 }>
                 <Reports />
-              </Suspense>
-            }
-          />
-          <Route
-            path="form-information"
-            element={
-              <Suspense
-                fallback={
-                  <div className="flex h-full items-center justify-center py-20">
-                    <Loader size={"md"} />
-                  </div>
-                }>
-                <FormInformation />
               </Suspense>
             }
           />
@@ -406,48 +389,6 @@ const Router = () => {
                     </div>
                   }>
                   <EditBlog />
-                </Suspense>
-              }
-            />
-          </Route>
-          {/* news */}
-          <Route path="news">
-            <Route
-              index
-              element={
-                <Suspense
-                  fallback={
-                    <div className="flex h-full items-center justify-center py-20">
-                      <Loader size={"md"} />
-                    </div>
-                  }>
-                  <News />
-                </Suspense>
-              }
-            />
-            <Route
-              path="add"
-              element={
-                <Suspense
-                  fallback={
-                    <div className="flex h-full items-center justify-center py-20">
-                      <Loader size={"md"} />
-                    </div>
-                  }>
-                  <AddNews />
-                </Suspense>
-              }
-            />
-            <Route
-              path=":id"
-              element={
-                <Suspense
-                  fallback={
-                    <div className="flex h-full items-center justify-center py-20">
-                      <Loader size={"md"} />
-                    </div>
-                  }>
-                  <EditNews />
                 </Suspense>
               }
             />

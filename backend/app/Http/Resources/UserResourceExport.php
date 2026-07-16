@@ -3,7 +3,6 @@
 namespace App\Http\Resources;
 
 use App\Enums\VideoPaymentStatus;
-use App\Models\UserInfo;
 use App\Models\UserVideo;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
@@ -38,11 +37,6 @@ class UserResourceExport extends JsonResource
             'certificate_count' => $this->userVideos?->where('status', VideoPaymentStatus::Accepted->value)->where('is_certificate_generated', 1)->count() ?? 0,
             'email' => $this->email,
 
-            'gender'=>$this->info?->gender,
-            'age'=> $this->info?->age,
-            'nationality'=>$this->info?->nationality,
-            'sector'=>$this->info?->sector,
-            'workplace'=>$this->info?->workplace,
             'created_at'=>$this->created_at,
             'updated_at'=>$this->updated_at,
             'deleted_at'=>$this->deleted_at,

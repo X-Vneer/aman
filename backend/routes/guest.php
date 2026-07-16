@@ -4,7 +4,6 @@ use App\Http\Controllers\Admin\AdminAuthController;
 use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\MapController;
-use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Admin\PartnerController;
 use App\Http\Controllers\Admin\VideoController;
 use App\Http\Controllers\User\ContactController;
@@ -66,10 +65,6 @@ Route::resource('stories', StoryController::class)->names('guest.stories')->only
 // Start::Partner ===================================================== //
 Route::resource('partners', PartnerController::class)->names('guest.partners')->only(['index', 'show']);
 // End::Partner ===================================================== //
-
-// Start::News ===================================================== //
-Route::resource('news', NewsController::class)->names('guest.news')->only(['index', 'show']);
-// End::News ===================================================== //
 
 // Start::Blogs ===================================================== //
 Route::resource('blogs', BlogController::class)->names('guest.blogs')->only(['index', 'show']);

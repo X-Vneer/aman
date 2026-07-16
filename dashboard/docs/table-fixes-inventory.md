@@ -7,20 +7,6 @@ This document records the full diagnostic for each page targeted in the second s
 
 ---
 
-## Page 1 — Form Information
-
-| Field | Value |
-|---|---|
-| Dashboard file | `src/app/dashboard/form-information/components/table.tsx` |
-| API endpoint | `GET /admin/users` |
-| Controller | `App\Http\Controllers\User\UserController` (no custom `__construct`, uses `User` model) |
-| Model | `App\Models\User` |
-| Allowed sort columns (fillable minus exclusions) | `id`, `mobile`, `first_name`, `last_name`, `lang`, `email`, `certificate_count` |
-
-**Status: DONE** — SortableTh and RefreshButton were added in the first pass with SORTABLE: `id`, `first_name`, `mobile`, `certificate_count`, `lang`. No further changes needed.
-
----
-
 ## Page 2 — Users
 
 | Field | Value |

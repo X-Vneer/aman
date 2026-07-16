@@ -152,9 +152,6 @@
     "title": "أختر اللغة"
   },
   "complete-profile": {
-    "age": "العمر",
-    "coupon-form-description": "للمتابعة مع الحصول على شهادتك ، يرجى إكمال هذا القسم",
-    "coupon-form-title": "أدخل المعلومات الشخصية",
     "description": "لمتابعة الحصول على الشهادة، يرجى إكمال ملف التعريف الخاص بك",
     "email": "البريد الإلكتروني",
     "email-input-placeholder": "Example@example.co",
@@ -163,21 +160,15 @@
       "required": "هذا الحقل مطلوب",
       "serverError": "حصل خطأ في الاتصال بالسيرفر"
     },
-    "female": "أنثى",
     "first_name": "الاسم الاول",
     "first_name-input-placeholder": "",
-    "gender": "جنس",
     "last_name": "اسم العائلة",
     "last_name-input-placeholder": " ",
-    "male": "ذكر",
     "name": "الاسم",
     "name-input-placeholder": "",
-    "nationality": "الجنسية",
     "save-button": "متابعة",
-    "sector": "قطاع",
     "success": "تم اكمال بياناتك الشخصية بنجاح",
-    "title": "أكمل ملفك الشخصي",
-    "workplace": "اسم الشركة"
+    "title": "أكمل ملفك الشخصي"
   },
   "contact-us": {
     "description": " املأ النموذج أدناه، وسنقوم بالرد عليك في اقرب وقت ممكن. او تواصل معنا بشكل مباشر علي رقم التواصل +970 53 367 3587",
@@ -446,7 +437,6 @@
     },
     "stepper": {
       "first": "التقييم",
-      "fourth": "تفاصيل",
       "second": "اكمال البيانات",
       "third": "استلام الشهادة"
     },

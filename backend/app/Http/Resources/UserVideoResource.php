@@ -37,7 +37,6 @@ class UserVideoResource extends JsonResource
             'view_counter' => $this->view_counter,
             'view_complete_counter' => $this->view_complete_counter,
             'is_rated' => $this->is_rated,
-            'has_form' => $this->has_form,
             'status' => $this->status,
 
             'certificate_url' => $this->certificate_url,
@@ -52,9 +51,6 @@ class UserVideoResource extends JsonResource
         $data['is_rated'] =  $this->is_rated == "0"? false : true;
         $data['is_certificate_generated'] = $this->is_certificate_generated == "0"? false : true;
         $data['is_new'] = (bool) ($this->video?->is_new ?? 0);
-        $data['has_form'] = $this->has_form? true : false;
-
-        $data['has_form'] = $data['has_form'] && $this->userInfo?->id? false : $data['has_form'];
         $data['is_applicable_for_certificate'] = $this->isApplicableForCertificate();
 
         return $data;

@@ -16,11 +16,6 @@ class Tag extends Model
         'color',
     ];
 
-    public function news(): MorphToMany
-    {
-        return $this->morphedByMany(News::class, 'taggable');
-    }
-
     public function blogs(): MorphToMany
     {
         return $this->morphedByMany(Blog::class, 'taggable');

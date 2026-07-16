@@ -31,13 +31,13 @@ Four locales: `ar, en, fr, id` (`src/config/index.ts`). `ar` is RTL. All app rou
 
 Three route groups inside `[locale]`:
 
-- `(public)` — marketing + content pages (blog, latest-news, about-us, stories, information-center, faqs, contact-us, terms, privacy-policy, certificate, start, payment, profile). `(public)/(auth)` nests login under the public chrome.
+- `(public)` — marketing + content pages (blog, about-us, stories, information-center, faqs, contact-us, terms, privacy-policy, certificate, start, profile). `(public)/(auth)` nests login under the public chrome.
 - `(video)` — the course video player at `(video)/course/[course_id]`.
 - `(public)` is where most dynamic content lives; it carries the shared layout, footer, and locale-aware auth session.
 
 A second root-level group, `src/app/(no-locale)/`, exists for pages that must *bypass* the locale prefix (`public-course`, `soon`). If you add a page here, remember the `proxy.ts` matcher will not run on it.
 
-SEO files at app root (not locale-scoped): `src/app/robots.ts`, `src/app/sitemap.ts`, `src/app/blog/sitemap.ts`, `src/app/latest-news/sitemap.ts`. The blog/news sitemaps paginate through the API and emit `languages` alternates for every locale.
+SEO files at app root (not locale-scoped): `src/app/robots.ts`, `src/app/sitemap.ts`, `src/app/blog/sitemap.ts`. The blog sitemap paginates through the API and emits `languages` alternates for every locale.
 
 **Always import navigation from `@/lib/i18n/navigation`** (`Link`, `usePathname`, `useRouter`, `redirect`) rather than from `next/link` or `next/navigation`. These are locale-aware wrappers from `next-intl`. Using raw Next navigation drops the locale prefix and breaks i18n.
 

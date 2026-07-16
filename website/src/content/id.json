@@ -152,9 +152,6 @@
     "title": "Pilih bahasa"
   },
   "complete-profile": {
-    "age": "Usia",
-    "coupon-form-description": "Untuk melanjutkan dengan mendapatkan sertifikat Anda, silakan lengkapi bagian ini",
-    "coupon-form-title": "Masukkan informasi pribadi",
     "description": "Untuk melanjutkan sertifikasi Anda, silakan lengkapi profil Anda",
     "email": "Email",
     "email-input-placeholder": "Example@example.co",
@@ -163,21 +160,15 @@
       "required": "Kolom ini wajib diisi",
       "serverError": "Kesalahan menghubungkan ke server"
     },
-    "female": "Perempuan",
     "first_name": "Nama Depan",
     "first_name-input-placeholder": "",
-    "gender": "Jenis kelamin",
     "last_name": "Nama Belakang",
     "last_name-input-placeholder": " ",
-    "male": "Pria",
     "name": "Nama",
     "name-input-placeholder": "",
-    "nationality": "Kebangsaan",
     "save-button": "Melanjutkan",
-    "sector": "sektor",
     "success": "Detail pribadi Anda telah berhasil dilengkapi",
-    "title": "Lengkapi profil Anda",
-    "workplace": "Nama perusahaan"
+    "title": "Lengkapi profil Anda"
   },
   "contact-us": {
     "description": "Isi formulir di bawah ini dan kami akan menghubungi Anda secepatnya. Atau hubungi kami langsung di +970 53 367 3587",
@@ -442,7 +433,6 @@
     },
     "stepper": {
       "first": "Penilaian",
-      "fourth": "Detail",
       "second": "Lengkapi data",
       "third": "Dapatkan sertifikat"
     },

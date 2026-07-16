@@ -48,7 +48,6 @@ export interface UserVideo {
   is_certificate_generated: boolean
   deleted_at: null
   video: Video
-  has_form: boolean
   user: User
 }
 

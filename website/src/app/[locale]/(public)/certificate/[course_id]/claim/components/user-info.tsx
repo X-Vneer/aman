@@ -15,10 +15,8 @@ import { useParams } from "next/navigation"
 import { Controller, useForm } from "react-hook-form"
 import { z } from "zod"
 import { useVideo } from "../../context/video-context"
-import { useStep } from "./stepper"
 
 const UserInfo = () => {
-  const [step, setStep] = useStep()
   const video = useVideo()
   const session = useSession()
   const user = session.data?.user
@@ -39,11 +37,7 @@ const UserInfo = () => {
   const onSubmit = form.handleSubmit(async (data) => {
     try {
       await AmanApi.put<SuccessResponse<User>>(`/user/users/${user!.id}`, data)
-      if (video.has_form) {
-        setStep(3)
-      } else {
-        Router.push(`/certificate/${course_id}/view`)
-      }
+      Router.push(`/certificate/${course_id}/view`)
     } catch (error) {
       if (axios.isAxiosError(error) && error.response?.status === 422) {
         const responseError = error.response.data as ErrorResponse<z.infer<typeof updateProfileSchema>>

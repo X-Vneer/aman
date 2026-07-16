@@ -33,7 +33,7 @@ function normalizeStatuses(raw: string[]) {
   return raw.filter((s) => s !== "")
 }
 
-/** Users + form-information lists */
+/** Users list */
 export function useUsersListActiveFilterChips(): ActiveFilterChip[] {
   const { t } = useTranslation()
   const [q, setQ] = useQueryState("q", parseAsString.withDefault(""))
@@ -309,37 +309,6 @@ export function useStoriesActiveFilterChips(): ActiveFilterChip[] {
 }
 
 export function useBlogsActiveFilterChips(): ActiveFilterChip[] {
-  const { t } = useTranslation()
-  const [q, setQ] = useQueryState("q", parseAsString.withDefault(""))
-  const [dateFrom, setDateFrom] = useQueryState("date_from", parseAsString.withDefault(""))
-  const [dateTo, setDateTo] = useQueryState("date_to", parseAsString.withDefault(""))
-
-  return useMemo(() => {
-    const chips: ActiveFilterChip[] = []
-    if (q.trim()) {
-      chips.push({
-        id: "q",
-        label: t("global.search"),
-        value: q,
-        onRemove: () => void setQ(null),
-      })
-    }
-    if (dateFrom && dateTo) {
-      chips.push({
-        id: "date-range",
-        label: t("global.active-filters.date-range"),
-        value: `${formattedDate(dateFrom)} — ${formattedDate(dateTo)}`,
-        onRemove: () => {
-          void setDateFrom(null)
-          void setDateTo(null)
-        },
-      })
-    }
-    return chips
-  }, [q, dateFrom, dateTo, t, setQ, setDateFrom, setDateTo])
-}
-
-export function useNewsActiveFilterChips(): ActiveFilterChip[] {
   const { t } = useTranslation()
   const [q, setQ] = useQueryState("q", parseAsString.withDefault(""))
   const [dateFrom, setDateFrom] = useQueryState("date_from", parseAsString.withDefault(""))

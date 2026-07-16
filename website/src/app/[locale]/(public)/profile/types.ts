@@ -38,5 +38,4 @@ export interface UserVideo {
   certificate_url: null | string
   certificate_number: null | string
   is_certificate_generated: boolean
-  has_form: boolean
 }

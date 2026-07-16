@@ -4,7 +4,6 @@ namespace App\Http\Controllers\User;
 
 use App\Enums\VideoPaymentStatus;
 use App\Http\Controllers\BaseApiController;
-use App\Http\Requests\UserInfoUpdateRequest;
 use App\Http\Requests\UserSetLangRequest;
 use App\Http\Requests\UserStoreRequest;
 use App\Http\Requests\UserUpdateRequest;
@@ -71,9 +70,6 @@ class UserController extends BaseApiController
             if($request->langs){
                 $items = $items->whereIn('lang', $request->langs);
             }
-            if($request->has_form){
-                $items = $items->whereHas('info');
-            }
 
             return [$items];
         }, [], auth('admin')->check(), function ($items) use ($userVideosLoad) {
@@ -130,13 +126,6 @@ class UserController extends BaseApiController
             $inputs['mobile'] = $mobile;
 
             DB::beginTransaction();
-            if($request->info){
-                if($item->info){
-                    $item->info()->update($request->info);
-                }else{
-                    $item->info()->create($request->info);
-                }
-            }
             $item?->update($inputs);
             DB::commit();
 
@@ -180,20 +169,5 @@ class UserController extends BaseApiController
         return $this->sendResponse(true, [
             'item' => new $this->resource(Auth()->user()),
         ], trans('Toggled'), null);
-    }
-
-    function updateForm(UserInfoUpdateRequest $request) {
-        try {
-            $item = Auth::user();
-
-            if($item->info){
-                $item->info()->update($request->all());
-            }else{
-                $item->info()->create($request->all());
-            }
-
-        } catch (\Throwable $th) {
-            return $this->sendResponse(false, null, trans('msg.technicalError'), null, 500, $request);
-        }
     }
 }

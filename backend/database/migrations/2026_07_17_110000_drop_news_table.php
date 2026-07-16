@@ -1,0 +1,17 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    public function up(): void
+    {
+        Schema::dropIfExists('news');
+    }
+
+    public function down(): void
+    {
+        // Irreversible: news feature removed entirely.
+    }
+};

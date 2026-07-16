@@ -26,7 +26,6 @@ Route::Delete('deleteFile', [FileController::class, 'deleteFile'])->name('user.d
 Route::patch('users/set-lang', [UserController::class, 'set_lang'])->name('user.set-lang');
 Route::resource('users', UserController::class)->except(['destroy', 'store', 'create', 'index'])->names('user.users');
 Route::put('mobile/update', [UserAuthController::class, 'updateMobile'])->name('user.update-mobile');
-Route::put('update-form', [UserController::class, 'updateForm'])->name('user.update-form');
 // End::User ===================================================== //
 
 // Start::Video ===================================================== //

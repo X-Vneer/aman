@@ -24,10 +24,6 @@ const navItems = [
         label: "reports",
         link: "/dashboard/reports",
       },
-      {
-        label: "form-information",
-        link: "/dashboard/form-information",
-      },
     ],
   },
 
@@ -168,10 +164,6 @@ const navItems = [
       {
         label: "blogs",
         link: "/dashboard/blogs",
-      },
-      {
-        label: "news",
-        link: "/dashboard/news",
       },
       {
         label: "partners",

@@ -5,7 +5,6 @@ import { useRouter } from "@/lib/i18n/navigation"
 import { useQuery } from "@tanstack/react-query"
 import { useParams } from "next/navigation"
 import { useEffect } from "react"
-import CouponForm from "./coupon-form"
 import Rating from "./rating"
 import Stepper, { useStep } from "./stepper"
 import UserInfo from "./user-info"
@@ -37,11 +36,10 @@ const Render = ({ user }: Props) => {
   if (status === "error") return <div>Error</div>
   return (
     <>
-      <Stepper totalSteps={video.has_form ? 4 : 3} />
+      <Stepper totalSteps={3} />
       <section className="relative flex h-full items-center justify-center gap-4 py-8 md:py-10">
         {step === 1 && <Rating />}
         {step === 2 && <UserInfo />}
-        {step === 3 && <CouponForm />}
       </section>
     </>
   )

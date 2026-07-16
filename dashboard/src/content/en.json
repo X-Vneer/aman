@@ -78,9 +78,6 @@
     "title": "Contact and Inquiries"
   },
   "filters": {},
-  "form-information": {
-    "title": "Form Information"
-  },
   "general": {
     "language": "Language",
     "logo-width": "390*324 pixels",
@@ -198,7 +195,6 @@
       "awareness": "Awareness information",
       "certificate": "Certificate Template",
       "contacts": "Contact and Inquiries",
-      "form-information": "Form information",
       "home": "Home",
       "manage-site": "Website Management",
       "partners": "Partners",
@@ -209,8 +205,7 @@
       "users": "User Management",
       "view": "Overview",
       "stories": "User Stories",
-      "blogs": "Blog posts",
-      "news": "Latest News"
+      "blogs": "Blog posts"
     }
   },
   "not-completed": "Not completed",
@@ -276,46 +271,6 @@
       "description": "Are you sure you want to delete this post?",
       "error": "Could not delete the post",
       "title": "Delete post"
-    }
-  },
-  "news": {
-    "title": "Latest News",
-    "description": "Manage latest news articles",
-    "add-button": "Create news",
-    "add": {
-      "title": "Create news article"
-    },
-    "edit": {
-      "title": "Edit news article"
-    },
-    "load-error": "Could not load this news article.",
-    "form": {
-      "details": "News content by language",
-      "publish_date": "Publish date",
-      "publish_date_placeholder": "Select date",
-      "tags": "Tags",
-      "tags_placeholder": "Add tags",
-      "logo": "Cover image",
-      "logo_upload_title": "Upload asset",
-      "logo_recommended_size": "Recommended size: 1900×230",
-      "title": "Title",
-      "title_placeholder": "News title",
-      "short_description": "Short description",
-      "short_description_placeholder": "Summary (max 500 characters)",
-      "content": "Content",
-      "content_placeholder": "Full news article content"
-    },
-    "table": {
-      "title": "Title",
-      "publish_date": "Publish date",
-      "actions": "Actions"
-    },
-    "delete": {
-      "cancel": "Cancel",
-      "confirm": "Confirm",
-      "description": "Are you sure you want to delete this news article?",
-      "error": "Could not delete the news article",
-      "title": "Delete news article"
     }
   },
   "notifications": {

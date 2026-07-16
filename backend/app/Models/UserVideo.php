@@ -31,7 +31,6 @@ class UserVideo extends Model
         'view_counter', // Number of views (default: 0)
         'view_complete_counter', // Number of completed views (default: 0)
         'is_rated', // Whether the video is rated (default: false)
-        'has_form',
 
         'status', // Enrollment status (free + instant = Accepted)
 
@@ -102,12 +101,6 @@ class UserVideo extends Model
         );
     }
 
-    // hasOne UserInfo
-    public function userInfo(): HasOne
-    {
-        return $this->hasOne(UserInfo::class, 'user_id', 'user_id');
-    }
-
     /**
      * Scope a query to only include records with null certificate_url.
      *
@@ -125,16 +118,7 @@ class UserVideo extends Model
     {
         return $query
             ->where('progress', '>=', 99)
-            ->where('is_rated', 1)
-            ->where(function ($query) {
-                $query
-                    ->where('has_form', 0)
-                    ->orWhere(function ($query) {
-                        $query
-                            ->where('has_form', 1)
-                            ->whereHas('userInfo');
-                    });
-            });
+            ->where('is_rated', 1);
     }
 
     public function isApplicableForCertificate(): bool
@@ -142,14 +126,13 @@ class UserVideo extends Model
         if ((int) $this->progress < 99) return false;
         if ((int) $this->is_rated !== 1) return false;
 
-        if ((int) $this->has_form === 0) return true;
-
-        return $this->userInfo?->id ? true : false;
+        return true;
     }
 
     /**
      * Admin dashboard: certificate pipeline phases (aligned with certificate PDF checks and lang/certificate.php copy:
-     * must_watch ≈ phase 1, must_set_full_name ≈ phase 3 full_name, must_fill_user_info ≈ phase 4).
+     * must_watch ≈ phase 1, must_set_full_name ≈ phase 3 full_name; phase 4 is retained for shape compatibility
+     * and always complete since the user-info form feature was removed).
      *
      * @return array{
      *   phase_1_completed: bool,
@@ -168,7 +151,7 @@ class UserVideo extends Model
         $phase1 = (int) $this->progress >= 99;
         $phase2 = (int) $this->is_rated === 1;
         $phase3 = $this->userHasBasicProfileForCertificate($user);
-        $phase4 = $this->isCouponFormPhaseCompleteForCertificate();
+        $phase4 = true;
         $phase5 = (int) $this->is_certificate_generated === 1;
 
         $steps = [
@@ -198,25 +181,6 @@ class UserVideo extends Model
             'current_phase' => $currentPhase,
             'can_revoke_certificate_generation' => $canRevoke,
         ];
-    }
-
-    /**
-     * Phase 4: `has_form === 0` (no coupon form) → complete; `has_form === 1` → complete only when `user_infos` exists for this user.
-     * Matches `scopeIsApplicableForCertificate` / PDF rule for `has_form`.
-     */
-    protected function isCouponFormPhaseCompleteForCertificate(): bool
-    {
-        $hasForm = (int) $this->has_form;
-
-        if ($hasForm === 0) {
-            return true;
-        }
-
-        if ($hasForm === 1) {
-            return (bool) $this->userInfo?->id;
-        }
-
-        return false;
     }
 
     /**

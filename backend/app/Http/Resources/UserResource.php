@@ -3,7 +3,6 @@
 namespace App\Http\Resources;
 
 use App\Enums\VideoPaymentStatus;
-use App\Models\UserInfo;
 use App\Models\UserVideo;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
@@ -30,9 +29,8 @@ class UserResource extends JsonResource
         ];
 
         $data =  toString($data);
-        $data['info'] = new UserInfoResource($this->info);
 
-        $this->userVideos?->loadMissing(['video', 'user', 'userInfo']);
+        $this->userVideos?->loadMissing(['video', 'user']);
 
         // if request->video_ids return only the videos that are in the request->video_ids
         if($request->video_ids){

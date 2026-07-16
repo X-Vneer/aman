@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl"
 import { parseAsNumberLiteral, useQueryState } from "nuqs"
 
 interface StepperProps {
-  totalSteps?: 3 | 4
+  totalSteps?: 3
   currentStep?: number
 }
 
@@ -15,7 +15,7 @@ export const useStep = () => {
     parseAsNumberLiteral([1, 2, 3, 4]).withDefault(1).withOptions({ history: "replace" }),
   )
 }
-const Stepper = ({ totalSteps = 4, currentStep }: StepperProps) => {
+const Stepper = ({ totalSteps = 3, currentStep }: StepperProps) => {
   const [step] = useStep()
 
   // Use currentStep prop if provided, otherwise use URL query state
@@ -30,41 +30,13 @@ const Stepper = ({ totalSteps = 4, currentStep }: StepperProps) => {
     return ((current - 1) / (total - 1)) * 100
   }
 
-  // Generate step positions based on total steps
-  const getStepPositions = (total: number) => {
-    if (total === 3) {
-      return [
-        { position: "ltr:left-6 rtl:right-6", transform: "" },
-        { position: "ltr:left-1/2 ltr:-translate-x-1/2 rtl:right-1/2 rtl:translate-x-1/2", transform: "" },
-        { position: "ltr:right-6 rtl:left-6", transform: "" },
-      ]
-    }
-    // 4 steps
-    return [
-      { position: "ltr:left-6 rtl:right-6", transform: "" },
-      { position: "ltr:left-1/3 ltr:-translate-x-1/2 rtl:right-1/3 rtl:translate-x-1/2", transform: "" },
-      { position: "ltr:right-1/3 ltr:-translate-x-1/2 rtl:left-1/3 rtl:translate-x-1/2", transform: "" },
-      { position: "ltr:right-6 rtl:left-6", transform: "" },
-    ]
-  }
-
-  // Generate step labels based on total steps
-  const getStepLabels = (total: number) => {
-    if (total === 3) {
-      return [t("first"), t("second"), t("third")]
-    }
-    // 4 steps
-    return [t("first"), t("second"), t("fourth"), t("third")]
-  }
-
-  // Generate grid columns based on total steps
-  const getGridCols = (total: number) => {
-    return total === 3 ? "grid-cols-3" : "grid-cols-4"
-  }
-
-  const stepPositions = getStepPositions(totalSteps)
-  const stepLabels = getStepLabels(totalSteps)
-  const gridCols = getGridCols(totalSteps)
+  const stepPositions = [
+    { position: "ltr:left-6 rtl:right-6", transform: "" },
+    { position: "ltr:left-1/2 ltr:-translate-x-1/2 rtl:right-1/2 rtl:translate-x-1/2", transform: "" },
+    { position: "ltr:right-6 rtl:left-6", transform: "" },
+  ]
+  const stepLabels = [t("first"), t("second"), t("third")]
+  const gridCols = "grid-cols-3"
 
   return (
     <Card className="mx-auto mb-5 max-w-md rounded-xl bg-[#0A090959] px-5 py-8 backdrop-blur-xl">

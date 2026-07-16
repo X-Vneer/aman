@@ -31,7 +31,7 @@ There is no test runner, no Storybook, no `format` script. Prettier runs through
 
 ### App segments (Next-style folders)
 
-`src/app/<segment>/page.tsx` is the route component. Each domain folder (`blogs`, `coupons`, `users`, `programs`, `financial`, `news`, `partners`, `awareness`, `stories`, `contacts`, `permissions`, `reviews`, `certificates`, `reports`, `form-information`) colocates:
+`src/app/<segment>/page.tsx` is the route component. Each domain folder (`blogs`, `users`, `programs`, `partners`, `awareness`, `stories`, `contacts`, `permissions`, `reviews`, `certificates`, `reports`) colocates:
 
 - `page.tsx` — toolbar (search/filters/active chips/export) + table or detail view.
 - `get-*.ts` / `create-*.ts` / `update-*.ts` / `delete-*.ts` — service functions calling the Axios client.
@@ -62,7 +62,7 @@ The request interceptor converts `URLSearchParams` to a plain object and splits 
 Pattern documented in `docs/developer-guide.md`; reference implementation in `src/app/dashboard/blogs/components/table.tsx`.
 
 - URL is the source of truth: `useOptimisticSearchParams()` → query key includes `searchParams.toString()` → TanStack Query refetches automatically when any URL param changes.
-- Sort: declare `const SORTABLE: Record<string, string> = { col: "api_col" }` and use `<SortableTh>` (3-state cycle ASC → DESC → off, via `useSortParams`). Backend allow-list is the model's `$fillable` minus `$excludedColumns` — translatable JSON columns (e.g. blog/news `title`) and computed/JOIN columns are not sortable.
+- Sort: declare `const SORTABLE: Record<string, string> = { col: "api_col" }` and use `<SortableTh>` (3-state cycle ASC → DESC → off, via `useSortParams`). Backend allow-list is the model's `$fillable` minus `$excludedColumns` — translatable JSON columns (e.g. blog `title`) and computed/JOIN columns are not sortable.
 - `<RefreshButton refetch={refetch} isFetching={isFetching} />` next to `<TableTotalCount>` for manual reload without resetting URL params.
 - Active filter chips: pick the matching hook from `src/hooks/use-dashboard-active-filter-chips.ts` (one per page) and render with `<ActiveFiltersBar chips={…} />`. Add a new hook there when introducing a new page rather than reinventing chip logic.
 

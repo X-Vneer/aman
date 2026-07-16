@@ -78,9 +78,6 @@
     "title": "التواصل والاستفسارات"
   },
   "filters": {},
-  "form-information": {
-    "title": "نماذج المستخدمين"
-  },
   "general": {
     "language": "اللغة",
     "logo-width": "390*324 بكسل",
@@ -198,7 +195,6 @@
       "awareness": "التوعيات",
       "certificate": "قالب الشهادة",
       "contacts": "التواصل والاستفسارات",
-      "form-information": "نماذج المستخدمين",
       "home": "الرئيسية",
       "manage-site": "إدارة الموقع",
       "partners": "الشركاء",
@@ -209,8 +205,7 @@
       "users": "إدارة المستخدمين",
       "view": "نظرة عامة",
       "stories": "قصص المنقذين",
-      "blogs": "مقالات المدونة",
-      "news": "آخر الأخبار"
+      "blogs": "مقالات المدونة"
     }
   },
   "not-completed": "لم يشترك في برنامج",
@@ -276,46 +271,6 @@
       "description": "هل أنت متأكد أنك تريد حذف هذا المقال؟",
       "error": "تعذر حذف المقال",
       "title": "حذف المقال"
-    }
-  },
-  "news": {
-    "title": "آخر الأخبار",
-    "description": "إدارة آخر الأخبار",
-    "add-button": "إنشاء خبر",
-    "add": {
-      "title": "إنشاء خبر جديد"
-    },
-    "edit": {
-      "title": "تعديل الخبر"
-    },
-    "load-error": "تعذر تحميل هذا الخبر.",
-    "form": {
-      "details": "محتوى الخبر حسب اللغة",
-      "publish_date": "تاريخ النشر",
-      "publish_date_placeholder": "اختر التاريخ",
-      "tags": "الوسوم",
-      "tags_placeholder": "أضف وسوماً",
-      "logo": "صورة الغلاف",
-      "logo_upload_title": "رفع الصورة",
-      "logo_recommended_size": "الحجم الموصى به: 1900×230",
-      "title": "العنوان",
-      "title_placeholder": "عنوان الخبر",
-      "short_description": "وصف قصير",
-      "short_description_placeholder": "ملخص (حد أقصى 500 حرف)",
-      "content": "المحتوى",
-      "content_placeholder": "نص الخبر كاملاً"
-    },
-    "table": {
-      "title": "العنوان",
-      "publish_date": "تاريخ النشر",
-      "actions": "الإجراءات"
-    },
-    "delete": {
-      "cancel": "إلغاء",
-      "confirm": "تأكيد",
-      "description": "هل أنت متأكد أنك تريد حذف هذا الخبر؟",
-      "error": "تعذر حذف الخبر",
-      "title": "حذف الخبر"
     }
   },
   "notifications": {

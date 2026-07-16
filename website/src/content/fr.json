@@ -152,9 +152,6 @@
     "title": "Choisir la langue"
   },
   "complete-profile": {
-    "age": "Âge",
-    "coupon-form-description": "Pour procéder à l'obtention de votre certificat, veuillez compléter cette section",
-    "coupon-form-title": "Entrez des informations personnelles",
     "description": "Pour continuer avec votre certification, veuillez compléter votre profil",
     "email": "Email",
     "email-input-placeholder": "Exemple@example.co",
@@ -163,21 +160,15 @@
       "required": "Ce champ est requis",
       "serverError": "Erreur de connexion au serveur"
     },
-    "female": "Femelle",
     "first_name": "Prénom",
     "first_name-input-placeholder": "",
-    "gender": "Genre",
     "last_name": "Nom de famille",
     "last_name-input-placeholder": " ",
-    "male": "Mâle",
     "name": "Nom",
     "name-input-placeholder": "",
-    "nationality": "Nationalité",
     "save-button": "Continuer",
-    "sector": "secteur",
     "success": "Vos informations personnelles ont été complétées avec succès",
-    "title": "Complétez votre profil",
-    "workplace": "Nom de l'entreprise"
+    "title": "Complétez votre profil"
   },
   "contact-us": {
     "description": "Remplissez le formulaire ci-dessous et nous vous répondrons dans les plus brefs délais. Ou contactez-nous directement au +970 53 367 3587",
@@ -442,7 +433,6 @@
     },
     "stepper": {
       "first": "Évaluation",
-      "fourth": "Détails",
       "second": "Complétez les données",
       "third": "Recevez le certificat "
     },

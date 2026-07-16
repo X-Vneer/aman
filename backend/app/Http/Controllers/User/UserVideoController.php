@@ -125,7 +125,6 @@ class UserVideoController extends BaseApiController {
             'current_time'        => '00:00:00',
             'last_question_id'    => null,
             'certificate_url'     => null,
-            'has_form'            => 0,
             'certificate_qr_code' => null,
             'certificate_number'  => null,
             'status'              => VideoPaymentStatus::Accepted->value,
@@ -312,10 +311,6 @@ class UserVideoController extends BaseApiController {
 
             if($userVideo?->progress < 99) return "User Video is not completed for certificate number: $certificate_number";
             if($userVideo?->is_rated == 0) return "User Video is not rated for certificate number: $certificate_number";
-            if ($userVideo?->has_form == 1 && ! $userVideo?->userInfo?->id) {
-                return trans('certificate.must_fill_user_info', ['number' => $certificate_number]);
-            }
-
 
             $certificateFileName = "$certificate_number.pdf";
             $certificateFilePath = "certificates/$certificateFileName";
@@ -439,7 +434,7 @@ class UserVideoController extends BaseApiController {
             $certificate_number = preg_replace('/\.pdf$/i', '', $pdf);
             $relativePath = 'certificates/'.$pdf;
 
-            $userVideo = UserVideo::with(['user', 'userInfo'])
+            $userVideo = UserVideo::with(['user'])
                 ->where('certificate_number', $certificate_number)
                 ->first();
 
@@ -544,7 +539,7 @@ class UserVideoController extends BaseApiController {
             return $this->sendResponse(false, null, trans('msg.notFound'), null, 404, $request);
         }
 
-        $userVideo->loadMissing(['user', 'userInfo', 'video']);
+        $userVideo->loadMissing(['user', 'video']);
 
         if ((int) $userVideo->is_certificate_generated != 1) {
             return $this->sendResponse(false, null, trans('certificate.revoke_not_generated') . ' -1', null, 422, $request);
@@ -574,7 +569,7 @@ class UserVideoController extends BaseApiController {
         }
 
         return $this->sendResponse(true, [
-            'item' => new UserVideoResource($userVideo->refresh()->load(['user', 'userInfo', 'video'])),
+            'item' => new UserVideoResource($userVideo->refresh()->load(['user', 'video'])),
         ], trans('Updated'), null, 200, $request);
     }
 

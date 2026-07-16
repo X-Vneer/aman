@@ -1,7 +1,6 @@
 <?php
 
 use App\Models\Blog;
-use App\Models\News;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\DB;
@@ -12,8 +11,8 @@ return new class extends Migration
 {
     public function up(): void
     {
-        foreach ([Blog::class, News::class] as $modelClass) {
-            /** @var Blog|News $sample */
+        foreach ([Blog::class] as $modelClass) {
+            /** @var Blog $sample */
             $sample = new $modelClass;
             $table = $sample->getTable();
 
@@ -27,7 +26,7 @@ return new class extends Migration
 
             $modelClass::query()->orderBy($sample->getKeyName())->chunkById(100, function ($items) use ($table) {
                 foreach ($items as $model) {
-                    /** @var Blog|News $model */
+                    /** @var Blog $model */
                     $source = (string) $model->getTranslation('title', 'en');
                     if ($source === '') {
                         $source = 'item-'.$model->getKey();
@@ -42,7 +41,7 @@ return new class extends Migration
 
     public function down(): void
     {
-        foreach ([Blog::class, News::class] as $modelClass) {
+        foreach ([Blog::class] as $modelClass) {
             $sample = new $modelClass;
             $table = $sample->getTable();
 
