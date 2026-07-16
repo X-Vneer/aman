@@ -76,7 +76,7 @@ const UserForm = ({ user, onEnd }: { user?: User; onEnd: () => void }) => {
             labels={lang === "ar" ? ar : en}
             international
             countryCallingCodeEditable={false}
-            defaultCountry="SA"
+            defaultCountry="PS"
             inputComponent={TextInput}
             radius="md"
             error={showErrorMessage(errors, "mobile")}

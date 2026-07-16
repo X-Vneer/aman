@@ -138,7 +138,7 @@ export function courseSchema(input: CourseSchemaInput) {
           offers: {
             "@type": "Offer",
             price,
-            priceCurrency: "SAR",
+            priceCurrency: "ILS",
             category: "Paid",
             url: input.url,
             availability: "https://schema.org/InStock",

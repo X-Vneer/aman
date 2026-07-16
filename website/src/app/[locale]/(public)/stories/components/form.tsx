@@ -203,9 +203,9 @@ const StoriesForm = (props: Props) => {
                     labels={locale === "ar" ? ar : en}
                     international
                     countryCallingCodeEditable={false}
-                    defaultCountry="SA"
+                    defaultCountry="PS"
                     inputComponent={Input}
-                    placeholder="+966"
+                    placeholder="+970"
                   />
                   {form.formState.errors.mobile?.message ? (
                     <FieldError>

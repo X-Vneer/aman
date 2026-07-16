@@ -46,7 +46,7 @@ const Footer = async (props: Props) => {
                     <a
                       dir="ltr"
                       className="font-medium text-white hover:underline"
-                      href="https://wa.me/966533673587"
+                      href="https://wa.me/970533673587"
                       target="_blank"
                       rel="noopener noreferrer">
                       {siteConfig.contactInfo.whatsapp}

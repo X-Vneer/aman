@@ -19,8 +19,8 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
   setRequestLocale(locale)
   const t = await getTranslations("contact-us")
   const description = t("description")
-  const phoneNumber = "+966 53 367 3587"
-  const whatsappUrl = "https://wa.me/966533673587"
+  const phoneNumber = "+970 53 367 3587"
+  const whatsappUrl = "https://wa.me/970533673587"
 
   // Split description and make phone number clickable
   const renderDescription = () => {

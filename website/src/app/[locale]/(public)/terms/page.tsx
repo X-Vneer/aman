@@ -194,7 +194,7 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                 </p>
                 <p>
                   لا تتضمن شروط الاستخدام أي استثناء أو الاحتيال أو تحريف الحقائق بطرق احتيالية من جانبنا، أو
-                  أية مسؤولية أخرى لا يمكن استبعادها أو تقييدها بموجب أحكام القوانين والأنظمة السعودية
+                  أية مسؤولية أخرى لا يمكن استبعادها أو تقييدها بموجب أحكام القوانين والأنظمة الفلسطينية
                   المرعية.
                 </p>
                 <p>
@@ -519,15 +519,15 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                   <strong>القوانين والأنظمة المرعية</strong>
                 </p>
                 <p>
-                  شروط الاستخدام هذه، وموضوعها وتشكيلها، تخضع لأحكام القوانين والأنظمة المرعية في المملكة
-                  العربية السعودية. ونحن نوافق معكم على أن محاكم المملكة العربية السعودية سيكون لها الاختصاص
+                  شروط الاستخدام هذه، وموضوعها وتشكيلها، تخضع لأحكام القوانين والأنظمة المرعية في دولة
+                  فلسطين. ونحن نوافق معكم على أن محاكم دولة فلسطين سيكون لها الاختصاص
                   الحصري في هذا الخصوص.
                 </p>
                 <p>
                   <strong>العلامات التجارية</strong>
                 </p>
                 <p>
-                  "برنامج أمان" AMAN&nbsp;هي علامة تجارية مسجلة في المملكة العربية السعودية لشركة رؤى
+                  "برنامج أمان" AMAN&nbsp;هي علامة تجارية مسجلة في دولة فلسطين لشركة رؤى
                   المتطورة للتدريب الصحي. ويراعى أن جميع العلامات التجارية غير المملوكة من قبلنا والتي تظهر
                   على موقعنا هي ملك لأصحابها. ولا يجوز لكم استخدام أي من هذه العلامات التجارية، أو أي من
                   أشكالها المختلفة، لأغراض ترويجية، تنطوي بأي حال من الأحوال عمدا أو عن غير قصد، على الادعاء
@@ -1072,14 +1072,14 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                 </p>
                 <p>
                   These Terms of Use, their subject matter and formation, are subject to the laws and
-                  regulations in force in the Kingdom of Saudi Arabia. We agree with you that the courts of
-                  the Kingdom of Saudi Arabia will have exclusive jurisdiction in this regard..
+                  regulations in force in the State of Palestine. We agree with you that the courts of
+                  the State of Palestine will have exclusive jurisdiction in this regard..
                 </p>
                 <p>
                   <strong>Brands</strong>
                 </p>
                 <p>
-                  "programAmanAMAN is a registered trademark in the Kingdom of Saudi Arabia.For
+                  "programAmanAMAN is a registered trademark in the State of Palestine.For
                   Advanced Visions for Health Training CompanyAll trademarks not owned by us that appear on
                   our site are the property of their respective owners. You may not use any of these
                   trademarks, or any variations thereof, for promotional purposes that in any way,

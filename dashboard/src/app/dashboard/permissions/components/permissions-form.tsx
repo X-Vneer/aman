@@ -91,7 +91,7 @@ const PermissionsForm = ({ initialData }: { initialData: Admin }) => {
               labels={lang === "ar" ? ar : en}
               international
               countryCallingCodeEditable={false}
-              defaultCountry="SA"
+              defaultCountry="PS"
               inputComponent={TextInput}
               radius="md"
               error={showErrorMessage(errors, "mobile")}

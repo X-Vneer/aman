@@ -243,9 +243,9 @@ const ContactForm = () => {
                 name="mobile"
                 labels={locale === "ar" ? ar : en}
                 international
-                defaultCountry="SA"
+                defaultCountry="PS"
                 inputComponent={Input}
-                placeholder="+966"
+                placeholder="+970"
               />
             </div>
             {form.formState.errors.mobile?.message ? (

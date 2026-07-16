@@ -38,7 +38,7 @@ class AppServiceProvider extends ServiceProvider
         // Model::preventLazyLoading(true);
 
         Validator::extend('sa_mobile', function ($attribute, $value, $parameters, $validator) {
-            return preg_match('/^(966|\+966|0)?5[0-9]{8}$/', $value);
+            return preg_match('/^(970|\+970|0)?5[0-9]{8}$/', $value);
         });
 
         Validator::extend('time_format', function ($attribute, $value, $parameters, $validator) {
