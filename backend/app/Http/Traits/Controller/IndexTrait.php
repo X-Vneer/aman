@@ -118,7 +118,7 @@ trait IndexTrait
                 // Get averages from helpers if available (for RateController)
                 $averages = $helpers['averages'] ?? null;
 
-                return $this->export($items, 'Inaash', 'export', $this->heading, $averages);
+                return $this->export($items, 'Aman', 'export', $this->heading, $averages);
             }
 
             $items = $items->paginate($request->per_page ?? config('constants.per_page'));

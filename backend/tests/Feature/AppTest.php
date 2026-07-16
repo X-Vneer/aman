@@ -141,14 +141,14 @@ class AppTest extends TestCase
     {
         $this->test_admin_Send_request_otp_and_login(); 
         
-        $this->test_crud('admin.videos', $this->adminToken, 1, ['store'], config('inaash.videos')[0]);
-        $this->test_crud('admin.videos', $this->adminToken, 1, ['store'], config('inaash.videos')[1]);
+        $this->test_crud('admin.videos', $this->adminToken, 1, ['store'], config('aman.videos')[0]);
+        $this->test_crud('admin.videos', $this->adminToken, 1, ['store'], config('aman.videos')[1]);
     }
     
     public function test_create_FAQs(): void
     {
         $this->test_admin_Send_request_otp_and_login(); 
-        $faqs = config('inaash.FAQs');
+        $faqs = config('aman.FAQs');
         foreach ($faqs as $faq) {
             $this->test_crud('admin.faqs', $this->adminToken, 1, ['store'], $faq); 
         }
@@ -173,7 +173,7 @@ class AppTest extends TestCase
     public function test_create_scenes(): void
     {
         $this->test_admin_Send_request_otp_and_login(); 
-        $scenes = config('inaash.scenes');
+        $scenes = config('aman.scenes');
         foreach ($scenes as $faq) {
             $this->test_crud('admin.scenes', $this->adminToken, 1, ['store'], $faq); 
         }
@@ -182,7 +182,7 @@ class AppTest extends TestCase
     public function test_create_questions(): void
     {
         $this->test_admin_Send_request_otp_and_login(); 
-        $questions = config('inaash.questions');
+        $questions = config('aman.questions');
         foreach ($questions as $faq) {
             $this->test_crud('admin.questions', $this->adminToken, 1, ['store'], $faq); 
         }

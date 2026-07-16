@@ -5,7 +5,7 @@
 
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Inaash: {{ $title }}</title>
+    <title>Aman: {{ $title }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
@@ -15,10 +15,10 @@
     <div style="padding-right: 50px;">
         <br>
 
-        مرحبا لديك اشعار من Inaash
+        مرحبا لديك اشعار من Aman
 
         <div>
-            <img style="display: block; margin:auto;" src="{{ config("app.inaash_api") }}img/inaash.png" alt="inaash" width="128" height="165">
+            <img style="display: block; margin:auto;" src="{{ config("app.aman_api") }}img/inaash.png" alt="aman" width="128" height="165">
         </div>
         <br>
         {{ $title }}

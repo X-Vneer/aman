@@ -125,7 +125,7 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
-    'inaash_api' => env('INAASH_API', 'https://api.inaash.edu.sa/'),
+    'aman_api' => env('AMAN_API', 'https://api.inaash.edu.sa/'),
 
     'platform' => env('PLATFORM', 'https://inaash.edu.sa/'),
     'platform_cert' => env('PLATFORM_CERT', 'https://inaash.edu.sa/'),

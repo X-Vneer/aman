@@ -141,10 +141,8 @@ class UserVideoController extends BaseApiController {
                 $item = $this->model::create($inputs);
             }
 
-            if($newPrice > 0 &&  !str_contains(config('app.platform'), 'https://uat.')){
+            if($newPrice > 0){
                 $edfaPayUserVideo = new EdfaPayUserVideo($request, $item);
-            }else if($newPrice > 0 &&  str_contains(config('app.platform'), 'https://uat.')){
-                return $this->sendResponse(false,  null, trans('youCanNotPayForThisVideoInUatPlatform'), null, 422, $request);
             }else {
                 $item->update(['status' => VideoPaymentStatus::Accepted->value]);
             }
@@ -223,7 +221,7 @@ class UserVideoController extends BaseApiController {
             if ($progress >= 99) {
                 $user_video->update([
                     'certificate_url' => $user_video->certificate_url,
-                    'certificate_qr_code' => config("app.inaash_api") . 'storage/qr/ic.png',
+                    'certificate_qr_code' => config("app.aman_api") . 'storage/qr/ic.png',
                     'certificate_number' => 'CERT' . base_convert($user_video->id * 2, 10, 36),
                 ]);
                 $user_video->refresh();
@@ -346,7 +344,7 @@ class UserVideoController extends BaseApiController {
             // return view('pdf.sample-with-image', [
             //     'video_id' => $userVideo->video_id,
             //     'certificate_file_name' => $certificate_file_name,
-            //     'full_name' => ($userVideo->user->full_name?? 'Inaash'),
+            //     'full_name' => ($userVideo->user->full_name?? 'Aman'),
             //     'certificate_number' => strtolower($userVideo->certificate_number?? ''),
             //     'date' => $userVideo->updated_at,
             // ]);
@@ -361,7 +359,7 @@ class UserVideoController extends BaseApiController {
             ])->loadView('pdf.sample-with-image', [
                 'video_id' => $userVideo->video_id,
                 'certificate_file_name' => $certificate_file_name,
-                'full_name' => ($userVideo->user->full_name?? 'Inaash'),
+                'full_name' => ($userVideo->user->full_name?? 'Aman'),
                 'certificate_number' => strtolower($userVideo->certificate_number?? ''),
                 'date' => $userVideo->updated_at,
             ]);

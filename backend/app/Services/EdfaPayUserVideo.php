@@ -38,7 +38,7 @@ class EdfaPayUserVideo
             "order_currency" => "SAR",
             "order_description" => "Payment for video " . $this->userVideo->id,
             "req_token" => "N",
-            "payer_first_name" => "Inaash",
+            "payer_first_name" => "Aman",
             "payer_last_name" => "Edu",
             "payer_address" => "Riyadh",
             "payer_country" => "SA",

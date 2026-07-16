@@ -49,7 +49,7 @@ class UserVideoResource extends JsonResource
             'status' => $this->status,
 
             'certificate_url' => $this->certificate_url,
-            'certificate_qr_code' => $this->certificate_qr_code ? config("app.inaash_api") . 'storage/qr/'.$this->certificate_number.'.png' : null,
+            'certificate_qr_code' => $this->certificate_qr_code ? config("app.aman_api") . 'storage/qr/'.$this->certificate_number.'.png' : null,
             'certificate_number' => $this->certificate_number,
             'deleted_at' => $this->deleted_at,
         ];

@@ -13,8 +13,3 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['domain' => 'uat.api.inaash.edu.sa'], function () {
-    Route::get('/telescope', function () {
-        return redirect('/telescope/requests');
-    });
-});

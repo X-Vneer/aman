@@ -5,7 +5,7 @@
 
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Inaash OTP Confirmation</title>
+    <title>Aman OTP Confirmation</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
@@ -14,7 +14,7 @@
 <body>
     <div style="padding-left: 50px;">
         <div>
-            <img style="display: block; margin:auto;" src="{{ config("app.inaash_api") }}img/inaash.png" alt="inaash" width="128" height="165">
+            <img style="display: block; margin:auto;" src="{{ config("app.aman_api") }}img/inaash.png" alt="aman" width="128" height="165">
         </div>
         <br>
         Hello,

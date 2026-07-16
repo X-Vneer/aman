@@ -32,7 +32,7 @@ class SendCodeMail extends Mailable
         return new Envelope(
             from: new Address('info@inaash.edu.sa', 'No replay'),
             to: [$this->to_email],
-            subject: 'Inaash App: OTP',
+            subject: 'Aman App: OTP',
         );
     }
 

@@ -128,7 +128,6 @@
     "numberOfUsers": "Number Of Users",
     "thisCouponIsNotExistOrExpired": "This coupon is not exist or expired!",
     "emailNotFound": "Email not found",
-    "youCanNotPayForThisVideoInUatPlatform": "You can not pay for this video in uat platform",
     "youCanNotDeleteYourAccountHavingCertificates": "You can not delete your account having certificates",
     "يجب إدخال رابط الشهادة": "Certificate URL is required",
     "يجب أن يكون رابط الشهادة بصيغة PNG": "Certificate URL must be in PNG format",

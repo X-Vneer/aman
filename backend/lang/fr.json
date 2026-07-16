@@ -125,7 +125,6 @@
     "numberOfUsers": "Nombre d'utilisateurs.",
     "thisCouponIsNotExistOrExpired": "Ce coupon n'existe pas ou a expiré !",
     "emailNotFound": "Email non trouvé.",
-    "youCanNotPayForThisVideoInUatPlatform": "Vous ne pouvez pas payer pour cette vidéo dans la plateforme uat",
     "youCanNotDeleteYourAccountHavingCertificates": "Vous ne pouvez pas supprimer votre compte ayant des certificats",
     "Sorry you skipped the some questions, please answer the questions in order!: ": "Désolé, vous avez sauté certaines questions, veuillez répondre aux questions dans l'ordre"
 }

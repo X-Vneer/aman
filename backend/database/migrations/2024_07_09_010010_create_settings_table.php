@@ -31,12 +31,12 @@ return new class extends Migration
         Setting::create([
             'set_key' => 'timeout_audio',
             'set_value' => json_encode([
-                "ar" => env("INAASH_API") . "timeout/ar.mp3",
-                "en" => env("INAASH_API") . "timeout/en.mp3",
-                "fr" => env("INAASH_API") . "timeout/fr.mp3",
-                "ur" => env("INAASH_API") . "timeout/ur.mp3",
-                "fil" => env("INAASH_API") . "timeout/fil.mp3",
-                "id" => env("INAASH_API") . "timeout/id.mp3",
+                "ar" => env("AMAN_API") . "timeout/ar.mp3",
+                "en" => env("AMAN_API") . "timeout/en.mp3",
+                "fr" => env("AMAN_API") . "timeout/fr.mp3",
+                "ur" => env("AMAN_API") . "timeout/ur.mp3",
+                "fil" => env("AMAN_API") . "timeout/fil.mp3",
+                "id" => env("AMAN_API") . "timeout/id.mp3",
             ], JSON_UNESCAPED_UNICODE),
             'type' => 'text',
             'description' => 'video time out audio relative url',
