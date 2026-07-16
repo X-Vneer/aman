@@ -255,7 +255,6 @@
     "awareness-information": "Informations de sensibilisation",
     "be-rescuer": "Jadilah penyelamat",
     "blog": "Blog",
-    "latest-news": "Berita Terbaru",
     "contact": "Hubungi Kami",
     "contact-us": "Dukungan Teknis Aman",
     "email": "Email",
@@ -278,7 +277,6 @@
     "awareness-information": "Informasi kesadaran",
     "be-rescuer": "Jadilah penyelamat",
     "blog": "Blog",
-    "latest-news": "Berita Terbaru",
     "contact": "Hubungi Kami",
     "faqs": "Pertanyaan yang Sering Diajukan",
     "full-screen": "Layar Penuh",
@@ -515,10 +513,7 @@
     "filter-error": "Tidak dapat memuat program. Silakan coba lagi.",
     "video-status-new": "Baru",
     "video-status-updated": "Diperbarui",
-    "no-results": "Tidak ada program yang cocok dengan pencarian Anda.",
-    "platform-help-link": "Bagaimana cara menggunakan platform ini?",
-    "platform-help-collapse": "Sembunyikan tautan bantuan",
-    "platform-help-expand": "Tampilkan tautan bantuan"
+    "no-results": "Tidak ada program yang cocok dengan pencarian Anda."
   },
   "stories": {
     "form": {
@@ -611,27 +606,12 @@
       }
     }
   },
-  "how-to-use": {
-    "title": "Cara menggunakan platform",
-    "back": "Kembali"
-  },
   "blog": {
     "title": "Blog Aman",
     "description": "Ini adalah program kesadaran dan pelatihan interaktif untuk mendidik serta meningkatkan kesadaran tentang darurat kesehatan dan cedera olahraga, serta cara yang tepat untuk menanganinya.",
     "empty": "Belum ada postingan. Silakan kembali lagi nanti.",
     "pagination": {
       "navLabel": "Paginasi blog",
-      "previous": "Sebelumnya",
-      "next": "Berikutnya",
-      "summary": "Menampilkan {from}-{to} dari {total}"
-    }
-  },
-  "latest-news": {
-    "title": "Berita Terbaru",
-    "description": "Tetap update dengan berita terbaru, pembaruan, dan pengumuman dari Aman",
-    "empty": "Belum ada berita. Silakan kembali lagi nanti.",
-    "pagination": {
-      "navLabel": "Paginasi berita",
       "previous": "Sebelumnya",
       "next": "Berikutnya",
       "summary": "Menampilkan {from}-{to} dari {total}"

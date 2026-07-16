@@ -2,7 +2,6 @@ import type { Metadata } from "next"
 import { getTranslations, setRequestLocale } from "next-intl/server"
 
 import ChooseCourse from "./components/choose-course"
-import PlatformHelpLink from "./components/platform-help-link"
 import { getVideos } from "@/services/utils/get-videos"
 import DynamicBg from "./components/dynamic-bg"
 import { HoveredCourseProvider } from "./components/hovered-course-context"
@@ -32,7 +31,6 @@ const Page = async (props: Props) => {
 
   return (
     <>
-      <PlatformHelpLink className="fixed inset-e-0 top-1/5 z-20 lg:top-1/3" label={t("platform-help-link")} />
       <HoveredCourseProvider>
         <main className="container mx-auto max-w-7xl grow px-6 pt-5 md:pt-8 lg:pt-10">
           <DynamicBg />

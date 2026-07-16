@@ -270,7 +270,6 @@
     "awareness-information": "Awareness Information",
     "be-rescuer": "Be a Rescuer",
     "blog": "Blog",
-    "latest-news": "Latest News",
     "contact": "Contact us",
     "contact-us": "Aman Technical Support",
     "email": "Email",
@@ -293,7 +292,6 @@
     "awareness-information": "Awareness Information",
     "be-rescuer": "Be a Rescuer",
     "blog": "Blog",
-    "latest-news": "Latest News",
     "contact": "Contact Us",
     "faqs": "FAQs",
     "full-screen": "Full Screen",
@@ -534,10 +532,7 @@
     "filter-error": "Could not load programs. Please try again.",
     "video-status-new": "New",
     "video-status-updated": "Updated",
-    "no-results": "No programs match your search.",
-    "platform-help-link": "How do I use the platform?",
-    "platform-help-collapse": "Hide help link",
-    "platform-help-expand": "Show help link"
+    "no-results": "No programs match your search."
   },
   "stories": {
     "form": {
@@ -634,27 +629,12 @@
       }
     }
   },
-  "how-to-use": {
-    "title": "How to use the platform",
-    "back": "Back"
-  },
   "blog": {
     "title": "Blog Inaa’sh",
     "description": "It is an interactive awareness and training program to educate and raise awareness about emergency health and sports injuries and the proper ways to deal with them",
     "empty": "No posts yet. Check back soon.",
     "pagination": {
       "navLabel": "Blog pagination",
-      "previous": "Previous",
-      "next": "Next",
-      "summary": "Showing {from}-{to} of {total}"
-    }
-  },
-  "latest-news": {
-    "title": "Latest News",
-    "description": "Stay up to date with the latest news, updates, and announcements from Aman",
-    "empty": "No news yet. Check back soon.",
-    "pagination": {
-      "navLabel": "News pagination",
       "previous": "Previous",
       "next": "Next",
       "summary": "Showing {from}-{to} of {total}"

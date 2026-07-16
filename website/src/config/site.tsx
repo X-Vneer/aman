@@ -29,10 +29,6 @@ export const siteConfig = {
           label: "blog",
           href: "/blog",
         },
-        {
-          label: "latest-news",
-          href: "/latest-news",
-        },
       ],
     },
 
@@ -83,10 +79,6 @@ export const siteConfig = {
     {
       label: "blog",
       href: "/blog",
-    },
-    {
-      label: "latest-news",
-      href: "/latest-news",
     },
   ],
   contactInfo: {

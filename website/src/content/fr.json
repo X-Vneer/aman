@@ -255,7 +255,6 @@
     "awareness-information": "Informations de sensibilisation",
     "be-rescuer": "Être un sauveteur",
     "blog": "Blog",
-    "latest-news": "Dernières Nouvelles",
     "contact": "Contactez-nous",
     "contact-us": "Support technique Aman",
     "email": "Email",
@@ -278,7 +277,6 @@
     "awareness-information": "Informations de sensibilisation",
     "be-rescuer": "Être un sauveteur",
     "blog": "Blog",
-    "latest-news": "Dernières Nouvelles",
     "contact": "Contactez-nous",
     "faqs": "FAQs",
     "full-screen": "Plein écran",
@@ -515,10 +513,7 @@
     "filter-error": "Impossible de charger les programmes. Veuillez réessayer.",
     "video-status-new": "Nouveau",
     "video-status-updated": "Mis à jour",
-    "no-results": "Aucun programme ne correspond à votre recherche.",
-    "platform-help-link": "Comment utiliser la plateforme ?",
-    "platform-help-collapse": "Masquer le lien d’aide",
-    "platform-help-expand": "Afficher le lien d’aide"
+    "no-results": "Aucun programme ne correspond à votre recherche."
   },
   "stories": {
     "form": {
@@ -611,27 +606,12 @@
       }
     }
   },
-  "how-to-use": {
-    "title": "Comment utiliser la plateforme",
-    "back": "Retour"
-  },
   "blog": {
     "title": "Blog Aman",
     "description": "Il s'agit d'un programme interactif de sensibilisation et de formation pour éduquer et sensibiliser aux urgences de santé et aux blessures sportives ainsi qu'aux bonnes façons de les gérer",
     "empty": "Aucun article pour le moment. Revenez bientôt.",
     "pagination": {
       "navLabel": "Pagination du blog",
-      "previous": "Précédent",
-      "next": "Suivant",
-      "summary": "Affichage de {from}-{to} sur {total}"
-    }
-  },
-  "latest-news": {
-    "title": "Dernières Nouvelles",
-    "description": "Restez informé des dernières nouvelles, mises à jour et annonces d'Aman",
-    "empty": "Aucune nouvelle pour le moment. Revenez bientôt.",
-    "pagination": {
-      "navLabel": "Pagination des nouvelles",
       "previous": "Précédent",
       "next": "Suivant",
       "summary": "Affichage de {from}-{to} sur {total}"

@@ -65,7 +65,6 @@ const PAGE_CRUMB_LABEL: Record<PageMetaKey, Record<string, string>> = {
   "contact-us": { ar: "تواصل معنا", en: "Contact Us", fr: "Contact", fil: "Makipag-ugnayan", id: "Kontak", ur: "رابطہ" },
   faqs: { ar: "الأسئلة الشائعة", en: "FAQs", fr: "FAQ", fil: "Mga FAQ", id: "FAQ", ur: "عام سوالات" },
   "information-center": { ar: "مركز المعلومات", en: "Information Center", fr: "Centre d'information", fil: "Information Center", id: "Pusat Informasi", ur: "معلوماتی مرکز" },
-  "latest-news": { ar: "آخر الأخبار", en: "Latest News", fr: "Actualités", fil: "Pinakabagong Balita", id: "Berita Terbaru", ur: "تازہ ترین خبریں" },
   "privacy-policy": { ar: "سياسة الخصوصية", en: "Privacy Policy", fr: "Confidentialité", fil: "Privacy", id: "Privasi", ur: "رازداری" },
   stories: { ar: "قصص الإنقاذ", en: "Stories", fr: "Histoires", fil: "Mga Kwento", id: "Kisah", ur: "کہانیاں" },
   terms: { ar: "الشروط والأحكام", en: "Terms", fr: "Conditions", fil: "Mga Tuntunin", id: "Syarat", ur: "شرائط" },

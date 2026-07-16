@@ -259,7 +259,6 @@
     "awareness-information": "معلومات التوعية",
     "be-rescuer": "كن منقذاً ",
     "blog": "المدونة",
-    "latest-news": "آخر الأخبار",
     "contact": "تواصل معنا",
     "contact-us": "الدعم الفني أمان",
     "email": "بريد إلكتروني",
@@ -282,7 +281,6 @@
     "awareness-information": "معلومات التوعية",
     "be-rescuer": "كن منقذاً ",
     "blog": "المدونة",
-    "latest-news": "آخر الأخبار",
     "contact": "تواصل معنا",
     "faqs": "الاسئلة الشائعة",
     "full-screen": "ملء الشاشة",
@@ -523,10 +521,7 @@
     "filter-error": "تعذر تحميل البرامج. حاول مرة أخرى.",
     "video-status-new": "جديد",
     "video-status-updated": "محدّث",
-    "no-results": "لا توجد برامج تطابق بحثك.",
-    "platform-help-link": "كيف أستخدم المنصة؟",
-    "platform-help-collapse": "إخفاء رابط المساعدة",
-    "platform-help-expand": "إظهار رابط المساعدة"
+    "no-results": "لا توجد برامج تطابق بحثك."
   },
   "stories": {
     "form": {
@@ -619,27 +614,12 @@
       }
     }
   },
-  "how-to-use": {
-    "title": "كيفية استخدام المنصة",
-    "back": "رجوع"
-  },
   "blog": {
     "title": "مدونة أمان",
     "description": "هو برنامج توعوي تدريبي تفاعلي للتثقيف والتوعية حول الإصابات الصحية والرياضية الطارئة والطرق السليمة للتعامل معها",
     "empty": "لا توجد مقالات بعد. تفضّل بزيارتنا لاحقًا.",
     "pagination": {
       "navLabel": "تصفح المدونة",
-      "previous": "السابق",
-      "next": "التالي",
-      "summary": "عرض {from}-{to} من {total}"
-    }
-  },
-  "latest-news": {
-    "title": "آخر الأخبار",
-    "description": "ابقَ على اطلاع بآخر الأخبار والتحديثات والإعلانات من أمان",
-    "empty": "لا توجد أخبار بعد. تفضّل بزيارتنا لاحقًا.",
-    "pagination": {
-      "navLabel": "تصفح الأخبار",
       "previous": "السابق",
       "next": "التالي",
       "summary": "عرض {from}-{to} من {total}"

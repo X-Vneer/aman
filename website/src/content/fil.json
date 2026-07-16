@@ -255,7 +255,6 @@
     "awareness-information": "Impormasyon sa kamalayan",
     "be-rescuer": "Maging tagapagligtas",
     "blog": "Blog",
-    "latest-news": "Pinakabagong Balita",
     "contact": "Makipag-ugnayan sa amin",
     "contact-us": "Suporta Teknikal ng Aman",
     "email": "Email",
@@ -278,7 +277,6 @@
     "awareness-information": "Impormasyon sa kamalayan",
     "be-rescuer": "Maging tagapagligtas",
     "blog": "Blog",
-    "latest-news": "Pinakabagong Balita",
     "contact": "Makipag-ugnayan sa Amin",
     "faqs": "Mga Madalas Itanong",
     "full-screen": "Buong Screen",
@@ -515,10 +513,7 @@
     "filter-error": "Hindi ma-load ang mga programa. Subukan muli.",
     "video-status-new": "Bago",
     "video-status-updated": "Na-update",
-    "no-results": "Walang programang tumutugma sa iyong paghahanap.",
-    "platform-help-link": "Paano ko gagamitin ang platform?",
-    "platform-help-collapse": "Itago ang link ng tulong",
-    "platform-help-expand": "Ipakita ang link ng tulong"
+    "no-results": "Walang programang tumutugma sa iyong paghahanap."
   },
   "stories": {
     "form": {
@@ -611,27 +606,12 @@
       }
     }
   },
-  "how-to-use": {
-    "title": "Paano gamitin ang platform",
-    "back": "Bumalik"
-  },
   "blog": {
     "title": "Blog Aman",
     "description": "Ito ay isang interactive na programa para sa kamalayan at pagsasanay na nagtuturo at nagbibigay-kaalaman tungkol sa mga emerhensiyang pangkalusugan at sports injuries at ang tamang paraan ng pagharap dito.",
     "empty": "Wala pang mga post. Bumalik ka mamaya.",
     "pagination": {
       "navLabel": "Pagination ng blog",
-      "previous": "Nakaraan",
-      "next": "Susunod",
-      "summary": "Ipinapakita ang {from}-{to} ng {total}"
-    }
-  },
-  "latest-news": {
-    "title": "Pinakabagong Balita",
-    "description": "Manatiling updated sa pinakabagong balita, updates, at mga anunsyo mula sa Aman",
-    "empty": "Wala pang balita. Bumalik ka mamaya.",
-    "pagination": {
-      "navLabel": "Pagination ng balita",
       "previous": "Nakaraan",
       "next": "Susunod",
       "summary": "Ipinapakita ang {from}-{to} ng {total}"

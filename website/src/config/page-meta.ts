@@ -11,7 +11,6 @@ export type PageMetaKey =
   | "contact-us"
   | "faqs"
   | "information-center"
-  | "latest-news"
   | "privacy-policy"
   | "stories"
   | "terms"
@@ -278,34 +277,6 @@ export const PAGE_META: PageMetaMap = {
       title: "سرٹیفکیٹ کی تصدیق | امان پلیٹ فارم کا معلوماتی مرکز – KSA",
       description:
         "امان پلیٹ فارم کی جانب سے جاری کردہ فرسٹ ایڈ سرٹیفکیٹس کی ایک تیز اور محفوظ قدم میں تصدیق کریں۔ ایک سرکاری اور قابل اعتماد خدمت جو سرکاری اور نجی اداروں کے سامنے آپ کے سرٹیفکیٹ کی اصلیت کی ضمانت دیتی ہے۔",
-    },
-  },
-  "latest-news": {
-    ar: {
-      title: "آخر الأخبار | منصة أمان",
-      description: "اطلع على آخر أخبار منصة أمان وفعالياتها ومستجداتها في مجال الإسعافات الأولية.",
-    },
-    en: {
-      title: "Latest News | Aman Platform",
-      description: "Stay up to date with the latest news, events, and updates from the Aman platform.",
-    },
-    fr: {
-      title: "Dernières actualités | Plateforme Aman",
-      description:
-        "Restez informé des dernières actualités, événements et mises à jour de la plateforme Aman.",
-    },
-    fil: {
-      title: "Pinakabagong Balita | Aman Platform",
-      description:
-        "Manatiling updated sa pinakabagong balita, mga kaganapan, at mga update mula sa Aman platform.",
-    },
-    id: {
-      title: "Berita Terbaru | Platform Aman",
-      description: "Ikuti berita terbaru, acara, dan pembaruan dari platform Aman.",
-    },
-    ur: {
-      title: "تازہ ترین خبریں | امان پلیٹ فارم",
-      description: "امان پلیٹ فارم کی تازہ ترین خبروں، تقریبات، اور تازہ کاریوں سے باخبر رہیں۔",
     },
   },
   "privacy-policy": {
