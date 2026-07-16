@@ -26,7 +26,8 @@ return new class extends Migration
             $table->json('wrong_d')->nullable();
             $table->enum('correct_answer', array_map(fn($case) => $case->value, AnswerOption::cases()));
             $table->string('allowed_time')->default('04:00:00');
-            $table->json('appears_at')->default('{"ar": "00:00:00", "en": "00:00:00", "fr": "00:00:00", "ur": "00:00:00", "fil": "00:00:00", "id": "00:00:00"}');
+            // MySQL 8 rejects a literal DEFAULT on JSON columns; default is set on the model instead (see App\Models\Question::$attributes).
+            $table->json('appears_at')->nullable();
             $table->json('wrong_answer_audio_urls');
             $table->timestamps();
 

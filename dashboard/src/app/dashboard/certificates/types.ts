@@ -35,18 +35,12 @@ export interface Datum {
   title: string
   description: string
   length: string
-  price: string
-  final_price: null
-  discount: string
   view_counter: string
   view_complete_counter: string
   deleted_at: null
   certificate_url: string
   questions: Question[]
   scenes: Scene[]
-  total_price: string
-  total_paid: string
-  total_discount: string
 }
 
 export interface Question {

@@ -34,8 +34,6 @@ class UserResource extends JsonResource
 
         $this->userVideos?->loadMissing(['video', 'user', 'userInfo']);
 
-        $data['coupons'] = array_unique($this->userVideos?->whereNotNull('coupon_code')->pluck('coupon_code')->toArray() ?? []);
-
         // if request->video_ids return only the videos that are in the request->video_ids
         if($request->video_ids){
             $data['userVideos'] =  $this->userVideos ? UserInformationVideoResource::collection($this->userVideos?->where('status', VideoPaymentStatus::Accepted->value)->whereIn('video_id', $request->video_ids)) : null;

@@ -3,7 +3,6 @@ export interface Video {
   color: string
   logo: string
   certificate_url: string
-  price: string
   title: Langs
   description: Langs
   length: string

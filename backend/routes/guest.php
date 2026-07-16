@@ -8,7 +8,6 @@ use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Admin\PartnerController;
 use App\Http\Controllers\Admin\VideoController;
 use App\Http\Controllers\User\ContactController;
-use App\Http\Controllers\Admin\PaymentController;
 use App\Http\Controllers\Admin\TawiaController;
 use App\Http\Controllers\Admin\StoryController;
 use App\Http\Controllers\FileController;
@@ -60,15 +59,6 @@ Route::post('uploadFile', [FileController::class, 'uploadFile'])->name('guest.up
 Route::resource('contacts', ContactController::class)->names('guest.contacts')->only(['store']);
 // End::Contact ===================================================== //
 
-// Start::Payment ===================================================== //
-Route::post('payments/callback', [PaymentController::class, 'edfaPayCallback'])->name('guest.payment.edfaPayCallback');
-Route::post('payments/callback2', [PaymentController::class, 'edfaPayCallback2'])->name('guest.payment.edfaPayCallback2');
-Route::get('payments/status', [PaymentController::class, 'checkPaymentStatus'])->name('guest.payment.status');
-Route::get('payments/dev-check-status', [PaymentController::class, 'devCheckPaymentStatus'])->name('guest.payment.dev-check-status');
-Route::get('payments/dev-check-status/{id}', [PaymentController::class, 'devCheckPaymentStatusById'])->name('guest.payment.dev-check-status-by-id');
-Route::get('payments/user-videos/{id}/status', [PaymentController::class, 'paymentStatus'])->name('guest.payment.user-videos.status');
-// End::Payment ===================================================== //
-
 // Start::Story ===================================================== //
 Route::resource('stories', StoryController::class)->names('guest.stories')->only(['index', 'show', 'store']);
 // End::Story ===================================================== //
@@ -93,10 +83,6 @@ Route::resource('rates', RateController::class)->names('guest.rates')->only(['in
 Route::get('map/country-statistics', [MapController::class, 'countryStatistics'])->name('guest.map.country-statistics');
 // End::Map ===================================================== //
 
-
-Route::prefix('test')->group(function () {
-    // Route::post('edfaPayment', [TestController::class, 'edfaPayment'])->name('guest.payment.edfaPayment');
-});
 
 Route::get('test', function (Request $request) {
     return $request->all();

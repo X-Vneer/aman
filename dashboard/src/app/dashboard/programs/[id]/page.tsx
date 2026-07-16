@@ -31,8 +31,6 @@ const EditProgram = () => {
     logo: data.logo,
     color: data.color,
     certificate_url: data.certificate_url,
-    price: data.price,
-    price_original: data.price_original,
     title: data.title,
     description: data.description,
     time: parseTime(data.length),

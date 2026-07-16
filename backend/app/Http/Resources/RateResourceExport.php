@@ -16,7 +16,6 @@ class RateResourceExport extends JsonResource
             'user_email' => $this->user?->email,
             'user_mobile' => $this->user?->mobile,
             'video_title' => $this->video?->title,
-            'coupon_code' => $this->userVideo?->coupon_code,
             'certificate_number' => $this->userVideo?->certificate_number,
             'certificate_url' => $this->userVideo?->certificate_url,
             'rate_1' => $this->rate_1,

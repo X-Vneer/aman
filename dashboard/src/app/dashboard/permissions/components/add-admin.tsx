@@ -43,19 +43,10 @@ const AddAdmin = () => {
       permissions: {
         Overview: false,
         Website_Management: false,
-        Coupon: {
-          Add: false,
-          Edit: false,
-          Export: false,
-        },
         User: {
           Add: false,
           Edit: false,
           Delete: false,
-          Export: false,
-        },
-        Financial: {
-          Edit: false,
           Export: false,
         },
       },

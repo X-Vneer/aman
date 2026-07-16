@@ -77,200 +77,16 @@
     },
     "title": "التواصل والاستفسارات"
   },
-  "coupons": {
-    "add": {
-      "form": {
-        "amount-input-label": "قيمة الخصم",
-        "amount-input-placeholder": "قيمة الخصم",
-        "cancel-button": "الغاء",
-        "code-input-label": "الرمز",
-        "code-input-placeholder": "ادخل الرمز",
-        "date_end-input-label": "تاريخ الإنتهاء",
-        "date_end-input-placeholder": "تاريخ الإنتهاء",
-        "date_start-input-label": "تاريخ البدء",
-        "date_start-input-placeholder": "تاريخ البدء",
-        "generate-code": "توليد ",
-        "has_form-input-label": "إظهار نموذج معلومات المستخدم",
-        "langs-input-label": "اختر اللغة",
-        "langs-input-placeholder": "اختر اللغة",
-        "max_customer_uses-input-label": "عدد الاستخدامات لكل مستخدم",
-        "max_customer_uses-input-placeholder": "عدد الاستخدامات لكل مستخدم",
-        "max_uses-input-label": "إجمالي عدد الاستخدامات",
-        "max_uses-input-placeholder": "إجمالي عدد الاستخدامات",
-        "name-input-label": "الاسم",
-        "name-input-placeholder": "اسم القسيمة",
-        "save-button": "حفظ",
-        "type-input-fixed-label": "مبلغ ثابت",
-        "type-input-label": "نوع الخصم",
-        "type-input-percentage-label": "نسبة %",
-        "type-input-placeholder": "نوع الخصم",
-        "video_ids-input-label": "اختر البرنامج التدريبي",
-        "video_ids-input-placeholder": "اختر البرنامج التدريبي"
-      },
-      "success": "تم اضافة كود الخصم بنجاح",
-      "title": "إضافة قسيمة جديدة"
-    },
-    "add-button": "اضافة جديد",
-    "edit": {
-      "success": "تم تعديل كود الخصم بنجاح",
-      "title": "تعديل قسيمة"
-    },
-    "table": {
-      "code": "الرمز",
-      "discount": "نسبة الخصم (٪)",
-      "end-date": "تاريخ الانتهاء",
-      "is-active": "التفعيل",
-      "more": "الاجراء",
-      "name": "المعرف",
-      "start-date": "تاريخ البدء",
-      "status": "الحالة",
-      "status-label": {
-        "active": "فعال",
-        "expired": "منتهي الصلاحية",
-        "inactive": "غير نشط"
-      },
-      "used-by": "عدد الاستخدامات",
-      "used-by-info": "عدد استخدامات القسيمة في عمليات الدفع الناجحة سواء أكمل البرنامج وحصل على شهادة أم لا"
-    },
-    "title": "الخصومات والعروض الترويجية",
-    "toggle-error": "تعذر تحديث حالة القسيمة",
-    "view": {
-      "amount": "قيمة الخصم",
-      "code": "الرمز",
-      "date_end": "تاريخ الإنتهاء",
-      "date_start": "تاريخ البدء",
-      "discount_amount": "إجمالي مبلغ الخصم",
-      "graph": {
-        "graph-type": {
-          "all_time": "كل الوقت",
-          "custom": "مخصص",
-          "daily": "يومي",
-          "hourly": "هذا اليوم",
-          "monthly": "شهري ",
-          "weekly": "اسبوعي",
-          "yearly": "سنوي"
-        },
-        "title": "إحصائيات القسيمة"
-      },
-      "langs": " اللغة",
-      "max_customer_uses": "عدد الاستخدامات لكل مستخدم",
-      "name": "الاسم",
-      "number_of_users": "عدد الاستخدامات",
-      "paid_amount": "إجمالي المبلغ المدفوع",
-      "paid_amount_after_discount": "إجمالي المبلغ المدفوع بعد الخصم",
-      "table": {
-        "date": "تاريخ الاستخدام",
-        "mobile": "رقم الهاتف",
-        "name": "الاسم",
-        "number_of_time_used": "عدد مرات الاستخدام",
-        "percentage": "إجمالي المبلغ المخصوم",
-        "video_title": "البرامج",
-        "price": "السعر"
-      },
-      "title": "تفاصيل القسيمة",
-      "type": "نوع الخصم",
-      "type-fixed": "مبلغ ثابت",
-      "type-percentage": "نسبة %",
-      "video_ids": "اختر البرنامج التدريبي"
-    }
-  },
-  "filters": {
-    "coupon-filter": {
-      "label": "كود الخصم",
-      "placeholder": "ادخل كود الخصم"
-    },
-    "payment-methods": {
-      "card": "دفع مباشر",
-      "coupon": "دفع بقسيمة"
-    }
-  },
-  "financial": {
-    "edit-button": "تحرير الاسعار",
-    "filters": {
-      "coupon-presence": {
-        "label": "القسيمة عند الشراء",
-        "placeholder": "اختر خياراً أو أكثر",
-        "with": "مع رمز قسيمة",
-        "without": "بدون قسيمة"
-      }
-    },
-    "reset-user-video": {
-      "cancel": "إلغاء",
-      "confirm": "هل تريد إعادة تعيين اشتراك \"{{user}}\" في \"{{program}}\"؟",
-      "description": "إذا لم يكن المستخدم قد حصل على الشهادة بعد، فسيتم حذف تقدمه وإجاباته وسيبدأ من السؤال الأول.",
-      "failure": {
-        "title": "فشلت عملية إعادة التعيين"
-      },
-      "ok": "نعم، إعادة التعيين",
-      "success": {
-        "message": "تمت إعادة تعيين تقدم المستخدم لهذا البرنامج.",
-        "title": "تمت إعادة التعيين"
-      },
-      "title": "إعادة تعيين الاشتراك"
-    },
-    "title": "الإدارة المالية",
-    "total-revenue": "إجمالي الإيرادات",
-    "update": {
-      "current-price-label": "السعر الحالي",
-      "new-price-label": "السعر جديد",
-      "save-button": "حفظ",
-      "title": "تحرير الأسعار",
-      "unit": "ريال"
-    },
-    "users": {
-      "table": {
-        "coupon_code": "كود الخصم",
-        "discount_value": "تخفيض",
-        "id": "المعرف",
-        "mobile": "رقم الهاتف",
-        "name": "الاسم",
-        "order_id": "رقم الطلب",
-        "paid": "مدفوع",
-        "payment_method": "طريقة الدفع",
-        "price": "سعر",
-        "program": "برنامج التدريب",
-        "tax_value": "ضريبة",
-        "transaction": "حالة الدفع",
-        "transaction_date": "تاريخ المعاملة"
-      }
-    },
-    "transaction-details": {
-      "title": "تفاصيل المعاملة",
-      "error": "خطأ في تحميل تفاصيل المعاملة",
-      "details": "تفاصيل المعاملة",
-      "history": "سجل الدفع",
-      "basic-info": "المعلومات الأساسية",
-      "id": "رقم المعاملة",
-      "order-id": "رقم الطلب",
-      "trans-id": "رقم المعاملة (البوابة)",
-      "hash": "التشفير",
-      "status": "الحالة",
-      "result": "النتيجة",
-      "card": "البطاقة",
-      "created-at": "تاريخ الإنشاء",
-      "request": "بيانات الطلب",
-      "response": "بيانات الاستجابة",
-      "no-history": "لا يوجد سجل لاستدعاءات الدفع",
-      "action": "الإجراء",
-      "amount": "المبلغ",
-      "methods": "طريقة الدفع",
-      "card-brand": "نوع البطاقة",
-      "rrn": "RRN",
-      "decline-reason": "سبب الرفض",
-      "full-data": "عرض بيانات الطلب الكاملة"
-    }
-  },
+  "filters": {},
   "form-information": {
     "title": "نماذج المستخدمين"
   },
   "general": {
-    "discounts": "خصومات",
     "language": "اللغة",
     "logo-width": "390*324 بكسل",
     "question": "سؤال",
     "replace-logo": "استبدال الصورة",
     "scene": "مشهد",
-    "taxes": "ضريبة",
     "yes": "نعم",
     "no": "لا",
     "delete": "حذف"
@@ -285,7 +101,6 @@
     "action-error-title": "حصل خطأ ما",
     "action-success-notification-title": "تمت العملية بنجاح",
     "apply": "تطبيق",
-    "coupon-filter": "كود الخصم",
     "date": "التاريخ",
     "dates-filter": "التاريخ",
     "delete": "حذف",
@@ -311,7 +126,6 @@
     "filters": "فلترة",
     "lang": "اللغة",
     "logout-button": "تسجيل الخروج",
-    "payment-method": "طريقة الدفع",
     "program": "برنامج التدريب",
     "programs": "البرامج التدريبية",
     "reports": "التقارير",
@@ -345,13 +159,8 @@
       "weekly": "هذا الاسبوع",
       "yearly": "آخر ثلاث سنوت"
     },
-    "revenue-graph": {
-      "title": "إجمالي الإيرادات",
-      "y-axis-label": "الايرادات"
-    },
     "statistics": {
       "total_certificates": "اجمالي الشهادات",
-      "total_revenue": "إجمالي الإيرادات",
       "total_users": "إجمالي المستخدمين"
     },
     "user-graph": {
@@ -362,14 +171,7 @@
       "table": {
         "id": "المعرف",
         "name": "الاسم",
-        "program": "برنامج التدريب",
-        "transaction": "حالة الدفع",
-        "transaction-status": {
-          "accepted": "مكتمل",
-          "rejected": "غير مكتمل",
-          "uncompleted": "قيد المراجعة",
-          "underreview": "معلق"
-        }
+        "program": "برنامج التدريب"
       }
     }
   },
@@ -396,8 +198,6 @@
       "awareness": "التوعيات",
       "certificate": "قالب الشهادة",
       "contacts": "التواصل والاستفسارات",
-      "coupons": "الخصومات والعروض الترويجية",
-      "financial": "الإدارة المالية",
       "form-information": "نماذج المستخدمين",
       "home": "الرئيسية",
       "manage-site": "إدارة الموقع",
@@ -413,7 +213,6 @@
       "news": "آخر الأخبار"
     }
   },
-  "no-coupon": "دفع مباشر",
   "not-completed": "لم يشترك في برنامج",
   "stories": {
     "title": "قصص المستخدم",
@@ -583,11 +382,9 @@
       "permissions": {
         "Add": "اضافة جديد",
         "Awareness": "التوعية",
-        "Coupon": "الخصومات والعروض الترويجية",
         "Delete": "حذف",
         "Edit": "تعديل",
         "Export": "تصدير التقارير",
-        "Financial": "الإدارة المالية",
         "Overview": "نظرة عامة والتقارير",
         "Programs": "البرامج",
         "User": "إدارة المستخدمين",
@@ -600,10 +397,8 @@
       "save-button": "حفظ"
     },
     "roles": {
-      "Accountant": "محاسب ",
       "Admin": "مدير عام",
-      "Marketer": "مسؤول تسويق",
-      "Seller": "مسؤول مبيعات"
+      "Marketer": "مسؤول تسويق"
     },
     "title": "فريق العمل",
     "view": {
@@ -623,8 +418,6 @@
         "description-placeholder": "أدخل وصف البرنامج",
         "lenght-label": "أذكر وقت نهاية الفيديو",
         "logo-width": "390*324 بكسل",
-        "price": "السعر",
-        "price-description": "{{final}} ريال شامل الضريبة {{tax}}",
         "replace-logo": "استبدال الصورة",
         "video-color-label": "لون البرنامج",
         "video-color-placeholder": "حدد اللون",
@@ -730,10 +523,6 @@
     "certificate-count": {
       "title": "إجمالي الشهادات"
     },
-    "coupon-filter-notice": {
-      "certificates": "عند الفلتر بقسيمة الخصم، إجمالي عدد الشهادات لا يمثل عدد استخدامات القسيمة، لأن ليس كل من استخدم القسيمة اكمل البرنامج حتي الحصول علي الشهاده",
-      "users": "إجمالي عدد المستخدمين لا يمثل عدد استخدامات القسيمة ولا مجموع اشتراكات البرامج، لأن المستخدم الواحد قد يكون مشتركًا في أكثر من برنامج."
-    },
     "general": {
       "filters": {
         "date_from": "من تاريخ",
@@ -780,7 +569,6 @@
     "title": "تعيين كلمة مرور جديدة"
   },
   "reviews": {
-    "coupon-filter-notice": "إجمالي النتائج لا يمثل عدد الاستخدامات الفعلية لقسائم الخصم، لأن ليس كل من استخدم القسيمة أكمل البرنامج حتى مرحلة التقييم.",
     "filters": {
       "email": "البريد الإلكتروني",
       "rate": "التقييم",
@@ -883,9 +671,6 @@
         "id": "Indonesian",
         "title": "اللغات"
       },
-      "payment-methods": {
-        "title": "حدد طريقة الدفع"
-      },
       "programs": {
         "title": "البرامج"
       }
@@ -906,7 +691,6 @@
     },
     "table": {
       "certificate_count": "عدد الشهادات",
-      "coupon": "القسيمة",
       "id": "المعرف",
       "lang": "اللغة",
       "mobile": "رقم الهاتف",
@@ -922,13 +706,9 @@
       }
     },
     "title": "إدارة المستخدمين",
-    "coupon-filter-notice": "العدد الظاهر يمثل عدد المستخدمين الذين استخدموا القسيمة، وليس عدد مرات استخدامها. المستخدم الذي استخدمها أكثر من مرة يُحتسب مرة واحدة.",
-    "toggle-error": "تعذر تحديث حالة القسيمة",
     "view": {
       "certificate_count": "عدد الشهادات",
       "correct_answers": "عدد الاجابات الصحيحة",
-      "coupons": "القسائم",
-      "currency": "ريال سعودي",
       "current_time": "نقطة التوقف الحالية",
       "download-certificate": "تحميل الشهادة ",
       "email": "البريد الالكتروني",
@@ -937,15 +717,12 @@
       "id": "المعرف",
       "lang": "اللغة",
       "mobile": "رقم الهاتف",
-      "paid": "المدفوع ل{{value}}",
       "statistics": "احصائيات",
       "title": "معلومات المستخدم",
-      "total_paid": "إجمالي المبالغ المدفوعة",
       "training_program": "دورة تدريبية",
       "video_played": "تشغيل الفيديو",
       "view_certificate": "عرض الشهادة",
       "certificate_number": "رقم الشهادة",
-      "coupon_code": "رمز القسيمة",
       "created_at": "تاريخ التسجيل",
       "updated_at": "آخر تحديث",
       "regenerate_certificate": {
@@ -973,21 +750,6 @@
         "countdown_message": "يرجى الانتظار بينما يتم إنشاء الشهادة بالاسم الجديد. سيتم تحديث الصفحة تلقائياً."
       }
     }
-  },
-  "users-info": {
-    "certificate_count": "عدد الشهادات",
-    "id": "المعرف",
-    "lang": "اللغة",
-    "mobile": "رقم الهاتف",
-    "modal-title": "معلومات المستخدم",
-    "name": "اسم العميل",
-    "payment_method": "طريقة الدفع ",
-    "payment_status": "حالة الدفع",
-    "program": "برنامج التدريب",
-    "reject_reason": "سبب الرفض",
-    "title": "معلومات المستخدمين",
-    "transaction_date": "تاريخ المعاملة",
-    "transaction_id": "المعرف"
   },
   "story": {
     "approve": "موافقة",

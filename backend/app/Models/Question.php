@@ -10,6 +10,14 @@ class Question extends Model
 {
      use HasFactory, HasTranslations;
 
+    /**
+     * DB-level default for the JSON `appears_at` column is not possible on MySQL 8,
+     * so the fallback is applied here at the application layer.
+     */
+    protected $attributes = [
+        'appears_at' => '{"ar": "00:00:00", "en": "00:00:00", "fr": "00:00:00", "id": "00:00:00"}',
+    ];
+
     protected $fillable = [
         'video_id',
         'question',

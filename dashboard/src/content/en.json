@@ -77,200 +77,16 @@
     },
     "title": "Contact and Inquiries"
   },
-  "coupons": {
-    "add": {
-      "form": {
-        "amount-input-label": "Discount Amount",
-        "amount-input-placeholder": "Discount Amount",
-        "cancel-button": "Cancel",
-        "code-input-label": "Code",
-        "code-input-placeholder": "Enter Code",
-        "date_end-input-label": "End Date",
-        "date_end-input-placeholder": "End Date",
-        "date_start-input-label": "Start Date",
-        "date_start-input-placeholder": "Start Date",
-        "generate-code": "Generate",
-        "has_form-input-label": "Show user information form",
-        "langs-input-label": "Choose Language",
-        "langs-input-placeholder": "Choose Language",
-        "max_customer_uses-input-label": "Number of Uses per User",
-        "max_customer_uses-input-placeholder": "Number of Uses per User",
-        "max_uses-input-label": "Total Number of Uses",
-        "max_uses-input-placeholder": "Total Number of Uses",
-        "name-input-label": "Name",
-        "name-input-placeholder": "Coupon Name",
-        "save-button": "Save",
-        "type-input-fixed-label": "Fixed",
-        "type-input-label": "Discount Type",
-        "type-input-percentage-label": "Percentage %",
-        "type-input-placeholder": "Discount Type",
-        "video_ids-input-label": "Choose Training Program",
-        "video_ids-input-placeholder": "Choose Training Program"
-      },
-      "success": "Discount code added successfully",
-      "title": "Add New Coupon"
-    },
-    "add-button": "Add New",
-    "edit": {
-      "success": "Discount code updated successfully",
-      "title": "Edit Coupon"
-    },
-    "table": {
-      "code": "Code",
-      "discount": "Discount Rate (%)",
-      "end-date": "End Date",
-      "is-active": "Activation",
-      "more": "More",
-      "name": "ID",
-      "start-date": "Start Date",
-      "status": "Status",
-      "status-label": {
-        "active": "Active",
-        "expired": "Expired",
-        "inactive": "Inactive"
-      },
-      "used-by": "Number of Uses",
-      "used-by-info": "Number of coupon uses in successful payments, whether the program was completed and a certificate was issued or not"
-    },
-    "title": "Discounts and Promotions",
-    "toggle-error": "Unable to update coupon status",
-    "view": {
-      "amount": "Discount Amount",
-      "code": "Code",
-      "date_end": "End Date",
-      "date_start": "Start Date",
-      "discount_amount": "Total Discount Amount",
-      "graph": {
-        "graph-type": {
-          "all_time": "All Time",
-          "custom": "Custom Range",
-          "daily": "Daily",
-          "hourly": "24 hour",
-          "monthly": "Monthly ",
-          "weekly": "Weekly",
-          "yearly": "Yearly"
-        },
-        "title": "Coupon Statistics"
-      },
-      "langs": "Language",
-      "max_customer_uses": "Number of Uses per User",
-      "name": "Name",
-      "number_of_users": "Number of Uses",
-      "paid_amount": "Total Amount Paid",
-      "paid_amount_after_discount": "Total Amount Paid after Discount",
-      "table": {
-        "date": "Usage Date",
-        "mobile": "Phone",
-        "name": "Name",
-        "number_of_time_used": "Number of Times Used",
-        "percentage": "Total Amount Discounted",
-        "video_title": "Programms",
-        "price": "Price"
-      },
-      "title": "Coupon Details",
-      "type": "Discount Type",
-      "type-fixed": "Fixed",
-      "type-percentage": "Percentage %",
-      "video_ids": "Choose Training Program"
-    }
-  },
-  "filters": {
-    "coupon-filter": {
-      "label": "Coupon code",
-      "placeholder": "Enter coupon code"
-    },
-    "payment-methods": {
-      "card": "Direct payment",
-      "coupon": "Coupon code"
-    }
-  },
-  "financial": {
-    "edit-button": "Edit Prices",
-    "filters": {
-      "coupon-presence": {
-        "label": "Coupon on purchase",
-        "placeholder": "Select one or more",
-        "with": "With coupon code",
-        "without": "Without coupon"
-      }
-    },
-    "reset-user-video": {
-      "cancel": "Cancel",
-      "confirm": "Reset \"{{user}}\"'s subscription to \"{{program}}\"?",
-      "description": "If the user hasn't earned the certificate yet, their progress and answers will be cleared and they'll restart from the first question.",
-      "failure": {
-        "title": "Reset failed"
-      },
-      "ok": "Yes, reset",
-      "success": {
-        "message": "The user's progress for this program has been reset.",
-        "title": "Reset complete"
-      },
-      "title": "Reset subscription"
-    },
-    "title": "Financial Management",
-    "total-revenue": "Total Revenue",
-    "update": {
-      "current-price-label": "Current Price",
-      "new-price-label": "New Price",
-      "save-button": "Save",
-      "title": "Edit Prices",
-      "unit": "ILS"
-    },
-    "users": {
-      "table": {
-        "coupon_code": "Coupon Code",
-        "discount_value": "Discount",
-        "id": "ID",
-        "mobile": "Phone",
-        "name": "Name",
-        "order_id": "Order ID",
-        "paid": "Paid",
-        "payment_method": "Payment Method",
-        "price": "Price",
-        "program": "Training Program",
-        "tax_value": "VAT",
-        "transaction": "Payment Status",
-        "transaction_date": "Transaction Date"
-      }
-    },
-    "transaction-details": {
-      "title": "Transaction Details",
-      "error": "Error loading transaction details",
-      "details": "Transaction Details",
-      "history": "Payment History",
-      "basic-info": "Basic Information",
-      "id": "Transaction ID",
-      "order-id": "Order ID",
-      "trans-id": "Transaction ID (Gateway)",
-      "hash": "Hash",
-      "status": "Status",
-      "result": "Result",
-      "card": "Card",
-      "created-at": "Created At",
-      "request": "Request Data",
-      "response": "Response Data",
-      "no-history": "No payment callback history found",
-      "action": "Action",
-      "amount": "Amount",
-      "methods": "Payment Method",
-      "card-brand": "Card Brand",
-      "rrn": "RRN",
-      "decline-reason": "Decline Reason",
-      "full-data": "View Full Request Data"
-    }
-  },
+  "filters": {},
   "form-information": {
     "title": "Form Information"
   },
   "general": {
-    "discounts": "Discounts",
     "language": "Language",
     "logo-width": "390*324 pixels",
     "question": "Question",
     "replace-logo": "Replace image",
     "scene": "Scene",
-    "taxes": "Taxes",
     "yes": "Yes",
     "no": "No",
     "delete": "Delete"
@@ -285,7 +101,6 @@
     "action-error-title": "An error occurred",
     "action-success-notification-title": "Operation completed successfully",
     "apply": "Apply",
-    "coupon-filter": "Coupon",
     "date": "Date",
     "dates-filter": "Time",
     "delete": "Delete",
@@ -311,7 +126,6 @@
     "filters": "Filters",
     "lang": "Language",
     "logout-button": "Log out",
-    "payment-method": "Payment method",
     "program": "Training Program",
     "programs": "Training Program",
     "reports": "Reports",
@@ -345,13 +159,8 @@
       "weekly": "Current Week",
       "yearly": "Last thee years"
     },
-    "revenue-graph": {
-      "title": "Total Revenue",
-      "y-axis-label": "Revenue"
-    },
     "statistics": {
       "total_certificates": "Total Certificates",
-      "total_revenue": "Total Revenue",
       "total_users": "Total Users"
     },
     "user-graph": {
@@ -362,14 +171,7 @@
       "table": {
         "id": "ID",
         "name": "Name",
-        "program": "Training Program",
-        "transaction": "Payment Status",
-        "transaction-status": {
-          "accepted": "Completed",
-          "rejected": "Uncompleted",
-          "uncompleted": "Under Review",
-          "underreview": "Under Review"
-        }
+        "program": "Training Program"
       }
     }
   },
@@ -396,8 +198,6 @@
       "awareness": "Awareness information",
       "certificate": "Certificate Template",
       "contacts": "Contact and Inquiries",
-      "coupons": "Discounts and Promotions",
-      "financial": "Financial Management",
       "form-information": "Form information",
       "home": "Home",
       "manage-site": "Website Management",
@@ -413,7 +213,6 @@
       "news": "Latest News"
     }
   },
-  "no-coupon": "No Coupon",
   "not-completed": "Not completed",
   "stories": {
     "title": "User stories",
@@ -583,11 +382,9 @@
       "permissions": {
         "Add": "Add New",
         "Awareness": "Awareness information",
-        "Coupon": "Discounts and Promotions",
         "Delete": "Delete",
         "Edit": "Edit",
         "Export": "Export Reports",
-        "Financial": "Financial Management",
         "Overview": "Overview and Reports",
         "Programs": "Manage programs",
         "User": "User Management",
@@ -600,10 +397,8 @@
       "save-button": "Save"
     },
     "roles": {
-      "Accountant": "Accountant",
       "Admin": "Admin",
-      "Marketer": "Marketer",
-      "Seller": "Seller"
+      "Marketer": "Marketer"
     },
     "title": "Team Members",
     "view": {
@@ -623,8 +418,6 @@
         "description-placeholder": "Enter program description",
         "lenght-label": "Mention Video end time ",
         "logo-width": "390*324 pixels",
-        "price": "Price",
-        "price-description": "{{final}} riyal including VAT {{tax}}",
         "replace-logo": "Replace a image",
         "video-color-label": "Program color",
         "video-color-placeholder": "Select color",
@@ -730,10 +523,6 @@
     "certificate-count": {
       "title": "Total Certificates"
     },
-    "coupon-filter-notice": {
-      "certificates": "When filtering by a discount coupon, the total certificate count does not represent the number of coupon uses.",
-      "users": "The total user count does not represent coupon uses, nor the sum of program subscriptions, since a single user may be enrolled in multiple programs."
-    },
     "general": {
       "filters": {
         "date_from": "From Date",
@@ -780,7 +569,6 @@
     "title": "Set a new password"
   },
   "reviews": {
-    "coupon-filter-notice": "The total results do not represent the actual number of coupon uses, since not every user who used a coupon completed the program through the rating stage.",
     "filters": {
       "email": "Email",
       "rate": "Rating",
@@ -887,9 +675,6 @@
         "id": "Indonesian",
         "title": "Languages"
       },
-      "payment-methods": {
-        "title": "Select Payment Method"
-      },
       "programs": {
         "title": "Programs"
       }
@@ -910,7 +695,6 @@
     },
     "table": {
       "certificate_count": "Number of Certificates",
-      "coupon": "Coupon",
       "id": "ID",
       "lang": "Language",
       "mobile": "Phone",
@@ -926,13 +710,9 @@
       }
     },
     "title": "User Management",
-    "coupon-filter-notice": "This count reflects the number of users who used the coupon, not the total uses. A user who used it multiple times is counted once.",
-    "toggle-error": "Unable to update coupon status",
     "view": {
       "certificate_count": "Number of Certificates",
       "correct_answers": "Number of Correct Answers",
-      "coupons": "Coupons",
-      "currency": "ILS",
       "current_time": "Current Stop Point",
       "download-certificate": "Download Certificate",
       "email": "Email",
@@ -941,15 +721,12 @@
       "id": "ID",
       "lang": "Language",
       "mobile": "Phone",
-      "paid": "Paid to {{value}}",
       "statistics": "Statistics",
       "title": "User Information",
-      "total_paid": "Total Amount Paid",
       "training_program": "Training Course",
       "video_played": "Video Played",
       "view_certificate": "View Certificate",
       "certificate_number": "Certificate number",
-      "coupon_code": "Coupon Code",
       "created_at": "Registered",
       "updated_at": "Last updated",
       "regenerate_certificate": {
@@ -977,21 +754,6 @@
         "countdown_message": "Please wait while the certificate with the new name is being generated. The page will refresh automatically."
       }
     }
-  },
-  "users-info": {
-    "certificate_count": "Number of Certificates",
-    "id": "ID",
-    "lang": "Language",
-    "mobile": "Phone",
-    "modal-title": "User Information",
-    "name": "Customer Name",
-    "payment_method": "Payment Method",
-    "payment_status": "Payment Status",
-    "program": "Training Program",
-    "reject_reason": "Reason for Rejection",
-    "title": "User Information",
-    "transaction_date": "Transaction Date",
-    "transaction_id": "Transaction ID"
   },
   "story": {
     "approve": "Approve",

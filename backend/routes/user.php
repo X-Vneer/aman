@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\Admin\CouponController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\QuestionController;
 use App\Http\Controllers\Admin\ScenesController;
@@ -58,9 +57,4 @@ Route::get('user-videos/{certificate_number}/pdf', [UserVideoController::class, 
 // Start::Story ===================================================== //
 Route::resource('stories', StoryController::class)->names('user.stories')->only(['index', 'show']);
 // End::Story ===================================================== //
-
-
-// Start::Coupon ===================================================== //
-Route::get('coupons/check', [CouponController::class, 'checkCoupon'])->name('user.checkCoupon');
-// End::Coupon ===================================================== //
 

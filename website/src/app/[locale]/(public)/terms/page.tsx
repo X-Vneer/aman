@@ -105,8 +105,7 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                   <strong>الدخول على الموقع</strong>
                 </p>
                 <p>
-                  الدخول على موقعنا متاح للعموم مع وجود رسوم رمزية للدخول إلى البرامج مع أحقية إدارة الموقع
-                  بتغيير الأسعار للبرامج دون إذن أو إشعار مسبق .
+                  الدخول على موقعنا وبرامجه متاح للعموم مجاناً.
                 </p>
                 <p>
                   لكننا لا نضمن أن يكون موقعنا، أو أي من محتوياته متاحاً بصورة دائمة بدون انقطاع. يُسمح
@@ -421,18 +420,11 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                   الإنجاز ويمنع تزوير الشهادات حيث إنها مرتبطة بمركز المعلومات بالموقع حسب رقم الشهادة.
                 </p>
                 <p>
-                  <strong>التسجيل وتسديد الرسوم</strong>
-                </p>
-                <p>مع مراعاة ما تقدم، يطلب منكم دفع رسوم قبل بدء البرنامج التوعوي على موقعنا.</p>
-                <p>
-                  يتم تجهيز معلومات الدفع الخاصة بكم من قبل بائع طرف ثالث، وسيتم إعادة توجيهكم إلى موقع آمن
-                  لإتمام عملية الدفع. ويحدد بيان الخصوصية المنشور في الصفحة المقصودة للموقع الذي يديره بائع
-                  الطرف الثالث المعني كيفية تقديم ومعالجة تفاصيل الدفع الخاصة بكم. فيرجى الاطلاع على هذه
-                  الشروط قبل الشروع في أية عملية من هذا القبيل.
+                  <strong>التسجيل</strong>
                 </p>
                 <p>
-                  بمجرد الإنتهاء من معاملات الدفع الخاصة بكم، فإنه سوف يتم إعادة توجيهكم إلى صفحة تأكيد الدفع
-                  على موقعنا وستتلقون رسالة تأكيد من خلال رقم الجوال المسجل.
+                  جميع البرامج التوعوية على موقعنا متاحة مجاناً. بعد تسجيل الدخول يمكنكم بدء أي برنامج
+                  مباشرة والحصول على شهادة الإنجاز عند إتمامه.
                 </p>
                 <p>
                   <strong>توثيق صحة البيانات</strong>
@@ -487,16 +479,12 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                 </p>
                 <p>&nbsp;</p>
                 <p>
-                  <strong>سياسة الاسترداد</strong>
+                  <strong>الوصول إلى البرامج</strong>
                 </p>
                 <p>
-                  نود أن نوضح أن قيمة البرامج المدفوعة على منصتنا غير قابلة للاسترداد، سواء تم الدفع باستخدام
-                  رمز ترويجي أو بدونه. بقبولك لهذه الشروط، فإنك توافق على عدم استرداد أي مبالغ تم دفعها.
-                </p>
-                <p>
-                  بمجرد إتمام عملية الدفع، ستحصل على صلاحية الوصول إلى البرنامج مدى الحياة. نؤكد على أهمية
-                  الحفاظ على حسابك، حيث يمنع منعًا باتًا بيع حسابك أو الترويج له للآخرين. أي انتهاك لهذا الشرط
-                  قد يعرضك المساءلة القانونية
+                  جميع البرامج على منصتنا متاحة مجاناً، وستحصل على صلاحية الوصول إلى البرنامج مدى الحياة. نؤكد
+                  على أهمية الحفاظ على حسابك، حيث يمنع منعًا باتًا بيع حسابك أو الترويج له للآخرين. أي انتهاك
+                  لهذا الشرط قد يعرضك المساءلة القانونية
                 </p>
                 <p>روابط وموارد الأطراف الثالثة المتاحة في موقعنا</p>
                 <p>
@@ -612,11 +600,7 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                 <p>
                   <strong>Login to the site</strong>
                 </p>
-                <p>
-                  Our website is open to the public.There is a nominal fee to access the programs, with the
-                  site management having the right to change the prices of the programs without prior
-                  permission or notice..
-                </p>
+                <p>Our website and its programs are open to the public free of charge.</p>
                 <p>
                   However, we do not guarantee that our site, or any content on it, will always be available
                   or be uninterrupted. Access to our site is permitted on a temporary basis. We may suspend,
@@ -958,23 +942,12 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                   the information center on the site according to the certificate number.
                 </p>
                 <p>
-                  <strong>Registration and payment of fees</strong>
+                  <strong>Registration</strong>
                 </p>
                 <p>
-                  Subject to the above, you are required to pay a fee.Before starting the awareness programOn
-                  our website.
-                </p>
-                <p>
-                  Your payment information is processed by a third party vendor and you will be redirected to
-                  a secure site to complete your payment. The privacy statement posted on the landing page of
-                  the site operated by the relevant third party vendor sets out how your payment details are
-                  provided and processed. Please review these terms before proceeding with any such
-                  transaction..
-                </p>
-                <p>
-                  Once your payment transactions are completed, you will be redirected to a confirmation
-                  page.PaymentOn our website and you will receive a confirmation message.Through the
-                  registered mobile number.
+                  All awareness programs on our website are available free of charge. Once you are logged in,
+                  you can start any program immediately and receive a certificate of achievement upon
+                  completing it.
                 </p>
                 <p>
                   <strong>Data Validation</strong>
@@ -1033,18 +1006,13 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                 </p>
                 <p>&nbsp;</p>
                 <p>
-                  <strong>Refund Policy</strong>
+                  <strong>Access to Programs</strong>
                 </p>
                 <p>
-                  We would like to clarify that the value of paid programs on our platform is non-refundable,
-                  whether or not payment was made using a promotional code. By accepting these terms, you
-                  agree that no refunds will be given to any amounts paid.
-                </p>
-                <p>
-                  Once you complete the payment process, you will have lifetime access to the program. We
-                  emphasize the importance of maintaining your account, as it is strictly prohibited to sell
-                  or promote your account to others. Any violation of this condition may expose you
-                  toAccountabilityLegal
+                  All programs on our platform are available free of charge, and you will have lifetime access
+                  to the program. We emphasize the importance of maintaining your account, as it is strictly
+                  prohibited to sell or promote your account to others. Any violation of this condition may
+                  expose you toAccountabilityLegal
                 </p>
                 <p>
                   <strong>Third Party Links and Resources Available on Our Site</strong>

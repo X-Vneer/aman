@@ -24,7 +24,7 @@ const Page = async (props: {
   const searchParams = await props.searchParams
   const session = await auth()
   if (session) {
-    // If courseId exists, redirect to course page (which will redirect to payment if no access)
+    // If courseId exists, redirect to the course page (backend auto-enrolls and plays it)
     // Otherwise, use callbackUrl or default to /start
     if (searchParams.courseId) {
       redirect({ href: `/course/${searchParams.courseId}`, locale: params.locale })

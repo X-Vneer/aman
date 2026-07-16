@@ -26,17 +26,13 @@ class ReportCertificateGraph
     private $video_ids = null;
     private $date_from = null;
     private $date_to = null;
-    private $coupon = null;
-    private $payment_method = null;
 
-    function __construct($langs_filter = null, $video_ids = null, $date_from = null, $date_to = null, $coupon = null, $payment_method = null)
+    function __construct($langs_filter = null, $video_ids = null, $date_from = null, $date_to = null)
     {
         $this->langs_filter = $langs_filter;
         $this->video_ids = $video_ids;
         $this->date_from = $date_from;
         $this->date_to = $date_to;
-        $this->coupon = $coupon;
-        $this->payment_method = $payment_method;
         $this->month = Carbon::now()->format('m');
         $this->year = Carbon::now()->format('y');
         $this->videos = Video::withTrashed()->get();
@@ -88,16 +84,6 @@ class ReportCertificateGraph
             if(count($this->langs_filter)> 0){
                 $this->items =  $this->items->whereIn('lang', $this->langs_filter);
             }
-        }
-
-        if($this->coupon){
-            $this->items =  $this->items->where('coupon_code', $this->coupon);
-        }
-
-        if($this->payment_method == 'coupon'){
-            $this->items =  $this->items->whereNotNull('coupon_code');
-        }else if($this->payment_method == 'card'){
-            $this->items =  $this->items->whereNull('coupon_code');
         }
     }
 

@@ -33,7 +33,7 @@ import { useTranslation } from "react-i18next"
 import { DeleteUser } from "../delete-user"
 import { GetUsers } from "../get-users"
 import { User as UserType } from "../types"
-const tableHead = ["id", "name", "mobile", "coupon", "certificate_count", "program", "lang", "more"] as const
+const tableHead = ["id", "name", "mobile", "certificate_count", "program", "lang", "more"] as const
 const SORTABLE: Record<string, string> = {
   id: "id",
   name: "first_name",
@@ -164,24 +164,6 @@ const TableCom = () => {
                       </Link>
                     </Table.Td>
                     <Table.Td className="text-center">{user.mobile}</Table.Td>
-                    <Table.Td className="text-center">
-                      {user.coupons?.length ? (
-                        <Group py="sm" gap={"xs"} justify="center">
-                          {user.coupons?.map((coupon, index) => (
-                            <Badge
-                              key={typeof coupon === "string" ? coupon : coupon.code}
-                              color={langs[user.lang].color}
-                              rightSection={
-                                <Box bg={langs[user.lang].color} className="size-1.5 rounded-full"></Box>
-                              }>
-                              {typeof coupon === "string" ? coupon.toUpperCase() : coupon.code.toUpperCase()}
-                            </Badge>
-                          ))}
-                        </Group>
-                      ) : (
-                        t("no-coupon")
-                      )}
-                    </Table.Td>
                     <Table.Td className="text-center">{user.certificate_count}</Table.Td>
                     <Table.Td className="text-center">
                       <>

@@ -2,12 +2,8 @@
 
 namespace App\Http\Requests;
 
-use App\Enums\CouponType;
-use App\Enums\CouponTypeStatus;
 use App\Helpers\CustomFormRequest;
-use App\Models\Coupon;
-use App\Models\Video;
-use Illuminate\Contracts\Validation\Validator; 
+use Illuminate\Contracts\Validation\Validator;
 
 class ShowUserVideoRequest extends CustomFormRequest
 {

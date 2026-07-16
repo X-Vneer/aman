@@ -41,13 +41,6 @@ export interface UserVideo {
   view_counter: string
   view_complete_counter: string
   is_rated: string
-  price: string
-  coupon_id: string
-  coupon_code: string
-  discount_value: string
-  final_price: string
-  paid: string
-  outstanding_payment: string
   status: string
   certificate_url: null | string
   certificate_qr_code: null | string

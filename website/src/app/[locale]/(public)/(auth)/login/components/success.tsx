@@ -16,7 +16,7 @@ const Success = (props: Props) => {
   const t = useTranslations("login.success")
 
   // handle change mobile
-  // If courseId exists, redirect to course page (which will redirect to payment if no access)
+  // If courseId exists, redirect to the course page (backend auto-enrolls and plays it)
   // Otherwise, use callbackUrl or default to /start
   const redirectUrl = courseId ? `/course/${courseId}` : callbackUrl || `/start`
 

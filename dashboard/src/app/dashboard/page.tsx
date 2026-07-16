@@ -1,15 +1,13 @@
 import ActiveFiltersBar from "@/components/common/active-filters-bar"
 import DateFilter from "@/components/common/date-filter"
 import { useGraphDateAndProgramChips } from "@/hooks/use-dashboard-active-filter-chips"
-import { RiyalIcon } from "@/components/icons"
-import { BarChart, DonutChart, LineChart } from "@mantine/charts"
+import { DonutChart, LineChart } from "@mantine/charts"
 import { Divider, Group, Paper, SimpleGrid, Stack, Text } from "@mantine/core"
 import { useSuspenseQueries } from "@tanstack/react-query"
-import { CircleDollarSign, GraduationCap, Users } from "lucide-react"
+import { GraduationCap, Users } from "lucide-react"
 import { useOptimisticSearchParams } from "nuqs/adapters/react-router/v7"
 import { useTranslation } from "react-i18next"
 import { GetGeneralStatistics } from "./get-general-statistics"
-import { GetRevenueGraph } from "./get-revenue-graph"
 import { GetUserGraph } from "./get-user-graph"
 import { GetCertificates } from "./reports/get-certificates"
 import { generateSearchParams } from "./reports/page"
@@ -20,17 +18,10 @@ const generalStatistics = [
   {
     key: "total_certificates",
     Icon: GraduationCap,
-    unit: null,
-  },
-  {
-    key: "total_revenue",
-    Icon: CircleDollarSign,
-    unit: "ILS",
   },
   {
     key: "total_users",
     Icon: Users,
-    unit: null,
   },
 ] as const
 
@@ -55,7 +46,7 @@ const DataCell = ({
           {t(`home.statistics.${keyToRender.key}`)}
         </Text>
         <Text size="2xl" fw={600}>
-          {statistics[keyToRender.key]} {keyToRender.unit ? <RiyalIcon /> : null}
+          {statistics[keyToRender.key]}
         </Text>
       </Stack>
     </Paper>
@@ -80,10 +71,6 @@ const Home = () => {
         queryFn: () => GetUserGraph(newSearchParams),
       },
       {
-        queryKey: ["home", "revenueGraph", newSearchParams.toString()],
-        queryFn: () => GetRevenueGraph(newSearchParams),
-      },
-      {
         queryKey: ["reports", "certificates", "graph", newSearchParams.toString()],
         queryFn: () => GetCertificates(newSearchParams),
       },
@@ -92,8 +79,7 @@ const Home = () => {
 
   const generalStatisticsQuery = queries[0]
   const userGraphQuery = queries[1]
-  const revenueGraphQuery = queries[2]
-  const certificateGraph = queries[3]
+  const certificateGraph = queries[2]
   const rawType = searchParams.get("dates") as (typeof GraphType)[number]
   const type = GraphType.includes(rawType) ? rawType : "daily"
 
@@ -182,27 +168,7 @@ const Home = () => {
             />
           </Group>
         </Paper>
-
-        <Paper component={Stack} gap={"lg"} p="lg" className="grow" radius="md">
-          <Group justify="space-between">
-            <Text size="lg" fw={600}>
-              {t("home.revenue-graph.title")}
-            </Text>
-          </Group>
-          <Divider color="gray.1" />
-          <BarChart
-            h={210}
-            data={revenueGraphQuery["data"][type] || []}
-            dataKey={"x"}
-            series={[{ name: "y", label: t("home.revenue-graph.y-axis-label"), color: "#18BDBE" }]}
-            barProps={{ radius: [10, 10, 0, 0] }}
-            tickLine="y"
-            yAxisLabel={t("home.revenue-graph.y-axis-label")}
-          />
-        </Paper>
       </Group>
-
-      {/* <UsersInfo /> */}
     </Stack>
   )
 }

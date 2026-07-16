@@ -9,7 +9,6 @@ import DateFilter from "./components/date-filter"
 import Filters from "./components/filters"
 import TableCom from "./components/table"
 import { GetUsers } from "./get-users"
-import CouponFilter from "../reports/components/coupon-filter"
 
 const FormInformation = () => {
   const { t } = useTranslation()
@@ -39,7 +38,6 @@ const FormInformation = () => {
           />
           <Filters />
           <DateFilter />
-          <CouponFilter />
         </Group>
       </Group>
       <ActiveFiltersBar chips={activeFilterChips} />

@@ -1,4 +1,3 @@
-import { RiyalIcon } from "@/components/icons"
 import useColors from "@/hooks/use-colors"
 import { useParams } from "@/lib/i18n/navigation"
 import { ActionIcon, Badge, Button, Group, Paper, SimpleGrid, Stack, Text, Title, Tooltip } from "@mantine/core"
@@ -196,12 +195,6 @@ const ViewUser = () => {
                   </Text>
                 </div>
                 <div>
-                  <Text c="gray.8">{t(`users.view.coupon_code`)}</Text>
-                  <Text size="lg" fw={500}>
-                    {userVideo.coupon_code || "—"}
-                  </Text>
-                </div>
-                <div>
                   <Text c="gray.8">{t(`users.view.created_at`)}</Text>
                   <TimestampTooltip value={userVideo.created_at} />
                 </div>
@@ -282,44 +275,16 @@ const ViewUser = () => {
         <Paper component={Stack} radius={"lg"} className="p-3 md:p-5">
           <Title order={3}>{t("users.view.statistics")}</Title>
           <SimpleGrid cols={{ base: 1, md: 2 }}>
-            <div>
-              <Text c="gray.8">{t(`users.view.total_paid`)}</Text>
-              <Text size="lg" fw={500}>
-                {user.userVideos.reduce((acc, curr) => acc + Number(curr.paid), 0).toFixed()} <RiyalIcon />
-              </Text>
-            </div>
-            <div>
-              <Text c="gray.8">{t(`users.view.coupons`)}</Text>
-              <Group py="sm" gap={"xs"}>
-                {user.coupons?.map((coupon, index) => (
-                  <Badge radius={"md"} size="xl" color="secondary" key={index}>
-                    {typeof coupon === "string" ? coupon.toUpperCase() : coupon.code.toUpperCase()}
-                  </Badge>
-                ))}
-              </Group>
-            </div>
             {user.userVideos.map((video) => {
               return (
-                <React.Fragment key={video.video_id}>
-                  <div>
-                    <Text c="gray.8">{t(`users.view.training_program`)}</Text>
-                    <Text size="lg" fw={500}>
-                      <Badge variant="light" size="lg" color={colors?.[video.video_id]}>
-                        {video.video_title}
-                      </Badge>
-                    </Text>
-                  </div>
-                  <div>
-                    <Text c="gray.8">
-                      {t(`users.view.paid`, {
-                        value: lang == "ar" ? video.video_title.slice(1) : video.video_title,
-                      })}
-                    </Text>
-                    <Text size="lg" fw={500}>
-                      {video.paid} <RiyalIcon />
-                    </Text>
-                  </div>
-                </React.Fragment>
+                <div key={video.video_id}>
+                  <Text c="gray.8">{t(`users.view.training_program`)}</Text>
+                  <Text size="lg" fw={500}>
+                    <Badge variant="light" size="lg" color={colors?.[video.video_id]}>
+                      {video.video_title}
+                    </Badge>
+                  </Text>
+                </div>
               )
             })}
           </SimpleGrid>

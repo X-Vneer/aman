@@ -152,13 +152,6 @@ class RateController extends BaseApiController {
                 });
             }
 
-            if($request->coupon_code){
-                $items = $items->whereHas('userVideo', function ($qq) use($request) {
-                    $qq->where('coupon_code', 'LIKE', "%{$request->coupon_code}%");
-                    return $qq;
-                });
-            }
-
             if($request->langs){
                 $items = $items->whereHas('userVideo', function ($qq) use($request) {
                     $qq->whereIn('lang', $request->langs);

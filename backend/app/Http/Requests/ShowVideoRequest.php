@@ -12,9 +12,7 @@ class ShowVideoRequest extends CustomFormRequest
     /**
      * Route `{video}` is resolved in VideoController via Video::resolveIdFromRouteParameter (slug or id).
      */
-    protected $roles = [
-        'coupon' => 'nullable|string|max:191',
-    ];
+    protected $roles = [];
 
     public function rules()
     {

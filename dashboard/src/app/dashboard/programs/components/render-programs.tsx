@@ -1,5 +1,4 @@
 import Loader from "@/components/common/loader"
-import { RiyalIcon } from "@/components/icons"
 import usePermissions from "@/hooks/use-permissions"
 import { Link } from "@/lib/i18n/navigation"
 import { getVideos } from "@/services/utils/get-videos"
@@ -93,10 +92,6 @@ const RenderPrograms = () => {
                 </Group>
               </Stack>
               <Group mt={"sm"} align="center" justify="space-between" wrap="nowrap" gap="xs">
-                <Text>
-                  {element.price}
-                  <RiyalIcon />
-                </Text>
                 <Text
                   size="sm"
                   c="dimmed"

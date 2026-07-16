@@ -3,9 +3,7 @@
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\AdminHomeController;
 use App\Http\Controllers\Admin\BlogController;
-use App\Http\Controllers\Admin\CouponController;
 use App\Http\Controllers\Admin\FaqController;
-use App\Http\Controllers\Admin\FinancialManagementController;
 use App\Http\Controllers\Admin\MapController;
 use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Admin\PartnerController;
@@ -36,7 +34,6 @@ Route::Delete('deleteFile', [FileController::class, 'deleteFile'])->name('admin.
 // Start::AdminHome ===================================================== //
 Route::get('home/statistics', [AdminHomeController::class, 'statistics'])->name('admin.home.statistics');
 Route::get('home/user-graph', [AdminHomeController::class, 'userGraph'])->name('admin.home.user-graph');
-Route::get('home/revenue-graph', [AdminHomeController::class, 'revenueGraph'])->name('admin.home.revenue-graph');
 Route::get('home/user-information', [AdminHomeController::class, 'userInformation'])->name('admin.home.user-information');
 // End::AdminHome ===================================================== //
 
@@ -49,15 +46,6 @@ Route::get('report/general-graph', [ReportController::class, 'generalGraph'])->n
 Route::get('report/certificate-graph', [ReportController::class, 'certificateGraph'])->name('admin.report.certificate-graph');
 Route::get('report/user-graph', [ReportController::class, 'userGraph'])->name('admin.report.user-graph');
 // End::Report ===================================================== //
-
-// Start::FinancialManagement ===================================================== //
-Route::get('financial-management/statistics', [FinancialManagementController::class, 'statistics'])->name('admin.financial-management.statistics');
-Route::get('financial-management/user-information', [FinancialManagementController::class, 'userInformation'])->name('admin.financial-management.userInformation');
-Route::get('financial-management/video-graph', [FinancialManagementController::class, 'videoGraph'])->name('admin.financial-management.video-graph');
-Route::put('financial-management/videos/price/update', [FinancialManagementController::class, 'updatePrice'])->name('admin.financial-management.video-price-update');
-Route::get('financial-management/transactions/{id}/details', [FinancialManagementController::class, 'transactionDetails'])->name('admin.financial-management.transaction-details');
-
-// End::FinancialManagement ===================================================== //
 
 // Start::Admin ===================================================== //
 Route::resource('admins', AdminController::class)->names('admin.admins');
@@ -133,18 +121,6 @@ Route::put('contacts/{contact}/toggleActive/{state}', [ContactController::class,
 Route::post('contacts/{contact}/reply', [ContactController::class, 'reply'])
     ->where(['id' => '[0-9]+'])->name('admin.contacts.reply');
 // End::Contact ===================================================== //
-
-// Start::Coupon ===================================================== //
-Route::resource('coupons', CouponController::class)->names('admin.coupons');
-
-Route::put('coupons/{coupon}/toggleActive/{state}', [couponController::class, 'toggleActive'])
-    ->where(['id' => '[0-9]+', 'state' => 'true|false'])->name('admin.coupons.toggleActive');
-
-Route::get('coupons/{coupon}/users', [couponController::class, 'couponUsers'])
-    ->where(['id' => '[0-9]+'])->name('admin.coupons.couponUsers');
-Route::get('coupons/{coupon}/graph', [couponController::class, 'couponGraph'])
-    ->where(['id' => '[0-9]+'])->name('admin.coupons.couponGraph');
-// End::Coupon ===================================================== //
 
 // Start::Story ===================================================== //
 Route::resource('stories', StoryController::class)->names('admin.stories');

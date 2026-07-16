@@ -37,9 +37,6 @@ export interface Notificationable {
   evaluation?: null
   current_time?: string
   video_played?: string
-  coupon_code?: string
-  price?: string
-  paid?: string
   certificate_url?: null
   certificate_number?: null
   is_certificate_generated?: boolean

@@ -24,11 +24,6 @@ class UserInformationResource extends JsonResource
             'video_id' => $this->video_id,
             'program' => $title,
             'color' => $this->color,
-            'price' => number_format($this->price, 2, '.', ''),
-            'discount_value' => number_format($this->discount_value, 2, '.', ''),
-            'tax_value' => number_format($this->tax_value, 2, '.', ''),
-            'paid' => number_format($this->paid, 2, '.', ''),
-            'coupon_code' => $this->coupon_code?? __('msg.noCoupon'),
             'lang' => $this->lang,
             'name' => $this->full_name??  $this->mobile,
         ];
@@ -45,16 +40,9 @@ class UserInformationResource extends JsonResource
             'email' => $this->email,
             'deleted_at' => $this->deleted_at,
         ];
-        $brand = data_get(json_decode($this->response, true), 'responseBody.brand', null);
-        $payment_method = $title? ($this->final_price == 0 ?  '  Coupon 100%' : ($this->card ? 'Card Payment' . ($brand ? ' - ' . $brand : '') : 'Apple Pay' . ($brand ? ' - ' . $brand : ''))) : null;
         $data['transaction'] = [
-            'brand' => $brand,
-            'id' => $this->transaction?->id,
-            'order_id' => $this->order_id ?? null,
-            'payment_method' => $this->status == VideoPaymentStatus::Accepted->value ?  $payment_method : '-',
-            'payment_status' => $this->status, //($title != null && $this->status == VideoPaymentStatus::Accepted->value)? VideoPaymentStatus::Accepted->value : null,
+            'payment_status' => $this->status,
             'transaction_date' => $this->created_at?? $this->user_created_at,
-            'reject_reason' => null,
         ];
 
 
@@ -71,14 +59,8 @@ class UserInformationResource extends JsonResource
                     'full_name' => $this->full_name,
                     'certificate_count' => $this->certificate_count,
                     'email' => $this->email,
-                    'payment_method' => $this->final_price == 0 ? 'Coupon 100%' : ($this->card ? 'Card Payment' : 'Apple Pay'),
                     'payment_status' => ($title != null && $this->status == VideoPaymentStatus::Accepted->value)? VideoPaymentStatus::Accepted->value : null,
                     'transaction_date' => $this->created_at ? Carbon::parse($this->created_at)->toDateTimeString() : null,
-                    'transaction_brand' => $brand,
-                    'transaction_id' => $this->transaction_id ?? null,
-                    'transaction_order_id' => $this->order_id ?? null,
-                    'transaction_payment_method' => $this->status == VideoPaymentStatus::Accepted->value ?  $payment_method : '-',
-                    'transaction_payment_status' => $this->status,
             ];
         }
         return $data;

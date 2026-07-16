@@ -45,16 +45,9 @@ export default async function Layout(props: {
     )
   } catch (error) {
     console.log("🚀 ~ error:", error)
+    // Backend auto-enrolls on open, so a valid course no longer 403s here.
+    // Any genuine API error means the certificate isn't available.
     if (axios.isAxiosError(error)) {
-      if (error.response?.status === 403) {
-        redirect({
-          href: {
-            pathname: `/payment/${params.course_id}`,
-          },
-          locale: params.locale,
-        })
-      }
-
       notFound()
     }
 

@@ -18,7 +18,6 @@ class UserResourceExport extends JsonResource
     public function toArray(Request $request): array
     {
         $userVideos = null;
-        $coupons = null;
 
         // if request->video_ids return only the videos that are in the request->video_ids
         if($request->video_ids){
@@ -26,7 +25,6 @@ class UserResourceExport extends JsonResource
         }else{
             $userVideos = implode(', ', UserInformationVideoResource::collection($this->userVideos?->where('status', VideoPaymentStatus::Accepted->value))->pluck('video.title')->toArray());
         }
-        $coupons = implode(', ', array_unique($this->userVideos?->whereNotNull('coupon_code')->pluck('coupon_code')->toArray() ?? []));
 
         $data = [
             'id' => $this->id,
@@ -52,7 +50,6 @@ class UserResourceExport extends JsonResource
         ];
 
         $data['userVideos'] = $userVideos;
-        $data['coupons'] = $coupons;
         $data =  toString($data);
 
         // $data['programs'] = $this->userVideos ? $this->userVideos->map(function ($item) {

@@ -27,17 +27,13 @@ class GeneralGraph
     private $video_ids = null;
     private $date_from = null;
     private $date_to = null;
-    private $coupon = null;
-    private $payment_method = null;
 
-    function __construct($langs_filter = null, $video_ids = null, $date_from = null, $date_to = null, $coupon = null, $payment_method = null)
+    function __construct($langs_filter = null, $video_ids = null, $date_from = null, $date_to = null)
     {
         $this->langs_filter = $langs_filter;
         $this->video_ids = $video_ids;
         $this->date_from = $date_from;
         $this->date_to = $date_to;
-        $this->coupon = $coupon;
-        $this->payment_method = $payment_method;
         $this->day = Carbon::now()->format('d');
         $this->month = Carbon::now()->format('m');
         $this->year = Carbon::now()->format('y');
@@ -101,21 +97,11 @@ class GeneralGraph
     function itemsInit() {
         $this->items = User::query();
 
-        if($this->video_ids || $this->coupon){
+        if($this->video_ids){
             $video_ids = $this->video_ids;
-            $coupon = $this->coupon?? null;
-            $payment_method = $this->payment_method?? null;
-            $this->items =  $this->items->whereHas('userVideos', function ($q) use($video_ids, $coupon, $payment_method) {
+            $this->items =  $this->items->whereHas('userVideos', function ($q) use($video_ids) {
                if($video_ids){
                     $q = $q->whereIn('video_id', $video_ids);
-               }
-               if($coupon){
-                    $q = $q->where('coupon_code', $coupon);
-               }
-               if($payment_method == 'coupon'){
-                    $q = $q->whereNotNull('coupon_code');
-               }else if($payment_method == 'card'){
-                    $q = $q->whereNull('coupon_code');
                }
                return $q;
             });

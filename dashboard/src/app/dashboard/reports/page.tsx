@@ -4,9 +4,9 @@ import ActiveFiltersBar from "@/components/common/active-filters-bar"
 import { useReportsActiveFilterChips } from "@/hooks/use-dashboard-active-filter-chips"
 import { useSmallScreen } from "@/hooks/use-small-screen"
 import { LineChart } from "@mantine/charts"
-import { Alert, Box, Button, Divider, Group, Paper, Stack, Text } from "@mantine/core"
+import { Box, Button, Divider, Group, Paper, Stack, Text } from "@mantine/core"
 import { useSuspenseQueries } from "@tanstack/react-query"
-import { CloudDownload, TriangleAlert } from "lucide-react"
+import { CloudDownload } from "lucide-react"
 import { parseAsArrayOf, parseAsString, useQueryState } from "nuqs"
 import { useOptimisticSearchParams } from "nuqs/adapters/react-router/v7"
 import { useTranslation } from "react-i18next"
@@ -114,9 +114,6 @@ const Reports = () => {
   const userGraph = queries[2]
 
   const [langs, setLangs] = useQueryState("langs[]", parseAsArrayOf(parseAsString).withDefault([]))
-  const [coupon] = useQueryState("coupon", parseAsString.withDefault(""))
-  const [showCertificatesNotice, setShowCertificatesNotice] = React.useState(true)
-  const [showUsersNotice, setShowUsersNotice] = React.useState(true)
   const allSeries = [
     { name: "y_ar", label: t("langs.ar"), color: "#18BDBE" },
     { name: "y_en", label: t("langs.en"), color: "#F16238" },
@@ -171,35 +168,11 @@ const Reports = () => {
         </Box>
       </Paper>
 
-      {coupon && showCertificatesNotice ? (
-        <Alert
-          color="yellow"
-          variant="light"
-          icon={<TriangleAlert size={18} />}
-          withCloseButton
-          onClose={() => setShowCertificatesNotice(false)}
-          data-export-hide="true"
-          className="print:hidden">
-          {t("reports.coupon-filter-notice.certificates")}
-        </Alert>
-      ) : null}
       <LineBarGraph
         title={t("reports.certificate-count.title")}
         title_label={t("global.total-certificates-count")}
         data={certificateGraph.data}
       />
-      {coupon && showUsersNotice ? (
-        <Alert
-          color="yellow"
-          variant="light"
-          icon={<TriangleAlert size={18} />}
-          withCloseButton
-          onClose={() => setShowUsersNotice(false)}
-          data-export-hide="true"
-          className="print:hidden">
-          {t("reports.coupon-filter-notice.users")}
-        </Alert>
-      ) : null}
       <LineBarGraph
         key={"user-graph"}
         title={t("reports.users-count.title")}

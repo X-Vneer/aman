@@ -15,7 +15,6 @@ use App\Http\Traits\Controller\IndexTrait;
 use App\Http\Traits\Controller\ShowTrait;
 use App\Http\Traits\Controller\ToggleActiveTrait;
 use App\Models\Video;
-use App\Services\GetNewPriceService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -77,12 +76,6 @@ class VideoController extends BaseApiController
         }
 
         return $this->showInit($id, function ($item) use ($request) {
-            if ($request->coupon) {
-                $service = new GetNewPriceService($item->id, $request->coupon);
-                $item->newPrice = $service->price;
-                $item->coupon = $service->coupon_code;
-            }
-
             return [$item];
         }, auth('admin')->check());
     }

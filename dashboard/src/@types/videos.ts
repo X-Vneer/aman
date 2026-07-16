@@ -36,16 +36,12 @@ export interface Video {
   title: string
   description: string
   length: string
-  price: string
   view_counter: string
   view_complete_counter: string
   deleted_at: null
   certificate_url: string
   questions: Question[]
   scenes: Scene[]
-  total_price: string
-  total_paid: string
-  total_discount: string
   is_new?: boolean
   /** `New` | `Updated` from API, or omitted / null when cleared */
   status?: "New" | "Updated" | null

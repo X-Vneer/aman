@@ -41,22 +41,12 @@ export interface Video {
   description: string
   length: string
   color: string
-  price: string
-  price_original: string
-  coupon: null
-  final_price: string
-  discount: string
-  tax_percentage: string
-  tax_value: string
   view_counter: string
   view_complete_counter: string
   deleted_at: null
   certificate_url: string
   questions: Question[]
   scenes: Scene[]
-  total_price: string
-  total_paid: string
-  total_discount: string
 }
 
 export interface Question {

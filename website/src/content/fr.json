@@ -354,39 +354,6 @@
       "title": "Continuer à se connecter"
     }
   },
-  "payment": {
-    "choose-method": "Nous prenons en charge les méthodes de paiement suivantes",
-    "coupon": {
-      "coupon-button": "Appliquer",
-      "coupon-code-applied": "Le code de coupon a été appliqué",
-      "errors": {
-        "invalidCoupon": "Code de réduction invalide"
-      },
-      "input-placeholder": "Entrez votre code de réduction"
-    },
-    "next-button": "Suivant",
-    "options": {
-      "apple": {
-        "description": "",
-        "value": "Apple Pay"
-      },
-      "card": {
-        "description": "Payez en toute sécurité avec Visa, MasterCard ou Mada.",
-        "value": "Carte de crédit"
-      }
-    },
-    "price": {
-      "discount": "Prix avec remise",
-      "original": "Le prix du programme comprend la TVA",
-      "total": "Prix total",
-      "vat": "T.V.A."
-    },
-    "selected-course": "Le programme sélectionné",
-    "success": {
-      "button": "Suivant",
-      "title": "Paiement effectué avec succès!"
-    }
-  },
   "privacy-policy": {
     "description": "Veuillez lire la politique attentivement",
     "title": "Politique de confidentialité"

@@ -3,7 +3,6 @@
 use App\Jobs\SendFcmNotification;
 use App\Models\Setting;
 use App\Services\AuthService;
-use App\Services\GetNewPriceService;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Log;
@@ -298,11 +297,6 @@ function calculateAverageTime(array $times) {
 
     // Format the result to hh:mm:ss
     return sprintf("%02d:%02d:%02d", $hours, $minutes, $seconds);
-}
-
-function getNewPrice($video_id, $coupon_code) {
-    $service = new GetNewPriceService($video_id, $coupon_code);
-    return $service->price;
 }
 
 function trimMobile($mobile) {

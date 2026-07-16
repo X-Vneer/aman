@@ -5,7 +5,6 @@ namespace App\Models;
 use App\Enums\VideoStatus;
 use App\Http\Traits\HasSlugTrait;
 use App\Http\Traits\Model\LogoTrait;
-use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -29,10 +28,6 @@ class Video extends Model
         'description',
         'color',
         'length',
-        'price',
-        'total_price',
-        'total_paid',
-        // 'total_discount', // virtual
         'view_counter',
         'view_complete_counter',
         'is_new',
@@ -77,28 +72,6 @@ class Video extends Model
         }
 
         return null;
-    }
-
-    protected function price(): Attribute
-    {
-        return Attribute::make(
-            get: fn (string $value) => (float) $value + $this->taxValue,
-            set: fn (string $value) => (float) $value,
-        );
-    }
-
-    protected function tax(): Attribute
-    {
-        return Attribute::make(
-            get: fn () => (float) settings('tax')->set_value,
-        );
-    }
-
-    protected function taxValue(): Attribute
-    {
-        return Attribute::make(
-            get: fn () => $this->tax / 100 * $this->getRawOriginal('price'),
-        );
     }
 
     public function getCertificateUrlAttribute($value)

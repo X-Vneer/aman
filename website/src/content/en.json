@@ -215,13 +215,6 @@
     },
     "title": "Contact Us"
   },
-  "coupon": {
-    "coupon-button": "Apply",
-    "errors": {
-      "invalidCoupon": "Invalid coupon code"
-    },
-    "input-placeholder": "Enter your discount code"
-  },
   "course": {
     "course-footer": {
       "change-program-button": "All programs",
@@ -367,43 +360,6 @@
       "input-label": "Enter the verification code",
       "resend-code": "Resend",
       "title": "Continue logging in"
-    }
-  },
-  "payment": {
-    "choose-method": "We support the following payment methods",
-    "coupon": {
-      "coupon-button": "Apply",
-      "coupon-code-applied": "Coupon code has been applied",
-      "errors": {
-        "invalidCoupon": "Invalid coupon"
-      },
-      "input-placeholder": "Enter coupon code"
-    },
-    "next-button": "Next",
-    "options": {
-      "apple": {
-        "description": "",
-        "value": "Apple Pay"
-      },
-      "card": {
-        "description": "Pay securely with Visa, MasterCard, or Mada.",
-        "value": "Credit card"
-      }
-    },
-    "price": {
-      "discount": "Discount price",
-      "original": "Program Price Includes VAT",
-      "total": "Total Price",
-      "vat": "VAT"
-    },
-    "selected-course": "The selected program",
-    "success": {
-      "button": "Next",
-      "title": "Payment received successfully!"
-    },
-    "failure": {
-      "button": "Try again",
-      "title": "Payment could not be completed"
     }
   },
   "privacy-policy": {
@@ -579,10 +535,6 @@
       "title": "Real Stories <br></br> Real Heroes",
       "warrning": "*The way people handle situations in stories is not necessarily the correct approach for dealing with emergencies. At Aman, we recommend attending our awareness programs to learn the proper procedures"
     }
-  },
-  "success": {
-    "button": "Next",
-    "title": "Payment Successfully Made!"
   },
   "terms": {
     "description": "Please read the terms carefully",

@@ -51,7 +51,7 @@ const LoginWithoutOtp = (props: Props) => {
         return
       }
 
-      // If courseId exists, redirect to course page (which will redirect to payment if no access)
+      // If courseId exists, redirect to the course page (backend auto-enrolls and plays it)
       // Otherwise, use callbackUrl or default to /start
       if (courseId) {
         Router.push(`/course/${courseId}`)

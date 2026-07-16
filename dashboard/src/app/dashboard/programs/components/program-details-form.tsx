@@ -14,7 +14,6 @@ import {
   FileButton,
   Group,
   Loader,
-  NumberInput,
   SimpleGrid,
   Space,
   Stack,
@@ -38,7 +37,6 @@ export type VideoFormValues = Omit<Video, "length"> & {
     m: number
     s: number
   }
-  price_original: string
 }
 const ProgramDetailsForm = ({ initialValues }: { initialValues?: VideoFormValues }) => {
   const { id } = useParams() as { id: string }
@@ -58,8 +56,6 @@ const ProgramDetailsForm = ({ initialValues }: { initialValues?: VideoFormValues
     },
     logo: "",
     certificate_url: "",
-    price: "",
-    price_original: "",
     title: {
       ar: "",
       en: "",
@@ -265,28 +261,6 @@ const ProgramDetailsForm = ({ initialValues }: { initialValues?: VideoFormValues
                 key={form.key(`title.${lang}`)}
                 {...form.getInputProps(`title.${lang}`)}
               />
-              <Stack gap={"6"}>
-                <Group justify="space-between" wrap="nowrap">
-                  <Text>{t(`programs.add.form.price`)}</Text>
-                  <Text>
-                    {t(`programs.add.form.price-description`, {
-                      tax: "15%",
-                      final:
-                        Number(form.getValues().price_original) +
-                        (Number(form.getValues().price_original) * 15) / 100,
-                    })}
-                  </Text>
-                </Group>
-
-                <NumberInput
-                  hideControls={true}
-                  size="md"
-                  // label={t(`programs.add.form.price`)}
-                  placeholder={t("programs.add.form.price")}
-                  key={form.key(`price_original`)}
-                  {...form.getInputProps(`price_original`)}
-                />
-              </Stack>
             </SimpleGrid>
             <Textarea
               rows={3}

@@ -11,7 +11,7 @@ const IndeterminateCheckbox = ({
   formKey,
   onChange,
   ...props
-}: CheckboxProps & { formKey: "Coupon" | "User" | "Financial" | "Awareness" | "Programs" }) => {
+}: CheckboxProps & { formKey: "User" | "Awareness" | "Programs" }) => {
   const { t } = useTranslation()
   const form = useFormContext<z.infer<typeof AdminSchema>>()
   const { control } = form

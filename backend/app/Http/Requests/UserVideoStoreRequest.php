@@ -2,13 +2,9 @@
 
 namespace App\Http\Requests;
 
-use App\Enums\CouponType;
-use App\Enums\CouponTypeStatus;
 use App\Enums\VideoPaymentStatus;
 use App\Helpers\CustomFormRequest;
-use App\Models\Coupon;
 use App\Models\UserVideo;
-use App\Models\Video;
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Support\Facades\Auth;
 
@@ -37,21 +33,6 @@ class UserVideoStoreRequest extends CustomFormRequest
 
             $is_video = $video->count()>0;
             if($is_video) $validator->errors()->add('user_id', trans('youAlreadyRegisteredInThisProgram'));
-
-            if($this->coupon){
-                $coupon = Coupon::whereRaw('('.Coupon::STATUS_SQL.') = ?', [CouponTypeStatus::Active->value])
-                ->where('code', $this->coupon)->first();
-
-                $video = Video::find($this->video_id);
-
-                if(!$coupon || !in_array($this->video_id, $coupon?->video_ids)){
-                    $validator->errors()->add('coupon', trans('thisCouponIsNotExistOrExpired'));
-                }else if($coupon->type == CouponType::Fixed->value){
-                    if($video->price < $coupon->amount){
-                        $validator->errors()->add('coupon', trans('thisCouponIsNotExistOrExpired'));
-                    }
-                }
-            }
         });
     }
 }

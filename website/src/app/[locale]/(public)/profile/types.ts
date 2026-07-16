@@ -22,7 +22,6 @@ export interface User {
   certificate_count: string
   email: null | string
   deleted_at: null | string
-  coupons: any[]
   userVideos: UserVideo[]
 }
 
@@ -36,9 +35,6 @@ export interface UserVideo {
   evaluation: null | string
   current_time: string
   video_played: string
-  coupon_code: string
-  price: string
-  paid: string
   certificate_url: null | string
   certificate_number: null | string
   is_certificate_generated: boolean

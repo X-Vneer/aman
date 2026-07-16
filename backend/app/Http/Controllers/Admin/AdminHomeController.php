@@ -9,7 +9,6 @@ use App\Http\Traits\Controller\IndexTrait;
 use App\Models\User;
 use App\Models\UserVideo;
 use App\Models\Video;
-use App\Services\RevenueGraph;
 use App\Services\UserGraph;
 use Carbon\Carbon;
 use DragonCode\Contracts\Cashier\Auth\Auth;
@@ -41,10 +40,6 @@ class AdminHomeController extends BaseApiController {
             $total_certificates = (string) $baseQuery->clone()
                 ->whereNotNull('certificate_qr_code')
                 ->count();
-
-            $total_revenue = (string) $baseQuery->clone()
-                ->sum('final_price');
-            $total_revenue = (string) number_format($total_revenue, 2, '.', '');
 
             $total_users = (string) User::when($date_range[0] && $date_range[1], function($query) use ($date_range) {
                 return $query->whereBetween('created_at', [
@@ -93,7 +88,6 @@ class AdminHomeController extends BaseApiController {
 
             return $this->sendResponse(true, [
                 'total_certificates' => $total_certificates,
-                'total_revenue' => $total_revenue,
                 'total_users' => $total_users,
                 'total_certificates_statistics' => $certificates_statistics,
                 'date_range' => [
@@ -116,16 +110,6 @@ class AdminHomeController extends BaseApiController {
         }
     }
 
-    function revenueGraph(Request $request)
-    {
-        try {
-            $graph =  new RevenueGraph();
-            return $this->sendResponse(true, ['graph' => $graph] );
-        } catch (\Throwable $th) {
-            return $this->sendResponse(false, null, trans('msg.technicalError'), null, 500);
-        }
-    }
-
     function userInformation(Request $request) {
          $this->resource = UserInformationResource::class;
         $this->resourceExport = UserInformationResource::class;
@@ -134,15 +118,12 @@ class AdminHomeController extends BaseApiController {
         return $this->indexInit($request, function ($items) use($request) {
             $items = $items->leftJoin('user_videos', 'user_videos.user_id', '=', 'users.id')
             ->leftJoin('videos', 'videos.id', '=', 'user_videos.video_id')
-            ->leftJoin('transactions', 'transactions.id', '=', 'user_videos.transaction_id')
             ->select(
                 'users.id',
                 'videos.title',
                 'user_videos.video_id',
                 'user_videos.status',
-                'user_videos.final_price',
                 'user_videos.created_at',
-                'user_videos.coupon_code',
                 'users.lang',
                 'users.full_name',
                 'users.mobile',
@@ -151,10 +132,6 @@ class AdminHomeController extends BaseApiController {
                 'users.certificate_count',
                 'users.email',
                 'users.deleted_at',
-                'transactions.id as transaction_id',
-                'transactions.order_id',
-                'transactions.card',
-                'transactions.response',
             );
 
 

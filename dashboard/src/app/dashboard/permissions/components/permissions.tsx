@@ -37,19 +37,10 @@ const Permissions = () => {
       form.setValue("permissions", {
         Overview: true,
         Website_Management: true,
-        Coupon: {
-          Add: true,
-          Edit: true,
-          Export: true,
-        },
         User: {
           Add: true,
           Edit: true,
           Delete: true,
-          Export: true,
-        },
-        Financial: {
-          Edit: true,
           Export: true,
         },
         Awareness: {
@@ -69,19 +60,10 @@ const Permissions = () => {
     form.setValue("permissions", {
       Overview: false,
       Website_Management: false,
-      Coupon: {
-        Add: false,
-        Edit: false,
-        Export: false,
-      },
       User: {
         Add: false,
         Edit: false,
         Delete: false,
-        Export: false,
-      },
-      Financial: {
-        Edit: false,
         Export: false,
       },
       Awareness: {
@@ -152,8 +134,6 @@ const Permissions = () => {
             }}
           />
 
-          <IndeterminateCheckbox formKey="Coupon" />
-          <IndeterminateCheckbox formKey="Financial" />
           <IndeterminateCheckbox formKey="Awareness" />
           <IndeterminateCheckbox formKey="Programs" />
         </SimpleGrid>

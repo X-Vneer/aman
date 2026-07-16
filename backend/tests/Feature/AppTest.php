@@ -4,7 +4,6 @@ namespace Tests\Feature;
 
 use App\Models\Admin;
 use App\Models\Contact;
-use App\Models\Coupon;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\DB;
 use Tests\TestCase;
@@ -187,23 +186,4 @@ class AppTest extends TestCase
             $this->test_crud('admin.questions', $this->adminToken, 1, ['store'], $faq); 
         }
     } 
-
-
-    // Admin Dashboard Testing
-    public function test_coupon_crud(): void
-    {
-        $this->test_admin_Send_request_otp_and_login();  
-        $fak = Coupon::factory()->make()->toArray();  
-        $this->test_crud('admin.coupons', $this->adminToken, 1, ['index', 'edit', 'show', 'create', 'store', 'update', 'destroy', 'toggleActive'], $fak);
-    }
-    
-    public function test_create_coupons(): void
-    {
-        $this->test_admin_Send_request_otp_and_login(); 
-
-        for ($i=0; $i < 10; $i++) { 
-            $fak = Coupon::factory()->make()->toArray();  
-            $this->test_crud('admin.coupons', $this->adminToken, null, ['index', 'edit', 'show', 'create', 'store'], $fak);
-        }
-    }
 }

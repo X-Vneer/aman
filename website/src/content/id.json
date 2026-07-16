@@ -354,39 +354,6 @@
       "title": "Lanjutkan masuk"
     }
   },
-  "payment": {
-    "choose-method": "Kami mendukung metode pembayaran berikut",
-    "coupon": {
-      "coupon-button": "Terapkan",
-      "coupon-code-applied": "Kode kupon telah diterapkan",
-      "errors": {
-        "invalidCoupon": "Kode kupon tidak valid"
-      },
-      "input-placeholder": "Masukkan kode diskon Anda"
-    },
-    "next-button": "Berikutnya",
-    "options": {
-      "apple": {
-        "description": "",
-        "value": "Apple Pay"
-      },
-      "card": {
-        "description": "Bayar dengan aman menggunakan Visa, MasterCard, atau Mada.",
-        "value": "Kartu Kredit"
-      }
-    },
-    "price": {
-      "discount": "Harga Diskon",
-      "original": "Harga program termasuk PPN",
-      "total": "Harga Total",
-      "vat": "TONG"
-    },
-    "selected-course": "Program yang dipilih",
-    "success": {
-      "button": "Berikutnya",
-      "title": "Pembayaran berhasil dilakukan!"
-    }
-  },
   "privacy-policy": {
     "description": "Harap baca kebijakan ini dengan cermat",
     "title": "Kebijakan Privasi"

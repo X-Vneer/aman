@@ -23,20 +23,12 @@ export interface Item {
   description: Langs
   length: string
   color: string
-  price: string
-  price_original: string
-  coupon: string
-  final_price: string
-  discount: string
   view_counter: string
   view_complete_counter: string
   deleted_at: null
   certificate_url: string
   questions: Question[]
   scenes: Scene[]
-  total_price: string
-  total_paid: string
-  total_discount: string
 }
 
 export interface Question {

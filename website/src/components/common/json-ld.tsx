@@ -109,15 +109,12 @@ export interface CourseSchemaInput {
   name: string
   description: string
   image?: string
-  price?: string | null
-  finalPrice?: string | null
   url: string
   locale: string
 }
 
 export function courseSchema(input: CourseSchemaInput) {
   const baseUrl = SITE_URL.replace(/\/$/, "")
-  const price = input.finalPrice ?? input.price
 
   return {
     "@context": "https://schema.org",
@@ -133,18 +130,7 @@ export function courseSchema(input: CourseSchemaInput) {
       name: "Aman",
       url: baseUrl,
     },
-    ...(price
-      ? {
-          offers: {
-            "@type": "Offer",
-            price,
-            priceCurrency: "ILS",
-            category: "Paid",
-            url: input.url,
-            availability: "https://schema.org/InStock",
-          },
-        }
-      : { isAccessibleForFree: true }),
+    isAccessibleForFree: true,
     hasCourseInstance: [
       {
         "@type": "CourseInstance",

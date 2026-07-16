@@ -17,12 +17,10 @@ use App\Http\Traits\Controller\ShowTrait;
 use App\Http\Traits\Controller\ToggleActiveTrait;
 use App\Jobs\GenerateCertificate;
 use App\Mail\SendCertMail;
-use App\Models\Coupon;
 use App\Models\Question;
 use App\Models\User;
 use App\Models\UserAnswer;
 use App\Models\Video;
-use App\Services\EdfaPayUserVideo;
 use BaconQrCode\Renderer\Image\ImagickImageBackEnd;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Support\Facades\Auth;
@@ -63,6 +61,20 @@ class UserVideoController extends BaseApiController {
                 ->registered()
                 ->latest()->first();
 
+            // Auto-enroll: opening a course with no active registration silently
+            // creates a free Accepted enrollment, then re-runs the lookup so the
+            // certificate-dispatch block and showInit see the new row.
+            if(!$userVideo){
+                $video = Video::find($id);
+                if($video){
+                    UserVideo::create($this->enrollmentInputs($video, $request));
+                    $userVideo = UserVideo::where(['user_id'=> Auth::id(), 'video_id' => $id])
+                        ->where('status', VideoPaymentStatus::Accepted->value)
+                        ->registered()
+                        ->latest()->first();
+                }
+            }
+
             $id = $userVideo?->id?? 0;
 
             if($userVideo?->isApplicableForCertificate()) {
@@ -95,72 +107,54 @@ class UserVideoController extends BaseApiController {
     }
 
 
+    /**
+     * Shared free-enrollment input defaults used by store() and show() auto-enroll.
+     * Every enrollment is free and instantly Accepted.
+     */
+    private function enrollmentInputs(Video $video, Request $request): array
+    {
+        return [
+            'user_id'             => Auth::id(),
+            'video_id'            => $video->id,
+            'answer_average'      => 0,
+            'hearts'              => 5,
+            'total_questions'     => $video->questions->count(),
+            'correct_answers'     => 0,
+            'progress'            => 0,
+            'lang'                => $request->header('Accept-Language'),
+            'current_time'        => '00:00:00',
+            'last_question_id'    => null,
+            'certificate_url'     => null,
+            'has_form'            => 0,
+            'certificate_qr_code' => null,
+            'certificate_number'  => null,
+            'status'              => VideoPaymentStatus::Accepted->value,
+        ];
+    }
+
     public function store(UserVideoStoreRequest $request)
     {
-        // try {
-            $video = Video::find($request->video_id);
-            $coupon = null;
-            $newPrice = $video->price;
+        $video = Video::find($request->video_id);
 
-            if( $request->coupon){
-                $coupon = Coupon::where('code', $request->coupon)->first();
-                $newPrice = getNewPrice($video->id, $request->coupon);
-            }
+        $item = UserVideo::withTrashed()
+            ->where(['video_id' => $request->video_id, 'user_id' => Auth::id()])
+            ->registered()->latest()
+            ->first();
 
-            $item = UserVideo::withTrashed()->where(['video_id'=> $request->video_id, 'user_id' => Auth::id()])
-                    ->registered()->latest()
-                    ->first();
+        $inputs = $this->enrollmentInputs($video, $request);
 
-            $inputs = [
-                'user_id' => Auth::id(),
-                'video_id' => $request->video_id,
-                'answer_average' => 0,
-                'hearts' => 5,
-                'total_questions' => $video->questions->count(),
-                'correct_answers' => 0,
-                'progress' => 0,
-                'lang' => $request->header('Accept-Language'),
-                'current_time' => '00:00:00',
-                'last_question_id' => null,
-                'certificate_url' => null,
-                'price_original' => $video->getRawOriginal('price'),
-                'price' => $video->price,
-                'coupon_id' => $coupon?->id,
-                'coupon_code' => $coupon?->code,
-                'has_form' => $coupon?->has_form,
-                'discount_value' => $video->price - $newPrice,
-                'paid' => $newPrice,
-                'tax_value' => $newPrice - $newPrice/(1+($video->tax/100)),
-                'certificate_qr_code' => null,
-                'certificate_number' => null,
-            ];
+        if ($item) {
+            $item->update($inputs);
+        } else {
+            $item = $this->model::create($inputs);
+        }
 
-            if($item) {
-                $item->update($inputs);
-            }else{
-                $item = $this->model::create($inputs);
-            }
+        $item = $item->refresh();
 
-            if($newPrice > 0){
-                $edfaPayUserVideo = new EdfaPayUserVideo($request, $item);
-            }else {
-                $item->update(['status' => VideoPaymentStatus::Accepted->value]);
-            }
-
-            $item = $item->refresh();
-            // return $this->sendResponse(true, [
-            //     'redirect_url' => route('payment.redirectPayment', [ 'local'=>app()->getLocale(), 'id'=>$item->id]),
-            //     'item' => new  $this->resource($item),
-            // ], trans('Created'), null, 201, $request);
-
-            return $this->sendResponse(true, [
-                'redirect_url' => ($newPrice == 0)? config("app.platform").app()->getLocale()."/payment/".$item->video_id."?success=1" :
-                     $edfaPayUserVideo->redirect_url,
-                'item' => new  $this->resource($item),
-            ], trans('Created'), null, 201, $request);
-        // } catch (\Throwable $th) {
-        //     return $this->sendResponse(false, null, trans('msg.technicalError'), null, 500, $request);
-        // }
+        return $this->sendResponse(true, [
+            'redirect_url' => config('app.platform').app()->getLocale().'/payment/'.$item->video_id.'?success=1',
+            'item'         => new $this->resource($item),
+        ], trans('Created'), null, 201, $request);
     }
 
 

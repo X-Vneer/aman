@@ -19,7 +19,6 @@ class UserVideo extends Model
     protected $fillable = [
         'user_id', // ID of the user
         'video_id', // ID of the video
-        'transaction_id', // ID of the transaction
         'answer_average', // Average score of answers
         'hearts', // Number of hearts/likes (default: 5)
         'total_questions', // Total number of questions (default: 0)
@@ -32,18 +31,9 @@ class UserVideo extends Model
         'view_counter', // Number of views (default: 0)
         'view_complete_counter', // Number of completed views (default: 0)
         'is_rated', // Whether the video is rated (default: false)
-        'price_original', // Price without tax
-        'price', // Price including tax but without discount
-        'tax_value', // Tax value after discount
-        'coupon_id', // ID of the applied coupon
-        'coupon_code', // Code of the applied coupon
         'has_form',
 
-        'discount_value', // Discount value applied
-        // 'final_price', // Virtual column: final price after discount and tax
-        'paid', // Paid amount after discount and tax
-        // 'outstanding_payment', // Virtual column: outstanding payment
-        'status', // Payment status of the video
+        'status', // Enrollment status (free + instant = Accepted)
 
         'certificate_url', // URL of the certificate
         'certificate_qr_code', // QR code of the certificate
@@ -78,11 +68,6 @@ class UserVideo extends Model
         return evaluateMark($this->total_questions, $this->correct_answers);
     }
 
-    function getPercentageAttribute() {
-        if($this->price<1) return $this->price . ' %';
-        return  number_format(((int) $this->discount_value / (int) $this->price * 100), 2) . ' %';
-    }
-
     public function video(): HasOne
     {
         return $this->hasOne(Video::class, 'id', 'video_id')->withTrashed();
@@ -91,11 +76,6 @@ class UserVideo extends Model
     public function user(): HasOne
     {
         return $this->hasOne(User::class, 'id', 'user_id')->withTrashed();
-    }
-
-    public function transaction(): HasOne
-    {
-        return $this->hasOne(Transaction::class, 'id', 'transaction_id');
     }
 
     public function answers(): HasMany

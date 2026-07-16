@@ -10,11 +10,6 @@ export const AdminSchema = z.object({
     .object({
       Overview: z.boolean().default(false),
       Website_Management: z.boolean().default(false),
-      Coupon: z.object({
-        Add: z.boolean().default(false),
-        Edit: z.boolean().default(false),
-        Export: z.boolean().default(false),
-      }),
       User: z.object({
         Add: z.boolean().default(false),
         Edit: z.boolean().default(false),
@@ -30,10 +25,6 @@ export const AdminSchema = z.object({
         Add: z.boolean().default(false),
         Edit: z.boolean().default(false),
         Delete: z.boolean().default(false),
-      }),
-      Financial: z.object({
-        Edit: z.boolean().default(false),
-        Export: z.boolean().default(false),
       }),
     })
     .partial(),

@@ -1,5 +1,4 @@
 import { WEBSITE_LANGS } from "@/config"
-import { Coupon } from "../coupons/types"
 
 export interface UsersResponse {
   status: boolean
@@ -33,7 +32,6 @@ export interface User {
   email: null | string
   deleted_at: null
   userVideos: UserVideo[]
-  coupons?: (string | Coupon)[]
   info: {
     id: string
     gender: string
@@ -53,9 +51,6 @@ export interface UserVideo {
   evaluation: string
   current_time: string
   video_played: string
-  coupon_code: string
-  price: string
-  paid: string | null
   certificate_url: null | string
   certificate_number: string | null
   is_certificate_generated: boolean

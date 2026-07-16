@@ -358,43 +358,6 @@
       "title": "متابعة تسجيل الدخول"
     }
   },
-  "payment": {
-    "choose-method": "ندعم طرق الدفع التالية",
-    "coupon": {
-      "coupon-button": "تطبيق",
-      "coupon-code-applied": "تم تطبيق رمز القسيمة",
-      "errors": {
-        "invalidCoupon": "كود الخصم منتهي أو غير فعال"
-      },
-      "input-placeholder": "أدخل رمز الخصم الخاص بك"
-    },
-    "next-button": "التالي",
-    "options": {
-      "apple": {
-        "description": "",
-        "value": "Apple Pay"
-      },
-      "card": {
-        "description": "ادفع بشكل آمن باستخدام بطاقة فيزا, ماستر كارد، أو مدى.",
-        "value": "بطاقة إئتمان"
-      }
-    },
-    "price": {
-      "discount": "سعر الخصم",
-      "original": "شامل الضريبة",
-      "total": "السعر الإجمالي",
-      "vat": "ضريبة القيمة المضافة"
-    },
-    "selected-course": "البرنامج المحدد",
-    "success": {
-      "button": "التالي",
-      "title": "تم الدفع بنجاح!"
-    },
-    "failure": {
-      "button": "حاول مرة أخرى",
-      "title": "تعذر إتمام الدفع"
-    }
-  },
   "privacy-policy": {
     "description": "يرجى قراءة السياسة بعناية",
     "title": "سياسة الخصوصية"

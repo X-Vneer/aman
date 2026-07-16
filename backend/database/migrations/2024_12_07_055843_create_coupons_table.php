@@ -1,8 +1,5 @@
 <?php
 
-use App\Enums\CouponType;
-use App\Enums\Lang;
-use App\Models\Coupon;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -18,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name', 50);
             $table->string('code', 50)->unique();
-            $table->enum('type', array_map(fn($case) => $case->value, CouponType::cases()));
+            $table->enum('type', ['Fixed', 'Percentage']);
             $table->decimal('amount', 8, 2)->default(0);
             $table->json('video_ids')->nullable();
             $table->json('langs')->nullable();
@@ -55,22 +52,6 @@ return new class extends Migration
             $table->index(['created_at']);
             $table->index(['updated_at']);
         });
-
-        Coupon::create([
-            'name'=> 'HEALTH',
-            'code'=> 'HEALTH',
-            'type'=> CouponType::Percentage->value,
-            'amount'=> '100',
-            'video_ids'=> [1,2],
-            'langs'=> array_map(fn($case) => $case->value, Lang::cases()),
-            'date_start'=> '2025-01-01 00:00:00',
-            'date_end'=> '2025-10-01 00:00:00',
-            'max_uses'=> '1000',
-            'max_customer_uses'=> '4',
-            'uses_count'=> '0',
-            'paid_amount'=> '0',
-            'paid_amount_after_discount'=> '0',
-         ]);
     }
 
     /**

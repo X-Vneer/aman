@@ -24,7 +24,6 @@ class UserVideoResource extends JsonResource
             'id' => $this->id,
             'user_id' => $this->user_id,
             'video_id' => $this->video_id,
-            'transaction_id' => $this->transaction_id,
             'answer_average' => $this->answer_average == 0? '00:00:00' : $this->answer_average,
             'hearts' => $this->hearts,
             'total_questions' => $this->total_questions,
@@ -38,14 +37,7 @@ class UserVideoResource extends JsonResource
             'view_counter' => $this->view_counter,
             'view_complete_counter' => $this->view_complete_counter,
             'is_rated' => $this->is_rated,
-            'price' => $this->price,
-            'coupon_id' => $this->coupon_id,
-            'coupon_code' =>  $this->coupon_code,
             'has_form' => $this->has_form,
-            'discount_value' => $this->discount_value,
-            'final_price' => $this->final_price,
-            'paid' => $this->paid,
-            'outstanding_payment' => $this->outstanding_payment,
             'status' => $this->status,
 
             'certificate_url' => $this->certificate_url,
@@ -60,7 +52,6 @@ class UserVideoResource extends JsonResource
         $data['is_rated'] =  $this->is_rated == "0"? false : true;
         $data['is_certificate_generated'] = $this->is_certificate_generated == "0"? false : true;
         $data['is_new'] = (bool) ($this->video?->is_new ?? 0);
-        $data['coupon_code'] = $this->coupon_code;
         $data['has_form'] = $this->has_form? true : false;
 
         $data['has_form'] = $data['has_form'] && $this->userInfo?->id? false : $data['has_form'];

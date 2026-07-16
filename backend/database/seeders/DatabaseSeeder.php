@@ -24,22 +24,6 @@ class DatabaseSeeder extends Seeder
                 'name_ar' => 'إدارة الموقع',
             ],
             [
-                'name' => 'Coupon:Add',
-                'name_ar' => 'الإضافة إلى كوبون',
-            ],
-            [
-                'name' => 'Coupon:Edit',
-                'name_ar' => 'تعديل الكوبون',
-            ],
-            [
-                'name' => 'Coupon:Delete',
-                'name_ar' => 'حذف الكوبون',
-            ],
-            [
-                'name' => 'Coupon:Export',
-                'name_ar' => 'تصدير الكوبون',
-            ],
-            [
                 'name' => 'User:Add',
                 'name_ar' => 'إضافة مستخدم',
             ],
@@ -54,22 +38,6 @@ class DatabaseSeeder extends Seeder
             [
                 'name' => 'User:Export',
                 'name_ar' => 'تصدير المستخدمين',
-            ],
-            [
-                'name' => 'Financial:Add',
-                'name_ar' => 'إضافة مالية',
-            ],
-            [
-                'name' => 'Financial:Edit',
-                'name_ar' => 'تعديل المالية',
-            ],
-            [
-                'name' => 'Financial:Delete',
-                'name_ar' => 'حذف المالية',
-            ],
-            [
-                'name' => 'Financial:Export',
-                'name_ar' => 'تصدير المالية',
             ],
 
             ['name' => 'Awareness:Add', 'name_ar' => 'إضافة التوعية'],

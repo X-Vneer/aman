@@ -43,7 +43,6 @@ export function useUsersListActiveFilterChips(): ActiveFilterChip[] {
   })
   const [dateFrom, setDateFrom] = useQueryState("date_from", parseAsString.withDefault(""))
   const [dateTo, setDateTo] = useQueryState("date_to", parseAsString.withDefault(""))
-  const [coupon, setCoupon] = useQueryState("coupon", parseAsString.withDefault(""))
 
   const { data: videos } = useQuery({
     queryKey: ["list", "videos"],
@@ -96,71 +95,11 @@ export function useUsersListActiveFilterChips(): ActiveFilterChip[] {
         },
       })
     }
-    if (coupon.trim()) {
-      chips.push({
-        id: "coupon",
-        label: t("global.coupon-filter"),
-        value: coupon,
-        onRemove: () => {
-          void setCoupon(null)
-        },
-      })
-    }
     return chips
-  }, [q, filters, dateFrom, dateTo, coupon, videos, t, setQ, setFilters, setDateFrom, setDateTo, setCoupon])
+  }, [q, filters, dateFrom, dateTo, videos, t, setQ, setFilters, setDateFrom, setDateTo])
 }
 
-/** Financial management user-information toolbar */
-export function useFinancialUsersActiveFilterChips(): ActiveFilterChip[] {
-  const { t } = useTranslation()
-  const [q, setQ] = useQueryState("q", parseAsString.withDefault(""))
-  const [statuses, setStatuses] = useQueryState("statuses[]", parseAsArrayOf(parseAsString).withDefault([""]))
-  const [coupon, setCoupon] = useQueryState("coupon", parseAsString.withDefault(""))
-  const [presence, setPresence] = useQueryStates({
-    "coupon_presence[]": parseAsArrayOf(parseAsString).withDefault([]),
-  })
-
-  return useMemo(() => {
-    const chips: ActiveFilterChip[] = []
-    if (q.trim()) {
-      chips.push({
-        id: "q",
-        label: t("global.search"),
-        value: q,
-        onRemove: () => void setQ(null),
-      })
-    }
-    const st = normalizeStatuses(statuses ?? [])
-    if (st.length) {
-      chips.push({
-        id: "statuses",
-        label: t("home.users.table.transaction"),
-        value: st.map((s) => t(`home.users.table.transaction-status.${s.toLowerCase() as "accepted"}`)).join(", "),
-        onRemove: () => void setStatuses(null),
-      })
-    }
-    if (coupon.trim()) {
-      chips.push({
-        id: "coupon",
-        label: t("global.coupon-filter"),
-        value: coupon,
-        onRemove: () => void setCoupon(null),
-      })
-    }
-    const pr = presence["coupon_presence[]"] ?? []
-    if (pr.length) {
-      chips.push({
-        id: "coupon_presence",
-        label: t("financial.filters.coupon-presence.label"),
-        value: pr.map((p) => t(`financial.filters.coupon-presence.${p as "with" | "without"}`)).join(", "),
-        onRemove: () => void setPresence({ "coupon_presence[]": null }),
-      })
-    }
-    return chips
-  }, [q, statuses, coupon, presence, t, setQ, setStatuses, setCoupon, setPresence])
-}
-
-/** Preset + custom dates + programs (financial page, home dashboard, reports, coupon detail, etc.) */
+/** Preset + custom dates + programs (home dashboard, reports, etc.) */
 export function useGraphDateAndProgramChips(options: {
   presetLabel?: (preset: string) => string
 }): ActiveFilterChip[] {
@@ -220,7 +159,6 @@ export function useGraphDateAndProgramChips(options: {
 export function useReviewsActiveFilterChips(): ActiveFilterChip[] {
   const { t } = useTranslation()
   const [comment, setComment] = useQueryState("comment", parseAsString.withDefault(""))
-  const [couponCode, setCouponCode] = useQueryState("coupon_code", parseAsString.withDefault(""))
   const [userFilters, setUserFilters] = useQueryStates({
     user_name: parseAsString.withDefault(""),
     user_mobile: parseAsString.withDefault(""),
@@ -253,14 +191,6 @@ export function useReviewsActiveFilterChips(): ActiveFilterChip[] {
         label: t("reviews.comment-filter"),
         value: comment,
         onRemove: () => void setComment(null),
-      })
-    }
-    if (couponCode.trim()) {
-      chips.push({
-        id: "coupon_code",
-        label: t("global.coupon-filter"),
-        value: couponCode,
-        onRemove: () => void setCouponCode(null),
       })
     }
     if (userFilters.user_name?.trim()) {
@@ -331,7 +261,6 @@ export function useReviewsActiveFilterChips(): ActiveFilterChip[] {
     return chips
   }, [
     comment,
-    couponCode,
     userFilters,
     rateFilters,
     listFilters,
@@ -340,7 +269,6 @@ export function useReviewsActiveFilterChips(): ActiveFilterChip[] {
     videos,
     t,
     setComment,
-    setCouponCode,
     setUserFilters,
     setRateFilters,
     setListFilters,
@@ -484,62 +412,6 @@ export function useContactsActiveFilterChips(): ActiveFilterChip[] {
   }, [q, filters, t, setQ, setFilters])
 }
 
-export function useCouponsListActiveFilterChips(): ActiveFilterChip[] {
-  const { t } = useTranslation()
-  const [q, setQ] = useQueryState("q", parseAsString.withDefault(""))
-  const [statuses, setStatuses] = useQueryState("statuses[]", parseAsArrayOf(parseAsString).withDefault([""]))
-  const [programs, setPrograms] = useQueryState("video_ids[]", parseAsArrayOf(parseAsString).withDefault([]))
-  const [dateFrom, setDateFrom] = useQueryState("date_from", parseAsString.withDefault(""))
-  const [dateTo, setDateTo] = useQueryState("date_to", parseAsString.withDefault(""))
-
-  const { data: videos } = useQuery({
-    queryKey: ["list", "videos"],
-    queryFn: () => getVideos(),
-    staleTime: 60_000,
-  })
-
-  return useMemo(() => {
-    const chips: ActiveFilterChip[] = []
-    if (q.trim()) {
-      chips.push({
-        id: "q",
-        label: t("global.search"),
-        value: q,
-        onRemove: () => void setQ(null),
-      })
-    }
-    const st = normalizeStatuses(statuses ?? [])
-    if (st.length) {
-      chips.push({
-        id: "statuses",
-        label: t("coupons.table.status"),
-        value: st.map((s) => t(`coupons.table.status-label.${s.toLowerCase() as "active"}`)).join(", "),
-        onRemove: () => void setStatuses(null),
-      })
-    }
-    if (programs.length) {
-      chips.push({
-        id: "video_ids",
-        label: t("global.programs"),
-        value: formatVideoIds(programs, videos, t),
-        onRemove: () => void setPrograms(null),
-      })
-    }
-    if (dateFrom && dateTo) {
-      chips.push({
-        id: "date-range",
-        label: t("global.active-filters.date-range"),
-        value: `${formattedDate(dateFrom)} — ${formattedDate(dateTo)}`,
-        onRemove: () => {
-          void setDateFrom(null)
-          void setDateTo(null)
-        },
-      })
-    }
-    return chips
-  }, [q, statuses, programs, dateFrom, dateTo, videos, t, setQ, setStatuses, setPrograms, setDateFrom, setDateTo])
-}
-
 export function useReportsActiveFilterChips(): ActiveFilterChip[] {
   const { t } = useTranslation()
   const [langs, setLangs] = useQueryState("langs[]", parseAsArrayOf(parseAsString).withDefault([]))
@@ -547,8 +419,6 @@ export function useReportsActiveFilterChips(): ActiveFilterChip[] {
   const [dates, setDates] = useQueryState("dates", parseAsString.withDefault(""))
   const [dateFrom, setDateFrom] = useQueryState("date_from", parseAsString.withDefault(""))
   const [dateTo, setDateTo] = useQueryState("date_to", parseAsString.withDefault(""))
-  const [coupon, setCoupon] = useQueryState("coupon", parseAsString.withDefault(""))
-  const [paymentMethod, setPaymentMethod] = useQueryState("payment_method", parseAsString.withDefault(""))
 
   const { data: videos } = useQuery({
     queryKey: ["list", "videos"],
@@ -597,41 +467,8 @@ export function useReportsActiveFilterChips(): ActiveFilterChip[] {
         },
       })
     }
-    if (coupon.trim()) {
-      chips.push({
-        id: "coupon",
-        label: t("global.coupon-filter"),
-        value: coupon,
-        onRemove: () => void setCoupon(null),
-      })
-    }
-    if (paymentMethod) {
-      chips.push({
-        id: "payment_method",
-        label: t("global.payment-method"),
-        value: t(`filters.payment-methods.${paymentMethod}` as "card"),
-        onRemove: () => void setPaymentMethod(null),
-      })
-    }
     return chips
-  }, [
-    langs,
-    programs,
-    dates,
-    dateFrom,
-    dateTo,
-    coupon,
-    paymentMethod,
-    videos,
-    t,
-    setLangs,
-    setPrograms,
-    setDates,
-    setDateFrom,
-    setDateTo,
-    setCoupon,
-    setPaymentMethod,
-  ])
+  }, [langs, programs, dates, dateFrom, dateTo, videos, t, setLangs, setPrograms, setDates, setDateFrom, setDateTo])
 }
 
 export function usePartnersActiveFilterChips(): ActiveFilterChip[] {
@@ -648,10 +485,4 @@ export function usePartnersActiveFilterChips(): ActiveFilterChip[] {
       },
     ]
   }, [q, t, setQ])
-}
-
-export function useCouponDetailGraphChips(): ActiveFilterChip[] {
-  const { t } = useTranslation()
-  const presetLabel = (d: string) => t(`coupons.view.graph.graph-type.${d}` as "all_time")
-  return useGraphDateAndProgramChips({ presetLabel })
 }

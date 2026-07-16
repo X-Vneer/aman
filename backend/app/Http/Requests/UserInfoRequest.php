@@ -27,8 +27,6 @@ class UserInfoRequest extends CustomFormRequest
         parent::prepareForValidation();
 
          if ($this->isMethod('put')) {
-            $this->merge(['id' => $this->route('coupon')]);
-            $this->roles['id'] =   'required|exists:coupons,id,deleted_at,NULL';
             $this->roles['birth_date'] =   [
                 'nullable',
                 'date',

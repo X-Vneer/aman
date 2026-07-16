@@ -16,7 +16,6 @@ class VideoStoreRequest extends CustomFormRequest
         "video_url.fr" => "required|url|min:1|max:500",
         "video_url.id" => "required|url|min:1|max:500",
         "logo" => "required|min:1|max:191",
-        "price" => "required|numeric|min:0|max:100000",
         "certificate_url" => "required|min:1|max:191",
         "title" => "array",
         "title.ar" => "required|min:1|max:500",
@@ -106,9 +105,6 @@ class VideoStoreRequest extends CustomFormRequest
     protected function prepareForValidation()
     {
         parent::prepareForValidation();
-        if ($this->price_original) {
-            $this->merge(["price" => $this->price_original]);
-        }
         $this->normalizeIsNew();
         $this->normalizeStatus();
         if ($this->isMethod("put")) {

@@ -73,7 +73,7 @@ const Layout = async (props: Props) => {
       href: {
         pathname: "/login",
         query: {
-          callbackUrl: `/payment/${params.course_id}`,
+          callbackUrl: `/course/${params.course_id}`,
           courseId: params.course_id,
         },
       },
@@ -134,8 +134,6 @@ const Layout = async (props: Props) => {
           description:
             publicCourse.description?.replace(/<[^>]+>/g, "").trim() || publicCourse.title,
           image: publicCourse.logo,
-          price: publicCourse.price,
-          finalPrice: publicCourse.final_price,
           url: courseUrl,
           locale: params.locale,
         })
@@ -163,16 +161,9 @@ const Layout = async (props: Props) => {
         nextRedirect("/api/auth/signout")
       }
       console.log("🚀 ~ Layout ~ error:", error.response?.config)
-      if (error.response?.status === 404) notFound()
-
-      if (error.response?.status === 403) {
-        redirect({
-          href: {
-            pathname: "/payment/" + params.course_id,
-          },
-          locale: params.locale,
-        })
-      }
+      // Backend auto-enrolls on open, so a valid video no longer 403s.
+      // Treat a genuine 403/404 as a missing course.
+      if (error.response?.status === 404 || error.response?.status === 403) notFound()
     }
     return <div className="text-white">Error</div>
   }

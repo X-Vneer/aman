@@ -43,10 +43,6 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                   <li>رقم الهاتف للتحقق عبر (OTP)</li>
                   <li>البريد الإلكتروني.</li>
                   <li>البيانات مثل البرامج المكتملة والتقييمات.</li>
-                  <li>
-                    معلومات الدفع عند الاشتراك مع العلم بأنه سيتم مشاركتها مع بوابة الدفع المعتمدة بالمنصة و
-                    تخضع المعلومات و حفظها لسياسة واحكام الطرف الثالث
-                  </li>
                 </ul>
                 <p>
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; قد يتم جمع معلومات إضافية لتحسين التجربة، مثل اللغة المفضلة
@@ -65,7 +61,6 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                   <li>التحقق من هوية المستخدم (OTP)</li>
                   <li>تحسين تجربة الاستخدام عبر تخصيص المحتوى.</li>
                   <li>إصدار الشهادات وتوفير ميزة التحقق من صحتها باستخدام رمز QR</li>
-                  <li>معالجة المدفوعات وتأمينها.</li>
                   <li>إرسال إشعارات متعلقة بالبرامج التدريبية أو التحديثات.</li>
                   <li>تحليل أداء المستخدم لتقديم توصيات شخصية.</li>
                 </ul>
@@ -99,7 +94,6 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                 <p>لا يتم مشاركة المعلومات الشخصية مع أطراف ثالثة إلا في الحالات التالية:</p>
                 <ul>
                   <li>الامتثال للقوانين المحلية أو الأحكام القضائية.</li>
-                  <li>إتمام المعاملات المالية بالتنسيق مع مزودي خدمة الدفع.</li>
                   <li>توفير خدمات الدعم الفني أو تحسين العمليات.</li>
                 </ul>
                 <ol start={5}>
@@ -177,18 +171,6 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                   <li>قد يتم تحديث أو تغيير المحتوى وفقًا لتوصيات اللجنة العلمية أو الإدارة .</li>
                 </ul>
                 <br />
-                <ol start={11}>
-                  <li>
-                    <strong>. سياسة الدفع</strong>
-                    <strong>:</strong>
-                  </li>
-                </ol>
-                <ul>
-                  <li>يتم الدفع لكل برنامج تدريب عبر بوابة دفع إلكترونية آمنة .</li>
-                  <li>لن يتمكن المستخدم من الوصول إلى البرامج دون إتمام الدفع .</li>
-                </ul>
-
-                <br />
                 <ol start={12}>
                   <li>
                     <strong>. المسؤولية</strong>
@@ -261,11 +243,6 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                   <li>phone numberTo verify via (OTP)</li>
                   <li>e-mail.</li>
                   <li>DataSuch as completed programs and evaluations..</li>
-                  <li>
-                    Payment information upon subscriptionNote that it will be shared with the platform&rsquo;s
-                    approved payment gateway and the information and its storage are subject to the third
-                    party&rsquo;s policy and provisions.
-                  </li>
                 </ul>
                 <p>
                   Additional information may be collected to improve the experience, such as preferred
@@ -281,7 +258,6 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                   <li>User identity verification(OTP)</li>
                   <li>Improve user experience by personalizing content.</li>
                   <li>Issue certificates and provide verification using a token.QR</li>
-                  <li>Payment processing and security.</li>
                   <li>Send notifications regarding training programs or updates.</li>
                   <li>Analyze user performance to provide personalized recommendations..</li>
                 </ul>
@@ -313,7 +289,6 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                 <p>Personal information is not shared with third parties except in the following cases::</p>
                 <ul>
                   <li>Compliance with local laws or court orders.</li>
-                  <li>Complete financial transactions in coordination with payment service providers..</li>
                   <li>Providing technical support services or improving operations.</li>
                 </ul>
                 <ol start={5}>
@@ -393,17 +368,6 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                     Committee or the Administration..
                   </li>
                 </ul>
-                <br />
-                <ol start={12}>
-                  <li>
-                    <strong>. PolicyPayment:</strong>
-                  </li>
-                </ol>
-                <ul>
-                  <li>Payment for each training program is made via a secure electronic payment gateway..</li>
-                  <li>The user will not be able to access the software without completing the payment..</li>
-                </ul>
-
                 <br />
                 <ol start={12}>
                   <li>

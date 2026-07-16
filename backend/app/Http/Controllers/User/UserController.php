@@ -30,20 +30,14 @@ class UserController extends BaseApiController
     }
 
     function index(Request $request) {
-        $coupon = $request->coupon;
-        $userVideosLoad = $coupon
-            ? ['userVideos' => function ($q) use ($coupon) {
-                $q->where('coupon_code', $coupon)->where('status', VideoPaymentStatus::Accepted->value);
-            }, 'userVideos.video']
-            : ['userVideos.video'];
+        $userVideosLoad = ['userVideos.video'];
 
         $sortAllowed = [
             'certificate_count' => fn($q, $dir) => $q->orderBy(
                 UserVideo::selectRaw('count(*)')
                     ->whereColumn('user_videos.user_id', 'users.id')
                     ->where('user_videos.status', VideoPaymentStatus::Accepted->value)
-                    ->where('user_videos.is_certificate_generated', 1)
-                    ->when($coupon, fn($sub) => $sub->where('user_videos.coupon_code', $coupon)),
+                    ->where('user_videos.is_certificate_generated', 1),
                 $dir
             ),
         ];
@@ -79,14 +73,6 @@ class UserController extends BaseApiController
             }
             if($request->has_form){
                 $items = $items->whereHas('info');
-            }
-
-            if($request->coupon){
-                $coupon = $request->coupon;
-                $items = $items->whereHas('userVideos', function ($q) use($coupon) {
-                    $q->where('coupon_code', $coupon)->where('status', VideoPaymentStatus::Accepted->value);
-                    return $q;
-                });
             }
 
             return [$items];

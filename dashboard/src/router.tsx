@@ -5,8 +5,6 @@ const AuthLayout = React.lazy(async () => import("./app/auth/layout"))
 const OTP = React.lazy(async () => import("./app/auth/otp/page"))
 const ResetPassword = React.lazy(async () => import("./app/auth/reset-password/page"))
 import { DashboardLayout } from "./app/dashboard/layout"
-import Coupons from "./app/dashboard/coupons/page"
-const AddCoupon = React.lazy(async () => import("./app/dashboard/coupons/add/page"))
 import { Loader } from "@mantine/core"
 import { Navigate } from "./lib/i18n/navigation"
 import Users from "./app/dashboard/users/page"
@@ -24,12 +22,9 @@ const FormInformation = React.lazy(async () => import("./app/dashboard/form-info
 const ViewUser = React.lazy(async () => import("./app/dashboard/users/[id]/page"))
 const Certificates = React.lazy(async () => import("./app/dashboard/certificates/page"))
 const Reports = React.lazy(async () => import("./app/dashboard/reports/page"))
-const Financial = React.lazy(async () => import("./app/dashboard/financial/page"))
 const Reviews = React.lazy(async () => import("./app/dashboard/reviews/page"))
 const Contacts = React.lazy(async () => import("./app/dashboard/contacts/page"))
 const ViewContact = React.lazy(async () => import("./app/dashboard/contacts/[id]/page"))
-const ViewCoupon = React.lazy(async () => import("./app/dashboard/coupons/[id]/page"))
-const EditCoupon = React.lazy(async () => import("./app/dashboard/coupons/[id]/edit/page"))
 const Permissions = React.lazy(async () => import("./app/dashboard/permissions/page"))
 const Programs = React.lazy(async () => import("./app/dashboard/programs/page"))
 const EditProgram = React.lazy(async () => import("./app/dashboard/programs/[id]/page"))
@@ -133,61 +128,6 @@ const Router = () => {
               </Suspense>
             }
           />
-          {/* coupons */}
-          <Route path="coupons">
-            <Route
-              index
-              element={
-                <Suspense
-                  fallback={
-                    <div className="flex h-full items-center justify-center py-20">
-                      <Loader size={"md"} />
-                    </div>
-                  }>
-                  <Coupons />
-                </Suspense>
-              }
-            />
-            <Route
-              path="add"
-              element={
-                <Suspense
-                  fallback={
-                    <div className="flex h-full items-center justify-center py-20">
-                      <Loader size={"md"} />
-                    </div>
-                  }>
-                  <AddCoupon />
-                </Suspense>
-              }
-            />
-            <Route
-              path=":id"
-              element={
-                <Suspense
-                  fallback={
-                    <div className="flex h-full items-center justify-center py-20">
-                      <Loader size={"md"} />
-                    </div>
-                  }>
-                  <ViewCoupon />
-                </Suspense>
-              }
-            />
-            <Route
-              path=":id/edit"
-              element={
-                <Suspense
-                  fallback={
-                    <div className="flex h-full items-center justify-center py-20">
-                      <Loader size={"md"} />
-                    </div>
-                  }>
-                  <EditCoupon />
-                </Suspense>
-              }
-            />
-          </Route>
           {/* Programs */}
           <Route path="Programs">
             <Route
@@ -303,22 +243,6 @@ const Router = () => {
                     </div>
                   }>
                   <ViewUser />
-                </Suspense>
-              }
-            />
-          </Route>
-          {/* financial */}
-          <Route path="financial">
-            <Route
-              index
-              element={
-                <Suspense
-                  fallback={
-                    <div className="flex h-full items-center justify-center py-20">
-                      <Loader size={"md"} />
-                    </div>
-                  }>
-                  <Financial />
                 </Suspense>
               }
             />

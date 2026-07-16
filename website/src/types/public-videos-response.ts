@@ -33,13 +33,7 @@ export interface Video {
   video_url: string
   logo: string
   title: string
-  price: string
-  final_price: null | string
-  tax_value: null | string
-  tax: null | string
-  discount: string
   description: string
-  coupon: string | null
   length: string
   deleted_at: null
   is_new: boolean

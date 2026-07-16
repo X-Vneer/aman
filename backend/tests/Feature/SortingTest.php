@@ -3,7 +3,6 @@
 namespace Tests\Feature;
 
 use App\Models\Admin;
-use App\Models\Coupon;
 use App\Models\Partner;
 use App\Models\Story;
 use App\Models\Video;
@@ -213,65 +212,5 @@ class SortingTest extends TestCase
         $sorted = $names;
         sort($sorted);
         $this->assertEquals($sorted, $names);
-    }
-
-    // ──────────────────────────────────────────────────────────────
-    // Coupons (has JSON columns excluded from sort allow-list)
-    // ──────────────────────────────────────────────────────────────
-
-    public function test_coupons_sort_by_name_asc(): void
-    {
-        Coupon::factory()->createMany([
-            ['name' => 'Zoo'],
-            ['name' => 'Ant'],
-            ['name' => 'Man'],
-        ]);
-
-        $response = $this->withHeaders($this->headers)
-            ->getJson(route('admin.coupons.index', [
-                'sort_column'    => 'name',
-                'sort_direction' => 'ASC',
-            ]));
-
-        $response->assertStatus(200);
-
-        $names = collect($response->json('data.items.data'))->pluck('name')->toArray();
-        $sorted = $names;
-        sort($sorted);
-        $this->assertEquals($sorted, $names);
-    }
-
-    public function test_coupons_sort_by_json_column_is_ignored(): void
-    {
-        // video_ids is a JSON column — excluded from $columns in CouponController
-        // The validation rule 'sort_column' => 'nullable|in:id,...$this->columns'
-        // will reject it with 422 (not in allow-list)
-        $response = $this->withHeaders($this->headers)
-            ->getJson(route('admin.coupons.index', [
-                'sort_column' => 'video_ids',
-            ]));
-
-        $response->assertStatus(422);
-    }
-
-    public function test_coupons_response_shape_unchanged_without_sort(): void
-    {
-        Coupon::factory()->count(3)->create();
-
-        $response = $this->withHeaders($this->headers)
-            ->getJson(route('admin.coupons.index'));
-
-        $response->assertStatus(200)
-            ->assertJsonStructure([
-                'status',
-                'message',
-                'data' => [
-                    'items' => [
-                        'data',
-                        'meta' => ['current_page', 'last_page', 'per_page', 'total'],
-                        'links',
-                    ],
-                ],
-            ]);
     }
 }
