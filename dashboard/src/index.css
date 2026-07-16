@@ -1,0 +1,63 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  /* Custom screens */
+  --breakpoint-xs: 20rem;
+
+  /* Custom font families */
+  --font-family-custom: "MyCustomFont", sans-serif;
+  --font-family-inter: "Inter", serif;
+  --font-family-custom-english: "englishCustomFont", sans-serif;
+
+  /* Container configuration */
+  --container-center: true;
+  --container-padding: 1.5rem;
+
+  /* Custom colors */
+  --color-primary: var(--mantine-color-primary-7);
+  --color-secondary: var(--mantine-color-secondary-8);
+}
+
+@font-face {
+  font-family: "MyCustomFont";
+  src: url("./assets/fonts/IBMPlexSansArabic-Regular.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "MyCustomFont";
+  src: url("./assets/fonts/IBMPlexSansArabic-Light.ttf");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "MyCustomFont";
+  src: url("./assets/fonts/IBMPlexSansArabic-Medium.ttf");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "MyCustomFont";
+  src: url("./assets/fonts/IBMPlexSansArabic-SemiBold.ttf");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "MyCustomFont";
+  src: url("./assets/fonts/IBMPlexSansArabic-Bold.ttf");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "englishCustomFont";
+  src: url("./assets/fonts/ABeeZee-Italic.ttf");
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: "englishCustomFont";
+  src: url("./assets/fonts/ABeeZee-Regular.ttf");
+  font-weight: 400;
+  font-style: normal;
+}

@@ -1,0 +1,14 @@
+<?php
+
+return array (
+  'can-not-delete-coupon-having-payment' => 'لا يمكن حذف القسيمة التي لديها دفعة',
+  'can-not-delete-video-having-certificates' => 'لا يمكن حذف الفيديو الذي يحتوي على شهادة!',
+  'can-not-delete-video-having-questions' => 'لا يمكن حذف الفيديو الذي يحتوي على سؤال',
+  'can-not-delete-video-having-scenes' => 'لا يمكن حذف الفيديو الذي يحتوي على مشاهد',
+  'can-not-edte-coupon-having-payment' => 'لا يمكن تحرير قسيمة مرتبطه بعمليه دفع',
+  'hasNotCertificate' => 'لم يشترك في برامج',
+  'noCoupon' => 'دفع مباشر',
+  'noName' => 'لا اسم',
+  'notFound' => 'غير موجود',
+  'technicalError' => 'خطأ فني',
+);

@@ -1,0 +1,446 @@
+@import "tailwindcss";
+@import "@heroui/styles";
+
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/*
+ * HeroUI v2 palettes — full 50–900 like https://v2.heroui.com/docs/customization/colors
+ * @theme registers Tailwind utilities (bg-zinc-500, text-primary-600, …).
+ * Light = default semantic scales; .dark overrides only swapped semantic colors.
+ */
+@theme {
+  --color-primary: #1ad0d1;
+  --color-secondary: #9f5ffe;
+  --color-black: #2e2a33;
+  --color-content2: #27272a;
+
+  --font-family-sans: var(--font-sans);
+  --font-family-mono: var(--font-mono);
+
+  --animate-fade-in: fade-in 0.3s ease-in-out;
+
+  /* Common zinc */
+  --color-zinc-50: #fafafa;
+  --color-zinc-100: #f4f4f5;
+  --color-zinc-200: #e4e4e7;
+  --color-zinc-300: #d4d4d8;
+  --color-zinc-400: #a1a1aa;
+  --color-zinc-500: #71717a;
+  --color-zinc-600: #52525b;
+  --color-zinc-700: #3f3f46;
+  --color-zinc-800: #27272a;
+  --color-zinc-900: #18181b;
+
+  /* default-* — light: same order as zinc */
+  --color-default-50: #fafafa;
+  --color-default-100: #f4f4f5;
+  --color-default-200: #e4e4e7;
+  --color-default-300: #d4d4d8;
+  --color-default-400: #a1a1aa;
+  --color-default-500: #71717a;
+  --color-default-600: #52525b;
+  --color-default-700: #3f3f46;
+  --color-default-800: #27272a;
+  --color-default-900: #18181b;
+
+  /* primary-* — light: blue scale */
+  --color-primary-50: #e6f1fe;
+  --color-primary-100: #cce3fd;
+  --color-primary-200: #99c7fb;
+  --color-primary-300: #66aaf9;
+  --color-primary-400: #338ef7;
+  --color-primary-500: #006fee;
+  --color-primary-600: #005bc4;
+  --color-primary-700: #004493;
+  --color-primary-800: #002e62;
+  --color-primary-900: #001731;
+
+  /* secondary-* — light: purple scale */
+  --color-secondary-50: #f2eafa;
+  --color-secondary-100: #e4d4f4;
+  --color-secondary-200: #c9a9e9;
+  --color-secondary-300: #ae7ede;
+  --color-secondary-400: #9353d3;
+  --color-secondary-500: #7828c8;
+  --color-secondary-600: #6020a0;
+  --color-secondary-700: #481878;
+  --color-secondary-800: #301050;
+  --color-secondary-900: #180828;
+
+  /* success-* — light: green scale */
+  --color-success-50: #e8faf0;
+  --color-success-100: #d1f4e0;
+  --color-success-200: #a2e9c1;
+  --color-success-300: #74dfa2;
+  --color-success-400: #45d483;
+  --color-success-500: #17c964;
+  --color-success-600: #12a150;
+  --color-success-700: #0e793c;
+  --color-success-800: #095028;
+  --color-success-900: #052814;
+
+  /* warning-* — light: yellow scale */
+  --color-warning-50: #fefce8;
+  --color-warning-100: #fdedd3;
+  --color-warning-200: #fbdba7;
+  --color-warning-300: #f9c97c;
+  --color-warning-400: #f7b750;
+  --color-warning-500: #f5a524;
+  --color-warning-600: #c4841d;
+  --color-warning-700: #936316;
+  --color-warning-800: #62420e;
+  --color-warning-900: #312107;
+
+  /* danger-* — light: red scale */
+  --color-danger-50: #fee7ef;
+  --color-danger-100: #fdd0df;
+  --color-danger-200: #faa0bf;
+  --color-danger-300: #f871a0;
+  --color-danger-400: #f54180;
+  --color-danger-500: #f31260;
+  --color-danger-600: #c20e4d;
+  --color-danger-700: #920b3a;
+  --color-danger-800: #610726;
+  --color-danger-900: #310413;
+
+  /* Common palettes (v2 — omit white/black to keep --color-black) */
+  --color-blue-50: #e6f1fe;
+  --color-blue-100: #cce3fd;
+  --color-blue-200: #99c7fb;
+  --color-blue-300: #66aaf9;
+  --color-blue-400: #338ef7;
+  --color-blue-500: #006fee;
+  --color-blue-600: #005bc4;
+  --color-blue-700: #004493;
+  --color-blue-800: #002e62;
+  --color-blue-900: #001731;
+
+  --color-purple-50: #f2eafa;
+  --color-purple-100: #e4d4f4;
+  --color-purple-200: #c9a9e9;
+  --color-purple-300: #ae7ede;
+  --color-purple-400: #9353d3;
+  --color-purple-500: #7828c8;
+  --color-purple-600: #6020a0;
+  --color-purple-700: #481878;
+  --color-purple-800: #301050;
+  --color-purple-900: #180828;
+
+  --color-green-50: #e8faf0;
+  --color-green-100: #d1f4e0;
+  --color-green-200: #a2e9c1;
+  --color-green-300: #74dfa2;
+  --color-green-400: #45d483;
+  --color-green-500: #17c964;
+  --color-green-600: #12a150;
+  --color-green-700: #0e793c;
+  --color-green-800: #095028;
+  --color-green-900: #052814;
+
+  --color-red-50: #fee7ef;
+  --color-red-100: #fdd0df;
+  --color-red-200: #faa0bf;
+  --color-red-300: #f871a0;
+  --color-red-400: #f54180;
+  --color-red-500: #f31260;
+  --color-red-600: #c20e4d;
+  --color-red-700: #920b3a;
+  --color-red-800: #610726;
+  --color-red-900: #310413;
+
+  --color-pink-50: #ffedfa;
+  --color-pink-100: #ffdcf5;
+  --color-pink-200: #ffb8eb;
+  --color-pink-300: #ff95e1;
+  --color-pink-400: #ff71d7;
+  --color-pink-500: #ff4ecd;
+  --color-pink-600: #cc3ea4;
+  --color-pink-700: #992f7b;
+  --color-pink-800: #661f52;
+  --color-pink-900: #331029;
+
+  --color-yellow-50: #fefce8;
+  --color-yellow-100: #fdedd3;
+  --color-yellow-200: #fbdba7;
+  --color-yellow-300: #f9c97c;
+  --color-yellow-400: #f7b750;
+  --color-yellow-500: #f5a524;
+  --color-yellow-600: #c4841d;
+  --color-yellow-700: #936316;
+  --color-yellow-800: #62420e;
+  --color-yellow-900: #312107;
+
+  --color-cyan-50: #f0fcff;
+  --color-cyan-100: #e6fafe;
+  --color-cyan-200: #d7f8fe;
+  --color-cyan-300: #c3f4fd;
+  --color-cyan-400: #a5eefd;
+  --color-cyan-500: #7ee7fc;
+  --color-cyan-600: #06b7db;
+  --color-cyan-700: #09aacd;
+  --color-cyan-800: #0e8aaa;
+  --color-cyan-900: #053b48;
+}
+
+.dark,
+[data-theme="dark"] {
+  --color-default-50: #18181b;
+  --color-default-100: #27272a;
+  --color-default-200: #3f3f46;
+  --color-default-300: #52525b;
+  --color-default-400: #71717a;
+  --color-default-500: #a1a1aa;
+  --color-default-600: #d4d4d8;
+  --color-default-700: #e4e4e7;
+  --color-default-800: #f4f4f5;
+  --color-default-900: #fafafa;
+
+  --color-primary-50: #001731;
+  --color-primary-100: #002e62;
+  --color-primary-200: #004493;
+  --color-primary-300: #005bc4;
+  --color-primary-400: #006fee;
+  --color-primary-500: #338ef7;
+  --color-primary-600: #66aaf9;
+  --color-primary-700: #99c7fb;
+  --color-primary-800: #cce3fd;
+  --color-primary-900: #e6f1fe;
+
+  --color-secondary-50: #180828;
+  --color-secondary-100: #301050;
+  --color-secondary-200: #481878;
+  --color-secondary-300: #6020a0;
+  --color-secondary-400: #7828c8;
+  --color-secondary-500: #9353d3;
+  --color-secondary-600: #ae7ede;
+  --color-secondary-700: #c9a9e9;
+  --color-secondary-800: #e4d4f4;
+  --color-secondary-900: #f2eafa;
+
+  --color-success-50: #052814;
+  --color-success-100: #095028;
+  --color-success-200: #0e793c;
+  --color-success-300: #12a150;
+  --color-success-400: #17c964;
+  --color-success-500: #45d483;
+  --color-success-600: #74dfa2;
+  --color-success-700: #a2e9c1;
+  --color-success-800: #d1f4e0;
+  --color-success-900: #e8faf0;
+
+  --color-warning-50: #312107;
+  --color-warning-100: #62420e;
+  --color-warning-200: #936316;
+  --color-warning-300: #c4841d;
+  --color-warning-400: #f5a524;
+  --color-warning-500: #f7b750;
+  --color-warning-600: #f9c97c;
+  --color-warning-700: #fbdba7;
+  --color-warning-800: #fdedd3;
+  --color-warning-900: #fefce8;
+
+  --color-danger-50: #310413;
+  --color-danger-100: #610726;
+  --color-danger-200: #920b3a;
+  --color-danger-300: #c20e4d;
+  --color-danger-400: #f31260;
+  --color-danger-500: #f54180;
+  --color-danger-600: #f871a0;
+  --color-danger-700: #faa0bf;
+  --color-danger-800: #fdd0df;
+  --color-danger-900: #fee7ef;
+}
+
+/*
+ * HeroUI Theme Customization
+ * Add this to your global.css after importing @heroui/styles
+ * Only includes base variables from variables.css
+ * @see https://heroui.com/docs/react/getting-started/theming
+ */
+
+:root,
+.light,
+.default,
+[data-theme="light"],
+[data-theme="default"] {
+  /* Theme Colors (Light Mode) */
+  --accent: oklch(77.83% 0.1296 195.45);
+  --accent-foreground: oklch(15% 0.0259 195.45);
+  --background: oklch(97.02% 0.0015 195.45);
+  --border: oklch(90% 0.0015 195.45);
+  --danger: oklch(65.32% 0.2335 18.73);
+  --danger-foreground: oklch(99.11% 0 0);
+  --default: oklch(94% 0.0015 195.45);
+  --default-foreground: oklch(21.03% 0.0059 195.45);
+  --field-background: oklch(100% 0.0008 195.45);
+  --field-foreground: oklch(21.03% 0.0015 195.45);
+  --field-placeholder: oklch(55.17% 0.003 195.45);
+  --focus: oklch(77.83% 0.1296 195.45);
+  --foreground: oklch(21.03% 0.0015 195.45);
+  --muted: oklch(55.17% 0.003 195.45);
+  --overlay: oklch(100% 0.0004 195.45);
+  --overlay-foreground: oklch(21.03% 0.0015 195.45);
+  --scrollbar: oklch(87.1% 0.0015 195.45);
+  --segment: oklch(100% 0.0015 195.45);
+  --segment-foreground: oklch(21.03% 0.0015 195.45);
+  --separator: oklch(92% 0.0015 195.45);
+  --success: oklch(73.29% 0.1941 143.8);
+  --success-foreground: oklch(21.03% 0.0059 143.8);
+  --surface: oklch(100% 0.0008 195.45);
+  --surface-foreground: oklch(21.03% 0.0015 195.45);
+  --surface-secondary: oklch(95.24% 0.0012 195.45);
+  --surface-secondary-foreground: oklch(21.03% 0.0015 195.45);
+  --surface-tertiary: oklch(93.73% 0.0012 195.45);
+  --surface-tertiary-foreground: oklch(21.03% 0.0015 195.45);
+  --warning: oklch(78.19% 0.159 65.32);
+  --warning-foreground: oklch(21.03% 0.0059 65.32);
+
+  /* Border Radius */
+  --radius: 0.25rem;
+  --field-radius: 0.5rem;
+}
+
+.dark,
+[data-theme="dark"] {
+  color-scheme: dark;
+  /* Theme Colors (Dark Mode) */
+  --accent: oklch(77.83% 0.1296 195.45);
+  --accent-foreground: oklch(15% 0.0259 195.45);
+  --background: oklch(0.2145 0.0016 17.28);
+  --border: oklch(28% 0.0015 195.45);
+  --danger: oklch(59.4% 0.1973 17.62);
+  --danger-foreground: oklch(99.11% 0 0);
+  --default: oklch(27.4% 0.0015 195.45);
+  --default-foreground: oklch(99.11% 0 0);
+  --field-background: oklch(27.39% 0.005 286.03);
+  --field-foreground: oklch(99.11% 0.0015 195.45);
+  --field-placeholder: oklch(70.5% 0.003 195.45);
+  --focus: oklch(77.83% 0.1296 195.45);
+  --foreground: oklch(99.11% 0.0015 195.45);
+  --muted: oklch(70.5% 0.003 195.45);
+  --overlay: oklch(27.39% 0.005 286.03);
+  --overlay-foreground: oklch(99.11% 0.0015 195.45);
+  --scrollbar: oklch(70.5% 0.0015 195.45);
+  --segment: oklch(39.64% 0.0015 195.45);
+  --segment-foreground: oklch(99.11% 0.0015 195.45);
+  --separator: oklch(25% 0.0015 195.45);
+  --success: oklch(73.29% 0.1941 143.8);
+  --success-foreground: oklch(21.03% 0.0059 143.8);
+  --surface: oklch(27.39% 0.005 286.03);
+  --surface-foreground: oklch(99.11% 0.0015 195.45);
+  --surface-secondary: oklch(25.7% 0.0023 195.45);
+  --surface-secondary-foreground: oklch(99.11% 0.0015 195.45);
+  --surface-tertiary: oklch(27.21% 0.0023 195.45);
+  --surface-tertiary-foreground: oklch(99.11% 0.0015 195.45);
+  --warning: oklch(82.03% 0.1392 69.33);
+  --warning-foreground: oklch(21.03% 0.0059 69.33);
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.9;
+  }
+}
+
+/* Adjust header styles for mobile landscape */
+
+@layer utilities {
+  @media screen and (orientation: landscape) and (max-device-width: 926px) {
+    .landscape-header {
+      @apply grid-cols-[50px_1fr_50px] px-2 text-[10px];
+    }
+    .small-icon {
+      @apply size-4;
+    }
+    .small-text {
+      @apply text-[10px];
+    }
+    .small-padding-x {
+      @apply px-2 py-0.5;
+    }
+    .small-padding-y {
+      @apply py-1;
+    }
+  }
+
+  /* Text glow utilities */
+  .text-glow-soft {
+    text-shadow:
+      0 4px 10px var(--color-primary),
+      0 4px 20px var(--color-primary);
+  }
+
+  .text-glow-primary {
+    text-shadow:
+      0 0 10px rgba(59, 130, 246, 0.9),
+      0 0 22px rgba(59, 130, 246, 0.6);
+  }
+}
+input {
+  outline: none;
+}
+
+/* Fix react-phone-number-input country select in dark mode */
+.PhoneInputCountrySelect {
+  color: var(--foreground);
+  background-color: var(--field-background);
+}
+
+.PhoneInputCountrySelect option {
+  color: var(--foreground);
+  background-color: var(--field-background);
+}
+/* Hide controls for most modern browsers */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield; /* For Firefox */
+  appearance: textfield; /* For other modern browsers */
+}
+
+/* Hide native iOS video controls */
+video::-webkit-media-controls {
+  display: none !important;
+}
+
+video::-webkit-media-controls-enclosure {
+  display: none !important;
+}
+
+video::-webkit-media-controls-panel {
+  display: none !important;
+}
+
+video::-webkit-media-controls-play-button {
+  display: none !important;
+}
+
+video::-webkit-media-controls-start-playback-button {
+  display: none !important;
+}
+
+/* fade in animation  */
+
+/* @keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  animation-duration: 200ms;
+  animation-name: fadeIn;
+  animation-timing-function: ease;
+} */

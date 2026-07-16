@@ -1,0 +1,13 @@
+<?php
+
+return array (
+  'can-not-delete-coupon-having-payment' => 'Tidak dapat menghapus kupon yang memiliki pembayaran',
+  'can-not-delete-video-having-certificates' => 'Tidak dapat menghapus video yang memiliki sertifikat!',
+  'can-not-delete-video-having-questions' => 'Tidak dapat menghapus video yang memiliki pertanyaan',
+  'can-not-delete-video-having-scenes' => 'Tidak dapat menghapus video memiliki adegan',
+  'can-not-edte-coupon-having-payment' => 'Tidak dapat mengedit kupon yang memiliki pembayaran',
+  'hasNotCertificate' => 'Tidak memiliki kursus',
+  'noCoupon' => 'Tidak ada kupon',
+  'noName' => 'Tidak ada nama',
+  'technicalError' => 'Kesalahan teknologi',
+);

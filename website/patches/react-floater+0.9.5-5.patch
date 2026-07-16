@@ -1,0 +1,15 @@
+diff --git a/node_modules/react-floater/dist/index.d.cts b/node_modules/react-floater/dist/index.d.cts
+index a7695c8..ae9c387 100644
+--- a/node_modules/react-floater/dist/index.d.cts
++++ b/node_modules/react-floater/dist/index.d.cts
+@@ -159,7 +159,6 @@ declare global {
+ //#region src/index.d.ts
+ declare function ReactFloater(props: Props): react_jsx_runtime0.JSX.Element | null;
+ 
+-//# sourceMappingURL=index.d.cts.map    export { type Action, type CustomComponentProps, type Placement, type PopperInstance, type Props, type Styles, ReactFloater as default };
+-}
+-
+ export = ReactFloater;
++
++//# sourceMappingURL=index.d.cts.map
+\ No newline at end of file

@@ -1,0 +1,1051 @@
+{
+  "Awareness": {
+    "add-button": "Add"
+  },
+  "awareness": {
+    "add": {
+      "details": "Page details",
+      "form": {
+        "awareness-description-label": "Condition description",
+        "awareness-description-placeholder": "Enter condition description",
+        "awareness-title-label": "Add symptoms Title",
+        "awareness-title-placeholder": "enter condition title",
+        "symptoms-title-label": "Add Symptoms",
+        "symptoms-title-placeholder": "Press enter to add each symptom"
+      },
+      "title": "Add new awareness page"
+    },
+    "delete": {
+      "description": "Are you sure you want to delete {{value}}?",
+      "failer": {
+        "message": "Could not delete item.",
+        "title": "Failer"
+      }
+    },
+    "edit": {
+      "title": "Edit awareness"
+    },
+    "form": {
+      "video_id_label": "Select program"
+    },
+    "title": "Awareness information"
+  },
+  "certificates": {
+    "description": "Edit Certificate Template",
+    "download": "Upload Template",
+    "save": "Save",
+    "title": "Certificate Template",
+    "upload-modal": {
+      "cancel": "Cancel",
+      "dropzone": {
+        "description": "SVG or PNG or JPG or GIF (max 800 × 400 pixels)",
+        "title": "Or drag and drop <span>Click to upload</span>"
+      },
+      "save": "Attach Files",
+      "title": "Upload Template"
+    }
+  },
+  "contacts": {
+    "description": "Review and answer the inquries",
+    "reply-form": {
+      "reply-button": "Reply",
+      "reply-input-label": "Reply"
+    },
+    "view": {
+      "title": "Contact Details",
+      "mobile": "Mobile Number",
+      "images": "Attached Images"
+    },
+    "table": {
+      "actions": "Actions",
+      "date": "Date",
+      "email": "Email",
+      "id": "ID",
+      "video_title": "Program",
+      "message": "Message",
+      "name": "Name",
+      "reply": "Reply",
+      "status": "Status",
+      "status-label-new": "New",
+      "status-label-pending": "Pending",
+      "status-label-responded": "Responded",
+      "title": "Message Title",
+      "type": "Contact Type",
+      "type-Complaint": "Complaint",
+      "type-Inquiry": "Inquiry",
+      "type-Suggestion": "Suggestion"
+    },
+    "title": "Contact and Inquiries"
+  },
+  "coupons": {
+    "add": {
+      "form": {
+        "amount-input-label": "Discount Amount",
+        "amount-input-placeholder": "Discount Amount",
+        "cancel-button": "Cancel",
+        "code-input-label": "Code",
+        "code-input-placeholder": "Enter Code",
+        "date_end-input-label": "End Date",
+        "date_end-input-placeholder": "End Date",
+        "date_start-input-label": "Start Date",
+        "date_start-input-placeholder": "Start Date",
+        "generate-code": "Generate",
+        "has_form-input-label": "Show user information form",
+        "langs-input-label": "Choose Language",
+        "langs-input-placeholder": "Choose Language",
+        "max_customer_uses-input-label": "Number of Uses per User",
+        "max_customer_uses-input-placeholder": "Number of Uses per User",
+        "max_uses-input-label": "Total Number of Uses",
+        "max_uses-input-placeholder": "Total Number of Uses",
+        "name-input-label": "Name",
+        "name-input-placeholder": "Coupon Name",
+        "save-button": "Save",
+        "type-input-fixed-label": "Fixed",
+        "type-input-label": "Discount Type",
+        "type-input-percentage-label": "Percentage %",
+        "type-input-placeholder": "Discount Type",
+        "video_ids-input-label": "Choose Training Program",
+        "video_ids-input-placeholder": "Choose Training Program"
+      },
+      "success": "Discount code added successfully",
+      "title": "Add New Coupon"
+    },
+    "add-button": "Add New",
+    "edit": {
+      "success": "Discount code updated successfully",
+      "title": "Edit Coupon"
+    },
+    "table": {
+      "code": "Code",
+      "discount": "Discount Rate (%)",
+      "end-date": "End Date",
+      "is-active": "Activation",
+      "more": "More",
+      "name": "ID",
+      "start-date": "Start Date",
+      "status": "Status",
+      "status-label": {
+        "active": "Active",
+        "expired": "Expired",
+        "inactive": "Inactive"
+      },
+      "used-by": "Number of Uses",
+      "used-by-info": "Number of coupon uses in successful payments, whether the program was completed and a certificate was issued or not"
+    },
+    "title": "Discounts and Promotions",
+    "toggle-error": "Unable to update coupon status",
+    "view": {
+      "amount": "Discount Amount",
+      "code": "Code",
+      "date_end": "End Date",
+      "date_start": "Start Date",
+      "discount_amount": "Total Discount Amount",
+      "graph": {
+        "graph-type": {
+          "all_time": "All Time",
+          "custom": "Custom Range",
+          "daily": "Daily",
+          "hourly": "24 hour",
+          "monthly": "Monthly ",
+          "weekly": "Weekly",
+          "yearly": "Yearly"
+        },
+        "title": "Coupon Statistics"
+      },
+      "langs": "Language",
+      "max_customer_uses": "Number of Uses per User",
+      "name": "Name",
+      "number_of_users": "Number of Uses",
+      "paid_amount": "Total Amount Paid",
+      "paid_amount_after_discount": "Total Amount Paid after Discount",
+      "table": {
+        "date": "Usage Date",
+        "mobile": "Phone",
+        "name": "Name",
+        "number_of_time_used": "Number of Times Used",
+        "percentage": "Total Amount Discounted",
+        "video_title": "Programms",
+        "price": "Price"
+      },
+      "title": "Coupon Details",
+      "type": "Discount Type",
+      "type-fixed": "Fixed",
+      "type-percentage": "Percentage %",
+      "video_ids": "Choose Training Program"
+    }
+  },
+  "filters": {
+    "coupon-filter": {
+      "label": "Coupon code",
+      "placeholder": "Enter coupon code"
+    },
+    "payment-methods": {
+      "card": "Direct payment",
+      "coupon": "Coupon code"
+    }
+  },
+  "financial": {
+    "edit-button": "Edit Prices",
+    "filters": {
+      "coupon-presence": {
+        "label": "Coupon on purchase",
+        "placeholder": "Select one or more",
+        "with": "With coupon code",
+        "without": "Without coupon"
+      }
+    },
+    "reset-user-video": {
+      "cancel": "Cancel",
+      "confirm": "Reset \"{{user}}\"'s subscription to \"{{program}}\"?",
+      "description": "If the user hasn't earned the certificate yet, their progress and answers will be cleared and they'll restart from the first question.",
+      "failure": {
+        "title": "Reset failed"
+      },
+      "ok": "Yes, reset",
+      "success": {
+        "message": "The user's progress for this program has been reset.",
+        "title": "Reset complete"
+      },
+      "title": "Reset subscription"
+    },
+    "title": "Financial Management",
+    "total-revenue": "Total Revenue",
+    "update": {
+      "current-price-label": "Current Price",
+      "new-price-label": "New Price",
+      "save-button": "Save",
+      "title": "Edit Prices",
+      "unit": "SAR"
+    },
+    "users": {
+      "table": {
+        "coupon_code": "Coupon Code",
+        "discount_value": "Discount",
+        "id": "ID",
+        "mobile": "Phone",
+        "name": "Name",
+        "order_id": "Order ID",
+        "paid": "Paid",
+        "payment_method": "Payment Method",
+        "price": "Price",
+        "program": "Training Program",
+        "tax_value": "VAT",
+        "transaction": "Payment Status",
+        "transaction_date": "Transaction Date"
+      }
+    },
+    "transaction-details": {
+      "title": "Transaction Details",
+      "error": "Error loading transaction details",
+      "details": "Transaction Details",
+      "history": "Payment History",
+      "basic-info": "Basic Information",
+      "id": "Transaction ID",
+      "order-id": "Order ID",
+      "trans-id": "Transaction ID (Gateway)",
+      "hash": "Hash",
+      "status": "Status",
+      "result": "Result",
+      "card": "Card",
+      "created-at": "Created At",
+      "request": "Request Data",
+      "response": "Response Data",
+      "no-history": "No payment callback history found",
+      "action": "Action",
+      "amount": "Amount",
+      "methods": "Payment Method",
+      "card-brand": "Card Brand",
+      "rrn": "RRN",
+      "decline-reason": "Decline Reason",
+      "full-data": "View Full Request Data"
+    }
+  },
+  "form-information": {
+    "title": "Form Information"
+  },
+  "general": {
+    "discounts": "Discounts",
+    "language": "Language",
+    "logo-width": "390*324 pixels",
+    "question": "Question",
+    "replace-logo": "Replace image",
+    "scene": "Scene",
+    "taxes": "Taxes",
+    "yes": "Yes",
+    "no": "No",
+    "delete": "Delete"
+  },
+  "global": {
+    "active-filters": {
+      "date-range": "Date range",
+      "period": "Period",
+      "remove": "Remove filter",
+      "title": "Active filters"
+    },
+    "action-error-title": "An error occurred",
+    "action-success-notification-title": "Operation completed successfully",
+    "apply": "Apply",
+    "coupon-filter": "Coupon",
+    "date": "Date",
+    "dates-filter": "Time",
+    "delete": "Delete",
+    "details": "Details",
+    "edit": "Edit",
+    "errors": {
+      "Expected string, received null": "Invalid number",
+      "Invalid date": "Invalid date",
+      "invalidDate": "Invalid date",
+      "invalidEmail": "Please enter a valid email address",
+      "invalidNumber": "Invalid number",
+      "invalidPhoneNumber": "Invalid number",
+      "invalidUrl": "Please enter a valid URL",
+      "largeNumber": "Number is too large",
+      "longPassword": "Password is too long",
+      "noMatch": "Passwords do not match",
+      "required": "This field is required",
+      "serverError": "There was an error connecting to the server",
+      "shortPassword": "Password is too short",
+      "smallNumber": "Number is too small"
+    },
+    "export": "Export",
+    "filters": "Filters",
+    "lang": "Language",
+    "logout-button": "Log out",
+    "payment-method": "Payment method",
+    "program": "Training Program",
+    "programs": "Training Program",
+    "reports": "Reports",
+    "reset": "Clear",
+    "save": "Save",
+    "search": "Search",
+    "select": "Select",
+    "total-results": "{{total}} total results",
+    "total-results-with-page": "{{total}} total results · rows {{from}}–{{to}} on this page",
+    "total-certificates-count": "Total number of certificates",
+    "total-users-count": "Total number of users",
+    "zero-program": "Don't register in any program"
+  },
+  "home": {
+    "bar-graph-type": {
+      "custom": "Custom Range",
+      "daily": "Daily",
+      "hourly": "24 hour",
+      "monthly": "Monthly ",
+      "weekly": "Weekly",
+      "yearly": "Yearly"
+    },
+    "certificates-statistics": {
+      "title": "Total Certificates"
+    },
+    "line-graph-type": {
+      "custom": "Custom Range",
+      "daily": "Current Month",
+      "hourly": "Current day",
+      "monthly": "Current year",
+      "weekly": "Current Week",
+      "yearly": "Last thee years"
+    },
+    "revenue-graph": {
+      "title": "Total Revenue",
+      "y-axis-label": "Revenue"
+    },
+    "statistics": {
+      "total_certificates": "Total Certificates",
+      "total_revenue": "Total Revenue",
+      "total_users": "Total Users"
+    },
+    "user-graph": {
+      "title": "Total Users by Language",
+      "y-axis-label": "Active Users"
+    },
+    "users": {
+      "table": {
+        "id": "ID",
+        "name": "Name",
+        "program": "Training Program",
+        "transaction": "Payment Status",
+        "transaction-status": {
+          "accepted": "Completed",
+          "rejected": "Uncompleted",
+          "uncompleted": "Under Review",
+          "underreview": "Under Review"
+        }
+      }
+    }
+  },
+  "langs": {
+    "ar": "Arabic",
+    "en": "English",
+    "fil": "Tagalog",
+    "fr": "French",
+    "id": "Indonesian",
+    "title": "Languages",
+    "ur": "Urdu"
+  },
+  "login": {
+    "description": "Welcome back! Please enter your login details",
+    "form": {
+      "email-label": "Email",
+      "forgot-password": "Forgot password",
+      "password-label": "Password",
+      "remember-me": "Remember me",
+      "sign-in-button": "Sign in"
+    },
+    "title": "Log in to your account"
+  },
+  "nav": {
+    "items": {
+      "awareness": "Awareness information",
+      "certificate": "Certificate Template",
+      "contacts": "Contact and Inquiries",
+      "coupons": "Discounts and Promotions",
+      "financial": "Financial Management",
+      "form-information": "Form information",
+      "home": "Home",
+      "manage-site": "Website Management",
+      "partners": "Partners",
+      "permissions": "Permissions and Team",
+      "programs": "Manage programs",
+      "reports": "Reports",
+      "reviews": "Reviews",
+      "users": "User Management",
+      "view": "Overview",
+      "stories": "User Stories",
+      "blogs": "Blog posts",
+      "news": "Latest News"
+    }
+  },
+  "no-coupon": "No Coupon",
+  "not-completed": "Not completed",
+  "stories": {
+    "title": "User stories",
+    "description": "Review and manage stories",
+    "table": {
+      "id": "ID",
+      "first_name": "First Name",
+      "last_name": "Last Name",
+      "title": "Title",
+      "age": "Age",
+      "mobile": "Phone Number",
+      "email": "Email ID",
+      "aman_programs": "Aman's programs?",
+      "aman_programs-yes": "Yes",
+      "aman_programs-not_attender": "Not attender",
+      "aman_programs-others": "Others",
+      "video_title": "Program name",
+      "content": "Story",
+      "visibility": "Hide/unhide",
+      "visibility-visible": "Visible",
+      "visibility-hidden": "Hidden",
+      "action": "Actions"
+    },
+    "toggle-error": "Unable to update story visibility"
+  },
+  "blogs": {
+    "title": "Blog posts",
+    "description": "Manage blog articles",
+    "add-button": "Create post",
+    "add": {
+      "title": "Create blog post"
+    },
+    "edit": {
+      "title": "Edit blog post"
+    },
+    "load-error": "Could not load this post.",
+    "form": {
+      "details": "Post content by language",
+      "publish_date": "Publish date",
+      "publish_date_placeholder": "Select date",
+      "tags": "Tags",
+      "tags_placeholder": "Add tags",
+      "logo": "Cover image",
+      "logo_upload_title": "Upload asset",
+      "logo_recommended_size": "Recommended size: 1900×230",
+      "title": "Title",
+      "title_placeholder": "Post title",
+      "short_description": "Short description",
+      "short_description_placeholder": "Summary (max 500 characters)",
+      "content": "Content",
+      "content_placeholder": "Full article content"
+    },
+    "table": {
+      "title": "Title",
+      "publish_date": "Publish date",
+      "actions": "Actions"
+    },
+    "delete": {
+      "cancel": "Cancel",
+      "confirm": "Confirm",
+      "description": "Are you sure you want to delete this post?",
+      "error": "Could not delete the post",
+      "title": "Delete post"
+    }
+  },
+  "news": {
+    "title": "Latest News",
+    "description": "Manage latest news articles",
+    "add-button": "Create news",
+    "add": {
+      "title": "Create news article"
+    },
+    "edit": {
+      "title": "Edit news article"
+    },
+    "load-error": "Could not load this news article.",
+    "form": {
+      "details": "News content by language",
+      "publish_date": "Publish date",
+      "publish_date_placeholder": "Select date",
+      "tags": "Tags",
+      "tags_placeholder": "Add tags",
+      "logo": "Cover image",
+      "logo_upload_title": "Upload asset",
+      "logo_recommended_size": "Recommended size: 1900×230",
+      "title": "Title",
+      "title_placeholder": "News title",
+      "short_description": "Short description",
+      "short_description_placeholder": "Summary (max 500 characters)",
+      "content": "Content",
+      "content_placeholder": "Full news article content"
+    },
+    "table": {
+      "title": "Title",
+      "publish_date": "Publish date",
+      "actions": "Actions"
+    },
+    "delete": {
+      "cancel": "Cancel",
+      "confirm": "Confirm",
+      "description": "Are you sure you want to delete this news article?",
+      "error": "Could not delete the news article",
+      "title": "Delete news article"
+    }
+  },
+  "notifications": {
+    "title": "Notifications"
+  },
+  "partners": {
+    "title": "Partners",
+    "add-button": "Add Logo",
+    "table": {
+      "partner-name": "Partner Name",
+      "logo-image": "Logo image",
+      "activate-deactivate": "Activate / deactivate",
+      "manage": "Manage"
+    },
+    "toggle-error": "Unable to update partner status",
+    "delete": {
+      "cancel": "Cancel",
+      "description": "Are you sure you want to delete {{value}}?",
+      "failer": {
+        "message": "Could not delete partner",
+        "title": "Failed"
+      },
+      "yes": "Delete"
+    },
+    "add": {
+      "title": "Add Logo",
+      "logo-label": "Add Logo image",
+      "name-label": "Partner name",
+      "name-placeholder": "Enter the partner name",
+      "logo-dropzone-text": "Upload a image",
+      "logo-requirements": "PNG, JPG, GIF up to 5MB",
+      "logo-dimensions": "Dimension: 160 * 160",
+      "logo-note": "Note: add without background images",
+      "logo-uploaded": "Logo uploaded successfully"
+    }
+  },
+  "otp": {
+    "description": "We have sent the verification code to your email",
+    "no-otp": "Did not receive a code?",
+    "resend-button": "Click to resend",
+    "title": "Please check your email",
+    "verify-button": "Verify"
+  },
+  "permissions": {
+    "add-button": "Add New",
+    "delete": {
+      "cancel": "Cancel",
+      "confirm": "Confirm",
+      "description": "Are you sure?",
+      "error": "User was not deleted",
+      "title": "Delete Member"
+    },
+    "form": {
+      "cancel-button": "Cancel",
+      "detailed-permissions-title": "Permissions",
+      "email-input-label": "Email",
+      "email-input-placeholder": "Email",
+      "mobile-input-label": "Phone Number",
+      "mobile-input-placeholder": "Phone Number",
+      "name-input-label": "First Name",
+      "name-input-placeholder": "Name",
+      "password-input-label": "Password",
+      "password-input-placeholder": "********",
+      "permissions": {
+        "Add": "Add New",
+        "Awareness": "Awareness information",
+        "Coupon": "Discounts and Promotions",
+        "Delete": "Delete",
+        "Edit": "Edit",
+        "Export": "Export Reports",
+        "Financial": "Financial Management",
+        "Overview": "Overview and Reports",
+        "Programs": "Manage programs",
+        "User": "User Management",
+        "Website_Management": "Website Management"
+      },
+      "permissions-label": "Permissions",
+      "permissions-placeholder": "Allow all permissions",
+      "role-input-label": "Role",
+      "role-input-placeholder": "Choose Role",
+      "save-button": "Save"
+    },
+    "roles": {
+      "Accountant": "Accountant",
+      "Admin": "Admin",
+      "Marketer": "Marketer",
+      "Seller": "Seller"
+    },
+    "title": "Team Members",
+    "view": {
+      "title": "User Details"
+    }
+  },
+  "programs": {
+    "add": {
+      "form": {
+        "add-cover-image": "Add cover photo",
+        "allowed_time": "Allowed answer time",
+        "appears_at": "Appear at",
+        "appears_atl": "Appear at",
+        "certificate_url": "Upload certificate  (jpg/png) ",
+        "certificate_url_placeholder": "Click to upload certificate",
+        "description-label": "Program Description",
+        "description-placeholder": "Enter program description",
+        "lenght-label": "Mention Video end time ",
+        "logo-width": "390*324 pixels",
+        "price": "Price",
+        "price-description": "{{final}} riyal including VAT {{tax}}",
+        "replace-logo": "Replace a image",
+        "video-color-label": "Program color",
+        "video-color-placeholder": "Select color",
+        "video-title-label": "Program title",
+        "video-title-placeholder": "Enter program title",
+        "video_url": "Upload video link ",
+        "video_url_placeholder": "Upload video link "
+      },
+      "program-details": "Program Details",
+      "title": "Add new program"
+    },
+    "add-button": "Add new program",
+    "delete": {
+      "cancel": "Cancel",
+      "description": "Are you sure you want to delete {{value}}?",
+      "failer": {
+        "message": "Could not delete video",
+        "title": "Failer"
+      },
+      "yes": "Delete"
+    },
+    "delete-question": {
+      "failer": {
+        "message": "Could not delete question"
+      }
+    },
+    "delete-scene": {
+      "description": "Are you sure?",
+      "failer": {
+        "message": "Could not delete scene"
+      }
+    },
+    "edit": {
+      "title": "Edit program"
+    },
+    "menu": {
+      "danger-zone": "Danger zone",
+      "delete-program": "Delete program",
+      "edit-price": "Edit price",
+      "edit-questions": "Edit questions",
+      "edit-video": "Edit video",
+      "scenes": "Edit scenes"
+    },
+    "questions": {
+      "add": "Add Question",
+      "title": "Question section"
+    },
+    "reset": {
+      "all-confirm": "Reset all in-progress subscriptions across every program?",
+      "button-all": "Reset all in-progress subscriptions",
+      "cancel": "Cancel",
+      "description": "All enrolled users who have not yet earned the certificate will have their progress and answers cleared, and will restart from the first question.",
+      "failure": {
+        "title": "Reset failed"
+      },
+      "ok": "Yes, reset",
+      "success": {
+        "message": "{{count}} subscription(s) were reset.",
+        "title": "Reset complete"
+      },
+      "title": "Reset program subscriptions",
+      "title-all": "Reset all program subscriptions",
+      "video-confirm": "Reset in-progress subscriptions for \"{{value}}\"?"
+    },
+    "scenes": {
+      "add": "Add Scene",
+      "title": "Scene section"
+    },
+    "title": "Manage programs",
+    "toggle-error": "failer",
+    "status-menu-aria": "Program status",
+    "status-menu-title": "Program status",
+    "status-new": "Mark as New",
+    "status-updated": "Mark as Updated",
+    "status-clear": "Clear status",
+    "status-menu-error": "Could not update program status",
+    "list-status-new": "New",
+    "list-status-updated": "Updated",
+    "list-status-none": "No status"
+  },
+  "questions": {
+    "add": {
+      "form": {
+        "answer_right": "Correct answer",
+        "decleration": "Add a text explanation",
+        "option-label": "Option",
+        "option-placeholder": "Answer text...",
+        "question-label": "1.Write a Question",
+        "question-placeholder": "Enter question",
+        "text-explanation-placeholder": "Type...",
+        "timing": "Timings",
+        "wrong_audio_url": "Upload an MP3 audio file",
+        "wrong_audio_url_placeholder": "click here"
+      },
+      "program-details": "Question details",
+      "title": "Add question"
+    },
+    "edit": {
+      "title": "Edit Question"
+    }
+  },
+  "reports": {
+    "certificate-count": {
+      "title": "Total Certificates"
+    },
+    "coupon-filter-notice": {
+      "certificates": "When filtering by a discount coupon, the total certificate count does not represent the number of coupon uses.",
+      "users": "The total user count does not represent coupon uses, nor the sum of program subscriptions, since a single user may be enrolled in multiple programs."
+    },
+    "general": {
+      "filters": {
+        "date_from": "From Date",
+        "date_to": "To Date",
+        "dates": "Time",
+        "lang": "Language",
+        "programs": "Training Programs"
+      },
+      "title": "Total Reports",
+      "y-axis-label": "Active Users"
+    },
+    "graph-type": {
+      "custom": "Custom Range",
+      "daily": "Daily",
+      "hourly": "24 hour",
+      "lastDay": "Today",
+      "lastHour": "Last Hour",
+      "lastMonth": "Last Month",
+      "lastWeek": "Last Week",
+      "lastYear": "Last Year",
+      "monthly": "Monthly ",
+      "total": "Total",
+      "weekly": "Weekly",
+      "yearly": "Yearly"
+    },
+    "users-count": {
+      "title": "Total Users"
+    }
+  },
+  "reset-password": {
+    "description": "Set a password for your account",
+    "form": {
+      "otp-label": "Verification code",
+      "password-confirmation-label": "Confirm password",
+      "password-label": "New password",
+      "save-button": "Save"
+    },
+    "send-otp": {
+      "form": {
+        "email-label": "Email",
+        "send-button": "Send verification code"
+      }
+    },
+    "title": "Set a new password"
+  },
+  "reviews": {
+    "coupon-filter-notice": "The total results do not represent the actual number of coupon uses, since not every user who used a coupon completed the program through the rating stage.",
+    "filters": {
+      "email": "Email",
+      "rate": "Rating",
+      "rate-question-1": "Question 1",
+      "rate-question-2": "Question 2",
+      "rate-question-3": "Question 3",
+      "rate-question-4": "Question 4",
+      "rate_question_1": "Question 1",
+      "rate_question_2": "Question 2",
+      "rate_question_3": "Question 3",
+      "rate_question_4": "Question 4",
+      "email-input-label": "Email"
+    },
+    "rating-list": {
+      "1": "How would you rate the overall usability of the test interface?",
+      "2": "Do the questions reflect real-life scenarios well enough to improve your understanding?",
+      "3": "How satisfied are you with the responsiveness and clarity of the video content?",
+      "4": "Was progress tracking (hearts, correct answers, time) useful during the test?"
+    },
+    "table": {
+      "average": "Average rating",
+      "comments": "Comments",
+      "id": "ID",
+      "is-active": "Active",
+      "name": "Name",
+      "program": "Training Program",
+      "rate_1": "Question 1",
+      "rate_2": "Question 2",
+      "rate_3": "Question 3",
+      "rate_4": "Question 4"
+    },
+    "title": "Reviews",
+    "toggle-error": "Could not update review status",
+    "toggle-success-message": "Review activity was updated.",
+    "toggle-success-title": "Saved",
+    "comment-filter": "Search in comments"
+  },
+  "scenes": {
+    "add": {
+      "form": {
+        "add-cover-image": "Scene cover photo",
+        "end_time-label": "Scene end time",
+        "scene-title-label": "Scene title",
+        "scene-title-placeholder": "Enter scene title",
+        "start_time-label": "Scene start time"
+      },
+      "program-details": "Scene details",
+      "title": "Add Scene"
+    },
+    "edit": {
+      "title": "Edit scene"
+    }
+  },
+  "user": {
+    "table": {
+      "age": "Age",
+      "birth-date": "Birth date",
+      "gender": "Gender",
+      "nationality": "Nationality ",
+      "personal-info": "Personal information",
+      "sector": "Sector",
+      "workplace": "Company name"
+    },
+    "progress": {
+      "section_title": "Certificate progress",
+      "phase1": "Watch & questions",
+      "phase2": "Rate video",
+      "phase3": "Profile details",
+      "phase4": "Extra form (coupon)",
+      "phase5": "Certificate issued",
+      "tooltip": {
+        "phase1": "Watch the full program and answer all questions (progress reaches 100%).",
+        "phase2": "Submit a rating for the training video.",
+        "phase3": "Set first and last name so the profile has a full name (required to generate the certificate).",
+        "phase4": "If the coupon requires a form, complete the additional user information.",
+        "phase5": "Certificate PDF has been generated and linked."
+      },
+      "revoke_button": "Revoke certificate issuance",
+      "revoke_success_title": "Updated",
+      "revoke_success_message": "Certificate issuance has been cleared.",
+      "revoke_error_title": "Error",
+      "revoke_error_message": "Could not revoke certificate issuance."
+    }
+  },
+  "users": {
+    "add-button": "Add New User",
+    "add-title": "Add New User",
+    "delete": {
+      "cancel": "Cancel",
+      "confirm": "Confirm",
+      "description": "Are you sure?",
+      "error": "User not deleted",
+      "title": "Delete User"
+    },
+    "edit": {
+      "title": "Edit User Details"
+    },
+    "edit-button": "Edit",
+    "filters": {
+      "langs": {
+        "ar": "Arabic",
+        "en": "English",
+        "fil": "Tagalog",
+        "fr": "French",
+        "id": "Indonesian",
+        "title": "Languages",
+        "ur": "Urdu"
+      },
+      "payment-methods": {
+        "title": "Select Payment Method"
+      },
+      "programs": {
+        "title": "Programs"
+      }
+    },
+    "form": {
+      "cancel-button": "Cancel",
+      "email-input-label": "Email (Optional)",
+      "email-input-placeholder": "Email (Optional)",
+      "first_name-input-label": "First Name",
+      "first_name-input-placeholder": "First Name",
+      "langs-input-label": "Choose Language",
+      "langs-input-placeholder": "Choose Language",
+      "last_name-input-label": "Last Name",
+      "last_name-input-placeholder": "Last Name",
+      "mobile-input-label": "Phone Number",
+      "mobile-input-placeholder": "Phone Number",
+      "save-button": "Save"
+    },
+    "table": {
+      "certificate_count": "Number of Certificates",
+      "coupon": "Coupon",
+      "id": "ID",
+      "lang": "Language",
+      "mobile": "Phone",
+      "more": "More",
+      "user": "User",
+      "name": "Name",
+      "program": "Training Program",
+      "show-form-info": "Form information ",
+      "status-label": {
+        "active": "Active",
+        "expired": "Expired",
+        "inactive": "Inactive"
+      }
+    },
+    "title": "User Management",
+    "coupon-filter-notice": "This count reflects the number of users who used the coupon, not the total uses. A user who used it multiple times is counted once.",
+    "toggle-error": "Unable to update coupon status",
+    "view": {
+      "certificate_count": "Number of Certificates",
+      "correct_answers": "Number of Correct Answers",
+      "coupons": "Coupons",
+      "currency": "SAR",
+      "current_time": "Current Stop Point",
+      "download-certificate": "Download Certificate",
+      "email": "Email",
+      "evaluation": "Rating",
+      "full_name": "Name",
+      "id": "ID",
+      "lang": "Language",
+      "mobile": "Phone",
+      "paid": "Paid to {{value}}",
+      "statistics": "Statistics",
+      "title": "User Information",
+      "total_paid": "Total Amount Paid",
+      "training_program": "Training Course",
+      "video_played": "Video Played",
+      "view_certificate": "View Certificate",
+      "certificate_number": "Certificate number",
+      "coupon_code": "Coupon Code",
+      "created_at": "Registered",
+      "updated_at": "Last updated",
+      "regenerate_certificate": {
+        "button": "Regenerate certificate",
+        "success_title": "Success",
+        "success_message": "Certificate has been regenerated.",
+        "error_title": "Error",
+        "error_message": "Could not regenerate certificate."
+      },
+      "update_certificate_username": {
+        "button": "Update Certificate Name",
+        "title": "Update Certificate Username",
+        "first_name_label": "First Name",
+        "first_name_placeholder": "Enter first name",
+        "first_name_required": "First name is required",
+        "last_name_label": "Last Name",
+        "last_name_placeholder": "Enter last name",
+        "last_name_required": "Last name is required",
+        "submit_button": "Update",
+        "success_title": "Success",
+        "success_message": "Certificate username updated successfully",
+        "error_title": "Error",
+        "error_message": "Failed to update certificate username",
+        "countdown_title": "Generating Certificate",
+        "countdown_message": "Please wait while the certificate with the new name is being generated. The page will refresh automatically."
+      }
+    }
+  },
+  "users-info": {
+    "certificate_count": "Number of Certificates",
+    "id": "ID",
+    "lang": "Language",
+    "mobile": "Phone",
+    "modal-title": "User Information",
+    "name": "Customer Name",
+    "payment_method": "Payment Method",
+    "payment_status": "Payment Status",
+    "program": "Training Program",
+    "reject_reason": "Reason for Rejection",
+    "title": "User Information",
+    "transaction_date": "Transaction Date",
+    "transaction_id": "Transaction ID"
+  },
+  "story": {
+    "approve": "Approve",
+    "reject": "Reject",
+    "edit": "Edit",
+    "delete": "Delete",
+    "approve-confirmation": "Are you sure you want to approve this story?",
+    "reject-confirmation": "Are you sure you want to reject this story?",
+    "story-approved": "Story approved successfully",
+    "story-rejected": "Story rejected successfully",
+    "story-updated": "Story updated successfully",
+    "edit-story": "Edit Story",
+    "title": "Title",
+    "content": "Content",
+    "first-name": "First Name",
+    "last-name": "Last Name",
+    "email": "Email",
+    "mobile": "Mobile",
+    "age": "Age",
+    "enter-title": "Enter story title",
+    "enter-content": "Enter story content",
+    "enter-first-name": "Enter first name",
+    "enter-last-name": "Enter last name",
+    "enter-email": "Enter email",
+    "enter-mobile": "Enter mobile number",
+    "enter-age": "Enter age",
+    "update": "Update",
+    "cancel": "Cancel",
+    "title-required": "Title is required",
+    "content-required": "Content is required",
+    "first-name-required": "First name is required",
+    "last-name-required": "Last name is required",
+    "email-required": "Email is required",
+    "mobile-required": "Mobile is required",
+    "invalid-email": "Invalid email",
+    "try-again": "Try again!",
+    "story-not-updated": "Could not update content!",
+    "age-required": "Age is required"
+  },
+  "common": {
+    "save": "Save",
+    "remove": "Remove",
+    "refresh": "Refresh",
+    "sort-asc": "Sort ascending",
+    "sort-desc": "Sort descending",
+    "sort-clear": "Clear sort"
+  },
+  "validation": {
+    "required": "This field is required",
+    "long": "Text is too long (max 500 characters)",
+    "invalidUrl": "Please enter a valid URL"
+  }
+}

@@ -1,0 +1,663 @@
+{
+  "about-us": {
+    "about-us": {
+      "description": "The program is designed to provide emergency response training through fun and interactive scenario-based videos. The platform covers both health and sports injuries, aiming to educate users on basic skills to deal with emergencies. Key features include real-time questions on how to deal with the situation with the ability to track progress, evaluate performance, and obtain a certificate upon completion of the training program, our platform ensures a seamless user experience with options to update personal data, check certificates and share achievements on social media. The platform targets a wide audience, ranging from 8 to 60 years old, and promotes learning in a fun and interactive way with a focus on life-saving skills",
+      "share": {
+        "card": {
+          "description": "Interactive Emergency Awareness Program",
+          "title": "Got 100%"
+        },
+        "title": "Share your success!"
+      },
+      "title": "Who We Are",
+      "updates": {
+        "description": "Many individuals lack the proper training to deal with health and sports emergencies. Traditional methods are often inaccessible and habitual. There is a need for an interactive platform that provides accessible and comprehensive training for emergencies.",
+        "title": "Challenges"
+      }
+    },
+    "additional-partners": {
+      "description": "We are proud of in partnership with the leading organizations in spreading awareness among members of society",
+      "title": "Awareness Partners"
+    },
+    "hero": {
+      "description": "It is an interactive awareness and training program to educate and raise awareness about emergency health and sports injuries and the proper ways to deal with them",
+      "title": "About Aman"
+    },
+    "objectives": {
+      "description": "Strengthening the capacity of community members on how to deal with emergencies, learn and provide assistance",
+      "objectives-list": {
+        "list": {
+          "fifth": {
+            "title": "Tongue swallowing accidents during sports"
+          },
+          "first": {
+            "title": "Preserving Life"
+          },
+          "fourth": {
+            "title": "How to use a defibrillator"
+          },
+          "second": {
+            "title": "Medical Emergencies"
+          },
+          "sixth": {
+            "title": "Sports concussion accidents"
+          },
+          "third": {
+            "title": "Cardiopulmonary resuscitation"
+          }
+        }
+      },
+      "title": "Goals"
+    },
+    "our-partners": {
+      "description": "We are proud to partner with leading organizations to deliver high-quality emergency response training, ensuring effective and up-to-date practices for health and sports-related situations.",
+      "title": "Our partners"
+    },
+    "solutions": {
+      "description": "The platform provides a fun technology solution for emergency response training through interactive scenario-based videos, users learn health and sports-related emergency skills at their own pace. Featuring real-time quizzes, progress tracking, and performance assessments to keep users engaged, upon completion of the program users can earn certificates, easily verify their achievements and share their results on social media, this solution designed for a wide audience provides a modern and flexible way to equip individuals with essential life-saving skills and address the limitations of traditional training methods",
+      "list": {
+        "fifth": {
+          "description": "Celebrate your success! Share your certificate and program achievements on social media",
+          "title": "Share your achievement"
+        },
+        "first": {
+          "description": "Start your journey by watching videos of the interactive training program designed to engage and teach practical skills",
+          "title": "Watch the program videos"
+        },
+        "fourth": {
+          "description": "Successfully complete all modules and assessments to receive a certificate of completion of the training program",
+          "title": "Get your certificate"
+        },
+        "second": {
+          "description": "Test your understanding by answering the questions between each video",
+          "title": "Answer the questions"
+        },
+        "third": {
+          "description": "With each completed lesson, you can track your progress and deepen your knowledge",
+          "title": "Progress"
+        }
+      },
+      "title": "Solutions"
+    },
+    "splitted-logo": {
+      "fifth": "P",
+      "first": "Start",
+      "fourth": "R",
+      "second": "Sport",
+      "sixth": "C",
+      "third": "Heart and Health"
+    },
+    "target": {
+      "description": "The program is aimed at all members of the community from the age of 8",
+      "main": {
+        "description": "Providing awareness and education about health and sports emergencies to provide the necessary assistance to people before they reach health centers or other medical facilities and avoid life-threatening incidents using technology",
+        "sub-description": "The principle is to build a healthier life, free from cardiovascular disease, stroke, and major sports injuries and to educate the individual on how to save lives, have a life free from serious diseases and live healthy while promoting the community to attend first aid, CPR and sports first responder courses.",
+        "title": "The main goal"
+      },
+      "title": "Target audience"
+    },
+    "why-us": {
+      "description": "Committed to providing fun training that equips you with basic emergency response skills",
+      "reasons": {
+        "0": "Multilingual",
+        "1": "Time efficiency",
+        "2": "Wide range",
+        "3": "Easy to use",
+        "4": "New technologies",
+        "5": "Evidence-based",
+        "6": "Prevention",
+        "7": "Paperless (for a safe environment)",
+        "8": "Interactive"
+      },
+      "title": "Why Aman"
+    }
+  },
+  "awareness": {
+    "description": "Learn to recognize and respond to critical health and sports emergencies with clear symptoms and swift actions.",
+    "symptoms": "symptoms",
+    "title": "Emergency Awareness Guide",
+    "to-programs": "Go to Programs"
+  },
+  "certificate": {
+    "generating": {
+      "title": "Generating your certificate…",
+      "subtitle": "Please wait. This page will refresh automatically."
+    },
+    "answers": "Answers",
+    "average-answer-time": "Average Answer Speed",
+    "certificate-card": {
+      "certificates": "Certificates",
+      "download-button": "Download PDF",
+      "grade": "Excellent!",
+      "pass": "Passed",
+      "sec": "Second",
+      "share-button": "Share your score",
+      "share-title": "You have passed {value} How about you",
+      "share-with-others": "Share Aman with others",
+      "title": "Certificate of Achievement!"
+    },
+    "continue": "Follow-up to obtain the certificate",
+    "grade": "Excellent!",
+    "sec": "Second",
+    "loading": "Generating certificate"
+  },
+  "choose-language": {
+    "next-button": "Next",
+    "tabs": {
+      "ar": "العربية",
+      "en": "English",
+      "fil": "Tagalog",
+      "fr": "Français",
+      "id": "Indonesian",
+      "ur": "اُردُو"
+    },
+    "title": "Choose the language"
+  },
+  "complete-profile": {
+    "age": "Age",
+    "coupon-form-description": "To proceed with obtaining your certificate, please complete this section",
+    "coupon-form-title": "Enter personal information",
+    "description": "To proceed with your certification, please complete your profile",
+    "email": "Email",
+    "email-input-placeholder": "Example@example.co",
+    "errors": {
+      "invalidEmail": "Invalid Email",
+      "required": "This field is required",
+      "serverError": "Error connecting to the server"
+    },
+    "female": "Female",
+    "first_name": "First Name",
+    "first_name-input-placeholder": "",
+    "gender": "Gender",
+    "last_name": "Last Name",
+    "last_name-input-placeholder": " ",
+    "male": "Male",
+    "name": "Name",
+    "name-input-placeholder": "",
+    "nationality": "Nationality",
+    "save-button": "Continue ",
+    "sector": "Sector",
+    "success": "Your personal details have been successfully completed",
+    "title": "Complete your profile",
+    "workplace": "Company name"
+  },
+  "contact-us": {
+    "description": "Fill out the form below and we will get back to you as soon as possible. Or contact us directly on +966 53 367 3587",
+    "form": {
+      "email-input-label": "Enter your email address",
+      "email-input-placeholder": "Example@example.co",
+      "errors": {
+        "invalidEmail": "Invalid Email",
+        "invalidPhoneNumber": "Mobile number must be between 10 and 13 digits",
+        "maxLength": "Maximum 5 images",
+        "required": "This field is required",
+        "serverError": "Error connecting to the server"
+      },
+      "images-input-label": "Attached Images",
+      "images-max-reached": "Maximum reached (5 images)",
+      "images-upload-placeholder": "Click or drag images here (max 5 images)",
+      "video_title_label": "Select program (optional)",
+      "video_title_placeholder": "Choose a program (optional)",
+      "message-input-label": "Subject",
+      "message-input-placeholder": "Enter the subject here!",
+      "mobile-input-label": "Mobile Number",
+      "name-input-label": "Enter your full name",
+      "name-input-placeholder": "Your full name",
+      "subject-input-label": "Message",
+      "subject-input-placeholder": "Enter the subject here!",
+      "submit-button": "Submit",
+      "uploading": "Uploading...",
+      "success": "Your message has been successfully received, you will receive a reply as soon as possible.",
+      "tabs": {
+        "complaint": "Complaint",
+        "inquiry": "Inquiry",
+        "suggestion": "Suggestion"
+      },
+      "type-label": "Select the type of message"
+    },
+    "title": "Contact Us"
+  },
+  "coupon": {
+    "coupon-button": "Apply",
+    "errors": {
+      "invalidCoupon": "Invalid coupon code"
+    },
+    "input-placeholder": "Enter your discount code"
+  },
+  "course": {
+    "course-footer": {
+      "change-program-button": "All programs",
+      "change-program-confirm-dialog": "Are you sure you want to change your training program?",
+      "change-program-dialog-cancel": "No",
+      "change-program-dialog-confirm": "Yes",
+      "select-scene-button": "Scene Selector",
+      "select-scene-warning": "Once you have completed the program, you will be able to select scenes",
+      "sound-tooltip": "Sound",
+      "subtitle-tooltip": "Subtitle"
+    },
+    "course-header": {
+      "average-answer-time": "Average Answer Speed",
+      "score": {
+        "right-answers": "Correct Answers",
+        "total": "Total Questions"
+      }
+    },
+    "wrong-answer-modal": {
+      "continue-button": "Continue",
+      "description": "You lost a heart",
+      "listen": "Listen to the explanation to understand the impact of this decision on the sufferer",
+      "reason": "Explain the reason",
+      "title": "Incorrect Answer!"
+    },
+    "error-alert": {
+      "title": "Error",
+      "ok-button": "OK",
+      "default-message": "An error occurred while processing your answer."
+    }
+  },
+  "faqs": {
+    "awareness": {
+      "description": "",
+      "title": "Emergency Awareness Guide"
+    },
+    "description": "Get answers to frequently asked questions about our training programs and services",
+    "title": "FAQs"
+  },
+  "footer": {
+    "about": "About Aman",
+    "description": "Aman platform in Saudi Arabia – Interactive training and first aid",
+    "all-right-reserved": "All rights reserved for Aman © {value}",
+    "awareness-information": "Awareness Information",
+    "be-rescuer": "Be a Rescuer",
+    "blog": "Blog",
+    "latest-news": "Latest News",
+    "contact": "Contact us",
+    "contact-us": "Aman Technical Support",
+    "email": "Email",
+    "faqs": "FAQs",
+    "full-screen": "Full Screen",
+    "home": "Home",
+    "important-links": "Important links",
+    "information-center": "Information Center",
+    "phonenumber": "Phone Number",
+    "whatsapp": "WhatsApp",
+    "privacy-policy": "Privacy Policy",
+    "socials": "Social Media",
+    "terms": "Terms and Conditions"
+  },
+  "global": {
+    "viewMore": "View more"
+  },
+  "header": {
+    "about": "About Aman",
+    "awareness-information": "Awareness Information",
+    "be-rescuer": "Be a Rescuer",
+    "blog": "Blog",
+    "latest-news": "Latest News",
+    "contact": "Contact Us",
+    "faqs": "FAQs",
+    "full-screen": "Full Screen",
+    "home": "Programs",
+    "information-center": "Certificate verification",
+    "close-menu": "Close menu",
+    "nav-menu-dialog": "Site navigation"
+  },
+  "home": {
+    "title": "The first global interactive platform for education and awareness on emergency health and sports conditions and cardiopulmonary resuscitation",
+    "map": {
+      "noData": "No statistics available for this region",
+      "rescuerVisitsLabel": "Rescuer visits worldwide",
+      "analyticsSource": "Source: Google Analytics",
+      "exploreCaption": "Explore the world"
+    }
+  },
+  "information-center": {
+    "description": "Confirm receipt and successful completion of the emergency response training program",
+    "result": {
+      "answers": "Answers",
+      "average-answer-time": "Average Answer Speed",
+      "download-button": "Download PDF",
+      "grade": "Excellent!",
+      "not-found": "The certificate has been canceled or removed or not generated yet!",
+      "pass": "Passed",
+      "sec": "Second",
+      "share-button": "Share your score",
+      "share-title": "You have passed {value} How about you",
+      "share-with-others": "Share Aman with others",
+      "start-course-button": "Start Program"
+    },
+    "search": {
+      "clear-history": "Delete Records",
+      "empty-search-error": "Please enter certificate number",
+      "input-placeholder": "Search by certificate number",
+      "no-results": "Sorry, no matching records were found. Please check the details and try again.",
+      "old-search": "Records",
+      "search-button": "Search"
+    },
+    "title": "information center"
+  },
+  "landscape": {
+    "description": "Please use your phone in landscape mode for the best video viewing experience"
+  },
+  "login": {
+    "send-opt": {
+      "button": "Send verification code",
+      "description": "Please enter your mobile phone number to continue",
+      "errors": {
+        "invalidPhoneNumber": "Invalid phone number format. Must have exactly 9 digits after the country code.",
+        "required": "Phone number required",
+        "serverError": "Error connecting to the server",
+        "tryAgainAfter": "Exceeded the number of allowed attempts Please try again later"
+      },
+      "input-label": "Mobile Phone Number",
+      "input-placeholder": "Enter the number",
+      "title": "Continue logging in"
+    },
+    "success": {
+      "button": "Next",
+      "title": "Successfully logged in!"
+    },
+    "title": "Welcome to Aman",
+    "verify-opt": {
+      "button": "Code confirmation",
+      "change-number-button": "Edit Number",
+      "description": "Please enter the temporary 4-digit password sent to your mobile number",
+      "errors": {
+        "overuse": "Exceeded the number of allowed attempts Please try again later",
+        "serverError": "Error connecting to the server",
+        "tryAgainAfter": "Exceeded the number of allowed attempts Please try again later",
+        "unauthorized": "Invalid code"
+      },
+      "input-label": "Enter the verification code",
+      "resend-code": "Resend",
+      "title": "Continue logging in"
+    }
+  },
+  "payment": {
+    "choose-method": "We support the following payment methods",
+    "coupon": {
+      "coupon-button": "Apply",
+      "coupon-code-applied": "Coupon code has been applied",
+      "errors": {
+        "invalidCoupon": "Invalid coupon"
+      },
+      "input-placeholder": "Enter coupon code"
+    },
+    "next-button": "Next",
+    "options": {
+      "apple": {
+        "description": "",
+        "value": "Apple Pay"
+      },
+      "card": {
+        "description": "Pay securely with Visa, MasterCard, or Mada.",
+        "value": "Credit card"
+      }
+    },
+    "price": {
+      "discount": "Discount price",
+      "original": "Program Price Includes VAT",
+      "total": "Total Price",
+      "vat": "VAT"
+    },
+    "selected-course": "The selected program",
+    "success": {
+      "button": "Next",
+      "title": "Payment received successfully!"
+    },
+    "failure": {
+      "button": "Try again",
+      "title": "Payment could not be completed"
+    }
+  },
+  "privacy-policy": {
+    "description": "Please read the policy carefully",
+    "title": "Privacy Policy"
+  },
+  "profile": {
+    "certificates": "Certificates obtained",
+    "change-mobile-button": "Change",
+    "dropdown": {
+      "change-lang": "Change the language",
+      "change-language": {
+        "tabs": {
+          "ar": "العربية",
+          "en": "English",
+          "fil": "Tagalog",
+          "fr": "Français",
+          "id": "Indonesian",
+          "ur": "اُردُو"
+        },
+        "title": "Change the language",
+        "update-button": "Modify the language"
+      },
+      "logout": "Sign out",
+      "profile": "Profile"
+    },
+    "edit": {
+      "description": "Update your personal information and contact details",
+      "title": "Edit"
+    },
+    "edit-button": "Edit",
+    "email": "Email",
+    "email-input-placeholder": "Example@example.co",
+    "errors": {
+      "invalidEmail": "Invalid Email",
+      "required": "This field is required",
+      "serverError": "Error connecting to the server"
+    },
+    "first_name": "First Name",
+    "first_name-input-placeholder": "",
+    "last_name": "Last Name",
+    "last_name-input-placeholder": "",
+    "mobile": "Mobile Phone Number",
+    "name": "Name",
+    "name-input-placeholder": "",
+    "save-button": "Save",
+    "success": "Your personal details have been successfully edited",
+    "update-mobile": {
+      "send-opt": {
+        "button": "Send verification code",
+        "description": "Please enter your mobile number to receive a verification code",
+        "errors": {
+          "invalidPhoneNumber": "Invalid phone number format. Must be 7-15 digits, optionally starting with '+'.",
+          "required": "Phone number required",
+          "serverError": "Error connecting to the server",
+          "tryAgainAfter": "Exceeded the number of allowed attempts Please try again later"
+        },
+        "input-label": "Enter the new phone number*",
+        "input-placeholder": "Enter the number",
+        "title": "Update Phone Number"
+      },
+      "success": {
+        "button": "Back",
+        "title": "Your mobile number has been successfully updated!"
+      },
+      "verify-opt": {
+        "button": "Code confirmation",
+        "change-number-button": "Edit Number",
+        "description": "Please enter the 4-digit verification code sent to your phone number ",
+        "errors": {
+          "overuse": "Exceeded the number of allowed attempts Please try again later",
+          "serverError": "Error connecting to the server",
+          "tryAgainAfter": "Exceeded the number of allowed attempts Please try again later",
+          "unauthorized": "Invalid code"
+        },
+        "input-label": "Enter the verification code",
+        "resend-code": "Resend",
+        "title": "Mobile Number Update"
+      }
+    }
+  },
+  "rating": {
+    "continue": "Continue",
+    "description": "Your feedback is important to us! Answer these quick questions to help us optimize the testing experience and platform",
+    "rating-list": {
+      "1": "How would you rate the overall usability of the test interface?",
+      "2": "Do the questions reflect real-life scenarios well enough to improve your understanding?",
+      "3": "How satisfied are you with the responsiveness and clarity of the video content?",
+      "4": "Was progress tracking (hearts, correct answers, time) useful during the test?"
+    },
+    "stepper": {
+      "first": "Rating",
+      "fourth": "Details",
+      "second": "Complete the data",
+      "third": "Receive the certificate"
+    },
+    "textarea-label": "Describe your experience (optional)",
+    "textarea-placeholder": "Tell us more about your experience!",
+    "title": "Help us optimize your experience"
+  },
+  "share": {
+    "title": "I achieved {value}% in the {course} program. What about you? Try it now."
+  },
+  "share-your-success": {
+    "got": "You got {value}%",
+    "share-button": "Share your score",
+    "share-with-others": "Share Aman with others",
+    "title": "Share your success!"
+  },
+  "start": {
+    "description": "Explore how to deal with tongue swallowing and sports first aid in emergency health situations",
+    "new-program": "New program",
+    "new-cases": "New Cases",
+    "start-course-button": "Start Program",
+    "search-placeholder": "Search",
+    "filter-aria-label": "Open filters",
+    "filter-title": "Filters",
+    "filter-all": "All programs",
+    "filter-updated-programs": "Updated programs only",
+    "filter-new-status": "New or updated cases only",
+    "filter-new-status-hint": "Status: New or Updated",
+    "filter-most-viewed": "Most viewed programs",
+    "filter-loading": "Loading programs",
+    "filter-error": "Could not load programs. Please try again.",
+    "video-status-new": "New",
+    "video-status-updated": "Updated",
+    "no-results": "No programs match your search.",
+    "platform-help-link": "How do I use the platform?",
+    "platform-help-collapse": "Hide help link",
+    "platform-help-expand": "Show help link"
+  },
+  "stories": {
+    "form": {
+      "age": "Enter your age",
+      "agePlaceholder": "Enter your age",
+      "agreeToDisplay": "I agree to the display of my first name, age, and story on the Aman platform and social media",
+      "description": "Inspire others by sharing your lifesaving experiences and encourage more people to learn and act.",
+      "email": "Enter your email ID",
+      "emailPlaceholder": "Enter email ID",
+      "errors": {
+        "invalidEmail": "Invalid email format",
+        "maxLength": "Maximum 500 characters allowed",
+        "required": "This field is required",
+        "serverError": "Error connecting to the server"
+      },
+      "firstName": "Enter your first name",
+      "firstNamePlaceholder": "Enter first name",
+      "hasAttendedProgram": "Have you attended one of Aman's programs?",
+      "hasAttendedProgramPlaceholder": "Select",
+      "lastName": "Enter your last name",
+      "lastNamePlaceholder": "Enter last name",
+      "no": "No",
+      "occupation": "Story title",
+      "occupationPlaceholder": "Enter story title",
+      "other": "Other",
+      "phoneNumber": "Enter your phone number",
+      "phoneNumberPlaceholder": "Enter phone number",
+      "programName": "Program Name",
+      "programNamePlaceholder": "Enter program name",
+      "selectedVideo": "Which program did you attend?",
+      "selectedVideoPlaceholder": "Select a program",
+      "story": "You story details",
+      "storyDescription": "- maximum 500 characters",
+      "storyPlaceholder": "Describe your rescue experience, what happened, and how it made a difference",
+      "submit": "Submit",
+      "success": "Your story has been submitted successfully!",
+      "title": "Share Your Rescue Story",
+      "yes": "yes"
+    },
+    "hero": {
+      "description": "On the interactive In‘aash platform, we believe that everyone can be a rescuer in an emergency.",
+      "description2": "We are the first interactive platform for teaching first aid skills, dealing with daily health and sports emergencies, and performing CPR. You will learn through realistic videos, instant interaction, and receive an accredited certificate. It’s not just a program, but a lifestyle — because every minute can save a life.",
+      "description3": "Every rescue story can inspire hundreds to learn and save lives. Share your experience and be a voice for awareness and change.",
+      "title": "Be a Rescuer"
+    },
+    "stories": {
+      "description": "Discover inspiring moments where ordinary people became lifesavers, proving anyone can make a difference.",
+      "title": "Real Stories <br></br> Real Heroes",
+      "warrning": "*The way people handle situations in stories is not necessarily the correct approach for dealing with emergencies. At Aman, we recommend attending our awareness programs to learn the proper procedures"
+    }
+  },
+  "success": {
+    "button": "Next",
+    "title": "Payment Successfully Made!"
+  },
+  "terms": {
+    "description": "Please read the terms carefully",
+    "title": "Terms and Conditions"
+  },
+  "tour": {
+    "buttons": {
+      "next": "Next",
+      "skip": "Skip",
+      "start": "Start"
+    },
+    "steps": {
+      "step1": {
+        "content": "Monitor your progress while watching the video.",
+        "title": "Track Your Progress"
+      },
+      "step2": {
+        "content": "See how many questions are left and how many you answered correctly.",
+        "title": "Total Questions and Answers"
+      },
+      "step3": {
+        "content": "Start with 5 hearts! Lose one for a wrong answer, and gain one for a correct answer.",
+        "title": "Keep It Up!"
+      },
+      "step4": {
+        "content": "Track how fast you choose the correct answer for each question.",
+        "title": "Time Matters!"
+      },
+      "step5": {
+        "content": "Answer questions in the video to test and improve your skills for real-life situations.",
+        "title": "Scenario-Based Questions"
+      },
+      "step6": {
+        "content": "Complete the training program to get your certificate and showcase your skills!",
+        "title": "Earn Your Certificate"
+      },
+      "step7": {
+        "content": "Option to share your achievement with others.",
+        "title": "Share Results"
+      }
+    }
+  },
+  "how-to-use": {
+    "title": "How to use the platform",
+    "back": "Back"
+  },
+  "blog": {
+    "title": "Blog Inaa’sh",
+    "description": "It is an interactive awareness and training program to educate and raise awareness about emergency health and sports injuries and the proper ways to deal with them",
+    "empty": "No posts yet. Check back soon.",
+    "pagination": {
+      "navLabel": "Blog pagination",
+      "previous": "Previous",
+      "next": "Next",
+      "summary": "Showing {from}-{to} of {total}"
+    }
+  },
+  "latest-news": {
+    "title": "Latest News",
+    "description": "Stay up to date with the latest news, updates, and announcements from Aman",
+    "empty": "No news yet. Check back soon.",
+    "pagination": {
+      "navLabel": "News pagination",
+      "previous": "Previous",
+      "next": "Next",
+      "summary": "Showing {from}-{to} of {total}"
+    }
+  }
+}

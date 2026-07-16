@@ -1,0 +1,18 @@
+{
+  "name": "aman",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Aman monorepo: backend (Laravel), dashboard (Vite/React), website (Next.js)",
+  "scripts": {
+    "dev": "concurrently -n backend,vite,dashboard,website -c blue,yellow,magenta,green \"npm:dev:backend\" \"npm:dev:backend-vite\" \"npm:dev:dashboard\" \"npm:dev:website\"",
+    "dev:backend": "cd backend && php artisan serve",
+    "dev:backend-vite": "npm --prefix backend run dev",
+    "dev:dashboard": "npm --prefix dashboard run dev",
+    "dev:website": "npm --prefix website run dev",
+    "install:all": "npm --prefix dashboard install && npm --prefix website install && npm --prefix backend install",
+    "build": "npm --prefix dashboard run build && npm --prefix website run build && npm --prefix backend run build"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

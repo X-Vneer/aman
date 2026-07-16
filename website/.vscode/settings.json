@@ -1,0 +1,15 @@
+{
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "cSpell.words": ["unathorization"],
+  "files.exclude": {
+    "**/dist": true,
+    "**/out": true
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/dist": true
+  },
+  "i18n-ally.localesPaths": ["src/content"],
+  "i18n-ally.keystyle": "nested",
+  "i18n-ally.sourceLanguage": "ar"
+}

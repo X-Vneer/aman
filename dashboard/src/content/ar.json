@@ -1,0 +1,1047 @@
+{
+  "Awareness": {
+    "add-button": "أضافة"
+  },
+  "awareness": {
+    "add": {
+      "details": "تفاصيل الصفحة",
+      "form": {
+        "awareness-description-label": "وصف الحالة",
+        "awareness-description-placeholder": "أدخل وصف الحالة",
+        "awareness-title-label": "إضافة عنوان الأعراض",
+        "awareness-title-placeholder": "أدخل عنوان الحالة",
+        "symptoms-title-label": "أضف الأعراض",
+        "symptoms-title-placeholder": "اضغط على Enter لإضافة كل أعراض"
+      },
+      "title": "أضف صفحة توعية جديدة"
+    },
+    "delete": {
+      "description": "هل أنت متأكد من أنك تريد حذف {{value}}؟",
+      "failer": {
+        "message": "لم يتم حذف التوعية",
+        "title": "فشلت العملية"
+      }
+    },
+    "edit": {
+      "title": "تعديل صفحة التوعية"
+    },
+    "form": {
+      "video_id_label": "حدد البرنامج"
+    },
+    "title": "معلومات التوعية"
+  },
+  "certificates": {
+    "description": "تحرير قالب الشهادة",
+    "download": "تحميل القالب",
+    "save": "حفظ",
+    "title": "قالب الشهادة",
+    "upload-modal": {
+      "cancel": "الغاء",
+      "dropzone": {
+        "description": "SVG أو PNG أو JPG أو GIF (بحد أقصى 800 × 400 بكسل)",
+        "title": "أو السحب والإفلات <span>انقر للتحميل</span>"
+      },
+      "save": "إرفاق الملفات",
+      "title": "تحميل القالب"
+    }
+  },
+  "contacts": {
+    "description": "للمراجعة والإجابة على الاستفسارات",
+    "reply-form": {
+      "reply-button": "رد",
+      "reply-input-lable": "الرد"
+    },
+    "view": {
+      "title": "تفاصيل الاستفسار",
+      "mobile": "رقم الجوال",
+      "images": "الصور المرفقة"
+    },
+    "table": {
+      "actions": "الإجراءات",
+      "date": "التاريخ",
+      "email": "البريد الالكتروني",
+      "id": "المعرف",
+      "video_title": "البرنامج ",
+      "message": "الرسالة",
+      "name": "الاسم",
+      "reply": "رد",
+      "status": "الحالة",
+      "status-label-new": "جديد",
+      "status-label-pending": "قيد الانتظار",
+      "status-label-responded": "تم الرد",
+      "title": "عنوان الرسالة",
+      "type": "نوع الاتصال",
+      "type-Complaint": "شكوى",
+      "type-Inquiry": "استفسار",
+      "type-Suggestion": "اقتراح"
+    },
+    "title": "التواصل والاستفسارات"
+  },
+  "coupons": {
+    "add": {
+      "form": {
+        "amount-input-label": "قيمة الخصم",
+        "amount-input-placeholder": "قيمة الخصم",
+        "cancel-button": "الغاء",
+        "code-input-label": "الرمز",
+        "code-input-placeholder": "ادخل الرمز",
+        "date_end-input-label": "تاريخ الإنتهاء",
+        "date_end-input-placeholder": "تاريخ الإنتهاء",
+        "date_start-input-label": "تاريخ البدء",
+        "date_start-input-placeholder": "تاريخ البدء",
+        "generate-code": "توليد ",
+        "has_form-input-label": "إظهار نموذج معلومات المستخدم",
+        "langs-input-label": "اختر اللغة",
+        "langs-input-placeholder": "اختر اللغة",
+        "max_customer_uses-input-label": "عدد الاستخدامات لكل مستخدم",
+        "max_customer_uses-input-placeholder": "عدد الاستخدامات لكل مستخدم",
+        "max_uses-input-label": "إجمالي عدد الاستخدامات",
+        "max_uses-input-placeholder": "إجمالي عدد الاستخدامات",
+        "name-input-label": "الاسم",
+        "name-input-placeholder": "اسم القسيمة",
+        "save-button": "حفظ",
+        "type-input-fixed-label": "مبلغ ثابت",
+        "type-input-label": "نوع الخصم",
+        "type-input-percentage-label": "نسبة %",
+        "type-input-placeholder": "نوع الخصم",
+        "video_ids-input-label": "اختر البرنامج التدريبي",
+        "video_ids-input-placeholder": "اختر البرنامج التدريبي"
+      },
+      "success": "تم اضافة كود الخصم بنجاح",
+      "title": "إضافة قسيمة جديدة"
+    },
+    "add-button": "اضافة جديد",
+    "edit": {
+      "success": "تم تعديل كود الخصم بنجاح",
+      "title": "تعديل قسيمة"
+    },
+    "table": {
+      "code": "الرمز",
+      "discount": "نسبة الخصم (٪)",
+      "end-date": "تاريخ الانتهاء",
+      "is-active": "التفعيل",
+      "more": "الاجراء",
+      "name": "المعرف",
+      "start-date": "تاريخ البدء",
+      "status": "الحالة",
+      "status-label": {
+        "active": "فعال",
+        "expired": "منتهي الصلاحية",
+        "inactive": "غير نشط"
+      },
+      "used-by": "عدد الاستخدامات",
+      "used-by-info": "عدد استخدامات القسيمة في عمليات الدفع الناجحة سواء أكمل البرنامج وحصل على شهادة أم لا"
+    },
+    "title": "الخصومات والعروض الترويجية",
+    "toggle-error": "تعذر تحديث حالة القسيمة",
+    "view": {
+      "amount": "قيمة الخصم",
+      "code": "الرمز",
+      "date_end": "تاريخ الإنتهاء",
+      "date_start": "تاريخ البدء",
+      "discount_amount": "إجمالي مبلغ الخصم",
+      "graph": {
+        "graph-type": {
+          "all_time": "كل الوقت",
+          "custom": "مخصص",
+          "daily": "يومي",
+          "hourly": "هذا اليوم",
+          "monthly": "شهري ",
+          "weekly": "اسبوعي",
+          "yearly": "سنوي"
+        },
+        "title": "إحصائيات القسيمة"
+      },
+      "langs": " اللغة",
+      "max_customer_uses": "عدد الاستخدامات لكل مستخدم",
+      "name": "الاسم",
+      "number_of_users": "عدد الاستخدامات",
+      "paid_amount": "إجمالي المبلغ المدفوع",
+      "paid_amount_after_discount": "إجمالي المبلغ المدفوع بعد الخصم",
+      "table": {
+        "date": "تاريخ الاستخدام",
+        "mobile": "رقم الهاتف",
+        "name": "الاسم",
+        "number_of_time_used": "عدد مرات الاستخدام",
+        "percentage": "إجمالي المبلغ المخصوم",
+        "video_title": "البرامج",
+        "price": "السعر"
+      },
+      "title": "تفاصيل القسيمة",
+      "type": "نوع الخصم",
+      "type-fixed": "مبلغ ثابت",
+      "type-percentage": "نسبة %",
+      "video_ids": "اختر البرنامج التدريبي"
+    }
+  },
+  "filters": {
+    "coupon-filter": {
+      "label": "كود الخصم",
+      "placeholder": "ادخل كود الخصم"
+    },
+    "payment-methods": {
+      "card": "دفع مباشر",
+      "coupon": "دفع بقسيمة"
+    }
+  },
+  "financial": {
+    "edit-button": "تحرير الاسعار",
+    "filters": {
+      "coupon-presence": {
+        "label": "القسيمة عند الشراء",
+        "placeholder": "اختر خياراً أو أكثر",
+        "with": "مع رمز قسيمة",
+        "without": "بدون قسيمة"
+      }
+    },
+    "reset-user-video": {
+      "cancel": "إلغاء",
+      "confirm": "هل تريد إعادة تعيين اشتراك \"{{user}}\" في \"{{program}}\"؟",
+      "description": "إذا لم يكن المستخدم قد حصل على الشهادة بعد، فسيتم حذف تقدمه وإجاباته وسيبدأ من السؤال الأول.",
+      "failure": {
+        "title": "فشلت عملية إعادة التعيين"
+      },
+      "ok": "نعم، إعادة التعيين",
+      "success": {
+        "message": "تمت إعادة تعيين تقدم المستخدم لهذا البرنامج.",
+        "title": "تمت إعادة التعيين"
+      },
+      "title": "إعادة تعيين الاشتراك"
+    },
+    "title": "الإدارة المالية",
+    "total-revenue": "إجمالي الإيرادات",
+    "update": {
+      "current-price-label": "السعر الحالي",
+      "new-price-label": "السعر جديد",
+      "save-button": "حفظ",
+      "title": "تحرير الأسعار",
+      "unit": "ريال"
+    },
+    "users": {
+      "table": {
+        "coupon_code": "كود الخصم",
+        "discount_value": "تخفيض",
+        "id": "المعرف",
+        "mobile": "رقم الهاتف",
+        "name": "الاسم",
+        "order_id": "رقم الطلب",
+        "paid": "مدفوع",
+        "payment_method": "طريقة الدفع",
+        "price": "سعر",
+        "program": "برنامج التدريب",
+        "tax_value": "ضريبة",
+        "transaction": "حالة الدفع",
+        "transaction_date": "تاريخ المعاملة"
+      }
+    },
+    "transaction-details": {
+      "title": "تفاصيل المعاملة",
+      "error": "خطأ في تحميل تفاصيل المعاملة",
+      "details": "تفاصيل المعاملة",
+      "history": "سجل الدفع",
+      "basic-info": "المعلومات الأساسية",
+      "id": "رقم المعاملة",
+      "order-id": "رقم الطلب",
+      "trans-id": "رقم المعاملة (البوابة)",
+      "hash": "التشفير",
+      "status": "الحالة",
+      "result": "النتيجة",
+      "card": "البطاقة",
+      "created-at": "تاريخ الإنشاء",
+      "request": "بيانات الطلب",
+      "response": "بيانات الاستجابة",
+      "no-history": "لا يوجد سجل لاستدعاءات الدفع",
+      "action": "الإجراء",
+      "amount": "المبلغ",
+      "methods": "طريقة الدفع",
+      "card-brand": "نوع البطاقة",
+      "rrn": "RRN",
+      "decline-reason": "سبب الرفض",
+      "full-data": "عرض بيانات الطلب الكاملة"
+    }
+  },
+  "form-information": {
+    "title": "نماذج المستخدمين"
+  },
+  "general": {
+    "discounts": "خصومات",
+    "language": "اللغة",
+    "logo-width": "390*324 بكسل",
+    "question": "سؤال",
+    "replace-logo": "استبدال الصورة",
+    "scene": "مشهد",
+    "taxes": "ضريبة",
+    "yes": "نعم",
+    "no": "لا",
+    "delete": "حذف"
+  },
+  "global": {
+    "active-filters": {
+      "date-range": "نطاق التاريخ",
+      "period": "الفترة",
+      "remove": "إزالة الفلتر",
+      "title": "الفلاتر النشطة"
+    },
+    "action-error-title": "حصل خطأ ما",
+    "action-success-notification-title": "تمت العملية بنجاح",
+    "apply": "تطبيق",
+    "coupon-filter": "كود الخصم",
+    "date": "التاريخ",
+    "dates-filter": "التاريخ",
+    "delete": "حذف",
+    "details": "التفاصيل",
+    "edit": "تعديل",
+    "errors": {
+      "Expected string, received null": "رقم غير صالح",
+      "Invalid date": "تاريخ غير صالح",
+      "invalidDate": "تاريخ غير صالح",
+      "invalidEmail": "الرجاء كتابة بريد الكتروني صالح",
+      "invalidNumber": "رقم غير صالح",
+      "invalidPhoneNumber": "رقم غير صالح",
+      "invalidUrl": "الرجاء إدخال رابط صالح",
+      "largeNumber": "رقم كبير جدأ",
+      "longPassword": "كلمة مرور طويلى للغاية",
+      "noMatch": "كلمتا المرور غير متطابقتان",
+      "required": "هذا الحقل مطلوب",
+      "serverError": "حصل خطأ في الاتصال بالسيرفر",
+      "shortPassword": "كلمة مرور قصيرة للغاية",
+      "smallNumber": "رقم صغير جدا"
+    },
+    "export": "تصدير ",
+    "filters": "فلترة",
+    "lang": "اللغة",
+    "logout-button": "تسجيل الخروج",
+    "payment-method": "طريقة الدفع",
+    "program": "برنامج التدريب",
+    "programs": "البرامج التدريبية",
+    "reports": "التقارير",
+    "reset": "مسح",
+    "save": "حفظ",
+    "search": "البحث",
+    "select": "اختر",
+    "total-results": "{{total}} نتيجة إجمالية",
+    "total-results-with-page": "{{total}} نتيجة إجمالية · الصفوف {{from}}–{{to}} في هذه الصفحة",
+    "total-certificates-count": "اجمالي عدد الشهادات",
+    "total-users-count": "اجمالي عدد المستخدمين",
+    "zero-program": "لم يشترك في آي برنامج"
+  },
+  "home": {
+    "bar-graph-type": {
+      "custom": "مخصص",
+      "daily": "يومي",
+      "hourly": "24 ساعة",
+      "monthly": "شهري ",
+      "weekly": "اسبوعي",
+      "yearly": "سنوي"
+    },
+    "certificates-statistics": {
+      "title": "إجمالي الشهادات"
+    },
+    "line-graph-type": {
+      "custom": "مخصص",
+      "daily": "هذا الشهر",
+      "hourly": "هذا اليوم",
+      "monthly": "هذه السنه",
+      "weekly": "هذا الاسبوع",
+      "yearly": "آخر ثلاث سنوت"
+    },
+    "revenue-graph": {
+      "title": "إجمالي الإيرادات",
+      "y-axis-label": "الايرادات"
+    },
+    "statistics": {
+      "total_certificates": "اجمالي الشهادات",
+      "total_revenue": "إجمالي الإيرادات",
+      "total_users": "إجمالي المستخدمين"
+    },
+    "user-graph": {
+      "title": "إجمالي المستخدمين باللغات",
+      "y-axis-label": "المستخدمين النشطين"
+    },
+    "users": {
+      "table": {
+        "id": "المعرف",
+        "name": "الاسم",
+        "program": "برنامج التدريب",
+        "transaction": "حالة الدفع",
+        "transaction-status": {
+          "accepted": "مكتمل",
+          "rejected": "غير مكتمل",
+          "uncompleted": "قيد المراجعة",
+          "underreview": "معلق"
+        }
+      }
+    }
+  },
+  "langs": {
+    "ar": "العربية",
+    "en": "English",
+    "fil": "Tagalog",
+    "fr": "Français",
+    "id": "Indonesian",
+    "title": "اللغات",
+    "ur": "اُردُو"
+  },
+  "login": {
+    "description": "مرحبا بعودتك! الرجاء ادخال بيانات التسجيل الخاصة بك",
+    "form": {
+      "email-label": "البريد الإلكتروني",
+      "forgot-password": "نسيت كلمة السر",
+      "password-label": "كلمة المرور",
+      "remember-me": "ينركذت",
+      "sign-in-button": "Sign in"
+    },
+    "title": "قم بتسجيل الدخول الى حسابك"
+  },
+  "nav": {
+    "items": {
+      "awareness": "التوعيات",
+      "certificate": "قالب الشهادة",
+      "contacts": "التواصل والاستفسارات",
+      "coupons": "الخصومات والعروض الترويجية",
+      "financial": "الإدارة المالية",
+      "form-information": "نماذج المستخدمين",
+      "home": "الرئيسية",
+      "manage-site": "إدارة الموقع",
+      "partners": "الشركاء",
+      "permissions": "الصلاحيات وفريق العمل",
+      "programs": "البرامج التدريبية",
+      "reports": "التقارير",
+      "reviews": "التقييمات",
+      "users": "إدارة المستخدمين",
+      "view": "نظرة عامة",
+      "stories": "قصص المنقذين",
+      "blogs": "مقالات المدونة",
+      "news": "آخر الأخبار"
+    }
+  },
+  "no-coupon": "دفع مباشر",
+  "not-completed": "لم يشترك في برنامج",
+  "stories": {
+    "title": "قصص المستخدم",
+    "description": "مراجعة وإدارة القصص",
+    "table": {
+      "id": "الرقم",
+      "first_name": "الاسم الأول",
+      "last_name": "اسم العائلة",
+      "title": "العنوان ",
+      "age": "العمر",
+      "mobile": "رقم الهاتف",
+      "email": "البريد الإلكتروني",
+      "aman_programs": "برامج أمان؟",
+      "aman_programs-yes": "نعم",
+      "aman_programs-not_attender": "لم يحضر",
+      "aman_programs-others": "أخرى",
+      "video_title": "اسم البرنامج",
+      "content": "القصة",
+      "visibility": "إخفاء/إظهار",
+      "visibility-visible": "مرئي",
+      "visibility-hidden": "مخفي",
+      "action": "الإجراءات"
+    },
+    "toggle-error": "تعذر تحديث حالة القصة"
+  },
+  "blogs": {
+    "title": "مقالات المدونة",
+    "description": "إدارة مقالات المدونة",
+    "add-button": "إنشاء مقال",
+    "add": {
+      "title": "إنشاء مقال"
+    },
+    "edit": {
+      "title": "تعديل المقال"
+    },
+    "load-error": "تعذر تحميل هذا المقال.",
+    "form": {
+      "details": "محتوى المقال حسب اللغة",
+      "publish_date": "تاريخ النشر",
+      "publish_date_placeholder": "اختر التاريخ",
+      "tags": "الوسوم",
+      "tags_placeholder": "أضف وسوماً",
+      "logo": "صورة الغلاف",
+      "logo_upload_title": "رفع الصورة",
+      "logo_recommended_size": "الحجم الموصى به: 1900×230",
+      "title": "العنوان",
+      "title_placeholder": "عنوان المقال",
+      "short_description": "وصف قصير",
+      "short_description_placeholder": "ملخص (حد أقصى 500 حرف)",
+      "content": "المحتوى",
+      "content_placeholder": "نص المقال كاملاً"
+    },
+    "table": {
+      "title": "العنوان",
+      "publish_date": "تاريخ النشر",
+      "actions": "الإجراءات"
+    },
+    "delete": {
+      "cancel": "إلغاء",
+      "confirm": "تأكيد",
+      "description": "هل أنت متأكد أنك تريد حذف هذا المقال؟",
+      "error": "تعذر حذف المقال",
+      "title": "حذف المقال"
+    }
+  },
+  "news": {
+    "title": "آخر الأخبار",
+    "description": "إدارة آخر الأخبار",
+    "add-button": "إنشاء خبر",
+    "add": {
+      "title": "إنشاء خبر جديد"
+    },
+    "edit": {
+      "title": "تعديل الخبر"
+    },
+    "load-error": "تعذر تحميل هذا الخبر.",
+    "form": {
+      "details": "محتوى الخبر حسب اللغة",
+      "publish_date": "تاريخ النشر",
+      "publish_date_placeholder": "اختر التاريخ",
+      "tags": "الوسوم",
+      "tags_placeholder": "أضف وسوماً",
+      "logo": "صورة الغلاف",
+      "logo_upload_title": "رفع الصورة",
+      "logo_recommended_size": "الحجم الموصى به: 1900×230",
+      "title": "العنوان",
+      "title_placeholder": "عنوان الخبر",
+      "short_description": "وصف قصير",
+      "short_description_placeholder": "ملخص (حد أقصى 500 حرف)",
+      "content": "المحتوى",
+      "content_placeholder": "نص الخبر كاملاً"
+    },
+    "table": {
+      "title": "العنوان",
+      "publish_date": "تاريخ النشر",
+      "actions": "الإجراءات"
+    },
+    "delete": {
+      "cancel": "إلغاء",
+      "confirm": "تأكيد",
+      "description": "هل أنت متأكد أنك تريد حذف هذا الخبر؟",
+      "error": "تعذر حذف الخبر",
+      "title": "حذف الخبر"
+    }
+  },
+  "notifications": {
+    "title": "إشعارات"
+  },
+  "partners": {
+    "title": "الشركاء",
+    "add-button": "إضافة شعار",
+    "table": {
+      "partner-name": "اسم الشريك",
+      "logo-image": "صورة الشعار",
+      "activate-deactivate": "تفعيل / إلغاء التفعيل",
+      "manage": "إدارة"
+    },
+    "toggle-error": "تعذر تحديث حالة الشريك",
+    "delete": {
+      "cancel": "الغاء",
+      "description": "هل انت متاكد من انك تريد حذف {{value}}؟",
+      "failer": {
+        "message": "لم يتم حذف الشريك",
+        "title": "فشلت العملية"
+      },
+      "yes": "حذف"
+    },
+    "add": {
+      "title": "اضافة شريك",
+      "logo-label": "إضافة صورة الشعار",
+      "name-label": "اسم الشريك",
+      "name-placeholder": "أدخل اسم الشريك",
+      "logo-dropzone-text": "تحميل صورة",
+      "logo-requirements": "PNG، JPG، GIF حتى 5 ميجابايت",
+      "logo-dimensions": "الأبعاد: 160 * 160",
+      "logo-note": "ملاحظة: أضف بدون صور خلفية",
+      "logo-uploaded": "تم تحميل الشعار بنجاح"
+    }
+  },
+  "otp": {
+    "description": "لقد ارسلنا رمز التحقق على الايميل  ",
+    "no-otp": "لم تحصل على رمز؟",
+    "resend-button": " انقر لإعادة الإرسال",
+    "title": "يرجى التحقق من البريد الإلكتروني الخاص بك",
+    "verify-button": "تحقق"
+  },
+  "permissions": {
+    "add-button": "اضافة جديد",
+    "delete": {
+      "cancel": "الغاء",
+      "confirm": "تاكيد",
+      "description": " هل انت متاكد؟",
+      "error": "لم يتم حذف المستخدم",
+      "title": "حذف عضو"
+    },
+    "form": {
+      "cancel-button": "الغاء",
+      "detailed-permissions-title": "الأذونات",
+      "email-input-label": "البريد الإلكتروني ",
+      "email-input-placeholder": "البريد الإلكتروني ",
+      "mobile-input-label": "رقم الهاتف",
+      "mobile-input-placeholder": "رقم الهاتف",
+      "name-input-label": "الاسم الاول",
+      "name-input-placeholder": "الاسم",
+      "password-input-label": "كلمة المرور",
+      "password-input-placeholder": "********",
+      "permissions": {
+        "Add": "اضافة جديد",
+        "Awareness": "التوعية",
+        "Coupon": "الخصومات والعروض الترويجية",
+        "Delete": "حذف",
+        "Edit": "تعديل",
+        "Export": "تصدير التقارير",
+        "Financial": "الإدارة المالية",
+        "Overview": "نظرة عامة والتقارير",
+        "Programs": "البرامج",
+        "User": "إدارة المستخدمين",
+        "Website_Management": "إدارة موقع الويب"
+      },
+      "permissions-label": "الصلاحيات",
+      "permissions-placeholder": "السماح بجميع الصلاحيات",
+      "role-input-label": "الدور",
+      "role-input-placeholder": "اختر الدور",
+      "save-button": "حفظ"
+    },
+    "roles": {
+      "Accountant": "محاسب ",
+      "Admin": "مدير عام",
+      "Marketer": "مسؤول تسويق",
+      "Seller": "مسؤول مبيعات"
+    },
+    "title": "فريق العمل",
+    "view": {
+      "title": "تفاصيل المستخدم"
+    }
+  },
+  "programs": {
+    "add": {
+      "form": {
+        "add-cover-image": "إضافة صورة الغلاف",
+        "allowed_time": "وقت الإجابة المسموح به",
+        "appears_at": "يظهر في",
+        "appears_atl": "يظهر عند",
+        "certificate_url": "رفع الشهادة (JPG/PNG)",
+        "certificate_url_placeholder": "انقر لتحميل شهادة",
+        "description-label": "وصف البرنامج",
+        "description-placeholder": "أدخل وصف البرنامج",
+        "lenght-label": "أذكر وقت نهاية الفيديو",
+        "logo-width": "390*324 بكسل",
+        "price": "السعر",
+        "price-description": "{{final}} ريال شامل الضريبة {{tax}}",
+        "replace-logo": "استبدال الصورة",
+        "video-color-label": "لون البرنامج",
+        "video-color-placeholder": "حدد اللون",
+        "video-title-label": "عنوان البرنامج",
+        "video-title-placeholder": "أدخل عنوان البرنامج",
+        "video_url": "تحميل رابط الفيديو",
+        "video_url_placeholder": "تحميل رابط الفيديو"
+      },
+      "program-details": "تفاصيل البرنامج",
+      "title": "أضف برنامجًا جديدًا"
+    },
+    "add-button": "اضافة برنامج جديد",
+    "delete": {
+      "cancel": "الغاء",
+      "description": "هل انت متاكد من انك تريد حذف برنامج {{value}}؟",
+      "failer": {
+        "message": "لم يتم حذف الفيدو",
+        "title": "فشلت العملية"
+      },
+      "yes": "حذف"
+    },
+    "delete-question": {
+      "failer": {
+        "message": "لم يتم حذف السؤال"
+      }
+    },
+    "delete-scene": {
+      "description": "هل أنت متأكد؟",
+      "failer": {
+        "message": "لم يتم حذف المشهد"
+      }
+    },
+    "edit": {
+      "title": "تعديل البرنامج"
+    },
+    "menu": {
+      "danger-zone": "منظقة الخطر",
+      "delete-program": "حذف البرنامج",
+      "edit-price": "تعديل السعر",
+      "edit-questions": "تعديل الاسئلة",
+      "edit-video": "تعديل البرنامج",
+      "scenes": "تعديل المشاهد"
+    },
+    "questions": {
+      "add": "أضف سؤالا",
+      "title": "قسم الأسئلة"
+    },
+    "reset": {
+      "all-confirm": "هل تريد إعادة تعيين جميع الاشتراكات قيد التقدم في كل البرامج؟",
+      "button-all": "إعادة تعيين جميع الاشتراكات قيد التقدم",
+      "cancel": "إلغاء",
+      "description": "سيتم حذف تقدم وإجابات جميع المستخدمين المشتركين الذين لم يحصلوا على الشهادة بعد، وسيبدأون من السؤال الأول.",
+      "failure": {
+        "title": "فشلت عملية إعادة التعيين"
+      },
+      "ok": "نعم، إعادة التعيين",
+      "success": {
+        "message": "تمت إعادة تعيين {{count}} اشتراك.",
+        "title": "تمت إعادة التعيين"
+      },
+      "title": "إعادة تعيين اشتراكات البرنامج",
+      "title-all": "إعادة تعيين جميع اشتراكات البرامج",
+      "video-confirm": "هل تريد إعادة تعيين الاشتراكات قيد التقدم لبرنامج \"{{value}}\"؟"
+    },
+    "scenes": {
+      "add": "أضف مشهد",
+      "title": "قسم المشاهد"
+    },
+    "title": "ادارة البرامج",
+    "toggle-error": "فشلت العملية",
+    "status-menu-aria": "حالة البرنامج",
+    "status-menu-title": "حالة البرنامج",
+    "status-new": "تعيين كجديد",
+    "status-updated": "تعيين كمحدّث",
+    "status-clear": "إزالة الحالة",
+    "status-menu-error": "تعذر تحديث حالة البرنامج",
+    "list-status-new": "جديد",
+    "list-status-updated": "محدّث",
+    "list-status-none": "بدون حالة"
+  },
+  "questions": {
+    "add": {
+      "form": {
+        "answer_right": "الإجابة الصحيحة",
+        "decleration": "أضف شرح نص",
+        "option-label": "خيار",
+        "option-placeholder": "نص الاجابة...",
+        "question-label": "1. كتابة السؤال",
+        "question-placeholder": "أدخل السؤال",
+        "text-explanation-placeholder": "اكتب...",
+        "timing": "توقيت",
+        "wrong_audio_url": "تحميل ملف صوت MP3",
+        "wrong_audio_url_placeholder": "انقر هنا"
+      },
+      "program-details": "تفاصيل السؤال",
+      "title": "أضف سؤالا"
+    },
+    "edit": {
+      "title": "تعديل السؤال"
+    }
+  },
+  "reports": {
+    "certificate-count": {
+      "title": "إجمالي الشهادات"
+    },
+    "coupon-filter-notice": {
+      "certificates": "عند الفلتر بقسيمة الخصم، إجمالي عدد الشهادات لا يمثل عدد استخدامات القسيمة، لأن ليس كل من استخدم القسيمة اكمل البرنامج حتي الحصول علي الشهاده",
+      "users": "إجمالي عدد المستخدمين لا يمثل عدد استخدامات القسيمة ولا مجموع اشتراكات البرامج، لأن المستخدم الواحد قد يكون مشتركًا في أكثر من برنامج."
+    },
+    "general": {
+      "filters": {
+        "date_from": "من تاريخ",
+        "date_to": "حتى تاريخ",
+        "dates": "التاريخ",
+        "lang": "اللغة",
+        "programs": "البرامج التدريبية"
+      },
+      "title": "إجمالي التقارير",
+      "y-axis-label": "المستخدمين النشطين"
+    },
+    "graph-type": {
+      "custom": "مخصص",
+      "daily": "يومي",
+      "hourly": "24 ساعة",
+      "lastDay": "اليوم",
+      "lastHour": "اخر ساعة",
+      "lastMonth": "اخر شهر",
+      "lastWeek": "اخر اسوع",
+      "lastYear": "اخر سنه",
+      "monthly": "شهري ",
+      "total": "الجميع",
+      "weekly": "اسبوعي",
+      "yearly": "سنوي"
+    },
+    "users-count": {
+      "title": "إجمالي المستخدمين"
+    }
+  },
+  "reset-password": {
+    "description": "قم بتعيين كلمة مرور لحسابك",
+    "form": {
+      "otp-label": "رمز التحقق",
+      "password-confirmation-label": "تأكيد كلمة المرور",
+      "password-label": "كلمة المرور الجديدة",
+      "save-button": "حفظ"
+    },
+    "send-otp": {
+      "form": {
+        "email-label": "البريد الإلكتروني",
+        "send-button": "أرسل كود تحقق"
+      }
+    },
+    "title": "تعيين كلمة مرور جديدة"
+  },
+  "reviews": {
+    "coupon-filter-notice": "إجمالي النتائج لا يمثل عدد الاستخدامات الفعلية لقسائم الخصم، لأن ليس كل من استخدم القسيمة أكمل البرنامج حتى مرحلة التقييم.",
+    "filters": {
+      "email": "البريد الإلكتروني",
+      "rate": "التقييم",
+      "rate_question_1": "السؤال 1",
+      "rate_question_2": "السؤال 2",
+      "rate_question_3": "السؤال 3",
+      "rate_question_4": "السؤال 4",
+      "email-input-label": "البريد الالكتروني"
+    },
+    "rating-list": {
+      "1": "كيف تقيم سهولة استخدام واجهة الاختبار بشكل عام؟",
+      "2": "هل تعكس الأسئلة سيناريوهات الحياة الواقعية بشكل جيد بما يكفي لتحسين فهمك؟",
+      "3": "ما مدى رضاك ​​عن سرعة استجابة محتوى الفيديو ووضوحه؟",
+      "4": "هل كان تتبع التقدم (القلوب، الإجابات الصحيحة، الوقت) مفيدًا أثناء الاختبار؟"
+    },
+    "table": {
+      "average": "متوسط ​​التقييم",
+      "comments": "التعليقات",
+      "id": "المعرف",
+      "is-active": "نشط",
+      "name": "الاسم",
+      "program": "برنامج التدريب",
+      "rate_1": "السؤال 1",
+      "rate_2": "السؤال 2",
+      "rate_3": "السؤال 3",
+      "rate_4": "السؤال 4"
+    },
+    "title": "التقييمات",
+    "toggle-error": "تعذر تحديث حالة التقييم",
+    "toggle-success-message": "تم تحديث حالة التقييم.",
+    "toggle-success-title": "تم الحفظ",
+    "comment-filter": "ابحث في التعليقات"
+  },
+  "scenes": {
+    "add": {
+      "form": {
+        "add-cover-image": "صورة غلاف المشهد",
+        "end_time-label": "وقت نهاية المشهد",
+        "scene-title-label": "عنوان المشهد",
+        "scene-title-placeholder": "أدخل عنوان المشهد",
+        "start_time-label": "وقت بدء المشهد"
+      },
+      "program-details": "تفاصيل المشهد",
+      "title": "أضف مشهد"
+    },
+    "edit": {
+      "title": "تعديل المشهد"
+    }
+  },
+  "user": {
+    "table": {
+      "age": "العمر",
+      "birth-date": "تاريخ الميلاد",
+      "gender": "الجنس",
+      "nationality": "الجنسية",
+      "personal-info": "معلومات شخصية",
+      "sector": "قطاع",
+      "workplace": "اسم الشركة"
+    },
+    "progress": {
+      "section_title": "تقدّم إصدار الشهادة",
+      "phase1": "مشاهدة والإجابة",
+      "phase2": "تقييم الفيديو",
+      "phase3": "بيانات المستخدم",
+      "phase4": "بيانات إضافية (قسيمة)",
+      "phase5": "إصدار الشهادة",
+      "tooltip": {
+        "phase1": "مشاهدة البرنامج كاملاً والإجابة على جميع الأسئلة (اكتمال التقدم 100٪).",
+        "phase2": "إرسال تقييم لبرنامج التدريب.",
+        "phase3": "تعيين الاسم الأول واسم العائلة ليظهر الاسم الكامل في الملف الشخصي (مطلوب لتوليد الشهادة).",
+        "phase4": "إذا كانت القسيمة تتطلب نموذجاً، استكمال معلومات المستخدم الإضافية.",
+        "phase5": "تم توليد ملف الشهادة وربطه."
+      },
+      "revoke_button": "إلغاء إصدار الشهادة",
+      "revoke_success_title": "تم التحديث",
+      "revoke_success_message": "تم إلغاء حالة إصدار الشهادة.",
+      "revoke_error_title": "خطأ",
+      "revoke_error_message": "تعذر إلغاء إصدار الشهادة."
+    }
+  },
+  "users": {
+    "add-button": "إضافة مستخدم جديد",
+    "add-title": "اضافة مستخدم جديد",
+    "delete": {
+      "cancel": "الغاء",
+      "confirm": "تاكيد",
+      "description": " هل انت متاكد؟",
+      "error": "لم يتم حذف المستخدم",
+      "title": "حذف مستخدم"
+    },
+    "edit": {
+      "title": "تحرير تفاصيل المستخدم"
+    },
+    "edit-button": "تعديل",
+    "filters": {
+      "langs": {
+        "ar": "العربية",
+        "en": "English",
+        "fil": "Tagalog",
+        "fr": "Français",
+        "id": "Indonesian",
+        "title": "اللغات",
+        "ur": "اُردُو"
+      },
+      "payment-methods": {
+        "title": "حدد طريقة الدفع"
+      },
+      "programs": {
+        "title": "البرامج"
+      }
+    },
+    "form": {
+      "cancel-button": "الغاء",
+      "email-input-label": "البريد الإلكتروني (اختياري)",
+      "email-input-placeholder": "البريد الإلكتروني (اختياري)",
+      "first_name-input-label": "الاسم الاول",
+      "first_name-input-placeholder": "الاسم",
+      "langs-input-label": "اختر اللغة",
+      "langs-input-placeholder": "اختر اللغة",
+      "last_name-input-label": "اسم العائلة",
+      "last_name-input-placeholder": "الاسم",
+      "mobile-input-label": "رقم الهاتف",
+      "mobile-input-placeholder": "رقم الهاتف",
+      "save-button": "حفظ"
+    },
+    "table": {
+      "certificate_count": "عدد الشهادات",
+      "coupon": "القسيمة",
+      "id": "المعرف",
+      "lang": "اللغة",
+      "mobile": "رقم الهاتف",
+      "more": "الاجراء",
+      "user": "المستخدم",
+      "name": "الاسم",
+      "program": "برنامج التدريب",
+      "show-form-info": "النموذج",
+      "status-label": {
+        "active": "فعال",
+        "expired": "منتهي الصلاحية",
+        "inactive": "غير نشط"
+      }
+    },
+    "title": "إدارة المستخدمين",
+    "coupon-filter-notice": "العدد الظاهر يمثل عدد المستخدمين الذين استخدموا القسيمة، وليس عدد مرات استخدامها. المستخدم الذي استخدمها أكثر من مرة يُحتسب مرة واحدة.",
+    "toggle-error": "تعذر تحديث حالة القسيمة",
+    "view": {
+      "certificate_count": "عدد الشهادات",
+      "correct_answers": "عدد الاجابات الصحيحة",
+      "coupons": "القسائم",
+      "currency": "ريال سعودي",
+      "current_time": "نقطة التوقف الحالية",
+      "download-certificate": "تحميل الشهادة ",
+      "email": "البريد الالكتروني",
+      "evaluation": "تقييم",
+      "full_name": "الاسم",
+      "id": "المعرف",
+      "lang": "اللغة",
+      "mobile": "رقم الهاتف",
+      "paid": "المدفوع ل{{value}}",
+      "statistics": "احصائيات",
+      "title": "معلومات المستخدم",
+      "total_paid": "إجمالي المبالغ المدفوعة",
+      "training_program": "دورة تدريبية",
+      "video_played": "تشغيل الفيديو",
+      "view_certificate": "عرض الشهادة",
+      "certificate_number": "رقم الشهادة",
+      "coupon_code": "رمز القسيمة",
+      "created_at": "تاريخ التسجيل",
+      "updated_at": "آخر تحديث",
+      "regenerate_certificate": {
+        "button": "إعادة إنشاء الشهادة",
+        "success_title": "نجح",
+        "success_message": "تم إعادة إنشاء الشهادة.",
+        "error_title": "خطأ",
+        "error_message": "تعذر إعادة إنشاء الشهادة."
+      },
+      "update_certificate_username": {
+        "button": "تحديث اسم الشهادة",
+        "title": "تحديث اسم المستخدم على الشهادة",
+        "first_name_label": "الاسم الأول",
+        "first_name_placeholder": "أدخل الاسم الأول",
+        "first_name_required": "الاسم الأول مطلوب",
+        "last_name_label": "اسم العائلة",
+        "last_name_placeholder": "أدخل اسم العائلة",
+        "last_name_required": "اسم العائلة مطلوب",
+        "submit_button": "تحديث",
+        "success_title": "نجح",
+        "success_message": "تم تحديث اسم المستخدم على الشهادة بنجاح",
+        "error_title": "خطأ",
+        "error_message": "فشل تحديث اسم المستخدم على الشهادة",
+        "countdown_title": "إنشاء الشهادة",
+        "countdown_message": "يرجى الانتظار بينما يتم إنشاء الشهادة بالاسم الجديد. سيتم تحديث الصفحة تلقائياً."
+      }
+    }
+  },
+  "users-info": {
+    "certificate_count": "عدد الشهادات",
+    "id": "المعرف",
+    "lang": "اللغة",
+    "mobile": "رقم الهاتف",
+    "modal-title": "معلومات المستخدم",
+    "name": "اسم العميل",
+    "payment_method": "طريقة الدفع ",
+    "payment_status": "حالة الدفع",
+    "program": "برنامج التدريب",
+    "reject_reason": "سبب الرفض",
+    "title": "معلومات المستخدمين",
+    "transaction_date": "تاريخ المعاملة",
+    "transaction_id": "المعرف"
+  },
+  "story": {
+    "approve": "موافقة",
+    "reject": "رفض",
+    "edit": "تعديل",
+    "delete": "حذف",
+    "approve-confirmation": "هل أنت متأكد من الموافقة على هذه القصة؟",
+    "reject-confirmation": "هل أنت متأكد من رفض هذه القصة؟",
+    "story-approved": "تمت الموافقة على القصة بنجاح",
+    "story-rejected": "تم رفض القصة بنجاح",
+    "story-updated": "تم تحديث القصة بنجاح",
+    "edit-story": "تعديل القصة",
+    "title": "العنوان",
+    "content": "المحتوى",
+    "first-name": "الاسم الأول",
+    "last-name": "اسم العائلة",
+    "email": "البريد الإلكتروني",
+    "mobile": "رقم الهاتف",
+    "age": "العمر",
+    "enter-title": "أدخل عنوان القصة",
+    "enter-content": "أدخل محتوى القصة",
+    "enter-first-name": "أدخل الاسم الأول",
+    "enter-last-name": "أدخل اسم العائلة",
+    "enter-email": "أدخل البريد الإلكتروني",
+    "enter-mobile": "أدخل رقم الهاتف",
+    "enter-age": "أدخل العمر",
+    "update": "تحديث",
+    "cancel": "إلغاء",
+    "title-required": "العنوان مطلوب",
+    "content-required": "المحتوى مطلوب",
+    "first-name-required": "الاسم الأول مطلوب",
+    "last-name-required": "اسم العائلة مطلوب",
+    "email-required": "البريد الإلكتروني مطلوب",
+    "mobile-required": "رقم الهاتف مطلوب",
+    "invalid-email": "بريد إلكتروني غير صحيح",
+    "try-again": "حاول مرة اخرى!",
+    "story-not-updated": "لا يمكن تحديث المحتوى!",
+    "age-required": "العمر مطلوب"
+  },
+  "common": {
+    "save": "حفظ",
+    "remove": "إزالة",
+    "refresh": "تحديث",
+    "sort-asc": "ترتيب تصاعدي",
+    "sort-desc": "ترتيب تنازلي",
+    "sort-clear": "إلغاء الترتيب"
+  },
+  "validation": {
+    "required": "هذا الحقل مطلوب",
+    "long": "النص طويل جداً (حد أقصى 500 حرف)",
+    "invalidUrl": "يرجى إدخال رابط صالح"
+  }
+}
