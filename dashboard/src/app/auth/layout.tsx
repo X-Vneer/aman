@@ -18,7 +18,9 @@ export default function AuthLayout() {
           </div>
         </div>
         <div className="w-full md:w-1/2">
-          <img className="max-w-[330px] max-md:mx-auto max-md:w-32" src={logo} />
+          <div className="flex items-center justify-center rounded-3xl bg-primary p-10 max-md:mx-auto max-md:w-fit max-md:p-5">
+            <img className="max-w-[330px] max-md:w-32" src={logo} alt="Aman" />
+          </div>
         </div>
       </div>
     </section>

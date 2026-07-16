@@ -3,30 +3,7 @@ import { getSession } from "@/utils/get-session"
 import { logout } from "@/utils/logout"
 import axios from "axios"
 
-const productionBaseURL = "https://uat.api.inaash.edu.sa"
-// Environment-based API URL configuration
-const getBaseURL = () => {
-  // Use environment variable if set (for production/staging builds)
-  // This is set during build time via deploy.yml
-  if (import.meta.env.VITE_API_BASE_URL) {
-    return import.meta.env.VITE_API_BASE_URL.replace(/\/$/, "") // Remove trailing slash
-  }
-
-  // Check for staging API URL (from .env)
-  if (import.meta.env.VITE_STAGING_API_BASE_URL) {
-    return import.meta.env.VITE_STAGING_API_BASE_URL.replace(/\/$/, "") // Remove trailing slash
-  }
-
-  // For local development
-  if (import.meta.env.VITE_LOCAL_API_BASE_URL) {
-    return import.meta.env.VITE_LOCAL_API_BASE_URL.replace(/\/$/, "") // Remove trailing slash
-  }
-
-  // Fallback to production URL
-  return productionBaseURL
-}
-
-const baseURL = getBaseURL()
+const baseURL = import.meta.env.VITE_LOCAL_API_BASE_URL.replace(/\/$/, "") // Remove trailing slash
 
 // Create an Axios instance
 const AmanApi = axios.create({

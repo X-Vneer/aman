@@ -2,7 +2,6 @@ import { Route, Routes } from "react-router-dom"
 import React, { Suspense } from "react"
 const Login = React.lazy(async () => import("./app/auth/login/page"))
 const AuthLayout = React.lazy(async () => import("./app/auth/layout"))
-const OTP = React.lazy(async () => import("./app/auth/otp/page"))
 const ResetPassword = React.lazy(async () => import("./app/auth/reset-password/page"))
 import { DashboardLayout } from "./app/dashboard/layout"
 import { Loader } from "@mantine/core"
@@ -57,19 +56,6 @@ const Router = () => {
                   </div>
                 }>
                 <Login />
-              </Suspense>
-            }
-          />
-          <Route
-            path="otp"
-            element={
-              <Suspense
-                fallback={
-                  <div className="flex h-full items-center justify-center py-20">
-                    <Loader size={"md"} />
-                  </div>
-                }>
-                <OTP />
               </Suspense>
             }
           />

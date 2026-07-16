@@ -4,7 +4,7 @@ import { type Session } from "next-auth"
 import { getSession } from "next-auth/react"
 import { getLocale } from "next-intl/server"
 
-export const baseURL = process.env.NEXT_PUBLIC_API_URL || "https://api.inaash.edu.sa"
+export const baseURL = process.env.NEXT_PUBLIC_API_URL
 
 // Create an Axios instance`
 const AmanApi = axios.create({

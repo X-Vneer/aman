@@ -46,7 +46,7 @@ There is no test runner, no Storybook, no `format` script. Prettier runs through
 - `AmanApi` (default export) — base `${baseURL}/admin`, attaches `Authorization: Bearer <token>` from localStorage and `Accept-language` from i18next, auto-`logout()` on `401`.
 - `AmanApiGuest` — base `${baseURL}/guest/admin`, no auth.
 
-Base URL precedence: `VITE_API_BASE_URL` → `VITE_STAGING_API_BASE_URL` → `VITE_LOCAL_API_BASE_URL` → hardcoded UAT fallback (`api.inaash.edu.sa`, backend not yet migrated to the Aman domain). Trailing slashes are stripped.
+Base URL is `VITE_LOCAL_API_BASE_URL` (dev only, from `.env`). Trailing slash stripped.
 
 The request interceptor converts `URLSearchParams` to a plain object and splits any `key[]=a,b,c` value into `key: ["a","b","c"]`. **When passing filter state to a service, prefer passing the `URLSearchParams` from `useOptimisticSearchParams()` directly** (see `GetBlogs(searchParams)` in `src/app/dashboard/blogs/get-blogs.ts`); the interceptor handles array unwrapping.
 
@@ -79,7 +79,3 @@ Pattern documented in `docs/developer-guide.md`; reference implementation in `sr
 - **ESLint** disables `no-unused-vars` and `@typescript-eslint/no-unused-vars`; `tsconfig` also has `noUnusedLocals/Parameters: false`. Don't spend effort removing unused imports/vars unless they're noisy in a touched file.
 - React 19 + Mantine 9 — when adding/upgrading code, follow `docs/guides-8x-to-9x.md` (`zodResolver` → `schemaResolver`, `Collapse in` → `expanded`, `Grid gutter` → `gap`, `Text color` → `c`, `useLocalStorage` value can be `undefined`, etc.).
 - RTL is automatic: `App.tsx` syncs `document.documentElement.dir` from i18next; Mantine `DirectionProvider` follows. Use logical Tailwind classes (`ltr:` / `rtl:` variants exist in `index.html`) when direction-specific styling is needed.
-
-## Deployment
-
-`.github/workflows/deploy.yml`: pushing to `main` deploys to `admin.inaash.edu.sa`, pushing to `staging` deploys to `uat.admin.inaash.edu.sa`. Both build with `npm install --force && npm run build` and `scp` `dist/*` to the server. The build-time `VITE_API_BASE_URL` is set per environment in the workflow (prod → `https://api.inaash.edu.sa`, staging → `https://uat.api.inaash.edu.sa`); local dev falls back to `VITE_LOCAL_API_BASE_URL` from `.env`.

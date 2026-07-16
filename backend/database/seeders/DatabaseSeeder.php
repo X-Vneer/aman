@@ -64,10 +64,10 @@ class DatabaseSeeder extends Seeder
 
         // User::factory(10)->create();
         $admin = Admin::create([
-            'email' => 'info@glow.net.sa',
-            'password' => '123456',
+            'email' => 'sarah@aman.com',
+            'password' => '12345678',
             'mobile' => '966508570275',
-            'name' => 'admin',
+            'name' => 'Sarah',
             'role_name' => 'Admin',
         ]);
 

@@ -1,3 +1,5 @@
+import { LoginResponse } from "@/@types/user"
+import { LOCALSTORAGE_SESSION_KEY } from "@/config"
 import { Link, useNavigate } from "@/lib/i18n/navigation"
 import { AmanApiGuest } from "@/services/aman"
 import { handleFormError } from "@/utils/handle-form-errors"
@@ -23,9 +25,10 @@ const Login = () => {
   const navigate = useNavigate()
   const onSubmit = form.handleSubmit(async (data) => {
     try {
-      const response = await AmanApiGuest.post("/loginRegisterResendOtp", data)
-      console.log("🚀 ~ onSubmit ~ response:", response)
-      navigate(`/auth/otp?email=${encodeURI(data.email)}`)
+      const response = await AmanApiGuest.post<LoginResponse>("/loginRegisterResendOtp", data)
+      const user = response.data.data
+      localStorage.setItem(LOCALSTORAGE_SESSION_KEY, JSON.stringify(user))
+      navigate("/dashboard")
     } catch (error) {
       handleFormError(error, form)
     }

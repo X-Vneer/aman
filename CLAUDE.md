@@ -73,4 +73,4 @@ The two React apps were built with the same house style; the same rules apply in
 
 - Each app keeps its own `.gitignore`; the root `.gitignore` only covers root-level artifacts. `node_modules`, `vendor`, `.next`, and `dist` are ignored per-app.
 - `dashboard/.env` is committed (it holds only non-secret API base URLs). Real secrets belong in `*.env.local` (website) or an untracked `backend/.env`.
-- The apps have separate GitHub Actions/deploy targets living in each app's `.github/`; there is no monorepo-wide CI yet.
+- No CI/CD or deployment config currently — local dev only. Deployment setup deferred until a server is provisioned.
