@@ -8,7 +8,7 @@ use Illuminate\Validation\Rule;
 class BlogRequest extends CustomFormRequest
 {
     /** @var list<string> */
-    private const LOCALES = ['ar', 'en', 'fr', 'id'];
+    private const LOCALES = ['ar', 'en'];
 
     public function rules(): array
     {

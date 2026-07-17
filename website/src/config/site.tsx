@@ -179,15 +179,5 @@ export const siteConfig = {
       description:
         "Aman platform offers an accredited Aman program to learn first aid and emergency health situations.",
     },
-    fr: {
-      title: "Cours de Premiers Secours – Plateforme Aman en Palestine",
-      description:
-        "La plateforme Aman propose un programme Aman accrédité pour apprendre les premiers secours et les situations d'urgence sanitaire.",
-    },
-    id: {
-      title: "Kursus Pertolongan Pertama – Platform Aman di Palestina",
-      description:
-        "Platform Aman menawarkan program Aman terakreditasi untuk mempelajari pertolongan pertama dan situasi kesehatan darurat.",
-    },
   },
 }

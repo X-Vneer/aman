@@ -11,7 +11,7 @@
  * plus synthetic `000` (unknown). Run `php scripts/build_map_config.php` after changing topology or legacy counts.
  *
  * Display names per locale live in `lang/{locale}/map_countries.php` for each supported language
- * (en, ar, fr, id). API `Name` is an object keyed by locale code.
+ * (en, ar). API `Name` is an object keyed by locale code.
  *
  * `flag_url_template` uses `{alpha2}` (lowercase ISO 3166-1 alpha-2). Default is Flagcdn SVG for sharp
  * scaling on maps; override to e.g. `https://flagcdn.com/w640/{alpha2}.webp` for a fixed high-res raster.

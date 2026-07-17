@@ -37,7 +37,7 @@ export function organizationSchema() {
       telephone: "",
       contactType: "customer support",
       email: "",
-      availableLanguage: ["ar", "en", "fr", "id"],
+      availableLanguage: ["ar", "en"],
     },
   }
 }
@@ -50,23 +50,21 @@ export interface BreadcrumbItem {
 const HOME_LABEL: Record<string, string> = {
   ar: "الرئيسية",
   en: "Home",
-  fr: "Accueil",
-  id: "Beranda",
 }
 
 const PAGE_CRUMB_LABEL: Record<PageMetaKey, Record<string, string>> = {
   home: HOME_LABEL,
-  start: { ar: "البرامج", en: "Programs", fr: "Programmes", id: "Program" },
-  "about-us": { ar: "عن أمان", en: "About Us", fr: "À propos", id: "Tentang Kami" },
-  awareness: { ar: "التوعية", en: "Awareness", fr: "Sensibilisation", id: "Kesadaran" },
-  blog: { ar: "المدونة", en: "Blog", fr: "Blog", id: "Blog" },
-  "contact-us": { ar: "تواصل معنا", en: "Contact Us", fr: "Contact", id: "Kontak" },
-  faqs: { ar: "الأسئلة الشائعة", en: "FAQs", fr: "FAQ", id: "FAQ" },
-  "information-center": { ar: "مركز المعلومات", en: "Information Center", fr: "Centre d'information", id: "Pusat Informasi" },
-  "privacy-policy": { ar: "سياسة الخصوصية", en: "Privacy Policy", fr: "Confidentialité", id: "Privasi" },
-  stories: { ar: "قصص الإنقاذ", en: "Stories", fr: "Histoires", id: "Kisah" },
-  terms: { ar: "الشروط والأحكام", en: "Terms", fr: "Conditions", id: "Syarat" },
-  login: { ar: "تسجيل الدخول", en: "Log in", fr: "Se connecter", id: "Masuk" },
+  start: { ar: "البرامج", en: "Programs" },
+  "about-us": { ar: "عن أمان", en: "About Us" },
+  awareness: { ar: "التوعية", en: "Awareness" },
+  blog: { ar: "المدونة", en: "Blog" },
+  "contact-us": { ar: "تواصل معنا", en: "Contact Us" },
+  faqs: { ar: "الأسئلة الشائعة", en: "FAQs" },
+  "information-center": { ar: "مركز المعلومات", en: "Information Center" },
+  "privacy-policy": { ar: "سياسة الخصوصية", en: "Privacy Policy" },
+  stories: { ar: "قصص الإنقاذ", en: "Stories" },
+  terms: { ar: "الشروط والأحكام", en: "Terms" },
+  login: { ar: "تسجيل الدخول", en: "Log in" },
 }
 
 export function localizedCrumb(key: PageMetaKey, locale: string): string {

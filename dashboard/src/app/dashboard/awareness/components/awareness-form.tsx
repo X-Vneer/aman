@@ -39,20 +39,14 @@ const AwarenessForm = ({ initialValues }: { initialValues?: AddAwareness }) => {
     title: {
       ar: "",
       en: "",
-      fr: "",
-      id: "",
     },
     description: {
       ar: "",
       en: "",
-      fr: "",
-      id: "",
     },
     symptoms: {
       ar: [],
       en: [],
-      fr: [],
-      id: [],
     },
   }
   const form = useForm<AddAwareness>({

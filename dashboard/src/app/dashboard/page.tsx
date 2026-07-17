@@ -137,8 +137,6 @@ const Home = () => {
             series={[
               { name: "y_ar", label: t("langs.ar"), color: "#18BDBE" },
               { name: "y_en", label: t("langs.en"), color: "#F16238" },
-              { name: "y_fr", label: t("langs.fr"), color: "#3E4142" },
-              { name: "y_id", label: t("langs.id"), color: "yellow.5" },
             ]}
             curveType="monotone"
           />

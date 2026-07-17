@@ -175,8 +175,6 @@
   "langs": {
     "ar": "Arabic",
     "en": "English",
-    "fr": "French",
-    "id": "Indonesian",
     "title": "Languages"
   },
   "login": {
@@ -626,8 +624,6 @@
       "langs": {
         "ar": "Arabic",
         "en": "English",
-        "fr": "French",
-        "id": "Indonesian",
         "title": "Languages"
       },
       "programs": {

@@ -7,8 +7,6 @@ import type { Blog } from "../types"
 const INTL_LOCALE_BY_APP: Record<string, string> = {
   ar: "ar-SA",
   en: "en-US",
-  fr: "fr-FR",
-  id: "id-ID",
 }
 
 export function formatBlogPublishDate(publishDate: string, locale: string) {

@@ -60,16 +60,6 @@ export interface WrongAnswerAudioUrls {
     answer_b: string
     answer_c: string
   }
-  fr: {
-    answer_a: string
-    answer_b: string
-    answer_c: string
-  }
-  id: {
-    answer_a: string
-    answer_b: string
-    answer_c: string
-  }
 }
 
 export interface Scene {

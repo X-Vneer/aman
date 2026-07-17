@@ -30,8 +30,6 @@ const EditQuestion = () => {
     appears_at: {
       ar: parseTime(data.appears_at.ar),
       en: parseTime(data.appears_at.en),
-      fr: parseTime(data.appears_at.fr),
-      id: parseTime(data.appears_at.id),
     },
     allowed_time: parseTime(data.allowed_time),
   }

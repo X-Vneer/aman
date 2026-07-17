@@ -12,5 +12,5 @@ export default function middleware(request: NextRequest) {
 
 export const config = {
   // Match all routes including API routes (but we'll handle them differently)
-  matcher: ["/", `/(ar|en|fr|id)/:path*`],
+  matcher: ["/", `/(ar|en)/:path*`],
 }

@@ -26,8 +26,6 @@ type TimeObject = {
 type LangsTimeObject = {
   ar: TimeObject
   en: TimeObject
-  fr: TimeObject
-  id: TimeObject
 }
 
 export type QuestionFormValues = Omit<Question, "appears_at" | "allowed_time"> & {
@@ -41,44 +39,30 @@ const _initialValues = {
   question: {
     ar: "",
     en: "",
-    fr: "",
-    id: "",
   },
   answers_a: {
     ar: "",
     en: "",
-    fr: "",
-    id: "",
   },
   wrong_a: {
     ar: "",
     en: "",
-    fr: "",
-    id: "",
   },
   answers_b: {
     ar: "",
     en: "",
-    fr: "",
-    id: "",
   },
   wrong_b: {
     ar: "",
     en: "",
-    fr: "",
-    id: "",
   },
   answers_c: {
     ar: "",
     en: "",
-    fr: "",
-    id: "",
   },
   wrong_c: {
     ar: "",
     en: "",
-    fr: "",
-    id: "",
   },
 
   correct_answer: "answer_a",
@@ -90,8 +74,6 @@ const _initialValues = {
   appears_at: {
     ar: { h: 0, m: 0, s: 0 },
     en: { h: 0, m: 0, s: 0 },
-    fr: { h: 0, m: 0, s: 0 },
-    id: { h: 0, m: 0, s: 0 },
   },
   wrong_answer_audio_urls: {
     ar: {
@@ -100,16 +82,6 @@ const _initialValues = {
       answer_c: "",
     },
     en: {
-      answer_a: "",
-      answer_b: "",
-      answer_c: "",
-    },
-    fr: {
-      answer_a: "",
-      answer_b: "",
-      answer_c: "",
-    },
-    id: {
       answer_a: "",
       answer_b: "",
       answer_c: "",
@@ -138,8 +110,6 @@ const QuestionForm = ({ initialValues }: { initialValues?: QuestionFormValues })
         appears_at: {
           ar: formatTime(appears_at.ar),
           en: formatTime(appears_at.en),
-          fr: formatTime(appears_at.fr),
-          id: formatTime(appears_at.id),
         },
         allowed_time: formatTime(allowed_time),
       }

@@ -8,7 +8,7 @@ use Illuminate\Contracts\Validation\Validator;
 class UserSetLangRequest extends CustomFormRequest
 {
     protected $roles =  [
-        'lang' => 'required|in:ar,en,fr,id',
+        'lang' => 'required|in:ar,en',
     ];
 
     public function rules()

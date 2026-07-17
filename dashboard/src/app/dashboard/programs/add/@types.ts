@@ -11,6 +11,4 @@ export interface Video {
 export interface Langs {
   ar: string
   en: string
-  fr: string
-  id: string
 }

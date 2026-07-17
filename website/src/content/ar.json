@@ -145,9 +145,7 @@
     "next-button": "التالي",
     "tabs": {
       "ar": "العربية",
-      "en": "English",
-      "fr": "Français",
-      "id": "Indonesian"
+      "en": "English"
     },
     "title": "أختر اللغة"
   },
@@ -361,9 +359,7 @@
       "change-language": {
         "tabs": {
           "ar": "العربية",
-          "en": "English",
-          "fr": "Français",
-          "id": "Indonesian"
+          "en": "English"
         },
         "title": "تغيير اللغة",
         "update-button": "تعديل اللغة"

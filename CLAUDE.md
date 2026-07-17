@@ -66,7 +66,7 @@ The two React apps were built with the same house style; the same rules apply in
 - **Locale-aware navigation is mandatory.** Import `Link`/`useRouter`/`redirect`/`usePathname` etc. from `@/lib/i18n/navigation`, never from `react-router-dom` / `next/link` / `next/navigation` — the raw exports drop the URL locale prefix and break i18n.
 - API client is `src/services/aman.ts`, exporting an authed `AmanApi` + an unauthed `AmanApiGuest`.
 - Server cache: TanStack Query (singleton `QueryClient`). URL state: `nuqs`. Forms: React Hook Form + Zod (`zod@^4`).
-- i18n catalogs are bundled JSON in `src/content/<locale>.json`. Both are RTL-aware (Arabic/Urdu).
+- i18n catalogs are bundled JSON in `src/content/<locale>.json`. Both are RTL-aware (Arabic).
 - Prettier in both: no semicolons, double quotes, `printWidth: 110`.
 
 ## Repo hygiene

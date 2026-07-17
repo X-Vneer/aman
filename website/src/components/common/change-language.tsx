@@ -50,15 +50,11 @@ const ChangeLanguage = (props: Props) => {
   const title = {
     ar: "تغير اللغة",
     en: "Change the language",
-    fr: "Modifier la langue",
-    id: "Ubah bahasa",
   } as const
 
   const button = {
     ar: "تعديل اللغة",
     en: "Modify the language",
-    fr: "Modifier la langue",
-    id: "Ubah bahasa",
   } as const
 
   return (

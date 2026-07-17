@@ -43,8 +43,6 @@ const SceneForm = ({ initialValues }: { initialValues?: VideoFormValues }) => {
     title: {
       ar: "",
       en: "",
-      fr: "",
-      id: "",
     },
     start_time: {
       h: 0,

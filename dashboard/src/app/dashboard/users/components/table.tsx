@@ -44,12 +44,6 @@ export const langs = {
   en: {
     color: "blue",
   },
-  fr: {
-    color: "red",
-  },
-  id: {
-    color: "pink",
-  },
 }
 
 const TableCom = () => {

@@ -17,7 +17,7 @@ No test runner is configured.
 
 A few things deviate from "vanilla Next.js" and will bite you if you trust conventions:
 
-- **Middleware is `src/proxy.ts`, not `middleware.ts`.** It runs `next-intl` `createMiddleware`, matcher restricted to `/` and `/(ar|en|fr|id)/:path*`. If you add a locale, update both `src/config/index.ts` (`LOCALES`) *and* the matcher regex in `src/proxy.ts`.
+- **Middleware is `src/proxy.ts`, not `middleware.ts`.** It runs `next-intl` `createMiddleware`, matcher restricted to `/` and `/(ar|en)/:path*`. If you add a locale, update both `src/config/index.ts` (`LOCALES`) *and* the matcher regex in `src/proxy.ts`.
 - **`README.md` is the unmodified NextUI starter template**, as is the `package.json` name (`next-app-template`). Ignore them — the real stack is described below.
 - **`src/lib/security/file-protection.ts` is fully commented out** but still imported at the top of `src/app/[locale]/layout.tsx`. The import is a no-op; don't chase it.
 - Two ESLint configs coexist: `.eslintrc.json` (legacy, used by `npm run lint`) and `eslint.config.mjs` (flat, unused by the script). Changing lint rules requires editing both if you want parity.
@@ -27,7 +27,7 @@ A few things deviate from "vanilla Next.js" and will bite you if you trust conve
 
 ### Routing & i18n
 
-Four locales: `ar, en, fr, id` (`src/config/index.ts`). `ar` is RTL. All app routes live under `src/app/[locale]/...` with `localePrefix: "always"` — every URL has a locale segment.
+Two locales: `ar, en` (`src/config/index.ts`). `ar` is RTL. All app routes live under `src/app/[locale]/...` with `localePrefix: "always"` — every URL has a locale segment.
 
 Three route groups inside `[locale]`:
 

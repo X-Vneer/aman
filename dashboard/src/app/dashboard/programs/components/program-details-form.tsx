@@ -51,22 +51,16 @@ const ProgramDetailsForm = ({ initialValues }: { initialValues?: VideoFormValues
     video_url: {
       ar: "",
       en: "",
-      fr: "",
-      id: "",
     },
     logo: "",
     certificate_url: "",
     title: {
       ar: "",
       en: "",
-      fr: "",
-      id: "",
     },
     description: {
       ar: "",
       en: "",
-      fr: "",
-      id: "",
     },
     time: {
       h: 0,

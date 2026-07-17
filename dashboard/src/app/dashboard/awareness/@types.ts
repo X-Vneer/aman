@@ -79,6 +79,4 @@ export interface AddAwareness {
 export interface Symptoms {
   ar: string[]
   en: string[]
-  fr: string[]
-  id: string[]
 }

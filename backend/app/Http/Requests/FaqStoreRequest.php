@@ -11,13 +11,9 @@ class FaqStoreRequest extends CustomFormRequest
         'title' => 'array',
         'title.ar' => 'required|min:1|max:191',
         'title.en' => 'required|min:1|max:191',
-        'title.fr' => 'required|min:1|max:191',
-        'title.id' => 'required|min:1|max:191',
         'description' => 'array',
         'description.ar' => 'required|min:1|max:1000',
         'description.en' => 'required|min:1|max:1000',
-        'description.fr' => 'required|min:1|max:1000',
-        'description.id' => 'required|min:1|max:1000',
     ];
 
 

@@ -14,8 +14,6 @@ import { LOCALES } from "@/config"
 const RESCUER_LABEL: Record<(typeof LOCALES)[number], string> = {
   ar: "منقذ",
   en: "rescuer",
-  fr: "sauveteur",
-  id: "penyelamat",
 }
 
 function resolvedLanguage(lang: string): (typeof LOCALES)[number] {
