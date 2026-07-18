@@ -1,0 +1,20 @@
+# Next.js production server (next start on port 3000)
+# Install:  cp deploy/systemd/aman-website.service /etc/systemd/system/
+#           systemctl enable --now aman-website
+[Unit]
+Description=Aman Next.js website
+After=network.target
+
+[Service]
+User=www-data
+Group=www-data
+Restart=always
+RestartSec=5
+Environment=NODE_ENV=production
+Environment=PORT=3000
+Environment=PATH=/usr/bin:/bin:/usr/local/bin
+WorkingDirectory=/var/www/aman/website
+ExecStart=/usr/bin/npm run start
+
+[Install]
+WantedBy=multi-user.target
