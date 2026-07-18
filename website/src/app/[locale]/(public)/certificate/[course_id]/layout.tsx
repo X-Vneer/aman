@@ -1,5 +1,5 @@
 import { getUserVideo } from "@/app/[locale]/(video)/course/[course_id]/get-user-video"
-import { auth } from "@/lib/auth/auth"
+import { getSession } from "@/lib/auth/session"
 import { redirect } from "@/lib/i18n/navigation"
 import axios from "axios"
 import { isRedirectError } from "next/dist/client/components/redirect-error"
@@ -14,7 +14,7 @@ export default async function Layout(props: {
 
   const { children } = props
 
-  const session = await auth()
+  const session = await getSession()
   if (!session)
     redirect({
       href: {

@@ -67,7 +67,7 @@ and generate secrets:
 # backend app key
 cd /var/www/aman/backend && php artisan key:generate
 
-# website next-auth secret -> put into website/.env.local AUTH_SECRET
+# website session-cookie encryption key -> put into website/.env.local AUTH_SECRET
 openssl rand -base64 32
 ```
 

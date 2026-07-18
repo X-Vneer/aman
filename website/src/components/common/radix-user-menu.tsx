@@ -5,23 +5,25 @@ import { buttonVariants, Label } from "@heroui/react"
 import { UserCircle2 } from "lucide-react"
 import clsx from "clsx"
 import { useLocale, useTranslations } from "next-intl"
-import { signOut } from "next-auth/react"
+import { logoutAction } from "@/lib/auth/actions"
+import { setClientSession } from "@/lib/auth/session-client"
 import { useRouter } from "@/lib/i18n/navigation"
+import { useQueryClient } from "@tanstack/react-query"
 import { parseAsBoolean, useQueryState } from "nuqs"
 
 type Props = {}
 
 export function RadixUserMenu({}: Props) {
   const router = useRouter()
+  const queryClient = useQueryClient()
   const [_, seChangeLang] = useQueryState("change_lang", parseAsBoolean.withDefault(false))
 
-  const handleSignOut = () => {
+  const handleSignOut = async () => {
+    await logoutAction() // server-side: deletes the httpOnly session cookie
+    setClientSession(null) // instant header flip + multi-tab ping
+    queryClient.clear() // purge user-scoped cache (avoid cross-account leakage)
     localStorage.clear()
-    document.cookie.split(";").forEach((cookie) => {
-      const [name] = cookie.split("=")
-      document.cookie = `${name}=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/`
-    })
-    signOut()
+    router.push("/")
   }
   const t = useTranslations("profile.dropdown")
   const locale = useLocale()

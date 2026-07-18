@@ -3,7 +3,8 @@
 import phoneNumberSchema from "@/validation/phone-number"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { Input, Spinner } from "@heroui/react"
-import { signIn } from "next-auth/react"
+import { loginAction } from "@/lib/auth/actions"
+import { setClientSession } from "@/lib/auth/session-client"
 import { useTranslations } from "next-intl"
 import { useForm } from "react-hook-form"
 import ar from "react-phone-number-input/locale/ar.json"
@@ -45,11 +46,13 @@ const LoginWithoutOtp = (props: Props) => {
   const onSubmit = form.handleSubmit(async (data) => {
     try {
       const phonenumber = data.mobile?.replace("+", "")
-      const loginResponse = await signIn("credentials", { mobile: phonenumber, redirect: false })
-      if (loginResponse?.error) {
+      const loginResponse = await loginAction({ mobile: phonenumber ?? "" })
+      if (!loginResponse.ok) {
         form.setError("root", { message: "unauthorized" })
         return
       }
+      // Seed the client store from the action's return — header flips instantly
+      setClientSession(loginResponse.session)
 
       // If courseId exists, redirect to the course page (backend auto-enrolls and plays it)
       // Otherwise, use callbackUrl or default to /start

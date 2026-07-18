@@ -10,7 +10,6 @@ import { notFound } from "next/navigation"
 import { NuqsAdapter } from "nuqs/adapters/next/app"
 
 import { fontSans } from "@/config/fonts"
-import NySessionProvider from "@/lib/auth/provider"
 import { routing } from "@/lib/i18n/routing"
 
 import { logo } from "@/assets"
@@ -121,19 +120,17 @@ export default async function RootLayout(props: {
       </head>
       <NextIntlClientProvider messages={messages}>
         <NuqsAdapter>
-          <NySessionProvider>
-            <ReactQueryProvider>
-              <body
-                suppressHydrationWarning
-                className={clsx(
-                  "bg-background dark min-h-screen font-sans text-white antialiased",
-                  fontSans.variable,
-                )}>
-                <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>{children}</Providers>
-                <ScreenIndicator />
-              </body>
-            </ReactQueryProvider>
-          </NySessionProvider>
+          <ReactQueryProvider>
+            <body
+              suppressHydrationWarning
+              className={clsx(
+                "bg-background dark min-h-screen font-sans text-white antialiased",
+                fontSans.variable,
+              )}>
+              <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>{children}</Providers>
+              <ScreenIndicator />
+            </body>
+          </ReactQueryProvider>
         </NuqsAdapter>
       </NextIntlClientProvider>
     </html>

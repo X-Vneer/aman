@@ -5,7 +5,7 @@ import type { Metadata } from "next"
 import Logo from "@/components/common/logo"
 
 import BackgroundImage from "@/components/common/background-image"
-import { auth } from "@/lib/auth/auth"
+import { getSession } from "@/lib/auth/session"
 import { redirect } from "@/lib/i18n/navigation"
 import { routing } from "@/lib/i18n/routing"
 import { setRequestLocale } from "next-intl/server"
@@ -43,7 +43,7 @@ export async function generateMetadata(props: { params: Promise<{ locale: string
 }
 export default async function Home(props: { params: Promise<{ locale: string }> }) {
   const params = await props.params
-  const session = await auth()
+  const session = await getSession()
   const locale = params.locale
   setRequestLocale(locale)
   const t = await getTranslations("home")

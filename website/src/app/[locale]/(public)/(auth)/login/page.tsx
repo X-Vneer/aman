@@ -1,6 +1,6 @@
 import { loginBackground } from "@/assets"
 import BackgroundImage from "@/components/common/background-image"
-import { auth } from "@/lib/auth/auth"
+import { getSession } from "@/lib/auth/session"
 import { redirect } from "@/lib/i18n/navigation"
 import { Card } from "@heroui/react"
 import type { Metadata } from "next"
@@ -22,7 +22,7 @@ const Page = async (props: {
 }) => {
   const params = await props.params
   const searchParams = await props.searchParams
-  const session = await auth()
+  const session = await getSession()
   if (session) {
     // If courseId exists, redirect to the course page (backend auto-enrolls and plays it)
     // Otherwise, use callbackUrl or default to /start
@@ -43,9 +43,6 @@ const Page = async (props: {
       <section className="relative flex h-full items-center justify-center gap-4 py-8 md:py-10">
         <Card className="w-full max-w-sm border-none bg-[#0A090959] backdrop-blur-md">
           <Card.Content className="p-4 md:p-6 lg:p-8 rtl:text-right">
-            {/* <Suspense> */}
-            {/* <Wrapper /> */}
-            {/* </Suspense> */}
             <LoginWithoutOtp />
           </Card.Content>
         </Card>

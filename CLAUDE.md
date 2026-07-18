@@ -46,7 +46,7 @@ All three apps share **one API** (`api.inaash.edu.sa` — the backend has not ye
 
 Shared conventions that both frontends depend on — change the backend and you change both clients:
 
-- **Auth:** Laravel Sanctum bearer tokens. Frontends send `Authorization: Bearer <token>`; dashboard stores it in `localStorage`, website in the `next-auth` JWT session.
+- **Auth:** Laravel Sanctum bearer tokens. Frontends send `Authorization: Bearer <token>`; dashboard stores it in `localStorage`, website in a native AES-encrypted httpOnly cookie (`aman_session` — see `website/src/lib/auth/`, no auth library).
 - **Localization:** every request carries `Accept-language`; `ApiLocalization` middleware switches locale server-side. Translatable columns use `spatie/laravel-translatable` (stored as JSON — these columns are **not** sortable via the list endpoints).
 - **Permissions:** `spatie/laravel-permission`. The dashboard gates UI on the same action keys (`usePermissions()` / `PermissionPaths`).
 - **Response envelope:** `BaseApiController::sendResponse(success, data, message, errors, status)`. Errors come back as `{ message, errors: { field: [msg] } }` — both frontends' `handleFormError` map exactly this shape onto form fields. `401` returns the envelope (not a redirect); clients handle logout themselves.

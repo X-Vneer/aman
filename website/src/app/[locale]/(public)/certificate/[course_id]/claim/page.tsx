@@ -2,7 +2,7 @@ import AmanApi from "@/services/aman"
 import Render from "./components/render"
 import { UserResponse } from "@/app/[locale]/(public)/profile/types"
 
-import { auth } from "@/lib/auth/auth"
+import { getSession } from "@/lib/auth/session"
 import { redirect } from "@/lib/i18n/navigation"
 
 const page = async (props: { params: Promise<{ locale: string }> }) => {
@@ -10,7 +10,7 @@ const page = async (props: { params: Promise<{ locale: string }> }) => {
 
   const { locale } = params
 
-  const session = await auth()
+  const session = await getSession()
   if (!session) redirect({ href: "/login", locale })
   const response = await AmanApi.get<UserResponse>(`/user/users/${session?.user.id}`)
   const user = response.data.data.item

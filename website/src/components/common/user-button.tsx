@@ -2,7 +2,7 @@
 import { Button } from "@/components/ui/heroui-button"
 import { useRouter } from "@/lib/i18n/navigation"
 import { UserCircle2 } from "lucide-react"
-import { useSession } from "next-auth/react"
+import { useSession } from "@/lib/auth/session-client"
 import ChangeLanguage from "./change-language"
 import { RadixUserMenu } from "./radix-user-menu"
 

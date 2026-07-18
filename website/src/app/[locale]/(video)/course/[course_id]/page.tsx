@@ -1,4 +1,4 @@
-import { auth } from "@/lib/auth/auth"
+import { getSession } from "@/lib/auth/session"
 import { redirect } from "@/lib/i18n/navigation"
 import { getVideos } from "@/services/utils/get-videos"
 import axios from "axios"
@@ -67,7 +67,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
 const Layout = async (props: Props) => {
   const params = await props.params
 
-  const session = await auth()
+  const session = await getSession()
   if (!session)
     return redirect({
       href: {
@@ -158,7 +158,14 @@ const Layout = async (props: Props) => {
 
     if (axios.isAxiosError(error)) {
       if (error.response?.status === 401) {
-        nextRedirect("/api/auth/signout")
+        // Expired/invalid token: clear the session cookie server-side, then land
+        // on login with a return path into this course. Raw next/navigation
+        // redirect on purpose — /api/* is outside the locale proxy matcher.
+        nextRedirect(
+          `/api/auth/logout?next=${encodeURIComponent(
+            `/${params.locale}/login?callbackUrl=/course/${params.course_id}&courseId=${params.course_id}`,
+          )}`,
+        )
       }
       console.log("🚀 ~ Layout ~ error:", error.response?.config)
       // Backend auto-enrolls on open, so a valid video no longer 403s.

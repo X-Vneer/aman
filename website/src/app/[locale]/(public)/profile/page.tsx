@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { profilePlaceholder } from "@/assets"
 import { firstCertificate, secondCertificate } from "@/assets/certificates"
-import { auth } from "@/lib/auth/auth"
+import { getSession } from "@/lib/auth/session"
 import { redirect } from "@/lib/i18n/navigation"
 import AmanApi from "@/services/aman"
 import { Card } from "@heroui/react"
@@ -20,7 +20,7 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
 
   const t = await getTranslations()
 
-  const session = await auth()
+  const session = await getSession()
   if (!session) redirect({ href: "/login", locale })
 
   const response = await AmanApi.get<UserResponse>(`/user/users/${session.user.id}`)
