@@ -11,7 +11,7 @@ type Props = {
 }
 
 const RenderData = ({ data, videos }: Props) => {
-  const [selected, setSelected] = useQueryState("course_id", parseAsString.withDefault(videos[0].id))
+  const [selected, setSelected] = useQueryState("course_id", parseAsString.withDefault(videos[0]?.id))
   const t = useTranslations("awareness")
   const selectedData = data.filter((ele) => ele.video_id == selected) || []
 
