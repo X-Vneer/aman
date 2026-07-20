@@ -2,6 +2,11 @@
 
 All three apps + MySQL on one Ubuntu 24.04 VPS.
 
+> **No domain, only a VPS IP?** See [`AGENT-DEPLOY.md`](./AGENT-DEPLOY.md) — a
+> step-by-step runbook that uses free `nip.io` wildcard DNS (`<IP>.nip.io`) so this
+> same subdomain setup works with real HTTPS and no code changes. It's also written
+> for an autonomous agent to execute command-by-command.
+
 | Subdomain            | App                | Served by                          |
 |----------------------|--------------------|------------------------------------|
 | `api.example.com`    | backend (Laravel)  | nginx → php-fpm 8.3                 |
