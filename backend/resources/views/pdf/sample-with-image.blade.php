@@ -16,7 +16,7 @@
     </head>
     <body>
         <div class="image-container" style="position: relative">
-            <img src="{{ config("app.platform") }}api/certificate/{{ $video_id }}?certificate_code={{ $certificate_number }}&certificate_no={{ $certificate_number }}&name={{ $full_name }}&date={{ $date }}&certificate_file_name={{ $certificate_file_name }}" />
+            <img src="{{ $image_url }}" />
         </div>
     </body>
 </html>

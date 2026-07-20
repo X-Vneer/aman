@@ -21,6 +21,7 @@ use App\Models\Question;
 use App\Models\User;
 use App\Models\UserAnswer;
 use App\Models\Video;
+use App\Services\CertificateService;
 use BaconQrCode\Renderer\Image\ImagickImageBackEnd;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Support\Facades\Auth;
@@ -324,19 +325,23 @@ class UserVideoController extends BaseApiController {
                 return 'the certificate already generated';
             }
 
-            $certificateUrl = $userVideo->video->certificate_url;
-            $certificate_file_name = last(explode('/', $certificateUrl));
+            // Single global template (falls back to the website's bundled default when unset).
+            $templateSetting = settings('certificate_image');
+            $templateUrl = ($templateSetting && $templateSetting->set_value)
+                ? asset('storage/' . $templateSetting->set_value)
+                : null;
 
-            // Load view with optimized memory settings
-            // return env("PLATFORM") . "api/certificate/{$userVideo->video_id}?certificate_code={$userVideo->certificate_number}&certificate_no={$userVideo->certificate_number}&name={$userVideo->user->full_name}&date={$userVideo->updated_at}&certificate_file_name={$certificate_file_name}";
+            // Render the program title in the language the user took the program in.
+            app()->setLocale($userVideo->lang ?: app()->getLocale());
 
-            // return view('pdf.sample-with-image', [
-            //     'video_id' => $userVideo->video_id,
-            //     'certificate_file_name' => $certificate_file_name,
-            //     'full_name' => ($userVideo->user->full_name?? 'Aman'),
-            //     'certificate_number' => strtolower($userVideo->certificate_number?? ''),
-            //     'date' => $userVideo->updated_at,
-            // ]);
+            $imageUrl = CertificateService::canvasImageUrl(config('app.platform'), $userVideo->video_id, [
+                'name' => $userVideo->user->full_name ?? 'Aman',
+                'date' => (string) $userVideo->updated_at,
+                'certificate_no' => strtolower($userVideo->certificate_number ?? ''),
+                'certificate_code' => $userVideo->certificate_number ?? '',
+                'program_name' => $userVideo->video?->title ?? '',
+                'template_url' => $templateUrl,
+            ]);
 
             $pdf = PDF::setOptions([
                 'memory_limit' => '1024M',
@@ -346,11 +351,7 @@ class UserVideoController extends BaseApiController {
                 'enable_javascript' => true,
                 'enable_remote' => true
             ])->loadView('pdf.sample-with-image', [
-                'video_id' => $userVideo->video_id,
-                'certificate_file_name' => $certificate_file_name,
-                'full_name' => ($userVideo->user->full_name?? 'Aman'),
-                'certificate_number' => strtolower($userVideo->certificate_number?? ''),
-                'date' => $userVideo->updated_at,
+                'image_url' => $imageUrl,
             ]);
 
             $pdf->setPaper([0, 0, 4400, 3450]);
