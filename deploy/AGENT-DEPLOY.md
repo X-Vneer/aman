@@ -1,33 +1,36 @@
-# Agent deploy runbook — hostname-only VPS (no domain)
+# Agent deploy runbook — port-based VPS (no domain, HTTP)
 
-Self-contained, command-first runbook for an **autonomous agent** deploying Aman on a
-fresh Hostinger **VPS** (Ubuntu 24.04) when the user has **no domain** — only the VPS IP.
+Self-contained, command-first runbook for deploying Aman on a fresh Hostinger **VPS**
+(Ubuntu 24.04) with **no domain** — the three apps are served on **different ports of
+the VPS hostname over plain HTTP**. This matches the current live deployment.
 
 Follow top to bottom. Commands run as **root** in an SSH shell (or Hostinger hPanel →
-VPS → Browser Terminal). Do not skip verification steps.
+VPS → Browser Terminal). Do not skip the verification step.
 
-> This is the human guide's automated sibling. `deploy/DEPLOY.md` explains *why*; this
-> file is the exact *what*. Same scripts, same nginx/systemd files — only the domain
-> step differs.
+> This is the automated, port-based sibling of `deploy/DEPLOY.md` (which documents the
+> subdomain + Let's Encrypt approach). Use **this** file when you only have the bare
+> VPS hostname and want the simplest thing that works.
 
 ---
 
-## Why nip.io (read once)
+## The port model
 
-The tested setup uses 3 subdomains (`api.` / `admin.` / `www.`). With only an IP you
-can't create subdomains. **`nip.io` is free wildcard DNS**: `anything.<IP>.nip.io`
-resolves to `<IP>` with zero setup, and Let's Encrypt issues real certs for it. So:
+No domain → no subdomains. Instead each app gets its own port on the one hostname,
+all HTTP (nginx listens on three ports; the website is proxied to the Next.js process):
 
-| Host | Resolves to | Serves |
-|------|-------------|--------|
-| `<IP>.nip.io` | your VPS | website (Next.js) |
-| `api.<IP>.nip.io` | your VPS | backend (Laravel) |
-| `admin.<IP>.nip.io` | your VPS | dashboard (Vite) |
+| URL | App | Served by |
+|-----|-----|-----------|
+| `http://<HOST>`      | website (Next.js) | nginx `:80` → Node `:3000` (systemd) |
+| `http://<HOST>:8080` | backend (Laravel) | nginx `:8080` → php-fpm 8.3 |
+| `http://<HOST>:8081` | dashboard (Vite)  | nginx `:8081` (static `dist/`) |
 
-Every config file uses the placeholder `example.com`. One `sed` rewrites them all to
-`<IP>.nip.io`, because `api.example.com` → `api.<IP>.nip.io`, etc. **No source/routing
-changes.** (Downside: depends on the third-party nip.io service — fine for
-test/staging; buy a real domain for serious production and skip the sed's nip.io part.)
+`<HOST>` is the Hostinger hostname, e.g. `srv1843351.hstgr.cloud`. The committed config
+(`deploy/env/*`, `dashboard/.env`, `website/next.config.js`) is already filled in for
+**`srv1843351.hstgr.cloud`**. Redeploying on that host needs no host edits; on a
+different host, run the one-line rewrite in step 3.
+
+> **HTTP is cleartext** — the admin password and every bearer token travel unencrypted.
+> Fine for testing/staging. Add TLS before real users (see the last section).
 
 ---
 
@@ -35,16 +38,16 @@ test/staging; buy a real domain for serious production and skip the sed's nip.io
 
 - Hostinger **VPS** (not shared hosting), Ubuntu 24.04, root access.
 - The git repo URL (set `REPO_URL` below).
-- Ports 80 + 443 open (Hostinger firewall + `ufw` if enabled).
+- **Ports 80, 8080, 8081 open** in the Hostinger control-panel firewall *and* in `ufw`
+  if enabled (step 9). Without this the URLs are unreachable even when nginx is up.
 
 ## 1. Set variables
 
 ```bash
-export REPO_URL="https://github.com/<you>/<repo>.git"   # <-- EDIT
-IP="$(curl -fsS ifconfig.me)"                            # public IP, auto-detected
-export BASE="${IP}.nip.io"                               # base host
-export DB_PASS="$(openssl rand -base64 18 | tr -d '/+=')"  # generated DB password
-echo "IP=$IP  BASE=$BASE  DB_PASS=$DB_PASS"              # RECORD DB_PASS somewhere
+export REPO_URL="https://github.com/X-Vneer/aman.git"          # <-- EDIT if different
+export HOST="$(hostname -f)"                                    # e.g. srv1843351.hstgr.cloud
+export DB_PASS="$(openssl rand -base64 18 | tr -d '/+=')"       # generated DB password
+echo "HOST=$HOST  DB_PASS=$DB_PASS"                             # RECORD DB_PASS somewhere
 ```
 
 ## 2. Clone + provision
@@ -52,17 +55,18 @@ echo "IP=$IP  BASE=$BASE  DB_PASS=$DB_PASS"              # RECORD DB_PASS somewh
 ```bash
 git clone "$REPO_URL" /var/www/aman
 cd /var/www/aman
-bash deploy/setup.sh        # PHP 8.3, Composer, Node 22, nginx, MySQL, certbot, build deps
+bash deploy/setup.sh        # PHP 8.3, Composer, Node 22, nginx, MySQL, build deps
 ```
 
-## 3. Rewrite the `example.com` placeholder → your host
+## 3. (Only if HOST ≠ srv1843351.hstgr.cloud) rewrite the host
 
-Do this ONCE, before copying any config. Rewrites nginx confs + env templates in place.
+The committed config targets `srv1843351.hstgr.cloud`. If your hostname differs, rewrite
+it everywhere the URL is baked — env templates, dashboard env, and the next/image allowlist:
 
 ```bash
 cd /var/www/aman
-grep -rl 'example.com' deploy/nginx deploy/env | xargs sed -i "s/example.com/${BASE}/g"
-grep -rn "${BASE}" deploy/nginx/     # verify: server_name lines now show <IP>.nip.io
+grep -rl 'srv1843351.hstgr.cloud' deploy/env dashboard/.env website/next.config.js \
+  | xargs sed -i "s/srv1843351.hstgr.cloud/${HOST}/g"
 ```
 
 ## 4. MySQL (non-interactive)
@@ -80,6 +84,9 @@ SQL
 
 ## 5. Environment files + secrets
 
+The templates already carry the correct `http://<HOST>:8080` API URL, `:80` site URL,
+and ports. You only fill the secrets:
+
 ```bash
 cd /var/www/aman
 cp deploy/env/backend.env.example   backend/.env
@@ -90,88 +97,138 @@ cp deploy/env/website.env.example   website/.env.local
 sed -i "s/CHANGE_ME_STRONG/${DB_PASS}/" backend/.env
 php backend/artisan key:generate --force   # writes APP_KEY into backend/.env
 
-# website: session-cookie encryption key
+# website: session-cookie encryption key (AES-256-GCM)
 sed -i "s|CHANGE_ME|$(openssl rand -base64 32 | sed 's/[&/|]/\\&/g')|" website/.env.local
 
 # sanity check — no placeholders left
-grep -Rn 'CHANGE_ME\|example.com' backend/.env dashboard/.env website/.env.local || echo "OK: clean"
+grep -Rn 'CHANGE_ME' backend/.env website/.env.local || echo "OK: clean"
 ```
 
-## 6. Whitelist the API host for next/image
+> **Email (optional):** to send OTP/reset mail, set `MAIL_USERNAME` + a Gmail App
+> Password in `MAIL_PASSWORD` and `MAIL_FROM_ADDRESS` in `backend/.env`. Left as
+> placeholders, mail just fails silently — login still works (admin = email+password,
+> website user = mobile-only, neither needs email to sign in).
 
-`next/image` blocks non-whitelisted hosts. Add the prod API origin to
-`website/next.config.js` `images.remotePatterns` (leave the existing entries):
+## 6. next/image allowlist (already set)
 
-```bash
-cd /var/www/aman
-node -e '
-const f="website/next.config.js"; const fs=require("fs");
-let s=fs.readFileSync(f,"utf8");
-const add=`new URL("https://api.${process.env.BASE}/**"), `;
-if(!s.includes(process.env.BASE)) s=s.replace("remotePatterns: [", "remotePatterns: ["+add);
-fs.writeFileSync(f,s);
-'
-grep -n "$BASE" website/next.config.js   # verify the new remotePattern is present
-```
+`website/next.config.js` already whitelists `http://<HOST>:8080` for `next/image`
+(step 3 rewrites it if your host differs). No action needed — just don't remove it,
+or course/certificate images 400.
 
 ## 7. systemd services (install BEFORE first build so deploy.sh can restart them)
 
 ```bash
 cp /var/www/aman/deploy/systemd/aman-queue.service   /etc/systemd/system/
-cp /var/www/aman/deploy/systemd/aman-website.service /etc/systemd/system/
+cp /var/www/aman/deploy/systemd/aman-website.service /etc/systemd/system/   # runs Next on :3000
 systemctl daemon-reload
-systemctl enable aman-queue aman-website     # started after the first build below
+systemctl enable aman-queue aman-website     # started by the build below
 ```
 
 ## 8. Build + migrate
 
 ```bash
 cd /var/www/aman
-bash deploy/deploy.sh    # composer, migrate --force, build dashboard + website, restart services
+bash deploy/deploy.sh    # composer, migrate --force, config:cache, build dashboard + website, restart services
 ```
 
-If this is the first run and the DB needs seed data (admin user, permissions):
+First run, if the DB needs seed data (admin user, permissions):
 
 ```bash
 php /var/www/aman/backend/artisan db:seed --force
 ```
 
-## 9. nginx
+## 9. nginx — three port listeners
+
+Write the three server blocks (all `server_name _` — one hostname, distinguished by port):
 
 ```bash
-cp /var/www/aman/deploy/nginx/api.conf   /etc/nginx/sites-available/
-cp /var/www/aman/deploy/nginx/admin.conf /etc/nginx/sites-available/
-cp /var/www/aman/deploy/nginx/www.conf   /etc/nginx/sites-available/
-ln -sf /etc/nginx/sites-available/api.conf   /etc/nginx/sites-enabled/
-ln -sf /etc/nginx/sites-available/admin.conf /etc/nginx/sites-enabled/
-ln -sf /etc/nginx/sites-available/www.conf   /etc/nginx/sites-enabled/
+# API (Laravel) on :8080
+cat > /etc/nginx/sites-available/aman-api.conf <<'NGINX'
+server {
+    listen 8080;
+    server_name _;
+    root /var/www/aman/backend/public;
+    index index.php;
+    charset utf-8;
+    client_max_body_size 50M;
+    location / { try_files $uri $uri/ /index.php?$query_string; }
+    location = /favicon.ico { access_log off; log_not_found off; }
+    location = /robots.txt  { access_log off; log_not_found off; }
+    error_page 404 /index.php;
+    location ~ \.php$ {
+        fastcgi_pass unix:/run/php/php8.3-fpm.sock;
+        fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
+        include fastcgi_params;
+    }
+    location ~ /\.(?!well-known).* { deny all; }
+}
+NGINX
+
+# Dashboard (static Vite dist) on :8081
+cat > /etc/nginx/sites-available/aman-admin.conf <<'NGINX'
+server {
+    listen 8081;
+    server_name _;
+    root /var/www/aman/dashboard/dist;
+    index index.html;
+    location /assets/ {
+        expires 1y;
+        add_header Cache-Control "public, immutable";
+        try_files $uri =404;
+    }
+    location / { try_files $uri $uri/ /index.html; }
+}
+NGINX
+
+# Website (Next.js) on :80 -> Node :3000
+cat > /etc/nginx/sites-available/aman-www.conf <<'NGINX'
+server {
+    listen 80 default_server;
+    server_name _;
+    client_max_body_size 25M;
+    location / {
+        proxy_pass http://127.0.0.1:3000;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_cache_bypass $http_upgrade;
+    }
+}
+NGINX
+
+ln -sf /etc/nginx/sites-available/aman-api.conf   /etc/nginx/sites-enabled/
+ln -sf /etc/nginx/sites-available/aman-admin.conf /etc/nginx/sites-enabled/
+ln -sf /etc/nginx/sites-available/aman-www.conf   /etc/nginx/sites-enabled/
 rm -f /etc/nginx/sites-enabled/default
 nginx -t && systemctl reload nginx
 ```
 
-## 10. SSL (Let's Encrypt)
+## 10. Open the firewall
 
 ```bash
-certbot --nginx --non-interactive --agree-tos -m "admin@${BASE}" \
-  -d "api.${BASE}" -d "admin.${BASE}" -d "${BASE}" -d "www.${BASE}"
+# ufw (if active)
+ufw allow 80/tcp; ufw allow 8080/tcp; ufw allow 8081/tcp
 ```
-
-certbot rewrites the `:80` blocks to add `:443` + auto-renew. If it fails, confirm
-port 80 is reachable and DNS resolves: `getent hosts api.${BASE}`.
+**Also** open 80, 8080, 8081 in the Hostinger panel firewall (hPanel → VPS → Firewall) —
+the cloud firewall sits in front of the VPS and blocks these ports by default.
 
 ## 11. Verify (all must pass)
 
 ```bash
-curl -fsS "https://api.${BASE}/up"           && echo "  <- backend OK"
-curl -fsSI "https://admin.${BASE}/"  | head -1   # 200 -> dashboard OK
-curl -fsSI "https://${BASE}/"        | head -1   # 200 -> website OK
+curl -fsS  "http://${HOST}:8080/up"        && echo "  <- backend OK"
+curl -fsSI "http://${HOST}:8081/" | head -1   # 200 -> dashboard OK
+curl -fsSI "http://${HOST}/"      | head -1   # 200 -> website OK
 systemctl is-active aman-website aman-queue nginx mysql
 ```
 
-Report the three URLs to the user:
-- Website:  `https://<IP>.nip.io`
-- Dashboard: `https://admin.<IP>.nip.io`
-- API health: `https://api.<IP>.nip.io/up`
+Report the URLs:
+- Website:   `http://<HOST>`
+- Dashboard: `http://<HOST>:8081`
+- API health:`http://<HOST>:8080/up`
 
 ---
 
@@ -180,16 +237,32 @@ Report the three URLs to the user:
 ```bash
 cd /var/www/aman && bash deploy/deploy.sh
 ```
+Rebuilds all three (frontend env is baked at build — a restart alone is not enough) and
+restarts services.
 
 ## If something breaks
 
 - `journalctl -u aman-website -f` — website won't boot (usually a build/env error).
 - `journalctl -u aman-queue -f` — queue worker.
 - `tail -f /var/www/aman/backend/storage/logs/laravel.log` — API 500s.
+- **Website login doesn't stick** → the session cookie needs `NEXT_PUBLIC_SITE_URL` to be
+  `http://…` (not https) so the cookie isn't marked Secure and dropped over HTTP. It's set
+  in `website/.env.local`; fix and rebuild.
+- **Course/cert images 400** → `website/next.config.js` must whitelist `http://<HOST>:8080`,
+  and `AMAN_API` in `backend/.env` must be `http://<HOST>:8080/`. Rebuild after changing.
 - 500 "permission denied" on cache/logs → re-run:
   `chown -R www-data:www-data /var/www/aman/backend/storage /var/www/aman/backend/bootstrap/cache /var/www/aman/website/.next`
-- Changed a domain/host later → it's baked into the frontend builds; **rebuild**
-  (`deploy.sh`), a restart is not enough.
+- URL/host changed → it's baked into the frontend builds; **rebuild** (`deploy.sh`).
+
+## Adding HTTPS later (recommended before real users)
+
+Ports + HTTP are the quick path; TLS is the right end state. Two options:
+
+1. **Get a domain** and follow `deploy/DEPLOY.md` (subdomains + certbot). Cleanest.
+2. **Keep the ports, add a cert** for the hostname (e.g. via certbot standalone or a
+   reverse proxy like Caddy). Then, in `website/.env.local`, set
+   `NEXT_PUBLIC_SITE_URL=https://<HOST>` and **rebuild** — the session cookie's Secure
+   flag re-enables automatically (it's derived from the site scheme).
 
 ## Notes for a browser-driven agent (Claude in Chrome)
 

@@ -2,10 +2,10 @@
 
 All three apps + MySQL on one Ubuntu 24.04 VPS.
 
-> **No domain, only a VPS IP?** See [`AGENT-DEPLOY.md`](./AGENT-DEPLOY.md) — a
-> step-by-step runbook that uses free `nip.io` wildcard DNS (`<IP>.nip.io`) so this
-> same subdomain setup works with real HTTPS and no code changes. It's also written
-> for an autonomous agent to execute command-by-command.
+> **No domain?** See [`AGENT-DEPLOY.md`](./AGENT-DEPLOY.md) — a command-by-command
+> runbook that serves the three apps on ports of the bare VPS hostname over HTTP
+> (`http://<HOST>`, `:8080`, `:8081`). This is the current live setup. The subdomain +
+> HTTPS guide below is the alternative once you have a domain.
 
 | Subdomain            | App                | Served by                          |
 |----------------------|--------------------|------------------------------------|
