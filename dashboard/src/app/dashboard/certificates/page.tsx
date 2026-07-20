@@ -1,30 +1,21 @@
 import { useSmallScreen } from "@/hooks/use-small-screen"
-import { Button, Group, Image, SegmentedControl, Select, Space, Stack, Text, Title } from "@mantine/core"
+import { Group, Image, Stack, Text, Title } from "@mantine/core"
 import { useSuspenseQuery } from "@tanstack/react-query"
-import { useState } from "react"
 import { useTranslation } from "react-i18next"
 import UploadModal from "./components/upload-modal"
-import { GetCertificates } from "./get-certificates"
-import { ChevronDown } from "lucide-react"
+import { GetCertificate } from "./get-certificates"
 
 const Certificates = () => {
   const { t } = useTranslation()
   const sm = useSmallScreen()
 
   const { data, error, isFetching } = useSuspenseQuery({
-    queryKey: ["certificates"],
-    queryFn: () => GetCertificates(),
+    queryKey: ["certificate"],
+    queryFn: () => GetCertificate(),
   })
   if (error && !isFetching) {
     throw error
   }
-
-  const formattedData = data.items.data.map((element) => ({
-    value: element.id,
-    label: element.title,
-    certificate: element.certificate_url,
-  }))
-  const [tab, setTab] = useState(formattedData[0].value)
 
   return (
     <Stack>
@@ -40,37 +31,12 @@ const Certificates = () => {
             {t("certificates.description")}
           </Text>
         </div>
-        <Group gap={sm ? "xs" : "md"} wrap="nowrap">
-          {/* <Button size={sm ? "sm" : "md"} px={sm ? undefined : "xl"}>
-            {t("certificates.save")}
-          </Button> */}
-          <UploadModal id={tab} />
-        </Group>
+        <UploadModal />
       </Group>
 
-      <Space />
-
-      <Group justify="center">
-        {/* <SegmentedControl size={sm ? "xs" : "lg"} value={tab} onChange={setTab} data={formattedData} /> */}
-        <Select
-          rightSection={<ChevronDown />}
-          allowDeselect={false}
-          value={tab}
-          onChange={(value) => {
-            if (value) setTab(value)
-          }}
-          data={formattedData}
-        />
+      <Group justify="center" mt="md">
+        <Image src={data.item} alt={t("certificates.title")} maw={800} />
       </Group>
-
-      {formattedData.map((element) => {
-        if (element.value !== tab) return null
-        return (
-          <div key={element.value}>
-            <Image src={element.certificate} />
-          </div>
-        )
-      })}
     </Stack>
   )
 }

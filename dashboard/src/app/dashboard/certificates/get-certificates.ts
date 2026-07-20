@@ -1,10 +1,7 @@
 import AmanApi from "@/services/aman"
-import { CertificatesResponse } from "./types"
+import { CertificateResponse } from "./types"
 
-export const GetCertificates = async (params?: URLSearchParams) => {
-  const response = await AmanApi.get<CertificatesResponse>(`/videos`, {
-    params,
-  })
-
+export const GetCertificate = async () => {
+  const response = await AmanApi.get<CertificateResponse>("/certificate/image")
   return response.data.data
 }

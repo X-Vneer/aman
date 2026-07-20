@@ -31,7 +31,7 @@
     "title": "Awareness information"
   },
   "certificates": {
-    "description": "Edit Certificate Template",
+    "description": "One certificate template used for every program",
     "download": "Upload Template",
     "save": "Save",
     "title": "Certificate Template",
