@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { profilePlaceholder } from "@/assets"
-import { firstCertificate, secondCertificate } from "@/assets/certificates"
+import { certificate } from "@/assets/certificates"
 import { getSession } from "@/lib/auth/session"
 import { redirect } from "@/lib/i18n/navigation"
 import AmanApi from "@/services/aman"
@@ -64,7 +64,7 @@ export default async function Page(props: { params: Promise<{ locale: string }> 
                     <div className="relative mb-3 aspect-16/7 overflow-hidden rounded-2xl">
                       <Image
                         className="h-full w-full object-cover"
-                        src={video.video_id === "1" ? firstCertificate : secondCertificate}
+                        src={certificate}
                         alt="certificate"
                       />
                       <Card.Header className="relative z-10 w-full flex-col items-start! gap-3 rounded-2xl bg-[#272525E5] px-2 py-4">

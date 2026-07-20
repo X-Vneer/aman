@@ -1,4 +1,4 @@
-import firstCertificate from "./1.png"
-import secondCertificate from "./2.png"
+import certificate from "./certificate.jpeg"
 
-export { firstCertificate, secondCertificate }
+// Single global certificate template, used as the decorative preview for every program.
+export { certificate }
