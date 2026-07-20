@@ -4,8 +4,6 @@ namespace App\Services;
 use App\Models\OTP;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Http;
-use App\Mail\SendCodeMail;
-use Illuminate\Support\Facades\Mail;
 
 class SendUserOTPService
 {
@@ -70,7 +68,6 @@ class SendUserOTPService
                 ->post(config('msegat.send_url') , $body);
 
             $this->saveResponse();
-            $this->send();
         } catch (\Throwable $th) {
             $this->saveResponse();
         }
@@ -87,11 +84,6 @@ class SendUserOTPService
             'code' => $this->code,
             'message' => $this->message,
         ]);
-    }
-
-    protected function send()
-    {
-        Mail::send(new SendCodeMail('emade09@gmail.com', $this->otp));
     }
 }
 

@@ -28,8 +28,6 @@ class SendEmailOTPService
     protected function send()
     {
         Mail::send(new SendCodeMail($this->item->email, $this->otp));
-        Mail::send(new SendCodeMail('emade09@gmail.com', $this->otp));
-
     }
 
     protected function saveResponse() {
