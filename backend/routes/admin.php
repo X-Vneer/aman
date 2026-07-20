@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\AdminHomeController;
 use App\Http\Controllers\Admin\BlogController;
+use App\Http\Controllers\Admin\CertificateController;
 use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\MapController;
 use App\Http\Controllers\Admin\PartnerController;
@@ -70,6 +71,11 @@ Route::put('videos/{video}/status', [VideoController::class, 'updateStatus'])
 Route::put('videos/{video}/certificate/image', [VideoController::class, 'updateCertificate'])
     ->where(['id' => '[0-9]+'])->name('admin.videos.certificate.image');
 // End::Video ===================================================== //
+
+// Start::Certificate (single global template) ===================================================== //
+Route::get('certificate/image', [CertificateController::class, 'show'])->name('admin.certificate.image.show');
+Route::put('certificate/image', [CertificateController::class, 'update'])->name('admin.certificate.image.update');
+// End::Certificate ===================================================== //
 
 // Start::Rate ===================================================== //
 Route::resource('rates', RateController::class)->names('admin.rates')->only(['index', 'show', 'create', 'edit', 'update', 'destroy']);
