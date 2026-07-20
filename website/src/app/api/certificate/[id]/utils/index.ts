@@ -30,3 +30,27 @@ export const searchParamsToObject = (searchParams: URLSearchParams): Record<stri
   })
   return obj
 }
+
+import { convertArabic } from "arabic-reshaper"
+import bidiFactory from "bidi-js"
+
+const bidi = bidiFactory()
+
+// Arabic + Arabic Supplement/Extended + Presentation Forms A/B.
+const ARABIC_RANGE = /[؀-ۿݐ-ݿࢠ-ࣿﭐ-﷿ﹰ-﻿]/
+
+/**
+ * Reshape Arabic to contextual presentation forms and reorder to visual (RTL)
+ * order so node-canvas (which does no complex shaping) draws it correctly.
+ * Non-Arabic strings pass through untouched. Never throws.
+ */
+export const shapeText = (input: string): string => {
+  if (!input || !ARABIC_RANGE.test(input)) return input
+  try {
+    const reshaped = convertArabic(input)
+    const levels = bidi.getEmbeddingLevels(reshaped, "rtl")
+    return bidi.getReorderedString(reshaped, levels)
+  } catch {
+    return input
+  }
+}
