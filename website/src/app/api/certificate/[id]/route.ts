@@ -1,126 +1,126 @@
 import { NextRequest, NextResponse } from "next/server"
 
-import { createCanvas, loadImage } from "canvas"
+import path from "node:path"
+import { createCanvas, loadImage, registerFont } from "canvas"
 import QRCode from "qrcode"
 import { z } from "zod"
 
-import { drawRoundedRectangle, formatDateToDDMMYYYY, searchParamsToObject } from "./utils"
-import { baseURL } from "@/services/aman"
+import { drawRoundedRectangle, formatDateToDDMMYYYY, searchParamsToObject, shapeText } from "./utils"
 import { SITE_URL } from "@/config"
+
+// Register the brand font (Latin + Arabic) once, from a runtime-stable path.
+const fontFile = (name: string) => path.join(process.cwd(), "public", "fonts", name)
+try {
+  registerFont(fontFile("IBMPlexSansArabic-Bold.ttf"), { family: "IBMPlexSansArabicBold" })
+  registerFont(fontFile("IBMPlexSansArabic-SemiBold.ttf"), { family: "IBMPlexSansArabicSemiBold" })
+  registerFont(fontFile("IBMPlexSansArabic-Regular.ttf"), { family: "IBMPlexSansArabicRegular" })
+} catch {
+  // registerFont throws if called after a canvas context is created in the same
+  // process; fonts already registered are fine to reuse.
+}
+
+const TEAL = "#1ad0d1"
+const GREY = "#3F4142"
 
 const searchParamsSchema = z.object({
   name: z.string().min(1),
   date: z.string().min(1),
-  certificate_no: z.string(),
-  certificate_code: z.string(),
-  certificate_file_name: z.string(),
+  program_name: z.string().min(1),
+  certificate_code: z.string().min(1),
+  certificate_no: z.string().optional(),
+  template_url: z.string().url().optional(),
   scale: z.coerce.number().optional(),
 })
 
-let Base_Url = `${baseURL}/storage/certificate/`
+/** Word-wrap `text` to at most `maxLines` lines that each fit `maxWidth`. */
+const wrapLines = (
+  ctx: ReturnType<ReturnType<typeof createCanvas>["getContext"]>,
+  text: string,
+  maxWidth: number,
+  maxLines = 2,
+): string[] => {
+  const words = text.split(/\s+/)
+  const lines: string[] = []
+  let current = ""
+  for (const word of words) {
+    const candidate = current ? `${current} ${word}` : word
+    if (ctx.measureText(candidate).width <= maxWidth || !current) {
+      current = candidate
+    } else {
+      lines.push(current)
+      current = word
+    }
+  }
+  if (current) lines.push(current)
+  if (lines.length <= maxLines) return lines
+  // Collapse overflow into the last allowed line.
+  return [...lines.slice(0, maxLines - 1), lines.slice(maxLines - 1).join(" ")]
+}
 
-// const certificates = {
-//   "1": {
-//     color: "#9f5ffc",
-//   },
-// }
 export async function GET(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
-  // validating search params
   const { success, error, data } = searchParamsSchema.safeParse(
     searchParamsToObject(request.nextUrl.searchParams),
   )
   if (!success) return NextResponse.json(error, { status: 422 })
-  const { name, date, certificate_no, certificate_code, certificate_file_name } = data
-  console.log("🚀 ~ GET ~ date:", date)
-  // scale factor is an optional scale of the original size
-  let scaleFactor = data.scale ?? 1
 
-  const id = (await params).id as "1" | "2"
+  const { name, date, program_name, certificate_code, template_url } = data
+  const scale = data.scale ?? 1
+  await params // route param (video id) is not used for template selection anymore
 
-  const { color } = { color: "#3F4142" } //certificates[id]
-  // loading certificate template
-  const templatePath = `${Base_Url}${id}/${certificate_file_name}`
+  const defaultTemplate = path.join(process.cwd(), "public", "certificate.jpeg")
 
   try {
-    console.log("🚀 ~ GET ~ templatePath:", templatePath)
-    const certificateImage = await loadImage(templatePath)
-    const canvasWidth = certificateImage.width * scaleFactor
-    const canvasHeight = certificateImage.height * scaleFactor
-
-    // Create a canvas
-    const canvas = createCanvas(canvasWidth, canvasHeight)
-    const context = canvas.getContext("2d")
-
-    // Draw the certificate template on the canvas
-    context.drawImage(certificateImage, 0, 0, canvasWidth, canvasHeight)
-
-    // Customize font and style for the name
-    context.font = `bold ${110 * scaleFactor}px Arial`
-    context.fillStyle = color
-    context.textAlign = "center"
-
-    // Set the position for the name (adjust these values)
-    const x = canvasWidth / 2
-    const y = canvasHeight / 2.45
-
-    // Render the user's name
-    context.fillText(name, x, y)
-
-    // Add the date on the top-left corner
-
-    context.font = `${46 * scaleFactor}px Arial` // Smaller font for date and certificate number
-    context.fillStyle = "black"
-    context.textAlign = "left"
-
-    const dateX = canvasWidth / 7 // Left margin
-    const dateY = canvasHeight / 9 // Top margin
-    // context.fillText(`Date: ${date}`, dateX, dateY)
-
-    // Add the "Date" label in a lighter color
-    context.fillStyle = "rgba(0, 0, 0, 0.7)" // Lighter color for "Date"
-    context.fillText("Date:", dateX, dateY)
-
-    // Draw the actual date in a darker color
-    context.fillStyle = "#000" // Darker color for the date value
-    context.fillText(formatDateToDDMMYYYY(new Date(date)), dateX + 124 * scaleFactor, dateY) // Offset to the right of "Date:"
-    // Add the certificate number on the top-right corner
-    const certX = canvasWidth - canvasWidth / 5.5 // Right margin
-    const certY = canvasHeight / 9 // Top margin
-    context.textAlign = "right"
-    context.fillText(certificate_no, certX + 25 * certificate_no.length * scaleFactor, certY)
-    context.fillStyle = "rgba(0, 0, 0, 0.7)" // Lighter color for "Date"
-    context.fillText(`Certificate no:`, certX, certY)
-
-    // Generate QR code for the certificate number
-    const qrCodeData = await QRCode.toDataURL(
-      `${SITE_URL}/en/information-center/${certificate_code}`,
-      {
-        margin: 0.5,
-        errorCorrectionLevel: "M",
-      },
+    const template = await loadImage(template_url ?? defaultTemplate).catch(() =>
+      loadImage(defaultTemplate),
     )
 
-    // Load QR code as an image
-    const qrCodeImage = await loadImage(qrCodeData)
+    const W = template.width * scale
+    const H = template.height * scale
+    const canvas = createCanvas(W, H)
+    const ctx = canvas.getContext("2d")
 
-    // Set QR code size and position
-    const qrCodeSize = 400 * scaleFactor // Adjust size as needed
-    const qrCodeX = canvasWidth / 2 - qrCodeSize / 2 // Center horizontally
-    const qrCodeY = (canvasHeight - qrCodeSize / 2) / 1.5
+    ctx.drawImage(template, 0, 0, W, H)
+    ctx.textAlign = "center"
 
-    const borderRadius = 32 * scaleFactor // Border radius for rounded corners
+    // 1) User name — teal, bold.
+    ctx.fillStyle = TEAL
+    ctx.font = `${70 * scale}px IBMPlexSansArabicBold`
+    ctx.fillText(shapeText(name), W / 2, H * 0.4)
 
-    // Draw rounded rectangle for QR code clipping
-    // @ts-ignore
-    drawRoundedRectangle(context, qrCodeX, qrCodeY, qrCodeSize, qrCodeSize, borderRadius)
+    // 2) Program name — teal, semibold, wrapped to <= 2 lines.
+    ctx.fillStyle = TEAL
+    ctx.font = `${40 * scale}px IBMPlexSansArabicSemiBold`
+    const programLines = wrapLines(ctx, shapeText(program_name), W * 0.82, 2)
+    const programBaseline = H * 0.505
+    const lineHeight = 52 * scale
+    // Bottom-anchor the block just above the "Through the Aman…" template line.
+    const startY = programBaseline - (programLines.length - 1) * lineHeight
+    programLines.forEach((line, i) => ctx.fillText(line, W / 2, startY + i * lineHeight))
 
-    context.clip() // Apply clipping to make the QR code rounded
-    // Draw the QR code inside the rounded clipping area
-    context.drawImage(qrCodeImage, qrCodeX, qrCodeY, qrCodeSize, qrCodeSize)
+    // 3) Date — grey.
+    ctx.fillStyle = GREY
+    ctx.font = `${40 * scale}px IBMPlexSansArabicRegular`
+    ctx.fillText(formatDateToDDMMYYYY(new Date(date)), W / 2, H * 0.61)
 
-    // Create PNG stream
+    // 4) QR code — centered below the date.
+    const qrDataUrl = await QRCode.toDataURL(`${SITE_URL}/en/information-center/${certificate_code}`, {
+      margin: 0.5,
+      errorCorrectionLevel: "M",
+    })
+    const qrImage = await loadImage(qrDataUrl)
+    const qrSize = W * 0.135
+    const qrX = W / 2 - qrSize / 2
+    const qrY = H * 0.645
+    const radius = 24 * scale
+
+    ctx.save()
+    // @ts-ignore — drawRoundedRectangle takes the node-canvas 2d context
+    drawRoundedRectangle(ctx, qrX, qrY, qrSize, qrSize, radius)
+    ctx.clip()
+    ctx.drawImage(qrImage, qrX, qrY, qrSize, qrSize)
+    ctx.restore()
+
     const stream = canvas.createPNGStream()
-    // Convert the PNG stream to a Web Stream response
     const readable = new ReadableStream({
       start(controller) {
         stream.on("data", (chunk) => controller.enqueue(chunk))
@@ -129,16 +129,8 @@ export async function GET(request: NextRequest, { params }: { params: Promise<{ 
       },
     })
 
-    return new Response(readable, {
-      headers: {
-        "Content-Type": "image/png",
-      },
-    })
-  } catch (error) {
-    console.log("🚀 ~ GET ~ error:", error)
-    return NextResponse.json(
-      { error: "Internal Server Error: " + error + ": " + templatePath },
-      { status: 500 },
-    )
+    return new Response(readable, { headers: { "Content-Type": "image/png" } })
+  } catch (err) {
+    return NextResponse.json({ error: "Internal Server Error: " + err }, { status: 500 })
   }
 }
