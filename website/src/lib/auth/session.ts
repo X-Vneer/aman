@@ -13,7 +13,10 @@ export const COOKIE_OPTIONS = {
   httpOnly: true,
   path: "/",
   sameSite: "lax",
-  secure: process.env.NODE_ENV === "production",
+  // Secure only over HTTPS, derived from the site scheme: a Secure cookie is
+  // silently dropped by the browser on plain HTTP, which would break login on
+  // an HTTP deployment. Flips on automatically once NEXT_PUBLIC_SITE_URL is https.
+  secure: (process.env.NEXT_PUBLIC_SITE_URL || "").startsWith("https"),
   maxAge: 60 * 60 * 24 * 30, // 30 days
 } as const
 

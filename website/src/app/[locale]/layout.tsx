@@ -18,7 +18,6 @@ import ScreenIndicator from "@/components/common/screen-indecator"
 import { LOCALES, SITE_URL } from "@/config"
 import { siteConfig } from "@/config/site"
 import ReactQueryProvider from "@/lib/react-query/react-query-provider"
-import Script from "next/script"
 import { Providers } from "./providers"
 
 export const viewport: Viewport = {
@@ -101,21 +100,6 @@ export default async function RootLayout(props: {
       dir={["ar"].includes(locale) ? "rtl" : "ltr"}
       className="dark">
       <head>
-        {/* Google tag (gtag.js) */}
-        <Script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-1408SP6ECN"
-          strategy="afterInteractive"
-        />
-        <Script id="gtag-init" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', 'G-1408SP6ECN');
-          `}
-        </Script>
         <JsonLd data={organizationSchema()} />
       </head>
       <NextIntlClientProvider messages={messages}>

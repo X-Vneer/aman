@@ -8,7 +8,9 @@ const withNextIntl = createNextIntlPlugin(
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    remotePatterns: [new URL("https://uat.api.inaash.edu.sa/**"), new URL("https://api.inaash.edu.sa/**")],
+    remotePatterns: [
+      new URL("http://srv1843351.hstgr.cloud:8080/**")
+    ],
   },
 
   async headers() {
@@ -19,7 +21,7 @@ const nextConfig = {
           {
             key: "Content-Security-Policy",
             value:
-              "frame-src 'self' https://www.googletagmanager.com https://drive.google.com https://docs.google.com;",
+              "frame-src 'self' https://drive.google.com https://docs.google.com;",
           },
         ],
       },
