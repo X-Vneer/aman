@@ -115,8 +115,8 @@ return [
                 "en" => "Can public and private entities request the program for their employees?",
             ],
             "description" => [
-                "ar" => "نعم ، وذلك عبر تقديم طلب عبر البريد الالكتروني : info@inaash.edu.sa",
-                "en" => "Yes, by submitting a request via email: info@inaash.edu.sa",
+                "ar" => "نعم ، وذلك عبر تقديم طلب من خلال صفحة اتصل بنا على الموقع",
+                "en" => "Yes, by submitting a request through the contact us page on the website.",
             ]
         ],
         [
@@ -125,8 +125,8 @@ return [
                 "en" => "If I need help, how can I get in touch?",
             ],
             "description" => [
-                "ar" => "بإمكانك التواصل مباشرة معنا عن طريق اتصل بنا من الموقع أو عبر البريد الالكتروني ",
-                "en" => "You can contact us directly through the contact us link on the website or via email: info@inaash.edu.sa",
+                "ar" => "بإمكانك التواصل مباشرة معنا عن طريق اتصل بنا من الموقع",
+                "en" => "You can contact us directly through the contact us link on the website.",
             ]
         ],
         [
