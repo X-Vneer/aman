@@ -32,7 +32,7 @@ const Page = async (props: Props) => {
     <>
       <HoveredCourseProvider>
         <main className="container mx-auto max-w-7xl grow px-6 pt-5 md:pt-8 lg:pt-10">
-          <DynamicBg />
+          <DynamicBg defaultImage={videos[0]?.logo} />
 
           <section className="relative flex items-center justify-center gap-4 py-16 md:py-20">
             <div className="w-full space-y-10">

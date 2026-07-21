@@ -14,8 +14,6 @@ import { useParams } from "react-router-dom"
 import { Question } from "../@types"
 import Answer from "./answer"
 import { useQueryClient } from "@tanstack/react-query"
-import { useLocalFormStorage } from "@/hooks/use-local-form-storage"
-import { useEffect, useRef } from "react"
 
 type TimeObject = {
   h: number
@@ -128,26 +126,6 @@ const QuestionForm = ({ initialValues }: { initialValues?: QuestionFormValues })
     },
   })
 
-  // Persist to localStorage only when a language is fully completed
-  const storageKey = `question-details:new`
-  const { initialFromStorage, clear } = useLocalFormStorage<QuestionFormValues>(
-    form.getValues(),
-    {
-      storageKey,
-    },
-    id ? false : true,
-  )
-
-  // If we have valid cached values, hydrate once
-  const hydratedRef = useRef(false)
-  useEffect(() => {
-    if (!hydratedRef.current && initialFromStorage) {
-      form.setValues(initialFromStorage)
-      hydratedRef.current = true
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [initialFromStorage])
-
   const navigate = useNavigate()
   const queryClient = useQueryClient()
   const onSubmit = form.onSubmit(async (values) => {
@@ -162,8 +140,6 @@ const QuestionForm = ({ initialValues }: { initialValues?: QuestionFormValues })
       if (questionId) queryClient.invalidateQueries({ queryKey: ["questions", questionId] })
       if (questionId) queryClient.invalidateQueries({ queryKey: ["programs", id] })
       navigate(`/dashboard/programs/${id}`)
-      // Clear local cache after successful submit
-      clear()
     } catch (error) {
       handleMantineFormError(error, form)
     }

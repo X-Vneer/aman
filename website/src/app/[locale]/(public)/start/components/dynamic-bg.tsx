@@ -1,21 +1,20 @@
 "use client"
 import { loginBackground } from "@/assets"
-import Image from "next/image"
 
 import { useHoveredCourse } from "./hovered-course-context"
 
-const DynamicBg = () => {
+const DynamicBg = ({ defaultImage }: { defaultImage?: string }) => {
   const { hoveredCourse } = useHoveredCourse()
+  // hoveredCourse / defaultImage are complete image URLs — render as-is, no base prefix.
+  const src = hoveredCourse ?? defaultImage ?? loginBackground.src
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black/50">
-      <Image
-        key={hoveredCourse ?? "default"}
-        className={"h-full w-full bg-transparent bg-center object-cover opacity-15"}
-        src={hoveredCourse ?? loginBackground}
+      <img
+        key={src}
+        className="h-full w-full bg-transparent bg-center object-cover opacity-15"
+        src={src}
         alt="aman background"
-        fill
-        priority
       />
     </div>
   )

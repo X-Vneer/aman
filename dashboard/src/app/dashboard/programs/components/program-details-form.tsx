@@ -1,6 +1,5 @@
 import CustomTimeInput from "@/components/common/custom-time-input"
 import { WEBSITE_LANGS } from "@/config"
-import { useLocalFormStorage } from "@/hooks/use-local-form-storage"
 import { useSmallScreen } from "@/hooks/use-small-screen"
 import { useNavigate } from "@/lib/i18n/navigation"
 import AmanApi from "@/services/aman"
@@ -24,7 +23,7 @@ import { useForm } from "@mantine/form"
 import { useMutation, useQueryClient } from "@tanstack/react-query"
 import { CircleX, Image, Upload, X } from "lucide-react"
 import { parseAsArrayOf, parseAsString, useQueryState } from "nuqs"
-import { useEffect, useReducer, useRef } from "react"
+import { useReducer } from "react"
 import { useTranslation } from "react-i18next"
 import { useParams } from "react-router-dom"
 import { Video } from "../add/@types"
@@ -92,26 +91,6 @@ const ProgramDetailsForm = ({ initialValues }: { initialValues?: VideoFormValues
     },
   })
 
-  // Persist to localStorage only when a language is fully completed
-  const storageKey = `program-details:new`
-  const { initialFromStorage, clear } = useLocalFormStorage<VideoFormValues>(
-    form.getValues(),
-    {
-      storageKey,
-    },
-    id ? false : true,
-  )
-
-  // If we have valid cached values, hydrate once
-  const hydratedRef = useRef(false)
-  useEffect(() => {
-    if (!hydratedRef.current && initialFromStorage) {
-      form.setValues(initialFromStorage)
-      hydratedRef.current = true
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [initialFromStorage])
-
   // handling video logo
   const { mutate, isPending, isError, error } = useMutation({
     mutationFn: async ({ file }: { file: File }) => {
@@ -156,8 +135,6 @@ const ProgramDetailsForm = ({ initialValues }: { initialValues?: VideoFormValues
 
       if (id) queryClient.invalidateQueries({ queryKey: ["programs"] })
       navigate(id ? "/dashboard/programs" : `/dashboard/programs/${response.data.data.item.id}`)
-      // Clear local cache after successful submit
-      clear()
     } catch (error) {
       handleMantineFormError(error, form)
     }
