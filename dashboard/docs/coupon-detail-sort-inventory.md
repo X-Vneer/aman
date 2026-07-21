@@ -156,7 +156,7 @@ Not `CouponUsage` or `CouponRedemption`. The model represents a user's enrollmen
 
 ## 8. Summary of Required Changes
 
-### Backend (`inaash-api`)
+### Backend (`aman-api`)
 
 | File | Change |
 |---|---|
@@ -164,7 +164,7 @@ Not `CouponUsage` or `CouponRedemption`. The model represents a user's enrollmen
 | `CouponUserVideoResource::toArray()` | Add `'price' => $this->price` to response |
 | New migration | `ADD INDEX user_videos_coupon_id_index (coupon_id)` |
 
-### Frontend (`inaash-dashboard`)
+### Frontend (`aman-dashboard`)
 
 | File | Change |
 |---|---|

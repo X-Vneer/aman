@@ -62,7 +62,7 @@ Shared UI lives in `src/components/{common,ui,icons}/`; feature-local UI stays i
 - `AmanApi` — authed; a request interceptor injects `Authorization: Bearer <token>` from the session cookie (server-side via `getSession()` from `@/lib/auth/session`, client-side via `getClientSession()` from `@/lib/auth/session-client`) and sets `Accept-language` from the current locale.
 - `AmanApiGuest` — unauthed, uses `<baseURL>/guest`, only sets `Accept-language`.
 
-Base URL is `NEXT_PUBLIC_API_URL`, defaults to `https://api.inaash.edu.sa` (backend not yet migrated). `next.config.js` whitelists the prod + UAT origins for `next/image`.
+Base URL is `NEXT_PUBLIC_API_URL`. `next.config.js` whitelists the configured API origin for `next/image`.
 
 Public site URL is `SITE_URL` from `src/config/index.ts`, sourced from `NEXT_PUBLIC_SITE_URL` (empty fallback). Used by share buttons, certificate API route, and JSON-LD schemas — set it in `.env.local` when the production domain is known.
 

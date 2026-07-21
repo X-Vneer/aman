@@ -255,14 +255,14 @@ Since `user_videos.id` is unique, the dynamic sort column becomes a useless tieb
 
 ## 12. Summary of Required Changes
 
-### Backend (`inaash-api`)
+### Backend (`aman-api`)
 
 | File | Change |
 |---|---|
 | `FinancialManagementController::userInformation()` | Remove hardcoded `orderBy` from callback; add `$sortAllowed` with qualified closures for all 12 sort keys |
 | New migration | Add `transactions_order_id_index` on `transactions.order_id` |
 
-### Frontend (`inaash-dashboard`)
+### Frontend (`aman-dashboard`)
 
 | File | Change |
 |---|---|

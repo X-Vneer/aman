@@ -18,7 +18,7 @@
          Aman.
         <br>
         <div>
-            <img style="display: block; margin:auto;" src="{{ config("app.aman_api") }}img/inaash.png" alt="aman" width="128" height="165">
+            <img style="display: block; margin:auto;" src="{{ config("app.aman_api") }}img/aman.png" alt="aman" width="128" height="165">
         </div>
         <br>
         <div style="text-align:center; font-size:26px;"><strong>{{ $body }}</strong></div>

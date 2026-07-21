@@ -84,8 +84,6 @@ openssl rand -base64 32
 ```js
 remotePatterns: [
   new URL("https://api.example.com/**"),   // <-- add your prod API host
-  new URL("https://uat.api.inaash.edu.sa/**"),
-  new URL("https://api.inaash.edu.sa/**"),
 ],
 ```
 Without this, remote images render broken in production.

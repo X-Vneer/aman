@@ -125,12 +125,12 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
-    'aman_api' => env('AMAN_API', 'https://api.inaash.edu.sa/'),
+    'aman_api' => env('AMAN_API', 'http://localhost:8000/'),
 
-    'platform' => env('PLATFORM', 'https://inaash.edu.sa/'),
-    'platform_cert' => env('PLATFORM_CERT', 'https://inaash.edu.sa/'),
+    'platform' => env('PLATFORM', 'http://localhost:3000/'),
+    'platform_cert' => env('PLATFORM_CERT', 'http://localhost:3000/'),
 
-    'admin_email' => env('ADMIN_EMAIL', 'info@inaash.edu.sa'),
+    'admin_email' => env('ADMIN_EMAIL'),
     'file_url' => env('APP_FILE_URL'),
 
 ];

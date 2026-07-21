@@ -11,7 +11,7 @@ use Illuminate\Queue\SerializesModels;
 /**
  * Generates the certificate PDF by calling the same logic as the guest/user PDF route,
  * in-process. Avoids Http::get() to the public API (fixes DNS/cURL timeout when the server
- * cannot resolve api.inaash.edu.sa from itself).
+ * cannot resolve the public API host from itself).
  *
  * يولّد ملف PDF للشهادة داخل نفس عملية PHP دون طلب HTTP خارجي لتجنّب أخطاء DNS/cURL 28.
  */

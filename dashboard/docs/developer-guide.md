@@ -62,7 +62,7 @@ const { data, status, error, refetch, isFetching } = useQuery({ ... })
 
 ## 5. Register allowed columns on the backend
 
-In `inaash-api`, open the relevant controller and verify the model's
+In `aman-api`, open the relevant controller and verify the model's
 `$fillable` array contains the columns you want to sort by. The `IndexTrait`
 builds its allow-list automatically from `$fillable` minus `$excludedColumns`.
 No code change is needed unless you want to restrict sorting to a subset.

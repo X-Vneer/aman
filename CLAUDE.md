@@ -35,7 +35,7 @@ Until `backend/vendor` and `backend/.env` exist, `php artisan serve` fails and o
 
 ## The cross-app contract (most important big-picture)
 
-All three apps share **one API** (`api.inaash.edu.sa` — the backend has not yet migrated to an `aman` domain, so URLs/names still say `inaash`). The backend groups routes by audience in `backend/bootstrap/app.php`; each frontend consumes a different prefix:
+All three apps share **one API** whose host is configured per environment (`AMAN_API` on the backend, `NEXT_PUBLIC_API_URL` on the website, `VITE_LOCAL_API_BASE_URL` on the dashboard). The backend groups routes by audience in `backend/bootstrap/app.php`; each frontend consumes a different prefix:
 
 | Backend prefix | Route file          | Middleware                     | Consumed by |
 |----------------|---------------------|--------------------------------|-------------|

@@ -154,7 +154,7 @@ const SORTABLE: Record<string, string> = {
 
 ## Summary of Required Changes
 
-### Backend (`inaash-api`)
+### Backend (`aman-api`)
 
 | File | Change |
 |---|---|
@@ -162,7 +162,7 @@ const SORTABLE: Record<string, string> = {
 | `app/Http/Controllers/Admin/CouponController.php` | (a) `index()`: pass `['status']` to `$sortAllowed`. (b) `couponUsers()`: set `$this->columns = ['price', 'discount_value', 'created_at']` before `indexInit()`. |
 | `app/Http/Controllers/User/RateController.php` | `index()`: pass `$sortAllowed` closure for `user_name` → LEFT JOIN on `users`. |
 
-### Frontend (`inaash-dashboard`)
+### Frontend (`aman-dashboard`)
 
 | File | Change |
 |---|---|
