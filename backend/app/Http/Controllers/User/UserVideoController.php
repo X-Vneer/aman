@@ -97,9 +97,15 @@ class UserVideoController extends BaseApiController {
 
     function lastShow($id) {
         if(auth('user')->check()){
-            $userVideo = UserVideo::where(['user_id'=> Auth::id(), 'video_id' => $id])
-                ->where('status', VideoPaymentStatus::Accepted->value)
-                ->where('progress', '>=', 99)
+            // Resolve on the 'user' guard explicitly. Auth::id() reads the default ('sanctum')
+            // guard, which is not guaranteed to hold the user id here; when it was null the
+            // lookup matched nothing, $id fell back to 0, and showInit() returned 403 — which the
+            // website certificate layout turned into a 404. Return the user's latest enrollment for
+            // this video (a completed one wins), so a completed course renders the certificate and an
+            // incomplete one flows through the frontend's "no qr → back to course" redirect instead of 404.
+            $userVideo = UserVideo::where('user_id', auth('user')->id())
+                ->where('video_id', $id)
+                ->orderByRaw('CASE WHEN progress >= 99 THEN 0 ELSE 1 END')
                 ->latest()->first();
 
             $id = $userVideo?->id?? 0;

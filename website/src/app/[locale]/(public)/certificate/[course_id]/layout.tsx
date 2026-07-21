@@ -3,7 +3,7 @@ import { getSession } from "@/lib/auth/session"
 import { redirect } from "@/lib/i18n/navigation"
 import axios from "axios"
 import { isRedirectError } from "next/dist/client/components/redirect-error"
-import { notFound } from "next/navigation"
+import { redirect as nextRedirect } from "next/navigation"
 import { VideoProvider } from "./context/video-context"
 
 export default async function Layout(props: {
@@ -44,14 +44,28 @@ export default async function Layout(props: {
       </>
     )
   } catch (error) {
-    console.log("🚀 ~ error:", error)
-    // Backend auto-enrolls on open, so a valid course no longer 403s here.
-    // Any genuine API error means the certificate isn't available.
-    if (axios.isAxiosError(error)) {
-      notFound()
-    }
-
+    // A redirect() above (e.g. "no certificate yet → course") throws — let it through.
     if (isRedirectError(error)) throw error
+
+    if (axios.isAxiosError(error)) {
+      // Expired/invalid token: clear the session cookie server-side, then land on login
+      // with a return path back into this certificate page (mirrors the course page).
+      if (error.response?.status === 401) {
+        nextRedirect(
+          `/api/auth/logout?next=${encodeURIComponent(
+            `/${params.locale}/login?callbackUrl=/certificate/${params.course_id}`,
+          )}`,
+        )
+      }
+      // No enrollment / certificate for this course yet — send the user back to the course
+      // to complete it instead of dead-ending on a 404.
+      redirect({
+        href: {
+          pathname: `/course/${params.course_id}`,
+        },
+        locale: params.locale,
+      })
+    }
 
     return <p>Server Error</p>
   }
