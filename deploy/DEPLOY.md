@@ -7,26 +7,29 @@ All three apps + MySQL on one Ubuntu 24.04 VPS.
 > (`http://<HOST>`, `:8080`, `:8081`). This is the current live setup. The subdomain +
 > HTTPS guide below is the alternative once you have a domain.
 
-| Subdomain            | App                | Served by                          |
-|----------------------|--------------------|------------------------------------|
-| `api.example.com`    | backend (Laravel)  | nginx → php-fpm 8.3                 |
-| `admin.example.com`  | dashboard (Vite)   | nginx (static `dist/`)             |
-| `example.com` + www  | website (Next.js)  | nginx → Node (`aman-website` unit) |
+| Subdomain                          | App                | Served by                          |
+|------------------------------------|--------------------|------------------------------------|
+| `api.aman.76.13.250.92.nip.io`     | backend (Laravel)  | nginx → php-fpm 8.3                 |
+| `admin.aman.76.13.250.92.nip.io`   | dashboard (Vite)   | nginx (static `dist/`)             |
+| `aman.76.13.250.92.nip.io`         | website (Next.js)  | nginx → Node (`aman-website` unit) |
 
-Replace `example.com` everywhere with your real domain (files use it as a placeholder).
+Config files (`deploy/env/*`, `deploy/nginx/*`, `website/next.config.js`, `dashboard/.env`)
+are already filled in for these `76.13.250.92.nip.io` hosts. Using a different IP/domain?
+Rewrite it everywhere: `grep -rl '76.13.250.92' deploy website/next.config.js dashboard/.env | xargs sed -i 's/76.13.250.92/<NEW_IP>/g'`.
 
 ---
 
 ## 0. DNS
 
-Point these A records at the VPS IP (Hostinger → DNS):
+**nip.io needs no DNS records.** `*.76.13.250.92.nip.io` always resolves to `76.13.250.92` —
+the IP is baked into the hostname. The only requirement: `76.13.250.92` **must be the VPS
+public IP**. Confirm on the box:
 
+```bash
+curl -s ifconfig.me      # must print 76.13.250.92
 ```
-api     A   <VPS_IP>
-admin   A   <VPS_IP>
-www     A   <VPS_IP>
-@       A   <VPS_IP>
-```
+
+If it prints a different IP, run the rewrite from the table above with your real IP before proceeding.
 
 ## 1. Provision the server
 
@@ -78,15 +81,16 @@ openssl rand -base64 32
 
 ## 4. One code edit before building the website
 
-`next/image` only loads images from whitelisted hosts. Add your API domain to
-`website/next.config.js` `images.remotePatterns`:
+`next/image` only loads images from whitelisted hosts. `website/next.config.js`
+`images.remotePatterns` is already set to the prod API host:
 
 ```js
 remotePatterns: [
-  new URL("https://api.example.com/**"),   // <-- add your prod API host
+  new URL("https://api.aman.76.13.250.92.nip.io/**"),
 ],
 ```
-Without this, remote images render broken in production.
+No action unless your host differs (then rewrite per the table above). Without a matching
+entry, remote images render broken in production.
 
 ## 5. Build + migrate (first deploy)
 
@@ -134,15 +138,16 @@ nginx -t && systemctl reload nginx
 ## 8. SSL (Let's Encrypt)
 
 ```bash
-certbot --nginx -d api.example.com -d admin.example.com -d example.com -d www.example.com
+certbot --nginx -d aman.76.13.250.92.nip.io -d api.aman.76.13.250.92.nip.io -d admin.aman.76.13.250.92.nip.io
 ```
-certbot rewrites the `:80` blocks to add `:443` + auto-renewal.
+certbot rewrites the `:80` blocks to add `:443` + auto-renewal. Port **80 must be open**
+(Hostinger panel + ufw) for the HTTP-01 challenge, and **443** for serving.
 
 ## 9. Done — verify
 
-- `https://api.example.com/up` → Laravel health check returns 200.
-- `https://admin.example.com` → dashboard loads, login hits the API.
-- `https://example.com` → website renders.
+- `https://api.aman.76.13.250.92.nip.io/up` → Laravel health check returns 200.
+- `https://admin.aman.76.13.250.92.nip.io` → dashboard loads, login hits the API.
+- `https://aman.76.13.250.92.nip.io` → website renders.
 
 ---
 

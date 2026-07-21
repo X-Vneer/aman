@@ -35,6 +35,9 @@ return Application::configure(basePath: dirname(__DIR__))
         },
     )
     ->withMiddleware(function (Middleware $middleware) {
+        // Behind the TLS-terminating nginx proxy: honour X-Forwarded-Proto so
+        // url()/redirects/PDF links resolve as https, not http.
+        $middleware->trustProxies(at: '*');
         $middleware->statefulApi();
         $middleware->validateCsrfTokens(except: [
             '*',

@@ -9,7 +9,7 @@ const withNextIntl = createNextIntlPlugin(
 const nextConfig = {
   images: {
     remotePatterns: [
-      new URL("http://srv1843351.hstgr.cloud:8080/**")
+      new URL("https://api.aman.76.13.250.92.nip.io/**")
     ],
   },
 
