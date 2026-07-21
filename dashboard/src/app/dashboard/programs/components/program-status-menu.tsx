@@ -7,7 +7,6 @@ import { useTranslation } from "react-i18next"
 
 import { Video } from "@/@types/videos"
 import { putVideoStatus, type ProgramStatusValue } from "../update-video-status"
-import ResetUserVideosMenuItem from "./reset-user-videos-button"
 
 type Props = Video
 
@@ -59,8 +58,6 @@ const ProgramStatusMenu = (video: Props) => {
         <Menu.Item color="dimmed" onClick={() => setStatus(null)}>
           {t("programs.status-clear")}
         </Menu.Item>
-        <Menu.Divider />
-        <ResetUserVideosMenuItem {...video} />
       </Menu.Dropdown>
     </Menu>
   )

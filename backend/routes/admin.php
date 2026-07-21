@@ -100,11 +100,6 @@ Route::post('user-videos/{certificate_number}/regenerate-certificate', [UserVide
 Route::post('user-videos/{user_video}/revoke-certificate', [UserVideoController::class, 'revokeCertificate'])
     ->where(['user_video' => '[0-9]+'])
     ->name('admin.user-videos.revoke-certificate');
-Route::post('user-videos/reset-all', [UserVideoController::class, 'resetAll'])
-    ->name('admin.user-videos.reset-all');
-Route::post('user-videos/reset-by-video/{video_id}', [UserVideoController::class, 'resetByVideo'])
-    ->where(['video_id' => '[0-9]+'])
-    ->name('admin.user-videos.reset-by-video');
 Route::post('user-videos/{user_video}/reset', [UserVideoController::class, 'resetUserVideo'])
     ->where(['user_video' => '[0-9]+'])
     ->name('admin.user-videos.reset');

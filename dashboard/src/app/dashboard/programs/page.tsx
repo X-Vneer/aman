@@ -8,7 +8,6 @@ import { ActionIcon, Button, Group, Space, Stack, Title } from "@mantine/core"
 import { Plus } from "lucide-react"
 import { useTranslation } from "react-i18next"
 import RenderPrograms from "./components/render-programs"
-import ResetAllUserVideosButton from "./components/reset-all-user-videos-button"
 
 const Programs = () => {
   const { t } = useTranslation()
@@ -45,7 +44,6 @@ const Programs = () => {
         <Group className="grow" justify="space-between" gap={"lg"} wrap="nowrap">
           <SearchInput />
         </Group>
-        {hasPermissionTo("Programs:Edit") ? <ResetAllUserVideosButton /> : null}
         {/* <Filters /> */}
       </Group>
       <ActiveFiltersBar chips={activeFilterChips} />

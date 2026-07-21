@@ -418,23 +418,6 @@
       "add": "Add Question",
       "title": "Question section"
     },
-    "reset": {
-      "all-confirm": "Reset all in-progress subscriptions across every program?",
-      "button-all": "Reset all in-progress subscriptions",
-      "cancel": "Cancel",
-      "description": "All enrolled users who have not yet earned the certificate will have their progress and answers cleared, and will restart from the first question.",
-      "failure": {
-        "title": "Reset failed"
-      },
-      "ok": "Yes, reset",
-      "success": {
-        "message": "{{count}} subscription(s) were reset.",
-        "title": "Reset complete"
-      },
-      "title": "Reset program subscriptions",
-      "title-all": "Reset all program subscriptions",
-      "video-confirm": "Reset in-progress subscriptions for \"{{value}}\"?"
-    },
     "scenes": {
       "add": "Add Scene",
       "title": "Scene section"
