@@ -30,7 +30,7 @@ class SendReplyMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            from: new Address('info@inaash.edu.sa', 'Aman'),
+            from: new Address(config('mail.from.address'), config('mail.from.name')),
             to: [$this->to_email],
             subject: 'Aman Reply',
         );

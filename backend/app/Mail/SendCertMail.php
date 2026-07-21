@@ -36,8 +36,8 @@ class SendCertMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            from: new Address('info@inaash.edu.sa', 'Aman'),
-            to: [$this->to_email, 'info@inaash.edu.sa'],
+            from: new Address(config('mail.from.address'), config('mail.from.name')),
+            to: [$this->to_email, config('mail.from.address')],
             subject: 'Aman Certificate',
         );
     }

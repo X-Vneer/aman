@@ -30,7 +30,7 @@ class SendCodeMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            from: new Address('info@inaash.edu.sa', 'No replay'),
+            from: new Address(config('mail.from.address'), 'No replay'),
             to: [$this->to_email],
             subject: 'Aman App: OTP',
         );
