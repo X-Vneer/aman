@@ -216,7 +216,6 @@ return [
         'video_url.en' => 'English Video URL',
         'logo' => 'Logo',
         'price' => 'Price',
-        'certificate_url' => 'Certificate URL',
         'title' => 'Title',
         'title.ar' => 'Arabic Title',
         'title.en' => 'English Title',

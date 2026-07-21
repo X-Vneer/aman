@@ -30,7 +30,6 @@ const EditProgram = () => {
     video_url: data.video_url,
     logo: data.logo,
     color: data.color,
-    certificate_url: data.certificate_url,
     title: data.title,
     description: data.description,
     time: parseTime(data.length),

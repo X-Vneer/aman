@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Admin;
 
 use App\Enums\VideoStatus;
 use App\Http\Controllers\BaseApiController;
-use App\Http\Requests\CertificateUpdateRequest;
 use App\Http\Requests\ShowVideoRequest;
 use App\Http\Requests\UpdateVideoStatusRequest;
 use App\Http\Requests\VideoStoreRequest;
@@ -228,18 +227,6 @@ class VideoController extends BaseApiController
             return $this->sendResponse(true, [
                 'item' => new $this->resource($video->refresh()),
             ], trans('Updated'), null, 200, $request);
-        } catch (\Throwable $th) {
-            return $this->sendResponse(false, null, trans('msg.technicalError'), null, 500, $request);
-        }
-    }
-
-    public function updateCertificate(CertificateUpdateRequest $request, $id)
-    {
-        try {
-            $video = Video::find($id);
-            $video->update(['certificate_url' => $request->certificate_url]);
-
-            return $this->show(ShowVideoRequest::createFrom($request), $id);
         } catch (\Throwable $th) {
             return $this->sendResponse(false, null, trans('msg.technicalError'), null, 500, $request);
         }

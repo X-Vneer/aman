@@ -68,8 +68,6 @@ Route::put('videos/{video}/toggleIsNew/{state}', [VideoController::class, 'toggl
     ->where(['video' => '[0-9]+', 'state' => 'true|false'])->name('admin.videos.toggleIsNew');
 Route::put('videos/{video}/status', [VideoController::class, 'updateStatus'])
     ->where(['video' => '[0-9]+'])->name('admin.videos.updateStatus');
-Route::put('videos/{video}/certificate/image', [VideoController::class, 'updateCertificate'])
-    ->where(['id' => '[0-9]+'])->name('admin.videos.certificate.image');
 // End::Video ===================================================== //
 
 // Start::Certificate (single global template) ===================================================== //

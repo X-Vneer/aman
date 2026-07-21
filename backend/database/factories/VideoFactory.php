@@ -34,7 +34,6 @@ class VideoFactory extends Factory
             'color' => $this->faker->hexColor(),
             'view_counter' => 0,
             'view_complete_counter' => 0,
-            'certificate_url' => null,
         ];
     }
 }

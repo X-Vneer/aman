@@ -44,7 +44,6 @@ export interface Video {
   view_counter: string
   view_complete_counter: string
   deleted_at: null
-  certificate_url: string
   questions: Question[]
   scenes: Scene[]
 }

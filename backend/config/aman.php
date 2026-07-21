@@ -10,7 +10,6 @@ return [
                 "en" => "https://vz-3d93d703-c07.b-cdn.net/cb6f82cf-8f98-4ce5-970a-6636cf2fe96e/playlist.m3u8",
             ],
             "logo" => env("AMAN_API") . "img/videos/01.jpg",
-            "certificate_url" => env("AMAN_API") . "storage/certificate/1/6ed879be539bab894d7ac2219477c11fb9dcf3aa.png",
             "price" => "20",
             "title" => [
                 "ar" => "الحالات الصحية الطارئة",
@@ -31,7 +30,6 @@ return [
                 "en" => "https://vz-c23c20ef-869.b-cdn.net/41fa0cd3-81c8-4e7d-be82-98a82c026730/playlist.m3u8",
             ],
             "logo" => env("AMAN_API") . "img/videos/02.jpeg",
-            "certificate_url" => env("AMAN_API") . "storage/certificate/2/9d79afeca165070486953dcc1c3074377d91bc28.png",
             "price" => "20",
             "title" => [
                 "ar" => "الحالات الرياضية الطارئة",

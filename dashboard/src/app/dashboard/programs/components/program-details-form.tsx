@@ -11,9 +11,7 @@ import {
   ActionIcon,
   Button,
   ColorInput,
-  FileButton,
   Group,
-  Loader,
   SimpleGrid,
   Space,
   Stack,
@@ -26,7 +24,7 @@ import { useForm } from "@mantine/form"
 import { useMutation, useQueryClient } from "@tanstack/react-query"
 import { CircleX, Image, Upload, X } from "lucide-react"
 import { parseAsArrayOf, parseAsString, useQueryState } from "nuqs"
-import { useEffect, useRef } from "react"
+import { useEffect, useReducer, useRef } from "react"
 import { useTranslation } from "react-i18next"
 import { useParams } from "react-router-dom"
 import { Video } from "../add/@types"
@@ -53,7 +51,6 @@ const ProgramDetailsForm = ({ initialValues }: { initialValues?: VideoFormValues
       en: "",
     },
     logo: "",
-    certificate_url: "",
     title: {
       ar: "",
       en: "",
@@ -130,23 +127,12 @@ const ProgramDetailsForm = ({ initialValues }: { initialValues?: VideoFormValues
     },
   })
 
+  // Force a re-render so the uncontrolled form's logo preview / link input reflect the latest value
+  const [, bumpPreview] = useReducer((c) => c + 1, 0)
   const removeLogo = () => {
     form.setFieldValue("logo", "")
+    bumpPreview()
   }
-  // handling video certificate
-  const uploadCertificate = useMutation({
-    mutationFn: async ({ file }: { file: File }) => {
-      // uploading file
-      const response = await UploadFile({
-        file: file,
-        path: `certificate/${id}`,
-      })
-      return response.absolutePath
-    },
-    onSuccess(data) {
-      form.setFieldValue("certificate_url", data)
-    },
-  })
 
   const navigate = useNavigate()
   const queryClient = useQueryClient()
@@ -245,6 +231,24 @@ const ProgramDetailsForm = ({ initialValues }: { initialValues?: VideoFormValues
                 ) : null}
               </div>
             )}
+            <TextInput
+              type="url"
+              className="w-full md:w-[300px]"
+              label={t("programs.add.form.cover-image-link")}
+              placeholder={t("programs.add.form.cover-image-link-placeholder")}
+              value={form.getValues().logo}
+              onChange={(e) => {
+                form.setFieldValue("logo", e.currentTarget.value)
+                bumpPreview()
+              }}
+              rightSection={
+                form.getValues().logo ? (
+                  <ActionIcon onClick={removeLogo} variant="transparent" color="red">
+                    <CircleX color="red" />
+                  </ActionIcon>
+                ) : null
+              }
+            />
           </Stack>
           <Stack gap={"sm"} w={"100%"}>
             <Space />
@@ -265,7 +269,7 @@ const ProgramDetailsForm = ({ initialValues }: { initialValues?: VideoFormValues
             />
           </Stack>
         </div>
-        <SimpleGrid cols={{ base: 1, sm: 4, md: 1, lg: 4 }}>
+        <SimpleGrid cols={{ base: 1, sm: 3, md: 1, lg: 3 }}>
           <ColorInput
             label={t(`programs.add.form.video-color-label`)}
             size="md"
@@ -290,36 +294,6 @@ const ProgramDetailsForm = ({ initialValues }: { initialValues?: VideoFormValues
               </ActionIcon>
             }
           />
-          <FileButton
-            onChange={(file) => {
-              if (!file) return
-              uploadCertificate.mutate({ file })
-            }}
-            accept="image/png,image/jpeg">
-            {(props) => (
-              <TextInput
-                leftSection={uploadCertificate.isPending ? <Loader size={"xs"} /> : null}
-                readOnly
-                type="url"
-                label={t(`programs.add.form.certificate_url`)}
-                placeholder={t("programs.add.form.certificate_url_placeholder")}
-                key={form.key(`certificate_url`)}
-                {...form.getInputProps(`certificate_url`)}
-                rightSection={
-                  <ActionIcon
-                    onClick={() => {
-                      form.setFieldValue(`certificate_url`, "")
-                    }}
-                    variant="transparent"
-                    color="red">
-                    <CircleX color="red" />
-                  </ActionIcon>
-                }
-                {...props}
-              />
-            )}
-          </FileButton>
-
           <CustomTimeInput formKey="time" form={form} label={t(`programs.add.form.lenght-label`)} />
         </SimpleGrid>
       </Stack>

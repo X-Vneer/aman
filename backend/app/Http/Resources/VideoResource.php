@@ -24,9 +24,6 @@ class VideoResource extends JsonResource
             'deleted_at' => $this->deleted_at,
         ];
 
-        if (auth('admin')->check()) {
-            $data['certificate_url'] = $this->certificate_url;
-        }
         $data = toString($data);
         // Ensure boolean is preserved (toString() would coerce to string)
         $data['is_new'] = (bool) ($this->is_new ?? 0);

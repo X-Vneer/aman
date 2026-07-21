@@ -32,7 +32,6 @@ class Video extends Model
         'view_complete_counter',
         'is_new',
         'status',
-        'certificate_url',
         'deleted_at',
     ];
 
@@ -72,20 +71,6 @@ class Video extends Model
         }
 
         return null;
-    }
-
-    public function getCertificateUrlAttribute($value)
-    {
-        if (filter_var($value, FILTER_VALIDATE_URL)) {
-            return $value;
-        }
-
-        return $value ? asset('storage/'.$value) : '';
-    }
-
-    public function setCertificateUrlAttribute($value)
-    {
-        $this->attributes['certificate_url'] = getRelative($value);
     }
 
     /**
