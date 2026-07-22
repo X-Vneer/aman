@@ -445,6 +445,7 @@
         "question-placeholder": "Enter question",
         "text-explanation-placeholder": "Type...",
         "timing": "Timings",
+        "appears_at_zero": "Set the “Appears at” time (not 0:00:00) for both Arabic and English — a question at 0:00:00 never shows during playback.",
         "wrong_audio_url": "Upload an MP3 audio file",
         "wrong_audio_url_placeholder": "click here"
       },

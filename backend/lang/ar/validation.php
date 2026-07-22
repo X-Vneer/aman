@@ -117,6 +117,7 @@ return array(
     'uploaded'             => 'فشل في تحميل الـ :attribute',
     'url'                  => 'صيغة الرابط :attribute غير صحيحة',
     'uuid' => ' :attribute must be a valid UUID.',
+    'appears_at_not_zero' => ':attribute يجب أن يكون بعد 00:00:00؛ السؤال المضبوط على 00:00:00 لا يظهر أثناء التشغيل.',
 
     'attributes' => [
         // Admin related
@@ -167,6 +168,8 @@ return array(
         'correct_answer' => 'الإجابة الصحيحة',
         'allowed_time' => 'الوقت المسموح',
         'appears_at' => 'يظهر في',
+        'appears_at.ar' => 'وقت "يظهر في" بالعربية',
+        'appears_at.en' => 'وقت "يظهر في" بالإنجليزية',
         'wrong_answer_audio_urls' => 'روابط الصوت للإجابات الخاطئة',
 
         // Scene related

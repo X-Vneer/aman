@@ -160,6 +160,7 @@ return [
     'url' => 'The :attribute field must be a valid URL.',
     'ulid' => 'The :attribute field must be a valid ULID.',
     'uuid' => 'The :attribute field must be a valid UUID.',
+    'appears_at_not_zero' => 'The :attribute must be later than 00:00:00; a question set to 00:00:00 never appears during playback.',
 
     /*
     |--------------------------------------------------------------------------
@@ -238,6 +239,8 @@ return [
         'correct_answer' => 'Correct Answer',
         'allowed_time' => 'Allowed Time',
         'appears_at' => 'Appears At',
+        'appears_at.ar' => 'Arabic “Appears At”',
+        'appears_at.en' => 'English “Appears At”',
         'wrong_answer_audio_urls' => 'Wrong Answer Audio URLs',
 
         // Scene related

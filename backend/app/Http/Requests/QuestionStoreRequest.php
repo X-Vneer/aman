@@ -83,21 +83,59 @@ class QuestionStoreRequest extends CustomFormRequest
                 }
             }
 
-            // Validate unique appears_at for the video
+            // Validate appears_at per language. The player keys questions by the CURRENT
+            // locale's appears_at, so each language must be checked on its own — comparing
+            // the full {ar,en} JSON (as before) missed both of these cases.
             if ($this->appears_at && is_array($this->appears_at)) {
-                $item = Question::where('video_id', $this->video_id)->get();
+                $existing = Question::where('video_id', $this->video_id)->get();
                 if ($this->isMethod('put')) {
-                    $item = $item->filter(function ($question) {
+                    $existing = $existing->filter(function ($question) {
                         return $question->id != $this->id;
                     });
                 }
-                $appearsAtJson = json_encode($this->appears_at, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
-                $is_item = $item->contains(function ($question) use ($appearsAtJson) {
-                    $questionAppearsAtJson = json_encode($question->appears_at, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
-                    return $questionAppearsAtJson === $appearsAtJson;
-                });
-                if($is_item) $validator->errors()->add('appears_at', trans('validation.unique', ['attribute' => trans('validation.attributes.appears_at')]));
+
+                foreach (['ar', 'en'] as $loc) {
+                    $seconds = $this->appearsAtSeconds($this->appears_at[$loc] ?? null);
+                    if ($seconds === null) {
+                        continue; // absent/malformed — the time_format rule reports it
+                    }
+
+                    // A question at video second 0 can never trigger: the player's poster
+                    // covers t=0 and its fire-guard skips the "0" slot, so it stays invisible.
+                    if ($seconds === 0) {
+                        $validator->errors()->add(
+                            "appears_at.$loc",
+                            trans('validation.appears_at_not_zero', ['attribute' => trans("validation.attributes.appears_at.$loc")])
+                        );
+                        continue;
+                    }
+
+                    // Per-locale uniqueness: two questions sharing the same second in ANY
+                    // language collapse to one on the player, even when the {ar,en} pair differs.
+                    $clash = $existing->contains(function ($question) use ($loc, $seconds) {
+                        return $this->appearsAtSeconds($question->getTranslation('appears_at', $loc)) === $seconds;
+                    });
+                    if ($clash) {
+                        $validator->errors()->add(
+                            "appears_at.$loc",
+                            trans('validation.unique', ['attribute' => trans("validation.attributes.appears_at.$loc")])
+                        );
+                    }
+                }
             }
         });
+    }
+
+    /**
+     * Convert an "HH:MM:SS" time string to whole seconds, or null when absent/unparseable.
+     */
+    private function appearsAtSeconds(?string $time): ?int
+    {
+        if (!is_string($time) || trim($time) === '') {
+            return null;
+        }
+        $parts = array_map('intval', explode(':', $time));
+
+        return ($parts[0] ?? 0) * 3600 + ($parts[1] ?? 0) * 60 + ($parts[2] ?? 0);
     }
 }

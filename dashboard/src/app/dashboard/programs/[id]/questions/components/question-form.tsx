@@ -89,7 +89,7 @@ const _initialValues = {
 
 const QuestionForm = ({ initialValues }: { initialValues?: QuestionFormValues }) => {
   const { id, questionId } = useParams() as { id: string; questionId?: string }
-  const [lang] = useQueryState("lang", parseAsString.withDefault("ar"))
+  const [lang, setLang] = useQueryState("lang", parseAsString.withDefault("ar"))
   const [completedLangs, setCompletedLangs] = useQueryState(
     "completed-langs",
     parseAsArrayOf(parseAsString).withDefault([]),
@@ -129,6 +129,16 @@ const QuestionForm = ({ initialValues }: { initialValues?: QuestionFormValues })
   const navigate = useNavigate()
   const queryClient = useQueryClient()
   const onSubmit = form.onSubmit(async (values) => {
+    // A question set to 0:00:00 never triggers during playback (its slot is at the very
+    // start, which the player's poster and fire-guard swallow). appears_at is per-language
+    // and each tab is edited independently, so block a zero in EITHER language and reveal it.
+    const ZERO = "00:00:00"
+    const zeroLang = values.appears_at.ar === ZERO ? "ar" : values.appears_at.en === ZERO ? "en" : null
+    if (zeroLang) {
+      form.setFieldError("root", t("questions.add.form.appears_at_zero"))
+      if (zeroLang !== lang) setLang(zeroLang)
+      return
+    }
     try {
       const data = {
         ...values,

@@ -445,6 +445,7 @@
         "question-placeholder": "أدخل السؤال",
         "text-explanation-placeholder": "اكتب...",
         "timing": "توقيت",
+        "appears_at_zero": "عيّن وقت \"يظهر في\" (وليس 0:00:00) للغتين العربية والإنجليزية — السؤال عند 0:00:00 لا يظهر أثناء التشغيل.",
         "wrong_audio_url": "تحميل ملف صوت MP3",
         "wrong_audio_url_placeholder": "انقر هنا"
       },
