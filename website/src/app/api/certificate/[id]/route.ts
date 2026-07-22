@@ -85,13 +85,13 @@ export async function GET(request: NextRequest, { params }: { params: Promise<{ 
     // 1) User name — teal, bold.
     ctx.fillStyle = TEAL
     ctx.font = `${70 * scale}px IBMPlexSansArabicBold`
-    ctx.fillText(shapeText(name), W / 2, H * 0.4)
+    ctx.fillText(shapeText(name), W / 2, H * 0.41)
 
     // 2) Program name — teal, semibold, wrapped to <= 2 lines.
     ctx.fillStyle = TEAL
     ctx.font = `${40 * scale}px IBMPlexSansArabicSemiBold`
     const programLines = wrapLines(ctx, shapeText(program_name), W * 0.82, 2)
-    const programBaseline = H * 0.505
+    const programBaseline = H * 0.515
     const lineHeight = 52 * scale
     // Bottom-anchor the block just above the "Through the Aman…" template line.
     const startY = programBaseline - (programLines.length - 1) * lineHeight
