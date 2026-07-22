@@ -26,7 +26,7 @@ const ChooseLanguage = (props: Props) => {
         selectedKey={language}
         onSelectionChange={(key) => setLanguage(key as (typeof LOCALES)[number])}
         variant="secondary"
-        className="gap-1"
+        className="gap-1 min-w-[250px]"
         aria-label="Tabs variants">
         <Tabs.ListContainer>
           <Tabs.List

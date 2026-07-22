@@ -57,28 +57,30 @@ class UserVideoController extends BaseApiController {
 
     function show($id, Request $request) {
         if(auth('user')->check()){
-            $userVideo = UserVideo::where(['user_id'=> Auth::id(), 'video_id' => $id])
+            // Find the user's existing enrollment for this video, preferring an active
+            // (not-yet-generated) one, else the latest. This previously used registered()
+            // (status=Accepted AND is_certificate_generated=0), so once the certificate was
+            // generated the finished row became invisible here and EVERY course open created a
+            // fresh progress=0 enrollment — throwing users who had already finished back to the
+            // start of the course and derailing the claim flow.
+            $userVideo = UserVideo::where('user_id', auth('user')->id())
+                ->where('video_id', $id)
                 ->where('status', VideoPaymentStatus::Accepted->value)
-                ->registered()
+                ->orderByRaw('CASE WHEN is_certificate_generated = 0 THEN 0 ELSE 1 END')
                 ->latest()->first();
 
-            // Auto-enroll: opening a course with no active registration silently
-            // creates a free Accepted enrollment, then re-runs the lookup so the
-            // certificate-dispatch block and showInit see the new row.
+            // Auto-enroll only when the user has NO enrollment at all for this video: opening a
+            // course for the first time silently creates a free Accepted enrollment.
             if(!$userVideo){
                 $video = Video::find($id);
                 if($video){
-                    UserVideo::create($this->enrollmentInputs($video, $request));
-                    $userVideo = UserVideo::where(['user_id'=> Auth::id(), 'video_id' => $id])
-                        ->where('status', VideoPaymentStatus::Accepted->value)
-                        ->registered()
-                        ->latest()->first();
+                    $userVideo = UserVideo::create($this->enrollmentInputs($video, $request));
                 }
             }
 
             $id = $userVideo?->id?? 0;
 
-            if($userVideo?->isApplicableForCertificate()) {
+            if($userVideo && ! $userVideo->is_certificate_generated && $userVideo->isApplicableForCertificate()) {
                 dispatch(new GenerateCertificate(
                     $userVideo->id,
                     $userVideo->user?->email,
