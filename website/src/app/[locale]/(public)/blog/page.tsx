@@ -54,7 +54,9 @@ export default async function Page(props: {
     <>
       <JsonLd data={pageBreadcrumbSchema("blog", params.locale, "/blog")} />
       <main className="relative">
-        <section className="relative z-10 bg-[#0A090959] backdrop-blur-lg">
+        <div className="relative overflow-hidden">
+
+        <section className="relative z-10 bg-[#0A090959] overflow-hidden backdrop-blur-lg">
           <div className="container mx-auto max-w-7xl grow px-6">
             <div className="flex w-full flex-col items-center justify-between md:flex-row md:px-10 lg:px-14 xl:px-20">
               <div className="max-w-sm space-y-5 py-16 max-md:mx-auto max-md:max-w-xs max-md:text-center md:py-24 lg:py-32">
@@ -74,6 +76,7 @@ export default async function Page(props: {
               </div>
             </div>
           </div>
+        </div>
         </div>
 
         <section className="relative py-12 lg:py-20">
