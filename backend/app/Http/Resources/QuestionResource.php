@@ -36,7 +36,6 @@ class QuestionResource extends JsonResource
         ];
         $data =  toString($data);
 
-        $data['wrong_answer_audio_urls'] = $this->wrong_answer_audio_urls;
         return $data;
     }
 

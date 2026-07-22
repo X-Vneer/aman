@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 use App\Enums\VideoStatus;
 use App\Models\Question;
+use App\Models\UserAnswer;
+use App\Models\UserVideo;
 use App\Models\Video;
 use Illuminate\Database\Seeder;
 
@@ -19,8 +21,12 @@ class ExampleProgramSeeder extends Seeder
         $url = 'https://vz-5e5055f3-abf.b-cdn.net/76f6e421-07f6-4783-be8c-7944528f895e/playlist.m3u8';
         $logo = 'https://vz-5e5055f3-abf.b-cdn.net/76f6e421-07f6-4783-be8c-7944528f895e/thumbnail.jpg';
 
-        // Start clean so re-running the seeder does not stack duplicates.
+        // Start clean so re-running the seeder does not stack duplicates. Clear
+        // dependent rows first (answers/enrollments) or their FKs block the delete.
         Video::withTrashed()->where('slug', 'test-program')->get()->each(function (Video $v) {
+            $questionIds = $v->questions()->pluck('id');
+            UserAnswer::where('video_id', $v->id)->orWhereIn('question_id', $questionIds)->delete();
+            UserVideo::where('video_id', $v->id)->forceDelete();
             $v->questions()->forceDelete();
             $v->forceDelete();
         });
@@ -37,11 +43,6 @@ class ExampleProgramSeeder extends Seeder
             'is_new' => 1,
             'status' => VideoStatus::Approved,
         ]);
-
-        $emptyAudio = [
-            'ar' => ['answer_a' => '', 'answer_b' => '', 'answer_c' => ''],
-            'en' => ['answer_a' => '', 'answer_b' => '', 'answer_c' => ''],
-        ];
 
         $questions = [
             ['at' => '00:00:10', 'n' => 1],
@@ -63,7 +64,6 @@ class ExampleProgramSeeder extends Seeder
                 'correct_answer' => 'answer_a',
                 'allowed_time' => '00:00:30',
                 'appears_at' => ['ar' => $q['at'], 'en' => $q['at']],
-                'wrong_answer_audio_urls' => $emptyAudio,
             ]);
         }
 

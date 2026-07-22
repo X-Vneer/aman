@@ -73,18 +73,6 @@ const _initialValues = {
     ar: { h: 0, m: 0, s: 0 },
     en: { h: 0, m: 0, s: 0 },
   },
-  wrong_answer_audio_urls: {
-    ar: {
-      answer_a: "",
-      answer_b: "",
-      answer_c: "",
-    },
-    en: {
-      answer_a: "",
-      answer_b: "",
-      answer_c: "",
-    },
-  },
 }
 
 const QuestionForm = ({ initialValues }: { initialValues?: QuestionFormValues }) => {

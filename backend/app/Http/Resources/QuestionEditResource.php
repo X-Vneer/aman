@@ -36,8 +36,6 @@ class QuestionEditResource extends JsonResource
         ];
         $data =  toString($data);
 
-        $data['wrong_answer_audio_urls'] = collect($this->getTranslations('wrong_answer_audio_urls'))
-            ->map(fn($value) => json_decode($value, true));
         return $data;
     }
 

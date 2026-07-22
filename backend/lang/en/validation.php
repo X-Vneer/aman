@@ -241,7 +241,6 @@ return [
         'appears_at' => 'Appears At',
         'appears_at.ar' => 'Arabic “Appears At”',
         'appears_at.en' => 'English “Appears At”',
-        'wrong_answer_audio_urls' => 'Wrong Answer Audio URLs',
 
         // Scene related
         'start_time' => 'Start Time',

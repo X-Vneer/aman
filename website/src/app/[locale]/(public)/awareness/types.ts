@@ -63,14 +63,6 @@ export interface Question {
   correct_answer: string
   allowed_time: string
   appears_at: string
-  wrong_answer_audio_urls: WrongAnswerAudioUrls
-}
-
-export interface WrongAnswerAudioUrls {
-  answer_a: null
-  answer_b: string
-  answer_c: string
-  answer_d: null
 }
 
 export interface Scene {

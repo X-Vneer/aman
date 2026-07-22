@@ -44,8 +44,6 @@ class QuestionStoreRequest extends CustomFormRequest
         'appears_at' => 'required|array',
         'appears_at.ar' => 'required|time_format',
         'appears_at.en' => 'required|time_format',
-        'wrong_answer_audio_urls' => 'array',
-        'wrong_answer_audio_urls.*' => 'nullable|min:1|max:1000',
     ];
 
 

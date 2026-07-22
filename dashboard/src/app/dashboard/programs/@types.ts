@@ -45,20 +45,6 @@ export interface Question {
   correct_answer: string
   allowed_time: string
   appears_at: Langs
-  wrong_answer_audio_urls: WrongAnswerAudioUrls | null
-}
-
-export interface WrongAnswerAudioUrls {
-  ar: {
-    answer_a: string
-    answer_b: string
-    answer_c: string
-  }
-  en: {
-    answer_a: string
-    answer_b: string
-    answer_c: string
-  }
 }
 
 export interface Scene {

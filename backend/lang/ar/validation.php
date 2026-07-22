@@ -170,7 +170,6 @@ return array(
         'appears_at' => 'يظهر في',
         'appears_at.ar' => 'وقت "يظهر في" بالعربية',
         'appears_at.en' => 'وقت "يظهر في" بالإنجليزية',
-        'wrong_answer_audio_urls' => 'روابط الصوت للإجابات الخاطئة',
 
         // Scene related
         'start_time' => 'وقت البداية',
