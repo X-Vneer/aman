@@ -59,7 +59,16 @@ function hydrate(): Promise<Session | null> {
     hydratePromise = fetch("/api/auth/session", { cache: "no-store" })
       .then((res) => (res.ok ? (res.json() as Promise<Session | null>) : null))
       .then((session) => {
-        setClientSession(session ?? null)
+        // Seed the store from the fetch WITHOUT broadcasting. Using
+        // setClientSession() here would write SYNC_KEY, whose storage event
+        // makes every other tab revalidate and broadcast back — an infinite
+        // /api/auth/session ping-pong across tabs. Only explicit login/logout
+        // (which call setClientSession directly) should sync other tabs.
+        hydrated = true
+        store.setState({
+          data: session ?? null,
+          status: session ? "authenticated" : "unauthenticated",
+        })
         return session ?? null
       })
       .catch(() => {
