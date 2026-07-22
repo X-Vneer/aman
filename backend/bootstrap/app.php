@@ -43,9 +43,12 @@ return Application::configure(basePath: dirname(__DIR__))
             '*',
             // Add other routes you want to exclude here
         ]);
-        $middleware->web(append: [
-            \Laravel\Telescope\Http\Middleware\Authorize::class,
-        ]);
+        // NOTE: do NOT append Telescope\Authorize to the whole `web` group — it
+        // gated every web route (including the public certificate route
+        // `storage/certificates/{pdf}`) and 403'd guests in production, because
+        // the viewTelescope gate closure takes an untyped `$user` param that
+        // Laravel treats as guest-denying. Telescope's own routes stay protected
+        // via config('telescope.middleware'), which already includes Authorize.
         $middleware->appendToGroup('telescope-auth', [
             \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         ]);
