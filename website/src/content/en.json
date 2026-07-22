@@ -511,7 +511,7 @@
       "yes": "yes"
     },
     "hero": {
-      "description": "On the interactive In‘aash platform, we believe that everyone can be a rescuer in an emergency.",
+      "description": "On the interactive Aman platform, we believe that everyone can be a rescuer in an emergency.",
       "description2": "We are the first interactive platform for teaching first aid skills, dealing with daily health and sports emergencies, and performing CPR. You will learn through realistic videos, instant interaction, and receive an accredited certificate. It’s not just a program, but a lifestyle — because every minute can save a life.",
       "description3": "Every rescue story can inspire hundreds to learn and save lives. Share your experience and be a voice for awareness and change.",
       "title": "Be a Rescuer"
@@ -564,7 +564,7 @@
     }
   },
   "blog": {
-    "title": "Blog Inaa’sh",
+    "title": "Blog Aman",
     "description": "It is an interactive awareness and training program to educate and raise awareness about emergency health and sports injuries and the proper ways to deal with them",
     "empty": "No posts yet. Check back soon.",
     "pagination": {

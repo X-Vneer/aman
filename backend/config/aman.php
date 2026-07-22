@@ -49,7 +49,7 @@ return [
     'FAQs' =>  [
         [
             "title" => [
-                "ar" => "ماهو برنامج إنعاش",
+                "ar" => "ماهو برنامج أمان",
                 "en" => "What is an Aman program?",
             ],
             "description" => [

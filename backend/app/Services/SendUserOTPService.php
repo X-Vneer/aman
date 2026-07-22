@@ -27,7 +27,7 @@ class SendUserOTPService
             "numbers" => trimMobile($this->user->mobile),
             "userSender" => config('msegat.user_sender'),
             "apiKey" => config('msegat.api_key'),
-            "msg" => "رمز التحقق للدخول على منصة انعاش هو : " . $this->otp,
+            "msg" => "رمز التحقق للدخول على منصة أمان هو : " . $this->otp,
         ];
 
         try {

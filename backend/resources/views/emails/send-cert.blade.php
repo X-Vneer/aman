@@ -20,7 +20,7 @@
        مرحبا : {{ $name }},
         <br>
         <div><p>
-             تهانينا لك من انعاش! تم اصدار شهادة برنامج التثقيف على
+             تهانينا لك من أمان! تم اصدار شهادة برنامج التثقيف على
         </p></div>
 
         <h2><a href="{{ config("app.platform") }}ar/information-center/{{ $cert_number }}">{{ $video_title }}</a></h2>

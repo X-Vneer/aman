@@ -38,7 +38,6 @@ class Notification extends Model
             // if (env('ENV') === 'production') {
                 $title =  $model->title;
                 if($model->title == NotificationTitle::Inquiry->value){
-                    // $body = " .هناك طلب تواصل علي منصة  انعاش" . $model->contact->message;
                     $body = $model->contact->message;
                     $title = $model->name . ": " . $model->subject;
                 }else{
