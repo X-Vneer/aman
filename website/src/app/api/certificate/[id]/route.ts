@@ -91,7 +91,7 @@ export async function GET(request: NextRequest, { params }: { params: Promise<{ 
     ctx.fillStyle = TEAL
     ctx.font = `${40 * scale}px IBMPlexSansArabicSemiBold`
     const programLines = wrapLines(ctx, shapeText(program_name), W * 0.82, 2)
-    const programBaseline = H * 0.515
+    const programBaseline = H * 0.525
     const lineHeight = 52 * scale
     // Bottom-anchor the block just above the "Through the Aman…" template line.
     const startY = programBaseline - (programLines.length - 1) * lineHeight
