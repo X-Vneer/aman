@@ -137,8 +137,8 @@ const QuestionForm = ({ initialValues }: { initialValues?: QuestionFormValues })
       const response = await (questionId
         ? AmanApi.put(`/questions/${questionId}`, data)
         : AmanApi.post("/questions", data))
+      queryClient.invalidateQueries({ queryKey: ["programs"] })
       if (questionId) queryClient.invalidateQueries({ queryKey: ["questions", questionId] })
-      if (questionId) queryClient.invalidateQueries({ queryKey: ["programs", id] })
       navigate(`/dashboard/programs/${id}`)
     } catch (error) {
       handleMantineFormError(error, form)

@@ -28,7 +28,7 @@ class VideoEditResource extends JsonResource
         $data['is_new'] = (bool) ($this->is_new ?? 0);
         $data['status'] = $this->status?->value;
 
-        if (auth()->check()) {
+        if (auth('admin')->check() || auth('user')->check()) {
             $data['questions'] = QuestionEditResource::collection($this->questions ?? []);
             $data['scenes'] = ScenesEditResource::collection($this->scenes);
         }

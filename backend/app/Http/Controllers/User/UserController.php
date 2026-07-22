@@ -140,11 +140,6 @@ class UserController extends BaseApiController
 
     function destroy($id) {
         $item = $this->model::find($id);
-        return $this->sendResponse(false, null, trans('youCanNotDeleteYourAccountHavingCertificates'), null, 429, null);
-
-        if($item->userVideos()->count() > 0){
-            return $this->sendResponse(false, null, trans('youCanNotDeleteYourAccountHavingCertificates'), null, 429, null);
-        }
         $item?->tokens()->delete();
         return $this->destroyInit($id, null, auth('admin')->check());
     }
