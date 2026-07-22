@@ -222,10 +222,15 @@ class RateController extends BaseApiController {
     public function store(RateStoreRequest $request)
     {
         // try {
-            $user_video = UserVideo::where(['video_id' => $request->video_id, 'user_id' => Auth::id()])
-                    ->registered()
-                    ->latest()
-                    ->first();
+            // Rate THE canonical (finished) enrollment — the same row show()/lastShow() resolve.
+            // Previously registered()->latest() could pick a newer stale progress=0 row, writing
+            // is_rated/certificate_number to the wrong row while the claim page (reading the finished
+            // row) stayed stuck on the rating step forever.
+            $user_video = UserVideo::canonicalFor(Auth::id(), $request->video_id)->first();
+
+            if (! $user_video) {
+                return $this->sendResponse(false, null, trans('msg.notFound'), null, 404, $request);
+            }
 
             DB::beginTransaction();
 

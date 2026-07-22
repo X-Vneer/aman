@@ -112,6 +112,25 @@ class UserVideo extends Model
         return $query->where('status', VideoPaymentStatus::Accepted->value)->where('is_certificate_generated', 0);
     }
 
+    /**
+     * Resolve THE canonical enrollment row for a (user, video) pair.
+     *
+     * Every reader (course page show(), certificate page lastShow()) and the rating writer
+     * (RateController) MUST use this so they never diverge: a user with a duplicate/stale
+     * progress=0 row plus a finished row previously resolved to DIFFERENT rows depending on the
+     * query — the course page picked the empty row (is_certificate_generated=0 first) and dumped
+     * the user back at the start of the video, while the certificate page picked the finished one.
+     * Prefer the completed enrollment (progress >= 99), then the most recent, among Accepted rows.
+     */
+    public function scopeCanonicalFor($query, $userId, $videoId)
+    {
+        return $query->where('user_id', $userId)
+            ->where('video_id', $videoId)
+            ->where('status', VideoPaymentStatus::Accepted->value)
+            ->orderByRaw('CASE WHEN progress >= 99 THEN 0 ELSE 1 END')
+            ->latest();
+    }
+
 
     //scope is applicable for certificate
     public function scopeIsApplicableForCertificate($query)

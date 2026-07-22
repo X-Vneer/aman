@@ -32,11 +32,10 @@ class RateStoreRequest extends CustomFormRequest
     protected function withValidator(Validator $validator)
     {
         $validator->after(function ($validator) {
-            // $rate = Rate::where(['video_id'=> $this->video_id, 'user_id' => Auth::id()])->first();
-            $user_video = UserVideo::where(['video_id'=> $this->video_id, 'user_id' => Auth::id()])
-                    ->registered()
-                    ->latest()
-                    ->first();
+            // Validate against THE canonical (finished) enrollment — the same row RateController::store
+            // rates. registered()->latest() could resolve a newer stale progress=0 row (null
+            // certificate_number) and wrongly reject a legitimate rating of the finished row.
+            $user_video = UserVideo::canonicalFor(Auth::id(), $this->video_id)->first();
 
             if($user_video?->certificate_number == null || !$user_video) $validator->errors()->add('video_id', trans('youAreNotAllowToRateThisProgram'));
             // if($user_video?->is_rated) $validator->errors()->add('video_id', trans('youAlreadyRatedThisCourse'));

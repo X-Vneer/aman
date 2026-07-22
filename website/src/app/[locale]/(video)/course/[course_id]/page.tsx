@@ -86,9 +86,11 @@ const Layout = async (props: Props) => {
     // Fetch video data first to check redirect condition
     const video = await getUserVideo(params.course_id)
     
-    console.log("🚀 ~ video number:", Number(video.progress), video.is_certificate_generated)
-    // Redirect if progress is 100% but certificate is not generated
-    if (Number(video.progress) === 100 && !video.is_certificate_generated) { 
+    // A finished course (progress >= 99, matching the backend finish threshold) whose certificate
+    // isn't generated yet goes to the claim/certificate flow — not back into the video. Strict
+    // === 100 previously missed rows at 99 or > 100 (re-answered questions), stranding finished
+    // users on the course.
+    if (Number(video.progress) >= 99 && !video.is_certificate_generated) {
       return redirect({
         href: {
           pathname: `/certificate/${params.course_id}/claim`,

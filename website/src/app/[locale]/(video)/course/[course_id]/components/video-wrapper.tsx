@@ -1,5 +1,4 @@
 "use client"
-import { useRouter } from "@/lib/i18n/navigation"
 import { getVideos } from "@/services/utils/get-videos"
 import { Spinner } from "@heroui/react"
 import { useQuery } from "@tanstack/react-query"
@@ -37,12 +36,9 @@ const VideoWrapper = ({ children, params }: Props) => {
     queryKey: ["courses", params.locale],
     queryFn: async () => await getVideos(),
   })
-  // if course has completed but skipped rating
-  const Router = useRouter()
-  if (video && video.certificate_qr_code && (!video.is_rated || !video.certificate_number)) {
-    Router.push(`/certificate/${video.video_id}`)
-    return null
-  }
+  // Finished-course routing is owned entirely by the server (course page.tsx redirects a finished,
+  // not-yet-generated enrollment to /certificate/[id]/claim). A second client-side push here raced
+  // that redirect and targeted a different URL, so it was removed.
 
   if (isLoadingUserVideo || isLoadingVideos)
     return (

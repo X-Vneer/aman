@@ -57,17 +57,13 @@ class UserVideoController extends BaseApiController {
 
     function show($id, Request $request) {
         if(auth('user')->check()){
-            // Find the user's existing enrollment for this video, preferring an active
-            // (not-yet-generated) one, else the latest. This previously used registered()
-            // (status=Accepted AND is_certificate_generated=0), so once the certificate was
-            // generated the finished row became invisible here and EVERY course open created a
-            // fresh progress=0 enrollment — throwing users who had already finished back to the
-            // start of the course and derailing the claim flow.
-            $userVideo = UserVideo::where('user_id', auth('user')->id())
-                ->where('video_id', $id)
-                ->where('status', VideoPaymentStatus::Accepted->value)
-                ->orderByRaw('CASE WHEN is_certificate_generated = 0 THEN 0 ELSE 1 END')
-                ->latest()->first();
+            // Resolve THE canonical enrollment for this (user, video). Must match lastShow() and
+            // RateController exactly (via scopeCanonicalFor) — this previously ordered by
+            // is_certificate_generated=0 first, so when a user had a stale/duplicate progress=0 row
+            // it outranked the finished row here while lastShow() still picked the finished one.
+            // The course page then read the empty row, saw progress<100, and replayed the video from
+            // the start — the "finish a program → sent back to the same program" bug.
+            $userVideo = UserVideo::canonicalFor(auth('user')->id(), $id)->first();
 
             // Auto-enroll only when the user has NO enrollment at all for this video: opening a
             // course for the first time silently creates a free Accepted enrollment.
@@ -102,13 +98,11 @@ class UserVideoController extends BaseApiController {
             // Resolve on the 'user' guard explicitly. Auth::id() reads the default ('sanctum')
             // guard, which is not guaranteed to hold the user id here; when it was null the
             // lookup matched nothing, $id fell back to 0, and showInit() returned 403 — which the
-            // website certificate layout turned into a 404. Return the user's latest enrollment for
-            // this video (a completed one wins), so a completed course renders the certificate and an
-            // incomplete one flows through the frontend's "no qr → back to course" redirect instead of 404.
-            $userVideo = UserVideo::where('user_id', auth('user')->id())
-                ->where('video_id', $id)
-                ->orderByRaw('CASE WHEN progress >= 99 THEN 0 ELSE 1 END')
-                ->latest()->first();
+            // website certificate layout turned into a 404. Use the SAME canonical resolver as
+            // show() so both pages read the identical row (a completed one wins): a completed course
+            // renders the certificate and an incomplete one flows through the frontend's
+            // "no qr → back to course" redirect instead of 404.
+            $userVideo = UserVideo::canonicalFor(auth('user')->id(), $id)->first();
 
             $id = $userVideo?->id?? 0;
         }
@@ -224,7 +218,11 @@ class UserVideoController extends BaseApiController {
                 $user_video->update([
                     'certificate_url' => $user_video->certificate_url,
                     'certificate_qr_code' => config("app.aman_api") . 'storage/qr/ic.png',
-                    'certificate_number' => 'CERT' . base_convert($user_video->id * 2, 10, 36),
+                    // Stable, single certificate identity. Must equal RateController's 'CERT'.id and
+                    // the qr/pdf filenames (storage/qr/{n}.png, storage/certificates/{n}.pdf) and the
+                    // guest /certificates/{n} lookup — previously this used base_convert(id*2), which
+                    // RateController later overwrote with 'CERT'.id, orphaning the finish-time files.
+                    'certificate_number' => 'CERT' . $user_video->id,
                 ]);
                 $user_video->refresh();
                 if($user_video->isApplicableForCertificate()){
