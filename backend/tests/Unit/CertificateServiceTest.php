@@ -25,6 +25,23 @@ class CertificateServiceTest extends TestCase
         $this->assertStringContainsString('certificate_code=CERT1', $url);
     }
 
+    /**
+     * An empty PLATFORM in .env yields '' (env() only falls back when the key is absent),
+     * which used to build the relative path "/api/certificate/…". dompdf cannot fetch that,
+     * so the certificate rendered as a blank page instead of failing.
+     */
+    public function test_rejects_a_platform_that_is_not_an_absolute_url(): void
+    {
+        foreach (['', '   ', '/api', 'aman.test', 'ftp://aman.test'] as $platform) {
+            try {
+                CertificateService::canvasImageUrl($platform, 7, ['name' => 'A']);
+                $this->fail("Expected a rejection for platform [$platform]");
+            } catch (\RuntimeException $e) {
+                $this->assertStringContainsString('PLATFORM', $e->getMessage());
+            }
+        }
+    }
+
     public function test_omits_null_or_empty_query_values(): void
     {
         $url = CertificateService::canvasImageUrl('https://site.test/', 7, [

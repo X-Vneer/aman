@@ -339,7 +339,11 @@ class UserVideoController extends BaseApiController {
             // Render the program title in the language the user took the program in.
             app()->setLocale($userVideo->lang ?: app()->getLocale());
 
-            $imageUrl = CertificateService::canvasImageUrl(config('app.platform'), $userVideo->video_id, [
+            // Public base for the QR target below. Throws when PLATFORM is blank/relative,
+            // so a misconfigured host fails loudly instead of baking a dead link into the QR.
+            $platform = CertificateService::platformUrl();
+
+            $imageUrl = CertificateService::canvasImageUrl(CertificateService::canvasBaseUrl(), $userVideo->video_id, [
                 'name' => $userVideo->user->full_name ?? 'Aman',
                 'date' => (string) $userVideo->updated_at,
                 'certificate_no' => strtolower($userVideo->certificate_number ?? ''),
@@ -370,7 +374,7 @@ class UserVideoController extends BaseApiController {
             $writer = new Writer($renderer);
 
             // Generate QR code and immediately save to storage to free memory
-            $qrCode = $writer->writeString(config("app.platform") . "ar/information-center/$certificate_number");
+            $qrCode = $writer->writeString($platform . "ar/information-center/$certificate_number");
             Storage::disk('public')->put("qr/$certificate_number.png", $qrCode);
             unset($qrCode); // Free QR code from memory
 
