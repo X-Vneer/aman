@@ -308,7 +308,7 @@ class UserVideoController extends BaseApiController {
 
     public function downloadCertificateAsPdf($certificate_number)
     {
-        // try {
+        try {
             // Set memory limit for this specific operation
             ini_set('memory_limit', '1024M');
             $userVideo = UserVideo::where('certificate_number', $certificate_number)->first();
@@ -319,8 +319,7 @@ class UserVideoController extends BaseApiController {
             if($userVideo?->progress < 99) return "User Video is not completed for certificate number: $certificate_number";
             if($userVideo?->is_rated == 0) return "User Video is not rated for certificate number: $certificate_number";
 
-            $certificateFileName = "$certificate_number.pdf";
-            $certificateFilePath = "certificates/$certificateFileName";
+            $certificateFilePath = CertificateService::pdfPath($certificate_number);
 
             if (Storage::disk('public')->exists($certificateFilePath)) {
                 $userVideo->update([
@@ -375,18 +374,30 @@ class UserVideoController extends BaseApiController {
             Storage::disk('public')->put("qr/$certificate_number.png", $qrCode);
             unset($qrCode); // Free QR code from memory
 
-            // Update database before heavy PDF operations
+            // URLs are known up front; `is_certificate_generated` waits until the PDF is on disk,
+            // otherwise a failed write leaves the record claiming a certificate that does not exist.
             $userVideo->update([
                 'certificate_url' => url('storage/certificates/' . $certificate_number . '.pdf'),
                 'certificate_qr_code' => url('storage/qr/' . $certificate_number . '.png'),
-                'is_certificate_generated' => 1,
             ]);
 
             // Generate and save PDF with memory optimization
             $pdfOutput = $pdf->output();
-            file_put_contents(public_path('storage/certificates/' . $certificate_number . '.pdf'), $pdfOutput);
+            $stored = CertificateService::storePdf($certificate_number, $pdfOutput);
             unset($pdfOutput); // Free PDF from memory
             unset($pdf); // Free PDF object
+
+            if (! $stored) {
+                CustomLogger::logInfo('downloadCertificateAsPdf', 'Error', [
+                    'message' => 'PDF write failed',
+                    'path' => $certificateFilePath,
+                    'certificate_number' => $certificate_number,
+                ]);
+
+                return "Error generating certificate: could not write $certificateFilePath";
+            }
+
+            $userVideo->update(['is_certificate_generated' => 1]);
 
             // Send email in background to avoid memory usage in main thread
             dispatch(function() use ($userVideo) {
@@ -410,13 +421,13 @@ class UserVideoController extends BaseApiController {
 
             return "generated Success";
 
-        // } catch (\Throwable $th) {
-        //     CustomLogger::logInfo('downloadCertificateAsPdf', 'Error', [
-        //         'message' => $th->getMessage(),
-        //         'certificate_number' => $certificate_number
-        //     ]);
-        //     return "Error generating certificate: " . $th->getMessage();
-        // }
+        } catch (\Throwable $th) {
+            CustomLogger::logInfo('downloadCertificateAsPdf', 'Error', [
+                'message' => $th->getMessage(),
+                'certificate_number' => $certificate_number
+            ]);
+            return "Error generating certificate: " . $th->getMessage();
+        }
     }
 
     function    fixCertificatePdf() {
