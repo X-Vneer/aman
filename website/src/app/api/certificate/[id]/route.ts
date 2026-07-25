@@ -5,7 +5,7 @@ import { createCanvas, loadImage, registerFont } from "canvas"
 import QRCode from "qrcode"
 import { z } from "zod"
 
-import { drawRoundedRectangle, formatDateToDDMMYYYY, searchParamsToObject, shapeText } from "./utils"
+import { drawRoundedRectangle, formatDateToDDMMYYYY, searchParamsToObject } from "./utils"
 import { SITE_URL } from "@/config"
 
 // Register the brand font (Latin + Arabic) once, from a runtime-stable path.
@@ -85,12 +85,12 @@ export async function GET(request: NextRequest, { params }: { params: Promise<{ 
     // 1) User name — teal, bold.
     ctx.fillStyle = TEAL
     ctx.font = `${70 * scale}px IBMPlexSansArabicBold`
-    ctx.fillText(shapeText(name), W / 2, H * 0.41)
+    ctx.fillText(name, W / 2, H * 0.41)
 
     // 2) Program name — teal, semibold, wrapped to <= 2 lines.
     ctx.fillStyle = TEAL
     ctx.font = `${40 * scale}px IBMPlexSansArabicSemiBold`
-    const programLines = wrapLines(ctx, shapeText(program_name), W * 0.82, 2)
+    const programLines = wrapLines(ctx, program_name, W * 0.82, 2)
     const programBaseline = H * 0.525
     const lineHeight = 52 * scale
     // Bottom-anchor the block just above the "Through the Aman…" template line.
@@ -99,8 +99,8 @@ export async function GET(request: NextRequest, { params }: { params: Promise<{ 
 
     // 3) Date — grey.
     ctx.fillStyle = GREY
-    ctx.font = `${40 * scale}px IBMPlexSansArabicRegular`
-    ctx.fillText(formatDateToDDMMYYYY(new Date(date)), W / 2, H * 0.61)
+    ctx.font = `${30 * scale}px IBMPlexSansArabicRegular`
+    ctx.fillText(formatDateToDDMMYYYY(new Date(date)), W / 2, H * 0.62)
 
     // 4) QR code — centered below the date.
     const qrDataUrl = await QRCode.toDataURL(`${SITE_URL}/en/information-center/${certificate_code}`, {

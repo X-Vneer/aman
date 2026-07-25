@@ -31,26 +31,10 @@ export const searchParamsToObject = (searchParams: URLSearchParams): Record<stri
   return obj
 }
 
-import { convertArabic } from "arabic-reshaper"
-import bidiFactory from "bidi-js"
-
-const bidi = bidiFactory()
-
-// Arabic + Arabic Supplement/Extended + Presentation Forms A/B.
-const ARABIC_RANGE = /[؀-ۿݐ-ݿࢠ-ࣿﭐ-﷿ﹰ-﻿]/
-
 /**
- * Reshape Arabic to contextual presentation forms and reorder to visual (RTL)
- * order so node-canvas (which does no complex shaping) draws it correctly.
- * Non-Arabic strings pass through untouched. Never throws.
+ * Arabic needs no pre-processing here: node-canvas renders text through Pango/HarfBuzz,
+ * which does contextual shaping and bidi reordering itself. A previous `shapeText` helper
+ * reshaped to presentation forms and reordered to visual order before drawing, which
+ * reversed every Arabic name and program title on the certificate — Pango was handed
+ * already-reordered text and drew it as given. Pass the logical string straight through.
  */
-export const shapeText = (input: string): string => {
-  if (!input || !ARABIC_RANGE.test(input)) return input
-  try {
-    const reshaped = convertArabic(input)
-    const levels = bidi.getEmbeddingLevels(reshaped, "rtl")
-    return bidi.getReorderedString(reshaped, levels)
-  } catch {
-    return input
-  }
-}
