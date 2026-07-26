@@ -1,7 +1,7 @@
 {
   "about-us": {
     "about-us": {
-      "description": "The program is designed to provide emergency response training through fun and interactive scenario-based videos. The platform covers both health and sports injuries, aiming to educate users on basic skills to deal with emergencies. Key features include real-time questions on how to deal with the situation with the ability to track progress, evaluate performance, and obtain a certificate upon completion of the training program, our platform ensures a seamless user experience with options to update personal data, check certificates and share achievements on social media. The platform targets a wide audience, ranging from 8 to 60 years old, and promotes learning in a fun and interactive way with a focus on life-saving skills",
+      "description": "Aman is designed to provide an interactive learning experience that helps children learn safety skills and how to act correctly during and after emergencies, through educational stories and videos. The platform covers safety topics, basic first aid, and psychological support for children, with interactive questions that reinforce understanding and give instant feedback. It also lets children track their progress, have their performance assessed, and receive a certificate of completion after finishing the educational program, providing a fun and safe learning experience that builds awareness, confidence, and readiness for different situations.",
       "share": {
         "card": {
           "description": "Interactive Emergency Awareness Program",
@@ -11,7 +11,7 @@
       },
       "title": "Who We Are",
       "updates": {
-        "description": "Many individuals lack the proper training to deal with health and sports emergencies. Traditional methods are often inaccessible and habitual. There is a need for an interactive platform that provides accessible and comprehensive training for emergencies.",
+        "description": "Many children lack awareness of safety skills and of how to act correctly during and after emergencies, especially in environments affected by conflict and crisis. Traditional awareness methods are often not age-appropriate or engaging enough. Aman was created to deliver simplified, interactive educational content that helps children gain essential knowledge and skills in a fun and safe way, and strengthens their ability to protect themselves and act confidently in emergencies.",
         "title": "Challenges"
       }
     },
@@ -20,30 +20,30 @@
       "title": "Awareness Partners"
     },
     "hero": {
-      "description": "It is an interactive awareness and training program to educate and raise awareness about emergency health and sports injuries and the proper ways to deal with them",
+      "description": "Aman is an interactive learning platform that helps children learn safety skills and how to act correctly in different situations through interactive stories, educational videos, and questions that encourage them to think and learn in a simple, safe way.",
       "title": "About Aman"
     },
     "objectives": {
-      "description": "Strengthening the capacity of community members on how to deal with emergencies, learn and provide assistance",
+      "description": "Raising children's awareness of safety skills and correct behavior in emergency situations through interactive learning.",
       "objectives-list": {
         "list": {
           "fifth": {
-            "title": "Tongue swallowing accidents during sports"
+            "title": "Psychological support for children"
           },
           "first": {
-            "title": "Preserving Life"
+            "title": "Safety during emergencies"
           },
           "fourth": {
-            "title": "How to use a defibrillator"
+            "title": "Protection from hazards"
           },
           "second": {
-            "title": "Medical Emergencies"
+            "title": "Basic first aid"
           },
           "sixth": {
-            "title": "Sports concussion accidents"
+            "title": "Safe interactive learning"
           },
           "third": {
-            "title": "Cardiopulmonary resuscitation"
+            "title": "Acting correctly in crises"
           }
         }
       },
@@ -54,7 +54,7 @@
       "title": "Our partners"
     },
     "solutions": {
-      "description": "The platform provides a fun technology solution for emergency response training through interactive scenario-based videos, users learn health and sports-related emergency skills at their own pace. Featuring real-time quizzes, progress tracking, and performance assessments to keep users engaged, upon completion of the program users can earn certificates, easily verify their achievements and share their results on social media, this solution designed for a wide audience provides a modern and flexible way to equip individuals with essential life-saving skills and address the limitations of traditional training methods",
+      "description": "Aman provides an interactive educational solution that helps children learn safety skills and how to act correctly during and after war, through educational videos, interactive stories, and activities based on real-life scenarios. Children learn the basics of first aid, recognize safe behaviors, and receive psychological support in a simplified, age-appropriate way. The platform also includes interactive quizzes, progress tracking, and performance assessment, with a certificate of completion at the end of the educational program, providing a fun and safe learning experience that builds awareness, confidence, and readiness for different situations.",
       "list": {
         "fifth": {
           "description": "Celebrate your success! Share your certificate and program achievements on social media",
@@ -88,34 +88,31 @@
       "third": "Heart and Health"
     },
     "target": {
-      "description": "The program is aimed at all members of the community from the age of 8",
+      "description": "Aman is designed for children aged 7 to 15. Teachers and parents can also use the platform to support children and strengthen safety concepts in a simple and safe way.",
       "main": {
-        "description": "Providing awareness and education about health and sports emergencies to provide the necessary assistance to people before they reach health centers or other medical facilities and avoid life-threatening incidents using technology",
-        "sub-description": "The principle is to build a healthier life, free from cardiovascular disease, stroke, and major sports injuries and to educate the individual on how to save lives, have a life free from serious diseases and live healthy while promoting the community to attend first aid, CPR and sports first responder courses.",
+        "description": "Providing children with awareness and education about safety principles, how to act correctly during and after emergencies, and the basics of simple first aid, so they can protect themselves and others before rescue teams or the relevant authorities arrive, while strengthening interactive learning with modern technology.",
+        "sub-description": "The principle is to build a generation that is more aware and better prepared to handle emergencies, by developing a culture of safety, strengthening basic first aid skills, and encouraging children to make the right decisions and protect themselves and others, which builds responsibility, confidence, and the ability to respond safely in different circumstances.",
         "title": "The main goal"
       },
       "title": "Target audience"
     },
     "why-us": {
-      "description": "Committed to providing fun training that equips you with basic emergency response skills",
+      "description": "We provide an interactive learning experience that helps children gain safety skills and learn how to act correctly during and after war, in a fun and safe way.",
       "reasons": {
-        "0": "Multilingual",
-        "1": "Time efficiency",
-        "2": "Wide range",
-        "3": "Easy to use",
-        "4": "New technologies",
-        "5": "Evidence-based",
-        "6": "Prevention",
-        "7": "Paperless (for a safe environment)",
-        "8": "Interactive"
+        "0": "Child-friendly",
+        "1": "Interactive learning",
+        "2": "Real-life scenarios",
+        "3": "Stronger safety",
+        "4": "Progress tracking",
+        "5": "Certificate of completion"
       },
       "title": "Why Aman"
     }
   },
   "awareness": {
-    "description": "Learn to recognize and respond to critical health and sports emergencies with clear symptoms and swift actions.",
-    "symptoms": "symptoms",
-    "title": "Emergency Awareness Guide",
+    "description": "Learn safety rules during and after war, plus the basics of simple first aid and how to act in different situations, through Aman's interactive lessons and activities.",
+    "symptoms": "Key points",
+    "title": "Safety and First Aid Guide for Children",
     "to-programs": "Go to Programs"
   },
   "certificate": {
@@ -240,7 +237,7 @@
       "description": "",
       "title": "Emergency Awareness Guide"
     },
-    "description": "Get answers to frequently asked questions about our training programs and services",
+    "description": "Get answers to the most frequently asked questions about Aman and its educational content.",
     "title": "FAQs"
   },
   "footer": {
@@ -290,7 +287,7 @@
     }
   },
   "information-center": {
-    "description": "Confirm receipt and successful completion of the emergency response training program",
+    "description": "Verify the completion of your learning journey and get an accredited certificate from Aman.",
     "result": {
       "answers": "Answers",
       "average-answer-time": "Average Answer Speed",
@@ -312,7 +309,7 @@
       "old-search": "Records",
       "search-button": "Search"
     },
-    "title": "information center"
+    "title": "Certificate Center"
   },
   "landscape": {
     "description": "Please use your phone in landscape mode for the best video viewing experience"
@@ -454,7 +451,7 @@
     "title": "Share your success!"
   },
   "start": {
-    "description": "Explore how to deal with tongue swallowing and sports first aid in emergency health situations",
+    "description": "Explore how to handle emergency situations during and after war, and learn the basics of first aid in an easy, interactive way.",
     "new-program": "New program",
     "new-cases": "New Cases",
     "start-course-button": "Start Program",
@@ -477,7 +474,7 @@
       "age": "Enter your age",
       "agePlaceholder": "Enter your age",
       "agreeToDisplay": "I agree to the display of my first name, age, and story on the Aman platform and social media",
-      "description": "Inspire others by sharing your lifesaving experiences and encourage more people to learn and act.",
+      "description": "Express your experience and share your story with other children, it may inspire and encourage them.",
       "email": "Enter your email ID",
       "emailPlaceholder": "Enter email ID",
       "errors": {
@@ -507,19 +504,17 @@
       "storyPlaceholder": "Describe your rescue experience, what happened, and how it made a difference",
       "submit": "Submit",
       "success": "Your story has been submitted successfully!",
-      "title": "Share Your Rescue Story",
+      "title": "Share your story",
       "yes": "yes"
     },
     "hero": {
-      "description": "On the interactive Aman platform, we believe that everyone can be a rescuer in an emergency.",
-      "description2": "We are the first interactive platform for teaching first aid skills, dealing with daily health and sports emergencies, and performing CPR. You will learn through realistic videos, instant interaction, and receive an accredited certificate. It’s not just a program, but a lifestyle — because every minute can save a life.",
-      "description3": "Every rescue story can inspire hundreds to learn and save lives. Share your experience and be a voice for awareness and change.",
+      "description": "Aman provides a safe space for children to write their stories and share their experiences during and after war, so they can express their feelings, exchange experiences, and learn from others. These stories build self-confidence, spread awareness, and foster cooperation and hope among children. Every story is reviewed before publication to keep the content safe and age-appropriate.",
       "title": "Be a Rescuer"
     },
     "stories": {
-      "description": "Discover inspiring moments where ordinary people became lifesavers, proving anyone can make a difference.",
+      "description": "Discover real stories shared by children about situations they lived through during and after war, and learn the lessons that strengthen awareness, safety, and cooperation.",
       "title": "Real Stories <br></br> Real Heroes",
-      "warrning": "*The way people handle situations in stories is not necessarily the correct approach for dealing with emergencies. At Aman, we recommend attending our awareness programs to learn the proper procedures"
+      "warrning": "*Published stories reflect their authors' own experiences and may not always represent the correct way to handle a situation. Aman recommends relying on its educational lessons and approved guidance to learn the correct safety and first aid procedures."
     }
   },
   "terms": {
@@ -565,7 +560,7 @@
   },
   "blog": {
     "title": "Blog Aman",
-    "description": "It is an interactive awareness and training program to educate and raise awareness about emergency health and sports injuries and the proper ways to deal with them",
+    "description": "Aman's blog is the platform's knowledge hub, offering trustworthy educational and awareness content that helps children and parents gain safety skills, respond correctly to emergencies, and strengthen mental well-being through simplified articles and practical tips based on reliable sources.",
     "empty": "No posts yet. Check back soon.",
     "pagination": {
       "navLabel": "Blog pagination",

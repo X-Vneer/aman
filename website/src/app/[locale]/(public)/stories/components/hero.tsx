@@ -27,8 +27,6 @@ const Hero = async (props: Props) => {
           </div>
           <div className="w-full space-y-6 max-lg:text-center lg:space-y-8">
             <p className="text-sm text-[#BEB7C8]">{t("description")}</p>
-            <p className="text-sm text-[#BEB7C8]">{t("description2")}</p>
-            <p className="text-sm text-[#BEB7C8]">{t("description3")}</p>
           </div>
         </div>
       </section>

@@ -10,7 +10,7 @@ type Props = {}
 const WhyUs = (props: Props) => {
   const t = useTranslations("about-us.why-us")
 
-  const slidesContent = Array(8).fill("")
+  const slidesContent = Array(6).fill("")
   const slides = slidesContent.map((slideContent, index) => {
     return (
       <div
