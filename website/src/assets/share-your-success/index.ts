@@ -1,3 +1,3 @@
-import arShare from "./عربي.png"
-import enShare from "./انجليزي.png"
+import arShare from "./arabic.jpeg"
+import enShare from "./english.jpeg"
 export { enShare, arShare }
