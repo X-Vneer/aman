@@ -1,32 +1,12 @@
-<!DOCTYPE html>
-<html>
+@extends('emails.layout')
 
-<head>
+@section('title', __('emailReplyTitle'))
 
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Aman</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+@section('content')
+    <p style="margin:0 0 8px; font-size:17px; font-weight:600;">{{ __('emailHello') }}</p>
+    <p style="margin:0 0 20px; color:#52525b;">{{ __('emailReplyIntro') }}</p>
 
-
-</head>
-
-<body dir="rtl">
-    <div style="padding-right: 50px;">
-        <br>
-       مرحبا  لديك رد من
-         Aman.
-        <br>
-        <div>
-            <img style="display: block; margin:auto;" src="{{ config("app.aman_api") }}img/aman.png" alt="aman" width="128" height="165">
-        </div>
-        <br>
-        <div style="text-align:center; font-size:26px;"><strong>{{ $body }}</strong></div>
-
-        <br><br>
-        شكرا لك,<br>
-        {{ config("app.platform") }}
+    <div style="background:#f9fafb; border-radius:10px; border-{{ app()->getLocale() === 'ar' ? 'right' : 'left' }}:4px solid #1ad0d1; padding:16px 18px;">
+        {{ $body }}
     </div>
-</body>
-
-</html>
+@endsection

@@ -38,7 +38,7 @@ class SendCertMail extends Mailable
         return new Envelope(
             from: new Address(config('mail.from.address'), config('mail.from.name')),
             to: [$this->to_email, config('mail.from.address')],
-            subject: 'Aman Certificate',
+            subject: __('emailCertTitle'),
         );
     }
 

@@ -1,44 +1,40 @@
-<!DOCTYPE html>
-<html>
+@extends('emails.layout')
 
-<head>
+@section('title', __('emailCertTitle'))
 
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Aman</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+@php
+    $locale = app()->getLocale();
+    $api = rtrim(config('app.aman_api'), '/');
+    $site = rtrim(config('app.platform') ?: config('app.url'), '/');
+@endphp
 
+@section('content')
+    <p style="margin:0 0 8px; font-size:17px; font-weight:600;">{{ __('emailGreeting', ['name' => $name]) }}</p>
+    <p style="margin:0 0 18px; color:#52525b;">{{ __('emailCertIntro') }}</p>
 
-</head>
-
-<body dir="rtl">
-    <div style="padding-right: 50px;">
-        <div>
-            <img style="display: block; margin:auto;" src="{{ config("app.aman_api") }}img/aman.png" alt="aman" width="128" height="165">
-        </div>
-        <br>
-       مرحبا : {{ $name }},
-        <br>
-        <div><p>
-             تهانينا لك من أمان! تم اصدار شهادة برنامج التثقيف على
-        </p></div>
-
-        <h2><a href="{{ config("app.platform") }}ar/information-center/{{ $cert_number }}">{{ $video_title }}</a></h2>
-
-        <h2>
-            <a href="{{ config("app.aman_api") }}pdf/{{ $video_id }}.pdf">
-                حمل الكتيب التوعوي من هنا
-            </a>
-        </h2>
-
-        <div>
-            <img style="display: block; margin:auto;" src="{{ config("app.aman_api") }}storage/qr/{{ $cert_number }}.png" alt="aman">
-        </div>
-        <br><br>
-        شكرا لك,<br>
-        {{ config("app.platform") }}
+    <div style="background:#f0fdfd; border:1px solid #b8f0f0; border-radius:10px; padding:16px 18px; text-align:center;">
+        <div style="font-size:13px; color:#0e9c9d;">{{ __('emailCertProgram') }}</div>
+        <div style="margin-top:4px; font-size:18px; font-weight:700;">{{ $video_title }}</div>
+        <div style="margin-top:6px; font-size:13px; color:#71717a; direction:ltr;">#{{ $cert_number }}</div>
     </div>
 
-</body>
+    <div style="text-align:center; padding:22px 0 6px;">
+        <a href="{{ $site }}/{{ $locale }}/information-center/{{ $cert_number }}"
+            style="display:inline-block; background:#1ad0d1; color:#ffffff; font-size:15px; font-weight:600;
+                   text-decoration:none; padding:12px 26px; border-radius:8px;">
+            {{ __('emailCertButton') }}
+        </a>
+    </div>
 
-</html>
+    <p style="margin:14px 0 0; text-align:center;">
+        <a href="{{ $api }}/pdf/{{ $video_id }}.pdf" style="color:#1ad0d1; font-size:14px; text-decoration:none;">
+            {{ __('emailCertBooklet') }}
+        </a>
+    </p>
+
+    <div style="text-align:center; padding-top:18px;">
+        <img src="{{ $api }}/storage/qr/{{ $cert_number }}.png" alt="{{ __('emailCertTitle') }}" width="120"
+            style="display:inline-block; border:0; height:auto;">
+        <div style="margin-top:6px; font-size:12px; color:#a1a1aa;">{{ __('emailCertQr') }}</div>
+    </div>
+@endsection

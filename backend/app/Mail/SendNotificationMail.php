@@ -34,7 +34,7 @@ class SendNotificationMail extends Mailable
         return new Envelope(
             from: new Address(config('mail.from.address'), config('mail.from.name')),
             to: [$this->to_email],
-            subject: 'Aman: ' . $this->title,
+            subject: __('emailBrand') . ': ' . $this->title,
         );
     }
 

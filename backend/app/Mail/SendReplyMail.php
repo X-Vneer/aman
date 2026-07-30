@@ -32,7 +32,7 @@ class SendReplyMail extends Mailable
         return new Envelope(
             from: new Address(config('mail.from.address'), config('mail.from.name')),
             to: [$this->to_email],
-            subject: 'Aman Reply',
+            subject: __('emailReplyTitle'),
         );
     }
 

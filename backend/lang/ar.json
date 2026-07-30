@@ -123,6 +123,29 @@
     "يجب إدخال رابط الشهادة": "يجب إدخال رابط الشهادة",
     "يجب أن يكون رابط الشهادة بصيغة PNG": "يجب أن يكون رابط الشهادة بصيغة PNG",
     "هذا الملف غير موجود": "هذا الملف غير موجود",
-    "Sorry you skipped the some questions, please answer the questions in order!: ": "للأسف لقد تخطيت بعض الأسئلة، يرجى الإجابة على الأسئلة بالترتيب"
+    "Sorry you skipped the some questions, please answer the questions in order!: ": "للأسف لقد تخطيت بعض الأسئلة، يرجى الإجابة على الأسئلة بالترتيب",
+
+
+    "emailBrand": "أمان",
+    "emailHello": "مرحباً،",
+    "emailGreeting": "مرحباً :name،",
+    "emailSignOff": "شكراً لك، فريق أمان",
+
+    "emailOtpTitle": "أمان: كود التحقق",
+    "emailOtpIntro": "هذا هو كود التحقق الخاص بك لتسجيل الدخول إلى أمان:",
+    "emailOtpExpiry": "ينتهي الكود خلال 6 دقائق.",
+    "emailOtpIgnore": "إذا لم تطلب هذا الكود، تجاهل هذه الرسالة.",
+
+    "emailReplyTitle": "أمان: رد على رسالتك",
+    "emailReplyIntro": "وصلك رد من فريق أمان:",
+
+    "emailNotificationIntro": "لديك إشعار جديد من أمان:",
+
+    "emailCertTitle": "أمان: شهادتك",
+    "emailCertIntro": "تهانينا! أنهيت البرنامج بنجاح وصدرت شهادتك.",
+    "emailCertProgram": "البرنامج",
+    "emailCertButton": "عرض الشهادة",
+    "emailCertBooklet": "تحميل الكتيب التوعوي",
+    "emailCertQr": "امسح الرمز للتحقق من الشهادة"
 
 }
