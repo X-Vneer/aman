@@ -41,8 +41,6 @@ const EditStoryModal = ({ opened, onClose, story }: EditStoryModalProps) => {
       content: (value) => (!value ? t("story.content-required") : null),
       first_name: (value) => (!value ? t("story.first-name-required") : null),
       last_name: (value) => (!value ? t("story.last-name-required") : null),
-      mobile: (value) => (!value ? t("story.mobile-required") : null),
-      email: (value) => (!value ? t("story.email-required") : null),
       video_id: (value) => null, // Optional field
       age: (value) => (!value ? t("story.age-required") : null),
     },
@@ -95,8 +93,8 @@ const EditStoryModal = ({ opened, onClose, story }: EditStoryModalProps) => {
               <NumberInput
                 size="md"
                 hideControls
-                min={0}
-                max={100}
+                min={1}
+                max={120}
                 label={t("story.age")}
                 placeholder={t("story.enter-age")}
                 {...form.getInputProps("age")}
@@ -129,7 +127,6 @@ const EditStoryModal = ({ opened, onClose, story }: EditStoryModalProps) => {
                 label={t("story.mobile")}
                 placeholder={t("story.enter-mobile")}
                 {...form.getInputProps("mobile")}
-                required
               />
             </Grid.Col>
             <Grid.Col span={{ base: 2, md: 1 }}>
@@ -138,7 +135,6 @@ const EditStoryModal = ({ opened, onClose, story }: EditStoryModalProps) => {
                 placeholder={t("story.enter-email")}
                 type="email"
                 {...form.getInputProps("email")}
-                required
               />
             </Grid.Col>
           </Grid>

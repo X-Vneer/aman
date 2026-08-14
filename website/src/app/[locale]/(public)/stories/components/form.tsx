@@ -168,8 +168,8 @@ const StoriesForm = (props: Props) => {
                       <Label className="text-xs text-default-500!">{t("age")}</Label>
                       <Input
                         type="number"
-                        max={100}
-                        min={0}
+                        max={120}
+                        min={1}
                         placeholder={t("agePlaceholder")}
                         {...field}
                       />
